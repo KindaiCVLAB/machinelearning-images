@@ -9,9 +9,7 @@ ENV HOME  /
 ENV PYENV_ROOT /.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
-RUN pyenv install anaconda3-4.4.0
-RUN pyenv global anaconda3-4.4.0
-RUN pyenv rehash
+RUN pyenv install anaconda3-4.4.0 && pyenv global anaconda3-4.4.0 && pyenv rehash
 
 RUN apt-get update && apt-get install -y libsm6 && \
     pip install opencv-python==3.4.7.28 && pip install tensorflow-gpu==1.13.1 --ignore-installed --user && \
