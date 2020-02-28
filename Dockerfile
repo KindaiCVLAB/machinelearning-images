@@ -15,11 +15,11 @@ RUN pip install opencv-python==3.4.7.28 && pip install tensorflow-gpu==1.13.1 --
     pip install keras && pip install torch torchvision &&\
     pip install tqdm && pip install torchsummary && pip install progressbar && pip install jupyterlab && pip install tensorboard
 
-#RUN jupyter labextension install @lckr/jupyterlab_variableinspector && \
-#    jupyter labextension install @jupyterlab/toc && \
-#    jupyter labextension install jupyterlab_tensorboard && jupyter serverextension enable --py jupyterlab_tensorboard && \
-#    jupyter labextension install jupyterlab-nvdashboard && \
-#    jupyter labextension install @krassowski/jupyterlab-lsp 
+RUN jupyter labextension install @lckr/jupyterlab_variableinspector && \
+    jupyter labextension install @jupyterlab/toc && \
+    jupyter labextension install jupyterlab_tensorboard && jupyter serverextension enable --py jupyterlab_tensorboard && \
+    jupyter labextension install jupyterlab-nvdashboard && \
+    jupyter labextension install @krassowski/jupyterlab-lsp 
     
 #RUN pip install jupyter-tensorboard && pip install jupyterlab-nvdashboard && pip install 'python-language-server[all]' && \
 #    pip install --pre jupyter-lsp
