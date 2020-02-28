@@ -13,14 +13,16 @@ RUN apt-get update && apt-get install -y curl git unzip imagemagick bzip2 vim li
 
 RUN pip install opencv-python==3.4.7.28 && pip install tensorflow-gpu==1.13.1 --ignore-installed --user && \
     pip install keras && pip install torch torchvision &&\
-    pip install tqdm && pip install torchsummary && pip install progressbar && install tensorboard && \
-    pip install jupyter-tensorboard && pip install jupyterlab-nvdashboard && pip install 'python-language-server[all]' && \
-    pip install --pre jupyter-lsp
+    pip install tqdm && pip install torchsummary && pip install progressbar 
 
-RUN pip install jupyterlab
-
-CMD jupyter labextension install @lckr/jupyterlab_variableinspector && \
+RUN jupyter labextension install @lckr/jupyterlab_variableinspector && \
     jupyter labextension install @jupyterlab/toc && \
     jupyter labextension install jupyterlab_tensorboard && jupyter serverextension enable --py jupyterlab_tensorboard && \
-    jupyter labextension install jupyterlab-nvdashboard && \\
-    jupyter labextension install @krassowski/jupyterlab-lsp && mkdir .lsp_symlink && cd .lsp_symlink && ln -s /home home
+    jupyter labextension install jupyterlab-nvdashboard && \
+    jupyter labextension install @krassowski/jupyterlab-lsp 
+    
+RUN pip install jupyterlab && install tensorboard && \
+    pip install jupyter-tensorboard && pip install jupyterlab-nvdashboard && pip install 'python-language-server[all]' && \
+    pip install --pre jupyter-lsp
+    
+CMD mkdir .lsp_symlink && cd .lsp_symlink && ln -s /home home
