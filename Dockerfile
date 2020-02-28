@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y curl git unzip imagemagick bzip2 vim li
     pyenv install anaconda3-4.4.0 && pyenv global anaconda3-4.4.0 && pyenv rehash
 
 RUN pip install opencv-python==3.4.7.28 && pip install tensorflow-gpu==1.13.1 --ignore-installed --user && \
-    pip install keras && pip install torch torchvision && pip install jupyterlab\
+    pip install keras && pip install torch torchvision && conda install jupyterlab\
     pip install tqdm && pip install torchsummary && pip install progressbar && install tensorboard && \
     pip install jupyter-tensorboard && pip install jupyterlab-nvdashboard && pip install 'python-language-server[all]' && \
     pip install --pre jupyter-lsp
