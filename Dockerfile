@@ -17,11 +17,11 @@ RUN apt-get update && apt-get install -y curl git unzip imagemagick bzip2 vim li
 RUN jupyter labextension install @lckr/jupyterlab_variableinspector
 #    jupyter labextension install @jupyterlab/toc
     
-#RUN jupyter labextension install jupyterlab_tensorboard && jupyter serverextension enable --py jupyterlab_tensorboard && \
-#    jupyter labextension install jupyterlab-nvdashboard && \
-#    jupyter labextension install @krassowski/jupyterlab-lsp 
+RUN jupyter labextension install jupyterlab_tensorboard && jupyter serverextension enable --py jupyterlab_tensorboard && \
+    jupyter labextension install jupyterlab-nvdashboard && \
+    jupyter labextension install @krassowski/jupyterlab-lsp 
     
-#RUN pip install jupyter-tensorboard && pip install jupyterlab-nvdashboard && pip install 'python-language-server[all]' && \
-#    pip install --pre jupyter-lsp
+RUN pip install jupyter-tensorboard && pip install jupyterlab-nvdashboard && pip install 'python-language-server[all]' && \
+    pip install --pre jupyter-lsp
     
-#CMD mkdir .lsp_symlink && cd .lsp_symlink && ln -s /home home
+CMD mkdir .lsp_symlink && cd .lsp_symlink && ln -s /home home
