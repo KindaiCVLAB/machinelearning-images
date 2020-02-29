@@ -17,7 +17,9 @@ RUN apt-get update && apt-get install -y curl git unzip imagemagick bzip2 vim li
 RUN jupyter labextension install @lckr/jupyterlab_variableinspector
 #    jupyter labextension install @jupyterlab/toc
     
-RUN jupyter labextension install jupyterlab_tensorboard && jupyter serverextension enable --py jupyterlab_tensorboard && \
+RUN jupyter labextension install jupyterlab_tensorboard 
+
+RUN jupyter serverextension enable --py jupyterlab_tensorboard && \
     jupyter labextension install jupyterlab-nvdashboard && \
     jupyter labextension install @krassowski/jupyterlab-lsp 
     
