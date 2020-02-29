@@ -17,5 +17,5 @@ RUN apt-get update && apt-get install -y curl git unzip imagemagick bzip2 vim li
     jupyter labextension install jupyterlab-nvdashboard
 
 #    jupyter labextension install @jupyterlab/tocs
-RUN jupyter labextension install jupyterlab_tensorboard \
+RUN jupyter labextension install jupyterlab_tensorboard && \
     jupyter serverextension enable --py jupyterlab_tensorboard
