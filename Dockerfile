@@ -12,5 +12,4 @@ RUN apt-get update && apt-get install -y curl git unzip imagemagick bzip2 vim li
     pyenv install anaconda3-4.4.0 && pyenv global anaconda3-4.4.0 && pyenv rehash && pip install --upgrade pip && \
     pip install opencv-python==3.4.7.28 && pip install tensorflow-gpu==1.13.1 --ignore-installed --user && \
     pip install keras && pip install torch torchvision && pip install tqdm && pip install torchsummary && \
-    pip install progressbar && pip install jupyterlab==1.2.4 && pip install jupyterlab-nvdashboard && \
-    jupyter labextension install @lckr/jupyterlab_variableinspector && jupyter labextension install jupyterlab-nvdashboard
+    pip install progressbar && pip install jupyterlab==1.2.4 && jupyter labextension install @lckr/jupyterlab_variableinspector
