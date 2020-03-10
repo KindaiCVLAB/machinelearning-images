@@ -1,21 +1,11 @@
 FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
 LABEL maintainer="CvlabKubernetesService:iwai"
 
-ARG USER_NAME=iwai
-ARG USER_NAME_UID=1000
-RUN useradd -m -u ${USER_NAME_UID} ${USER_NAME}
-
 WORKDIR /
 ENV HOME  /
 ENV PYENV_ROOT /.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
-#ENV HOME /home/${USER_NAME}
-#WORKDIR ${HOME}
-#ENV PYENV_ROOT /.pyenv
-#ENV PATH ${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${PATH}
-
-#preparation
 RUN apt-get update \
  && apt-get install -y curl \
     git \
@@ -44,5 +34,3 @@ RUN apt-get update \
  && pip install progressbar \
  && pip install jupyterlab==2.0.0 \
  && jupyter labextension install @lckr/jupyterlab_variableinspector
-
-USER ${USER_NAME_UID}
