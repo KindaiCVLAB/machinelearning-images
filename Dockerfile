@@ -5,15 +5,15 @@ ARG USER_NAME=iwai
 ARG USER_NAME_UID=1000
 RUN useradd -m -u ${USER_NAME_UID} ${USER_NAME}
 
-#WORKDIR /
-#ENV HOME  /
-#ENV PYENV_ROOT /.pyenv
-#ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
-
-ENV HOME /home/${USER_NAME}
-WORKDIR ${HOME}
+WORKDIR /
+ENV HOME  /
 ENV PYENV_ROOT /.pyenv
-ENV PATH ${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${PATH}
+ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+
+#ENV HOME /home/${USER_NAME}
+#WORKDIR ${HOME}
+#ENV PYENV_ROOT /.pyenv
+#ENV PATH ${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${PATH}
 
 #preparation
 RUN apt-get update \
