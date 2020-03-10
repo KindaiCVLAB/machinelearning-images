@@ -38,4 +38,4 @@ RUN apt-get update \
  && pip install progressbar \
  && pip install jupyterlab==2.0.0 \
  && jupyter labextension install @lckr/jupyterlab_variableinspector \
- && chown -R /home/${USER_NAME}/.local/
+ && chown -R iwai: /home/${USER_NAME}/.local/
