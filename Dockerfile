@@ -1,6 +1,10 @@
 FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
 LABEL maintainer="CvlabKubernetesService:iwai"
 
+ENV USER_NAME iwai
+ENV USER_NAME_UID 1000
+RUN useradd -m -u ${USER_NAME_UID} ${USER_NAME}
+
 WORKDIR /
 ENV HOME  /
 ENV PYENV_ROOT /.pyenv
