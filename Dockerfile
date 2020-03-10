@@ -6,7 +6,8 @@ ENV USER_NAME_UID 1000
 RUN useradd -m -u ${USER_NAME_UID} ${USER_NAME}
 
 ENV HOME  /home/${USER_NAME}
-ENV PYENV_ROOT /.pyenv
+WORKDIR ${HOME}
+ENV PYENV_ROOT .pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
 RUN apt-get update \
