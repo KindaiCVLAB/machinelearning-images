@@ -5,7 +5,7 @@ ENV USER_NAME iwai
 ENV UID 1000
 RUN useradd -m -u ${UID} ${USER_NAME}
 
-ENV HOME  /home/${USER_NAME}
+ENV HOME /home/${USER_NAME}
 WORKDIR ${HOME}
 ENV PYENV_ROOT ${HOME}/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
@@ -24,8 +24,8 @@ RUN apt-get update \
  && git clone https://github.com/pyenv/pyenv.git .pyenv \
  && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \
- && pyenv install anaconda3-4.4.0 \
- && pyenv global anaconda3-4.4.0 \
+ && pyenv install anaconda3-2019.07 \
+ && pyenv global anaconda3-2019.07 \
  && pyenv rehash \
  && pip install --upgrade pip \
  && pip install opencv-python==3.4.7.28 \
@@ -38,4 +38,4 @@ RUN apt-get update \
  && pip install progressbar \
  && pip install jupyterlab==2.0.0 \
  && jupyter labextension install @lckr/jupyterlab_variableinspector \
- && chown -R iwai: /home/${USER_NAME}/.local/
+ && chown -R ${USER_NAME}: /home/${USER_NAME}/.local/
