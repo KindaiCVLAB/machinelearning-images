@@ -28,9 +28,10 @@ RUN apt-get update \
  && pyenv global anaconda3-2019.07 \
  && pyenv rehash \
  && pip install --upgrade pip \
- && pip install opencv-python==4.2.0.34 \
- && pip install tensorflow-gpu==2.2.0 --ignore-installed --user keras==2.3.1 \
- && pip install torch==1.15.0 torchvision==0.6.0 torchsummary==1.5.1 \
+ && pip install opencv-python==4.2.0.34 
+RUN pip install tensorflow-gpu==2.2.0 --ignore-installed --user
+RUN keras==2.3.1 
+RUN pip install torch==1.15.0 torchvision==0.6.0 torchsummary==1.5.1 \
  && pip install tqdm addict progressbar \
  && pip install jupyterlab==2.0.0 \
  && jupyter labextension install @lckr/jupyterlab_variableinspector \
