@@ -1,7 +1,7 @@
 FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
 LABEL maintainer="CvlabKubernetesService:iwai"
 
-ENV USER_NAME iwai
+ENV USER_NAME user
 ENV UID 1000
 RUN useradd -m -u ${UID} ${USER_NAME}
 
@@ -29,13 +29,9 @@ RUN apt-get update \
  && pyenv rehash \
  && pip install --upgrade pip \
  && pip install opencv-python==3.4.7.28 \
- && pip install tensorflow-gpu==1.13.1 --ignore-installed --user \
- && pip install addict \
- && pip install keras \
- && pip install torch torchvision \
- && pip install tqdm \
- && pip install torchsummary \
- && pip install progressbar \
+ && pip install tensorflow-gpu==1.13.1 --ignore-installed --user keras==2.3.1 \
+ && pip install torch==1.2.0 torchvision==0.4.0 torchsummary \
+ && pip install progressbar tqdm addict \
  && pip install jupyterlab==2.0.0 \
  && jupyter labextension install @lckr/jupyterlab_variableinspector \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/.local/
