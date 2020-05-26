@@ -12,11 +12,6 @@ ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
 RUN apt-get update \
  && apt-get install -y curl \
-    git \
-    unzip \
-    imagemagick \
-    bzip2 \
-    vim \
     libsm6 \
     libgl1-mesa-dev \
     build-essential \
