@@ -1,14 +1,12 @@
-CUDA10.2:
+docker-build:
   image: docker:latest
   stage: build
-  variables: 
-    DOCKER_BUILD_DIR: "CUDA10.2"
   services:
     - docker:dind
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
-    - docker build -f "$DOCKER_BUILD_DIR/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE/$DOCKER_BUILD_DIR" .
-    - docker push "$CI_REGISTRY_IMAGE/$DOCKER_BUILD_DIR"
+    - docker build -f "$CI_COMMIT_REF_NAME/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME" .
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
   only:
-    - CUDA10.2
+    - $CI_COMMIT_REF_NAME
