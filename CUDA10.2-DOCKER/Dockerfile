@@ -38,4 +38,4 @@ RUN apt-get update \
 
 USER ${UID}
 EXPOSE 8888
-CMD [ "jupyter-lab", "--port=8888", "--ip=0.0.0.0", "--no-browser", "--NotebookApp.token=''", "--allow-root" ]
+CMD [ "jupyter-lab", "--port=8888", "--ip=0.0.0.0", "--no-browser", "--NotebookApp.token=''"]
