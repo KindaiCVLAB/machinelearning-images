@@ -33,5 +33,9 @@ RUN apt-get update \
  && pip install torch==1.2.0 torchvision==0.4.0 torchsummary \
  && pip install progressbar tqdm addict \
  && pip install jupyterlab==2.0.0 \
- && jupyter labextension install @lckr/jupyterlab_variableinspector \
- && chown -R ${USER_NAME}: /home/${USER_NAME}/.local/
+ && pip install jupyterlab-nvdashboard \
+ && chown -R ${USER_NAME}: /home/${USER_NAME}/
+
+USER ${UID}
+RUN jupyter labextension install jupyterlab-nvdashboard \
+ && jupyter labextension install @lckr/jupyterlab_variableinspector
