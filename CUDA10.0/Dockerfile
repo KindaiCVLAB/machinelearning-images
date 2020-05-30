@@ -34,6 +34,8 @@ RUN apt-get update \
  && pip install progressbar tqdm addict \
  && pip install jupyterlab==2.0.0 \
  && pip install jupyterlab-nvdashboard \
- && jupyter labextension install jupyterlab-nvdashboard \
- && jupyter labextension install @lckr/jupyterlab_variableinspector \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/.local/
+
+USER ${UID}
+RUN jupyter labextension install jupyterlab-nvdashboard \
+ && jupyter labextension install @lckr/jupyterlab_variableinspector
