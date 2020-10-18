@@ -1,10 +1,49 @@
 stages:
+  - prepare-dind
   - docker-build
 
-cuda10.0:
+docker19.03.12:
   image: docker:19.03.12
   services:
     - docker:19.03.12-dind
+  stage: build-dind
+  tags:
+    - gitlab-org-docker
+  variables: 
+    CONTAINER_VERSION: "docker19.03.12"
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build -f "$CONTAINER_VERSION/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION" .
+    - docker push "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION"
+  only:
+    changes:
+    - docker19.03.12/*
+    - .gitlab-ci.yml
+
+docker19.03.12-dind:
+  image: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  stage: build-dind
+  tags:
+    - gitlab-org-docker
+  variables: 
+    CONTAINER_VERSION: "docker19.03.12-dind"
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build -f "$CONTAINER_VERSION/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION" .
+    - docker push "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION"
+  only:
+    changes:
+    - docker19.03.12-dind/*
+    - .gitlab-ci.yml
+
+cuda10.0:
+  image: registry.gitlab.com/kindaicvlab/deeplearning:docker:19.03.12
+  services:
+    - registry.gitlab.com/kindaicvlab/deeplearning:docker:19.03.12-dind
   stage: docker-build
   tags:
     - gitlab-org-docker
@@ -21,9 +60,9 @@ cuda10.0:
     - .gitlab-ci.yml
     
 cuda10.0-docker:
-  image: docker:19.03.12
+  image: registry.gitlab.com/kindaicvlab/deeplearning:docker:19.03.12
   services:
-    - docker:19.03.12-dind
+    - registry.gitlab.com/kindaicvlab/deeplearning:docker:19.03.12-dind
   stage: docker-build
   tags:
     - gitlab-org-docker
@@ -40,9 +79,9 @@ cuda10.0-docker:
     - .gitlab-ci.yml
 
 cuda10.0-fukushima:
-  image: docker:19.03.12
+  image: registry.gitlab.com/kindaicvlab/deeplearning:docker:19.03.12
   services:
-    - docker:19.03.12-dind
+    - registry.gitlab.com/kindaicvlab/deeplearning:docker:19.03.12-dind
   stage: docker-build
   tags:
     - gitlab-org-docker
@@ -59,9 +98,9 @@ cuda10.0-fukushima:
     - .gitlab-ci.yml
 
 cuda10.2-cudnn7:
-  image: docker:19.03.12
+  image: registry.gitlab.com/kindaicvlab/deeplearning:docker:19.03.12
   services:
-    - docker:19.03.12-dind
+    - registry.gitlab.com/kindaicvlab/deeplearning:docker:19.03.12-dind
   stage: docker-build
   tags:
     - gitlab-org-docker
@@ -78,9 +117,9 @@ cuda10.2-cudnn7:
     - .gitlab-ci.yml
 
 cuda10.2-cudnn7-docker:
-  image: docker:19.03.12
+  image: registry.gitlab.com/kindaicvlab/deeplearning:docker:19.03.12
   services:
-    - docker:19.03.12-dind
+    - registry.gitlab.com/kindaicvlab/deeplearning:docker:19.03.12-dind
   stage: docker-build
   tags:
     - gitlab-org-docker
@@ -97,9 +136,9 @@ cuda10.2-cudnn7-docker:
     - .gitlab-ci.yml
 
 cuda10.2-cudnn8:
-  image: docker:19.03.12
+  image: registry.gitlab.com/kindaicvlab/deeplearning:docker:19.03.12
   services:
-    - docker:19.03.12-dind
+    - registry.gitlab.com/kindaicvlab/deeplearning:docker:19.03.12-dind
   stage: docker-build
   tags:
     - gitlab-org-docker
