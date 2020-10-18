@@ -21,7 +21,6 @@ docker19.03.12:
   only:
     changes:
     - docker19.03.12/*
-    - .gitlab-ci.yml
 
 docker19.03.12-dind:
   image: docker:19.03.12
@@ -40,7 +39,6 @@ docker19.03.12-dind:
   only:
     changes:
     - docker19.03.12-dind/*
-    - .gitlab-ci.yml
 
 cuda10.0:
   image: registry.gitlab.com/kindaicvlab/deeplearning:docker19.03.12
