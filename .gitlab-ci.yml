@@ -28,7 +28,7 @@ cuda10.0-docker:
   tags:
     - gitlab-org-docker
   variables: 
-    CONTAINER_VERSION: "cuda10.0"
+    CONTAINER_VERSION: "cuda10.0-docker"
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
