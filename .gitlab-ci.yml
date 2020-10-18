@@ -1,29 +1,116 @@
-cuda10.0:
-  image: docker:latest
-  stage: build
-  services:
-    - docker:dind
-  variables: 
-    DOCKER_BUILD_DIR: "CUDA10.0"
-  before_script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-  script:
-    - docker build -f "$DOCKER_BUILD_DIR/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME" .
-    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
-  only:
-    - cuda10.0
+stages:
+  - docker-build
 
-cuda10.0-docker:
-  image: docker:latest
-  stage: build
+cuda10.0:
+  image: docker:19.03.12
   services:
-    - docker:dind
+    - docker:19.03.12-dind
+  stage: docker-build
+  tags:
+    - gitlab-org-docker
   variables: 
-    DOCKER_BUILD_DIR: "CUDA10.0-DOCKER"
+    CONTAINER_VERSION: "cuda10.0"
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
-    - docker build -f "$DOCKER_BUILD_DIR/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME" .
-    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
+    - docker build -f "$CONTAINER_VERSION/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION" .
+    - docker push "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION"
   only:
-    - cuda10.0-docker
+    changes:
+    - cuda10.0/*
+    - .gitlab-ci.yml
+    
+cuda10.0-docker:
+  image: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  stage: docker-build
+  tags:
+    - gitlab-org-docker
+  variables: 
+    CONTAINER_VERSION: "cuda10.0"
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build -f "$CONTAINER_VERSION/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION" .
+    - docker push "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION"
+  only:
+    changes:
+    - cuda10.0-docker/*
+    - .gitlab-ci.yml
+
+cuda10.0-fukushima:
+  image: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  stage: docker-build
+  tags:
+    - gitlab-org-docker
+  variables: 
+    CONTAINER_VERSION: "cuda10.0-fukushima"
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build -f "$CONTAINER_VERSION/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION" .
+    - docker push "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION"
+  only:
+    changes:
+    - cuda10.0-fukushima/*
+    - .gitlab-ci.yml
+
+cuda10.2-cudnn7:
+  image: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  stage: docker-build
+  tags:
+    - gitlab-org-docker
+  variables: 
+    CONTAINER_VERSION: "cuda10.2-cudnn7"
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build -f "$CONTAINER_VERSION/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION" .
+    - docker push "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION"
+  only:
+    changes:
+    - cuda10.2-cudnn7/*
+    - .gitlab-ci.yml
+
+cuda10.2-cudnn7-docker:
+  image: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  stage: docker-build
+  tags:
+    - gitlab-org-docker
+  variables: 
+    CONTAINER_VERSION: "cuda10.2-cudnn7-docker"
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build -f "$CONTAINER_VERSION/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION" .
+    - docker push "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION"
+  only:
+    changes:
+    - cuda10.2-cudnn7-docker/*
+    - .gitlab-ci.yml
+
+cuda10.2-cudnn8:
+  image: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  stage: docker-build
+  tags:
+    - gitlab-org-docker
+  variables: 
+    CONTAINER_VERSION: "cuda10.2-cudnn8"
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build -f "$CONTAINER_VERSION/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION" .
+    - docker push "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION"
+  only:
+    changes:
+    - cuda10.2-cudnn8/*
+    - .gitlab-ci.yml

@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
+FROM nvcr.io/nvidia/cuda:10.2-cudnn8-devel-ubuntu18.04
 LABEL maintainer="CvlabKubernetesService:iwai"
 
 ENV USER_NAME user
@@ -24,14 +24,14 @@ RUN apt-get update \
  && git clone https://github.com/pyenv/pyenv.git .pyenv \
  && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \
- && pyenv install anaconda3-2019.07 \
- && pyenv global anaconda3-2019.07 \
+ && pyenv install anaconda3-2020.02 \
+ && pyenv global anaconda3-2020.02 \
  && pyenv rehash \
  && pip install --upgrade pip \
- && pip install opencv-python==3.4.7.28 \
- && pip install tensorflow-gpu==1.13.1 --ignore-installed --user keras==2.3.1 \
- && pip install torch==1.2.0 torchvision==0.4.0 torchsummary \
- && pip install progressbar tqdm addict \
+ && pip install opencv-python==4.2.0.34 \
+ && pip install tensorflow-gpu==2.2.0 --ignore-installed --user keras==2.3.1 \
+ && pip install torch==1.5.0 torchvision==0.6.0 torchsummary==1.5.1 \
+ && pip install tqdm addict progressbar \
  && pip install jupyterlab==2.0.0 \
  && pip install jupyterlab-nvdashboard \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/
@@ -39,3 +39,4 @@ RUN apt-get update \
 USER ${UID}
 RUN jupyter labextension install jupyterlab-nvdashboard \
  && jupyter labextension install @lckr/jupyterlab_variableinspector
+
