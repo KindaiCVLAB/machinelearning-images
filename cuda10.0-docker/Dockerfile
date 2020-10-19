@@ -41,4 +41,4 @@ RUN jupyter labextension install jupyterlab-nvdashboard \
  && jupyter labextension install @lckr/jupyterlab_variableinspector
 
 EXPOSE 8888
-CMD [ "jupyter-lab", "--port=8888", "--ip=0.0.0.0", "--no-browser", "--NotebookApp.token=''"]
+ENTRYPOINT [ "jupyter-lab", "--port=8888", "--ip=0.0.0.0", "--no-browser", "--NotebookApp.token=''"]
