@@ -77,6 +77,7 @@
 |torchvision|0.4.0|
 |torchsummary|1.5.1|
 |jupyterlab|2.0.0|
+|cupy-cuda|100|
 
 ## cuda10.0-fukushima
 
@@ -95,3 +96,12 @@
 |torchvision|0.4.0|
 |torchsummary|1.5.1|
 |jupyterlab|2.0.0|
+|cupy-cuda|100|
+|yacs|0.1.6|
+|pretrainedmodels|0.7.4|
+|imgaug|0.2.9|
+
+## cuda10.2
+
+- cuda10.2-cudnn7 & cuda10.2-cudnn8 & cuda10.2-cudnn7-docker イメージにのみ含まれる物を示しています．
+
