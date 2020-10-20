@@ -12,6 +12,7 @@ ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
 RUN apt-get update -y \
  && apt-get install -y curl \
+    wget \
     git \
     unzip \
     imagemagick \
@@ -32,11 +33,14 @@ RUN apt-get update -y \
  && pip install tensorflow-gpu==2.3.1 --ignore-installed --user keras==2.4.3 \
  && pip install torch==1.6.0 torchvision==0.7.0 torchsummary==1.5.1 \
  && pip install tqdm addict progressbar \
+ && pip install requests cmake scikit-build cupy-cuda110 \
  && pip install jupyterlab==2.2.8 \
  && pip install jupyterlab-nvdashboard \
+ && pip install ipywidgets \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/
 
 USER ${UID}
 RUN jupyter labextension install jupyterlab-nvdashboard \
- && jupyter labextension install @lckr/jupyterlab_variableinspector
+ && jupyter labextension install @lckr/jupyterlab_variableinspector \
+ && jupyter nbextension enable --py widgetsnbextension
 

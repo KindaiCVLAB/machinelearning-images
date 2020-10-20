@@ -12,6 +12,7 @@ ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
 RUN apt-get update \
  && apt-get install -y curl \
+    wget \
     git \
     unzip \
     imagemagick \
@@ -32,13 +33,16 @@ RUN apt-get update \
  && pip install tensorflow-gpu==2.2.0 --ignore-installed --user keras==2.3.1 \
  && pip install torch==1.5.0 torchvision==0.6.0 torchsummary==1.5.1 \
  && pip install tqdm addict progressbar \
+ && pip install requests cmake scikit-build cupy-cuda102 \
  && pip install jupyterlab==2.0.0 \
  && pip install jupyterlab-nvdashboard \
+ && pip install ipywidgets \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/
 
 USER ${UID}
 RUN jupyter labextension install jupyterlab-nvdashboard \
- && jupyter labextension install @lckr/jupyterlab_variableinspector
+ && jupyter labextension install @lckr/jupyterlab_variableinspector \
+ && jupyter nbextension enable --py widgetsnbextension
 
 EXPOSE 8888
 ENTRYPOINT [ "jupyter-lab", "--port=8888", "--ip=0.0.0.0", "--no-browser", "--NotebookApp.token=''"]

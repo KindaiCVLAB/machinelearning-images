@@ -33,7 +33,7 @@ RUN apt-get update \
  && pip install tensorflow-gpu==1.13.1 --ignore-installed --user keras==2.3.1 \
  && pip install torch==1.2.0 torchvision==0.4.0 torchsummary \
  && pip install progressbar tqdm addict \
- && pip install requests cmake scikit-build cupy-cuda100\
+ && pip install requests cmake scikit-build cupy-cuda100 \
  && pip install jupyterlab==2.0.0 \
  && pip install jupyterlab-nvdashboard \
  && pip install ipywidgets \
@@ -43,3 +43,4 @@ USER ${UID}
 RUN jupyter labextension install jupyterlab-nvdashboard \
  && jupyter labextension install @lckr/jupyterlab_variableinspector \
  && jupyter nbextension enable --py widgetsnbextension
+ 
