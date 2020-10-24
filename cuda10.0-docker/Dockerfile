@@ -32,7 +32,7 @@ RUN apt-get update \
  && pip install opencv-python==3.4.7.28 \
  && pip install tensorflow-gpu==1.13.1 --ignore-installed --user keras==2.3.1 \
  && pip install torch==1.2.0 torchvision==0.4.0 torchsummary==1.5.1 \
- && pip install progressbar tqdm addict \
+ && pip install progressbar tqdm addict pycocotools \
  && pip install requests cmake scikit-build cupy-cuda100 \ 
  && pip install jupyterlab==2.0.0 \
  && pip install jupyterlab-nvdashboard \
