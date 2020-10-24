@@ -140,7 +140,7 @@
 |torch|1.6.0|
 |torchvision|0.7.0|
 |torchsummary|1.5.1|
-|jupyterlab|2.0.0|
+|jupyterlab|2.2.8|
 |cupy-cuda|110|
 
 ## cuda11.1
@@ -159,5 +159,5 @@
 |torch|1.6.0|
 |torchvision|0.7.0|
 |torchsummary|1.5.1|
-|jupyterlab|2.0.0|
+|jupyterlab|2.2.8|
 |cupy-cuda|110|
