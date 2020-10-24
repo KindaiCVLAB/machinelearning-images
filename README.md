@@ -24,7 +24,7 @@
 - [x] cuda10.2-cudnn7-docker
 - [ ] cuda10.2-cudnn8
 - [ ] cuda11.0-cudnn8
-- [x] cuda11.1-cudnn8(feature)
+- [ ] cuda11.1-cudnn8(feature)
 
 
 # コンテナイメージ の詳細
