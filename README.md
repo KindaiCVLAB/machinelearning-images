@@ -24,6 +24,8 @@
 - [x] cuda10.2-cudnn7-docker
 - [ ] cuda10.2-cudnn8
 - [ ] cuda11.0-cudnn8
+- [x] cuda11.1-cudnn8(feature)
+
 
 # コンテナイメージ の詳細
 
@@ -60,6 +62,7 @@
     - progressbar
     - tqdm
     - addict
+    - pycocotools
 
 ## cuda10.0 
 
@@ -106,3 +109,55 @@
 
 - cuda10.2-cudnn7 & cuda10.2-cudnn8 & cuda10.2-cudnn7-docker イメージにのみ含まれる物を示しています．
 
+|ライブラリ名 & パッケージ名|バージョン|
+|:---:|:---:|
+|CUDA|10.2|
+|cudnn|7.x or 8.x|
+|nodejs|12.x|
+|anaconda3|2019.07|
+|opencv-python|4.2.0.34|
+|tensorflow-gpu|2.2.0|
+|keras|2.3.1|
+|torch|1.5.0|
+|torchvision|0.6.0|
+|torchsummary|1.5.1|
+|jupyterlab|2.0.0|
+|cupy-cuda|102|
+
+## cuda11.0
+
+- cuda11.0-cudnn8 イメージにのみ含まれる物を示しています．
+
+|ライブラリ名 & パッケージ名|バージョン|
+|:---:|:---:|
+|CUDA|11.0|
+|cudnn|8.x|
+|nodejs|14.x|
+|anaconda3|2020.07|
+|opencv-python|4.4.0.44|
+|tensorflow-gpu|2.3.1|
+|keras|2.4.3|
+|torch|1.6.0|
+|torchvision|0.7.0|
+|torchsummary|1.5.1|
+|jupyterlab|2.0.0|
+|cupy-cuda|110|
+
+## cuda11.1
+
+- cuda11.1-cudnn8 イメージにのみ含まれる物を示しています．
+
+|ライブラリ名 & パッケージ名|バージョン|
+|:---:|:---:|
+|CUDA|11.0|
+|cudnn|8.x|
+|nodejs|14.x|
+|anaconda3|2020.07|
+|opencv-python|4.4.0.44|
+|tensorflow-gpu|2.3.1|
+|keras|2.4.3|
+|torch|1.6.0|
+|torchvision|0.7.0|
+|torchsummary|1.5.1|
+|jupyterlab|2.0.0|
+|cupy-cuda|110|
