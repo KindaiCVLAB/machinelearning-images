@@ -1,0 +1,18 @@
+cuda10.0-fukushima:
+  image: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  stage: docker-build
+  tags:
+    - gitlab-org-docker
+  variables: 
+    CONTAINER_VERSION: "cuda10.0-fukushima"
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build -f "$CONTAINER_VERSION/Dockerfile" --pull -t "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION" .
+    - docker push "$CI_REGISTRY_IMAGE:$CONTAINER_VERSION"
+  only:
+    changes:
+    - cuda10.0-fukushima/*
+    - .gitlab/docker-build/cuda10.0-fukushima.yaml
