@@ -10,3 +10,4 @@ include:
   - local: .gitlab/docker-build/cuda10.2-cudnn8.yaml
   - local: .gitlab/docker-build/cuda11.0-cudnn8.yaml
   - local: .gitlab/docker-build/cuda11.1-cudnn8.yaml
+  - local: .gitlab/docker-build/code-server-test.yaml

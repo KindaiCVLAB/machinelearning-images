@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/cuda:11.1-cudnn8-devel-ubuntu18.04
+FROM nvcr.io/nvidia/cuda:10.2-cudnn8-devel-ubuntu18.04
 LABEL maintainer="CvlabKubernetesService:iwai"
 
 ENV USER_NAME user
@@ -28,10 +28,10 @@ RUN apt-get update -y \
     dumb-init \
  && rm -rf /var/lib/apt/lists/* \
  && git clone https://github.com/pyenv/pyenv.git .pyenv \
- && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+ && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \
- && pyenv install anaconda3-2020.07 \
- && pyenv global anaconda3-2020.07 \
+ && pyenv install anaconda3-2020.02 \
+ && pyenv global anaconda3-2020.02 \
  && pyenv rehash
 
 
