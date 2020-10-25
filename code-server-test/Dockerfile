@@ -35,8 +35,8 @@ RUN apt-get update -y \
  && pyenv rehash
 
 
-RUN curl -fOL https://github.com/cdr/code-server/releases/download/v3.6.1/code-server-3.6.1-amd64.rpm \
- && rpm -i code-server-3.6.1-amd64.rpm \
+RUN curl -fOL https://github.com/cdr/code-server/releases/download/v3.6.1/code-server_3.6.1_amd64.deb \
+ && dpkg -i code-server_3.6.1_amd64.deb \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/
 
 USER ${UID}
