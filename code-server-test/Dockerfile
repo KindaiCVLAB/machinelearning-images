@@ -40,5 +40,6 @@ RUN curl -fOL https://github.com/cdr/code-server/releases/download/v3.6.1/code-s
  && chown -R ${USER_NAME}: /home/${USER_NAME}/
 
 USER ${UID}
+ENV PASSWORD "aiueo"
 EXPOSE 8888
-ENTRYPOINT ["dumb-init", "/usr/bin/code-server", "--bind-addr", "0.0.0.0:8888", "--auth", "password", "--password", "aiueo", "--cert", "false", "."]
+ENTRYPOINT ["dumb-init", "/usr/bin/code-server", "--bind-addr", "0.0.0.0:8888", "--auth", "password", "--cert", "false", "."]

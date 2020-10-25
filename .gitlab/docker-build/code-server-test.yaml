@@ -29,7 +29,7 @@ code-server-test:
   script:
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --snapshotMode=redo --context $CI_PROJECT_DIR --dockerfile $CONTAINER_VERSION/Dockerfile --destination $CI_REGISTRY_IMAGE:$CONTAINER_VERSION
+    - /kaniko/executor --cache=true --snapshotMode=redo --context $CI_PROJECT_DIR --dockerfile $CONTAINER_VERSION/Dockerfile --destination $CI_REGISTRY_IMAGE:$CONTAINER_VERSION
   only:
     changes:
     - code-server-test/*
