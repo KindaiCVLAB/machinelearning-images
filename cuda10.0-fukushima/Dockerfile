@@ -41,6 +41,7 @@ RUN apt-get update \
                 requests \
                 cmake \
                 scikit-build \
+                tabulate \
                 cupy-cuda100 \
                 yacs==0.1.6 \
                 pretrainedmodels==0.7.4 \

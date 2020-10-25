@@ -40,6 +40,7 @@ RUN apt-get update \
                 pycocotools \
                 requests cmake \
                 scikit-build \
+                tabulate \
                 cupy-cuda102 \
  && pip install jupyterlab==2.0.0 \
                 jupyterlab-nvdashboard \
