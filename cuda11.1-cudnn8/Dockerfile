@@ -43,7 +43,7 @@ RUN apt-get update -y \
                 scikit-build \
                 tabulate \
                 cupy-cuda110 \
- && pip install jupyterlab==2.2.8 \
+ && pip install jupyterlab==2.2.9 \
                 jupyterlab-nvdashboard \
                 ipywidgets \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/
