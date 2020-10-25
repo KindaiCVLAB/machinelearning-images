@@ -31,12 +31,20 @@ RUN apt-get update -y \
  && pip install --upgrade pip \
  && pip install opencv-python==4.4.0.44 \
  && pip install tensorflow-gpu==2.3.1 --ignore-installed --user keras==2.4.3 \
- && pip install torch==1.6.0 torchvision==0.7.0 torchsummary==1.5.1 \
- && pip install tqdm addict progressbar pycocotools \
- && pip install requests cmake scikit-build cupy-cuda110 \
+ && pip install torch==1.6.0 \
+                torchvision==0.7.0 \
+                torchsummary==1.5.1 \
+ && pip install tqdm \
+                addict \
+                progressbar \
+                pycocotools \
+                requests \
+                cmake \
+                scikit-build \
+                cupy-cuda110 \
  && pip install jupyterlab==2.2.8 \
- && pip install jupyterlab-nvdashboard \
- && pip install ipywidgets \
+                jupyterlab-nvdashboard \
+                ipywidgets \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/
 
 USER ${UID}

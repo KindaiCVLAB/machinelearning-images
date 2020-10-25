@@ -31,16 +31,22 @@ RUN apt-get update \
  && pip install --upgrade pip \
  && pip install opencv-python==4.2.0.34 \
  && pip install tensorflow-gpu==2.2.0 --ignore-installed --user keras==2.3.1 \
- && pip install torch==1.5.0 torchvision==0.6.0 torchsummary==1.5.1 \
- && pip install tqdm addict progressbar pycocotools \
- && pip install requests cmake scikit-build cupy-cuda102 \
+ && pip install torch==1.5.0 \
+                torchvision==0.6.0 \
+                torchsummary==1.5.1 \
+ && pip install tqdm \
+                addict \
+                progressbar \
+                pycocotools \
+                requests cmake \
+                scikit-build \
+                cupy-cuda102 \
  && pip install jupyterlab==2.0.0 \
- && pip install jupyterlab-nvdashboard \
- && pip install ipywidgets \
+                jupyterlab-nvdashboard \
+                ipywidgets \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/
 
 USER ${UID}
 RUN jupyter labextension install jupyterlab-nvdashboard \
  && jupyter labextension install @lckr/jupyterlab_variableinspector \
  && jupyter nbextension enable --py widgetsnbextension
-
