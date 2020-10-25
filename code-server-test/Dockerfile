@@ -32,14 +32,26 @@ RUN apt-get update -y \
  && apt-get install -y --no-install-recommends nodejs \
  && pyenv install anaconda3-2020.02 \
  && pyenv global anaconda3-2020.02 \
- && pyenv rehash
-
-
-RUN curl -fOL https://github.com/cdr/code-server/releases/download/v3.6.1/code-server_3.6.1_amd64.deb \
+ && pyenv rehash \
+ && pip install --upgrade pip \
+ && pip install opencv-python==4.2.0.34 \
+ && pip install tensorflow-gpu==2.2.0 --ignore-installed --user keras==2.3.1 \
+ && pip install torch==1.5.0 \
+                torchvision==0.6.0 \
+                torchsummary==1.5.1 \
+ && pip install tqdm \
+                addict \
+                progressbar \
+                pycocotools \
+                requests cmake \
+                scikit-build \
+                tabulate \
+                cupy-cuda102 \
+ && curl -fOL https://github.com/cdr/code-server/releases/download/v3.6.1/code-server_3.6.1_amd64.deb \
  && dpkg -i code-server_3.6.1_amd64.deb \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/
 
 USER ${UID}
-ENV PASSWORD "aiueo"
-EXPOSE 8888
-ENTRYPOINT ["dumb-init", "/usr/bin/code-server", "--bind-addr", "0.0.0.0:8888", "--auth", "password", "--cert", "false", "."]
+# ENV PASSWORD "aiueo"
+# EXPOSE 8888
+# ENTRYPOINT ["dumb-init", "/usr/bin/code-server", "--bind-addr", "0.0.0.0:8888", "--auth", "password", "--cert", "false", "."]
