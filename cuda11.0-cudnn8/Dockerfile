@@ -9,9 +9,11 @@ ENV HOME /home/${USER_NAME}
 WORKDIR ${HOME}
 ENV PYENV_ROOT ${HOME}/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update -y \
- && apt-get install -y curl \
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+    curl \
     wget \
     git \
     unzip \
@@ -22,6 +24,21 @@ RUN apt-get update -y \
     libgl1-mesa-dev \
     build-essential \
     libssl-dev \
+    make \
+    build-essential \
+    zlib1g-dev \
+    libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    llvm \
+    libncurses5-dev \
+    xz-utils \
+    tk-dev \
+    libxml2-dev \
+    libxrender1\
+    libxmlsec1-dev \
+    libffi-dev \
+    liblzma-dev \
  && git clone https://github.com/pyenv/pyenv.git .pyenv \
  && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \

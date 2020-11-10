@@ -17,21 +17,29 @@
 #     - cuda11.1-cudnn8/*
 #     - .gitlab/docker-build/cuda11.1-cudnn8.yaml
 
+# code-server-test:
+#   image:
+#     name: gcr.io/kaniko-project/executor:debug
+#     entrypoint: [""]
+#   stage: docker-build
+#   tags:
+#     - gitlab-org-docker
+#   variables: 
+#     CONTAINER_VERSION: "code-server-test"
+#   script:
+#     - mkdir -p /kaniko/.docker
+#     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+#     - /kaniko/executor --snapshotMode=redo --context $CI_PROJECT_DIR --dockerfile $CONTAINER_VERSION/Dockerfile --destination $CI_REGISTRY_IMAGE:$CONTAINER_VERSION
+#   only:
+#     changes:
+#     - code-server-test/*
+#     - .gitlab/docker-build/code-server-test.yaml
+
 code-server-test:
-  image:
-    name: gcr.io/kaniko-project/executor:debug
-    entrypoint: [""]
-  stage: docker-build
-  tags:
-    - gitlab-org-docker
-  variables: 
+  extends: .container-image-builder
+  variables:
     CONTAINER_VERSION: "code-server-test"
-  script:
-    - mkdir -p /kaniko/.docker
-    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --snapshotMode=redo --context $CI_PROJECT_DIR --dockerfile $CONTAINER_VERSION/Dockerfile --destination $CI_REGISTRY_IMAGE:$CONTAINER_VERSION
   only:
     changes:
     - code-server-test/*
-    - .gitlab/docker-build/code-server-test.yaml
-    
+    - .gitlab/docker-build/code-server-test.yaml    
