@@ -48,7 +48,7 @@ RUN apt-get update \
  && pip install --upgrade pip \
  && pip install opencv-python==4.4.0.46 \
  && pip install tf-nightly-gpu==2.5.0.dev20201109 --ignore-installed --user keras==2.4.3 \
- && pip install torch==1.6.0 \
+ && pip install torch==1.7.0 \
                 torchvision==0.7.0 \
                 torchsummary==1.5.1 \
  && pip install tqdm \
