@@ -40,16 +40,16 @@ RUN apt-get update \
     libffi-dev \
     liblzma-dev \
  && git clone https://github.com/pyenv/pyenv.git .pyenv \
- && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+ && curl -sL https://deb.nodesource.com/setup_15.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \
- && pyenv install anaconda3-2019.07 \
- && pyenv global anaconda3-2019.07 \
+ && pyenv install anaconda3-2020.07 \
+ && pyenv global anaconda3-2020.07 \
  && pyenv rehash \
  && pip install --upgrade pip \
- && pip install opencv-python==4.2.0.34 \
- && pip install tensorflow-gpu==2.2.0 --ignore-installed --user keras==2.3.1 \
- && pip install torch==1.5.0 \
-                torchvision==0.6.0 \
+ && pip install opencv-python==4.4.0.46 \
+ && pip install tensorflow-gpu==2.3.1 --ignore-installed --user keras==2.4.3 \
+ && pip install torch==1.7.0 \
+                torchvision==0.8.1 \
                 torchsummary==1.5.1 \
  && pip install tqdm \
                 addict \
@@ -60,7 +60,7 @@ RUN apt-get update \
                 scikit-build \
                 tabulate \
                 cupy-cuda102==8.1.0 \
- && pip install jupyterlab==2.0.0 \
+ && pip install jupyterlab==2.2.9 \
                 jupyterlab-nvdashboard \
                 ipywidgets \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/
