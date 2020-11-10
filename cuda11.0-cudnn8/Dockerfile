@@ -40,7 +40,7 @@ RUN apt-get update \
     libffi-dev \
     liblzma-dev \
  && git clone https://github.com/pyenv/pyenv.git .pyenv \
- && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+ && curl -sL https://deb.nodesource.com/setup_15.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \
  && pyenv install anaconda3-2020.07 \
  && pyenv global anaconda3-2020.07 \
