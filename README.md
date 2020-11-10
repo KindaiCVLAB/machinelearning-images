@@ -17,14 +17,17 @@
 - 全てのイメージを全ての環境でテストすることはできないので以下の動作状況は参考程度にしてください．
 - チェックマークがついているものは確認したものですが，ついていない物は未確認のため動かないという意味ではないです．
 - feature がついているものは新機能追加中のためほぼ動きません．
+- alpha がついているものは一部 alpha バージョンのパッケージがインストールされていることを示します.
 
 - [x] cuda10.0
 - [x] cuda10.0-docker
 - [x] cuda10.0-fukushima
+- [x] cuda10.1-cudnn7
+- [x] cuda10.1-cudnn8
 - [x] cuda10.2-cudnn7
 - [x] cuda10.2-cudnn7-docker
 - [x] cuda10.2-cudnn8
-- [x] cuda11.0-cudnn8
+- [x] cuda11.0-cudnn8(alpha)
 - [ ] cuda11.1-cudnn8(feature)
 
 
@@ -82,7 +85,7 @@
 |torchvision|0.4.0|
 |torchsummary|1.5.1|
 |jupyterlab|2.0.0|
-|cupy-cuda|100|
+|cupy-cuda100|8.1.0|
 
 ## cuda10.0-fukushima
 
@@ -101,18 +104,18 @@
 |torchvision|0.4.0|
 |torchsummary|1.5.1|
 |jupyterlab|2.0.0|
-|cupy-cuda|100|
+|cupy-cuda100|8.1.0|
 |yacs|0.1.6|
 |pretrainedmodels|0.7.4|
 |imgaug|0.2.9|
 
-## cuda10.2
+## cuda10.1
 
-- cuda10.2-cudnn7 & cuda10.2-cudnn8 & cuda10.2-cudnn7-docker イメージにのみ含まれる物を示しています．
+- cuda10.1-cudnn7 & cuda10.1-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
 |:---:|:---:|
-|CUDA|10.2|
+|CUDA|10.1|
 |cudnn|7.x or 8.x|
 |nodejs|12.x|
 |anaconda3|2019.07|
@@ -123,7 +126,27 @@
 |torchvision|0.6.0|
 |torchsummary|1.5.1|
 |jupyterlab|2.0.0|
-|cupy-cuda|102|
+|cupy-cuda101|8.1.0|
+
+
+## cuda10.2
+
+- cuda10.2-cudnn7 & cuda10.2-cudnn8 & cuda10.2-cudnn7-docker イメージにのみ含まれる物を示しています．
+
+|ライブラリ名 & パッケージ名|バージョン|
+|:---:|:---:|
+|CUDA|10.2|
+|cudnn|7.x or 8.x|
+|nodejs|15.x|
+|anaconda3|2020.07|
+|opencv-python|4.4.0.46|
+|tensorflow-gpu|2.3.1|
+|keras|2.4.3|
+|torch|1.7.0|
+|torchvision|0.8.1|
+|torchsummary|1.5.1|
+|jupyterlab|2.2.9|
+|cupy-cuda102|8.1.0|
 
 ## cuda11.0
 
@@ -133,16 +156,16 @@
 |:---:|:---:|
 |CUDA|11.0|
 |cudnn|8.x|
-|nodejs|14.x|
+|nodejs|15.x|
 |anaconda3|2020.07|
-|opencv-python|4.4.0.44|
-|tensorflow-gpu|2.3.1|
+|opencv-python|4.4.0.46|
+|tensorflow-gpu|2.5.0.dev20201109|
 |keras|2.4.3|
-|torch|1.6.0|
-|torchvision|0.7.0|
+|torch|1.7.0|
+|torchvision|0.8.1|
 |torchsummary|1.5.1|
-|jupyterlab|2.2.8|
-|cupy-cuda|110|
+|jupyterlab|2.2.9|
+|cupy-cuda110|8.1.0|
 
 ## cuda11.1
 
@@ -154,11 +177,11 @@
 |cudnn|8.x|
 |nodejs|14.x|
 |anaconda3|2020.07|
-|opencv-python|4.4.0.44|
-|tensorflow-gpu|2.3.1|
+|opencv-python|4.4.0.46|
+|tensorflow-gpu|2.5.0.dev20201109|
 |keras|2.4.3|
-|torch|1.6.0|
-|torchvision|0.7.0|
+|torch|1.7.0|
+|torchvision|0.8.1|
 |torchsummary|1.5.1|
-|jupyterlab|2.2.8|
-|cupy-cuda|110|
+|jupyterlab|2.2.9|
+|cupy-cuda111|8.1.0|
