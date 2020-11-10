@@ -184,4 +184,4 @@
 |torchvision|0.8.1|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda111|8.1.0|
+|cupy-cuda111alpha|8.1.0|
