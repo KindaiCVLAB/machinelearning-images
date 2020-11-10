@@ -46,7 +46,7 @@ RUN apt-get update \
  && pyenv global anaconda3-2020.07 \
  && pyenv rehash \
  && pip install --upgrade pip \
- && pip install opencv-python==4.4.0.44 \
+ && pip install opencv-python==4.4.0.46 \
  && pip install tensorflow-gpu==2.3.1 --ignore-installed --user keras==2.4.3 \
  && pip install torch==1.6.0 \
                 torchvision==0.7.0 \
@@ -59,7 +59,7 @@ RUN apt-get update \
                 cmake \
                 scikit-build \
                 tabulate \
-                cupy-cuda111 \
+                cupy-cuda111 -f https://github.com/cupy/cupy/releases/tag/v8.1.0 \
  && pip install jupyterlab==2.2.9 \
                 jupyterlab-nvdashboard \
                 ipywidgets \
