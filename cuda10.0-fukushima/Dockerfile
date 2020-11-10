@@ -59,7 +59,7 @@ RUN apt-get update \
                 cmake \
                 scikit-build \
                 tabulate \
-                cupy-cuda100 \
+                cupy-cuda100==8.1.0 \
                 yacs==0.1.6 \
                 pretrainedmodels==0.7.4 \
                 imgaug==0.2.9 \

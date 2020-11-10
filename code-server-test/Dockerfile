@@ -64,7 +64,7 @@ RUN apt-get update \
                 requests cmake \
                 scikit-build \
                 tabulate \
-                cupy-cuda102 \
+                cupy-cuda102==8.1.0 \
  && curl -fOL https://github.com/cdr/code-server/releases/download/v3.6.1/code-server_3.6.1_amd64.deb \
  && dpkg -i code-server_3.6.1_amd64.deb \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/

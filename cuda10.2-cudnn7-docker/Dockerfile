@@ -59,7 +59,7 @@ RUN apt-get update \
                 cmake \
                 scikit-build \
                 tabulate \
-                cupy-cuda102 \
+                cupy-cuda102==8.1.0 \
  && pip install jupyterlab==2.0.0 \
                 jupyterlab-nvdashboard \
                 ipywidgets \
