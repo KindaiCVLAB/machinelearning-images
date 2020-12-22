@@ -39,6 +39,7 @@ RUN apt-get update \
     libxmlsec1-dev \
     libffi-dev \
     liblzma-dev \
+    dumb-init \
  && git clone https://github.com/pyenv/pyenv.git .pyenv \
  && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \
@@ -59,7 +60,7 @@ RUN apt-get update \
                 cmake \
                 scikit-build \
                 tabulate \
-                cupy-cuda101==8.1.0 \
+                cupy-cuda101==8.2.0 \
  && pip install jupyterlab==2.0.0 \
                 jupyterlab-nvdashboard \
                 ipywidgets \

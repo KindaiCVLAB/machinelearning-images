@@ -39,6 +39,7 @@ RUN apt-get update \
     libxmlsec1-dev \
     libffi-dev \
     liblzma-dev \
+    dumb-init \
  && git clone https://github.com/pyenv/pyenv.git .pyenv \
  && curl -sL https://deb.nodesource.com/setup_15.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \
@@ -47,10 +48,12 @@ RUN apt-get update \
  && pyenv rehash \
  && pip install --upgrade pip \
  && pip install opencv-python==4.4.0.46 \
- && pip install tf-nightly-gpu==2.5.0.dev20201109 --ignore-installed --user keras==2.4.3 \
- && pip install torch==1.7.0 \
-                torchvision==0.8.1 \
-                torchsummary==1.5.1 \
+ && pip install tf-nightly-gpu==2.5.0.dev20201221 --ignore-installed --user keras==2.4.3 \
+ && pip install --pre torch torchvision -f https://download.pytorch.org/whl/nightly/cu110/torch_nightly.html \
+ && pip install torchsummary==1.5.1 \
+#  && pip install torch==1.7.1 \
+#                 torchvision==0.8.2 \
+#                 torchsummary==1.5.1 \
  && pip install tqdm \
                 addict \
                 progressbar \
@@ -59,7 +62,7 @@ RUN apt-get update \
                 cmake \
                 scikit-build \
                 tabulate \
-                cupy-cuda111 -f https://github.com/cupy/cupy/releases/tag/v8.1.0 \
+                cupy-cuda111==8.2.0 \
  && pip install jupyterlab==2.2.9 \
                 jupyterlab-nvdashboard \
                 ipywidgets \
