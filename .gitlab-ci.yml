@@ -3,9 +3,9 @@ stages:
 
 include:
   - local: .gitlab/docker-build/template.yaml  
-  - local: .gitlab/docker-build/cuda10.0.yaml
-  - local: .gitlab/docker-build/cuda10.0-docker.yaml
-  - local: .gitlab/docker-build/cuda10.0-fukushima.yaml
+  # - local: .gitlab/docker-build/cuda10.0.yaml
+  # - local: .gitlab/docker-build/cuda10.0-docker.yaml
+  # - local: .gitlab/docker-build/cuda10.0-fukushima.yaml
   - local: .gitlab/docker-build/cuda10.1-cudnn7.yaml
   - local: .gitlab/docker-build/cuda10.1-cudnn8.yaml  
   - local: .gitlab/docker-build/cuda10.2-cudnn7.yaml
