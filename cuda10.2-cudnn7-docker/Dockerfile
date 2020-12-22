@@ -47,19 +47,19 @@ RUN apt-get update \
  && pyenv rehash \
  && pip install --upgrade pip \
  && pip install opencv-python==4.4.0.46 \
- && pip install tensorflow-gpu==2.3.1 --ignore-installed --user keras==2.4.3 \
- && pip install torch==1.7.0 \
-                torchvision==0.8.1 \
+ && pip install tensorflow-gpu==2.4.0 --ignore-installed --user keras==2.4.3 \
+ && pip install torch==1.7.1 \
+                torchvision==0.8.2 \
                 torchsummary==1.5.1 \
  && pip install tqdm \
                 addict \
                 progressbar \
                 pycocotools \
-                requests \
-                cmake \
+                requests cmake \
                 scikit-build \
                 tabulate \
-                cupy-cuda102==8.1.0 \
+                cmake \
+                cupy-cuda102 \
  && pip install jupyterlab==2.2.9 \
                 jupyterlab-nvdashboard \
                 ipywidgets \
