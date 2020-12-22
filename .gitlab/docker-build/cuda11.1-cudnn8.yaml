@@ -5,4 +5,4 @@ cuda11.1-cudnn8:
   only:
     changes:
     - cuda11.1-cudnn8/*
-    - .gitlab/docker-build/cuda11.1-cudnn8.yaml    
+    - .gitlab/docker-build/cuda11.1-cudnn8.yaml
