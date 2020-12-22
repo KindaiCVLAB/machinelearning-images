@@ -65,6 +65,22 @@
     - libgl1-mesa-dev
     - build-essential
     - libssl-dev
+    - make 
+    - build-essential
+    - zlib1g-dev
+    - libbz2-dev
+    - libreadline-dev
+    - libsqlite3-dev
+    - llvm
+    - libncurses5-dev
+    - xz-utils
+    - tk-dev
+    - libxml2-dev
+    - libxrender1
+    - libxmlsec1-dev
+    - libffi-dev
+    - liblzma-dev
+    - dumb-init    
     - pyenv
     - requests
     - cmake
