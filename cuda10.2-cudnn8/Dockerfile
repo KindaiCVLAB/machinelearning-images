@@ -58,6 +58,7 @@ RUN apt-get update \
                 requests cmake \
                 scikit-build \
                 tabulate \
+                cmake \
                 cupy-cuda102==8.1.0 \
  && pip install jupyterlab==2.2.9 \
                 jupyterlab-nvdashboard \
