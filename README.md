@@ -18,16 +18,17 @@
 - チェックマークがついているものは確認したものですが，ついていない物は未確認のため動かないという意味ではないです．
 - feature がついているものは新機能追加中のためほぼ動きません．
 - alpha がついているものは一部 alpha バージョンのパッケージがインストールされていることを示します.
+- deprecated がついているものはセキュリティパッチや深刻なエラー修正のみが提供されます．各ライブラリが最新版に更新されることはありません．
 
-- [x] cuda10.0
-- [x] cuda10.0-docker
-- [x] cuda10.0-fukushima
-- [x] cuda10.1-cudnn7
-- [x] cuda10.1-cudnn8
-- [x] cuda10.2-cudnn7
+- [] cuda10.0(deprecated)
+- [] cuda10.0-docker(deprecated)
+- [] cuda10.0-fukushima(deprecated)
+- [x] cuda10.1-cudnn7(deprecated)
+- [x] cuda10.1-cudnn8(deprecated)
+- [x] cuda10.2-cudnn7(deprecated)
 - [x] cuda10.2-cudnn7-docker
 - [x] cuda10.2-cudnn8
-- [x] cuda11.0-cudnn8(alpha)
+- [x] cuda11.0-cudnn8
 - [ ] cuda11.1-cudnn8(feature)
 
 
@@ -165,7 +166,7 @@
 |torchvision|0.8.1|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda110|8.1.0|
+|cupy-cuda110|8.2.0|
 
 ## cuda11.1
 
@@ -184,4 +185,4 @@
 |torchvision|0.8.1|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda111alpha|8.1.0|
+|cupy-cuda111|8.2.0|
