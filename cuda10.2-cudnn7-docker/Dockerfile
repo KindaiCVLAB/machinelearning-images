@@ -39,6 +39,7 @@ RUN apt-get update \
     libxmlsec1-dev \
     libffi-dev \
     liblzma-dev \
+    dumb-init \
  && git clone https://github.com/pyenv/pyenv.git .pyenv \
  && curl -sL https://deb.nodesource.com/setup_15.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \

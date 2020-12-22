@@ -20,17 +20,20 @@
 - alpha がついているものは一部 alpha バージョンのパッケージがインストールされていることを示します.
 - deprecated がついているものはセキュリティパッチや深刻なエラー修正のみが提供されます．各ライブラリが最新版に更新されることはなく，サーバ上での動作も不明です．
 
-- [ ] cuda10.0(deprecated)
-- [ ] cuda10.0-docker(deprecated)
-- [ ] cuda10.0-fukushima(deprecated)
+|||
+|||
+|||
+
+- [ ] cuda10.0(closed)
+- [ ] cuda10.0-docker(closed)
+- [ ] cuda10.0-fukushima(closed)
 - [x] cuda10.1-cudnn7(deprecated)
 - [x] cuda10.1-cudnn8(deprecated)
 - [x] cuda10.2-cudnn7(deprecated)
 - [x] cuda10.2-cudnn7-docker
 - [x] cuda10.2-cudnn8
-- [x] cuda11.0-cudnn8
+- [x] cuda11.0-cudnn8(alpha)
 - [ ] cuda11.1-cudnn8(feature, alpha)
-- [ ] cuda11.2-cudnn8(feature, alpha)
 
 
 # コンテナイメージ の詳細
@@ -163,7 +166,7 @@
 |opencv-python|4.4.0.46|
 |tensorflow-gpu|2.4.0|
 |keras|2.4.3|
-|torch|1.7.1|
+|torch|1.8.0-rcx|
 |torchvision|0.8.2|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
@@ -182,7 +185,7 @@
 |opencv-python|4.4.0.46|
 |tensorflow-gpu|2.5.0.dev20201221|
 |keras|2.4.3|
-|torch|1.7.1|
+|torch|1.8.0-rcx|
 |torchvision|0.8.2|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
