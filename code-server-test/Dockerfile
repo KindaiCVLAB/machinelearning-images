@@ -14,7 +14,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN chsh -s /bin/bash
 ENV SHELL=/bin/bash
 
-
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
     curl \
@@ -43,6 +42,7 @@ RUN apt-get update \
     libxmlsec1-dev \
     libffi-dev \
     liblzma-dev \
+    jq \
     dumb-init \
  && rm -rf /var/lib/apt/lists/* \
  && git clone https://github.com/pyenv/pyenv.git .pyenv \

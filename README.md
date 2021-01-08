@@ -52,7 +52,6 @@
 
 - 共通イメージを最新に保つため一定期間毎にコンテナイメージは再ビルドされます．
 
-
 - ライブラリ & パッケージ一覧
     - curl
     - wget
@@ -80,7 +79,8 @@
     - libxmlsec1-dev
     - libffi-dev
     - liblzma-dev
-    - dumb-init    
+    - dumb-init  
+    - jq  
     - pyenv
     - requests
     - cmake
@@ -209,3 +209,25 @@
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
 |cupy-cuda111|8.2.0|
+
+# 各種ツール類
+
+## jupyterlab アドオン拡張ツール
+
+|拡張ツール名|バージョン|
+|:---:|:---:|
+|jupyterlab-nvdashboard|latest|
+|@lckr/jupyterlab_variableinspector|latest|
+|widgetsnbextension|latest|
+
+
+## code-server アドオン拡張ツール
+
+|拡張ツール名|バージョン|
+|:---:|:---:|
+|ms-python|2020.10.332292344|
+|magicstack.magicpython|latest|
+|coenraads.bracket-pair-colorizer-2|latest|
+|streetsidesoftware.code-spell-checker|latest|
+|redhat.vscode-yaml|latest|
+|pkief.material-icon-theme|latest|

@@ -39,6 +39,7 @@ RUN apt-get update \
     libxmlsec1-dev \
     libffi-dev \
     liblzma-dev \
+    jq \
     dumb-init \
  && git clone https://github.com/pyenv/pyenv.git .pyenv \
  && curl -sL https://deb.nodesource.com/setup_15.x | bash - \
@@ -64,9 +65,31 @@ RUN apt-get update \
  && pip install jupyterlab==2.2.9 \
                 jupyterlab-nvdashboard \
                 ipywidgets \
+ && curl -fOL https://github.com/cdr/code-server/releases/download/v3.8.0/code-server_3.8.0_amd64.deb \
+ && dpkg -i code-server_3.8.0_amd64.deb \
+ && rm -rf code-server_3.8.0_amd64.deb \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/
 
+RUN apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
 USER ${UID}
+
+#  install jupyter extensions
 RUN jupyter labextension install jupyterlab-nvdashboard \
  && jupyter labextension install @lckr/jupyterlab_variableinspector \
  && jupyter nbextension enable --py widgetsnbextension
+
+# install code-server extensions
+RUN mkdir -p /home/user/.local/share/code-server/User \
+ && echo "{\n  \"terminal.integrated.shell.linux\": \"/bin/bash\",\n  \"workbench.colorTheme\": \"Visual Studio Dark\",\n  \"extensions.autoCheckUpdates\": false,\n  \"extensions.autoUpdate\": false\n}" \
+ > /home/user/.local/share/code-server/User/settings.json \           
+ && wget https://github.com/microsoft/vscode-python/releases/download/2020.10.332292344/ms-python-release.vsix \
+ && dumb-init /usr/bin/code-server \
+   --install-extension ./ms-python-release.vsix \
+   --install-extension magicstack.magicpython \
+   --install-extension coenraads.bracket-pair-colorizer-2 \
+   --install-extension streetsidesoftware.code-spell-checker \
+   --install-extension redhat.vscode-yaml \
+   --install-extension pkief.material-icon-theme || true \
+ && rm -rf ./ms-python-release.vsix
