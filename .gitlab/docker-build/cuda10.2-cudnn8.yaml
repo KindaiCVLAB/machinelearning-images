@@ -1,61 +1,25 @@
 cuda10.2-cudnn8:
-  extends: .container-image-builder
-  variables:
-    ANACONDA: "2020.07"
-    OPENCV: "4.4.0.46"
-    TF_GPU: "2.4.0"
-    TF_TYPE: "tensorflow"  
-    KERAS: "2.4.3"
-    TORCH: "1.7.1"
-    TORCH_VISION: "0.8.2"
-    TORCH_SUMMARY: "1.5.1"
-    CUPY_CUDA: "8.2.0"
-    JUPYTER: "2.2.9"
-    CODE_SERVER: "3.8.0"
-    NODEJS: "15"
-    CONTAINER_VERSION: "cuda10.2-cudnn8"
+  extends: 
+    - .cuda10.2-cudnn8-env-vars
+    - .container-image-builder
   only:
     changes:
     - cuda10.2-cudnn8/*
     - .gitlab/docker-build/cuda10.2-cudnn8.yaml
 
 cuda10.2-cudnn8-test:
-  extends: .test-image-builder
-  variables:
-    ANACONDA: "2020.07"
-    OPENCV: "4.4.0.46"
-    TF_GPU: "2.4.0"
-    TF_TYPE: "tensorflow"  
-    KERAS: "2.4.3"
-    TORCH: "1.7.1"
-    TORCH_VISION: "0.8.2"
-    TORCH_SUMMARY: "1.5.1"
-    CUPY_CUDA: "8.2.0"
-    JUPYTER: "2.2.9"
-    CODE_SERVER: "3.8.0"
-    NODEJS: "15"
-    CONTAINER_VERSION: "cuda10.2-cudnn8"
+  extends: 
+    - .cuda10.2-cudnn8-env-vars
+    - .test-image-builder
   only:
     changes:
     - cuda10.2-cudnn8/*
     - .gitlab/docker-build/cuda10.2-cudnn8.yaml    
 
 cuda10.2-cudnn8-unittest:
-  extends: .unittest
-  variables:
-    ANACONDA: "2020.07"
-    OPENCV: "4.4.0.46"
-    TF_GPU: "2.4.0"
-    TF_TYPE: "tensorflow"  
-    KERAS: "2.4.3"
-    TORCH: "1.7.1"
-    TORCH_VISION: "0.8.2"
-    TORCH_SUMMARY: "1.5.1"
-    CUPY_CUDA: "8.2.0"
-    JUPYTER: "2.2.9"
-    CODE_SERVER: "3.8.0"
-    NODEJS: "15"
-    CONTAINER_VERSION: "cuda10.2-cudnn8"
+  extends: 
+    - .cuda10.2-cudnn8-env-vars
+    - .unittest
   only:
     changes:
     - cuda10.2-cudnn8/*

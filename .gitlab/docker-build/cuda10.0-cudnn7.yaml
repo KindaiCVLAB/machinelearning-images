@@ -1,62 +1,27 @@
-cuda10.0-cudnn7:
-  extends: .container-image-builder
-  variables:
-    ANACONDA: "2019.07"
-    OPENCV: "3.4.7.28"
-    TF_GPU: "1.13.1"
-    TF_TYPE: "tensorflow"  
-    KERAS: "2.3.1"
-    TORCH: "1.2.0"
-    TORCH_VISION: "0.4.0"
-    TORCH_SUMMARY: "1.5.1"
-    CUPY_CUDA: "8.1.0"
-    JUPYTER: "2.0.0"
-    CODE_SERVER: "3.8.0"
-    NODEJS: "12"
-    CONTAINER_VERSION: "cuda10.0-cudnn7"
-  only:
-    changes:
-    - cuda10.0-cudnn7/*
-    - .gitlab/docker-build/cuda10.0-cudnn7.yaml    
-
 cuda10.0-cudnn7-test:
-  extends: .test-image-builder
-  variables:
-    ANACONDA: "2019.07"
-    OPENCV: "3.4.7.28"
-    TF_GPU: "1.13.1"
-    TF_TYPE: "tensorflow"  
-    KERAS: "2.3.1"
-    TORCH: "1.2.0"
-    TORCH_VISION: "0.4.0"
-    TORCH_SUMMARY: "1.5.1"
-    CUPY_CUDA: "8.1.0"
-    JUPYTER: "2.0.0"
-    CODE_SERVER: "3.8.0"
-    NODEJS: "12"
-    CONTAINER_VERSION: "cuda10.0-cudnn7"  
+  extends: 
+    - .cuda10.0-cudnn7-env-vars  
+    - .test-image-builder
   only:
     changes:
     - cuda10.0-cudnn7/*
     - .gitlab/docker-build/cuda10.0-cudnn7.yaml    
 
 cuda10.0-cudnn7-unittest:
-  extends: .unittest
-  variables:
-    ANACONDA: "2019.07"
-    OPENCV: "3.4.7.28"
-    TF_GPU: "1.13.1"
-    TF_TYPE: "tensorflow"  
-    KERAS: "2.3.1"
-    TORCH: "1.2.0"
-    TORCH_VISION: "0.4.0"
-    TORCH_SUMMARY: "1.5.1"
-    CUPY_CUDA: "8.1.0"
-    JUPYTER: "2.0.0"
-    CODE_SERVER: "3.8.0"
-    NODEJS: "12"
-    CONTAINER_VERSION: "cuda10.0-cudnn7"
+  extends:
+    - .cuda10.0-cudnn7-env-vars
+    - .unittest
   only:
     changes:
     - cuda10.0-cudnn7/*
     - .gitlab/docker-build/cuda10.0-cudnn7.yaml    
+
+cuda10.0-cudnn7:
+  extends: 
+    - .cuda10.0-cudnn7-env-vars    
+    - .container-image-builder
+  only:
+    changes:
+    - cuda10.0-cudnn7/*
+    - .gitlab/docker-build/cuda10.0-cudnn7.yaml    
+    
