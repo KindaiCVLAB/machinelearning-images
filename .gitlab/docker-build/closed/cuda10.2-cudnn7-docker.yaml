@@ -1,0 +1,17 @@
+cuda10.2-cudnn7-docker:
+  extends: .container-image-builder
+  variables:
+    CONTAINER_VERSION: "cuda10.2-cudnn7-docker"
+  only:
+    changes:
+    - cuda10.2-cudnn7-docker/*
+    - .gitlab/docker-build/cuda10.2-cudnn7-docker.yaml    
+
+cuda10.2-cudnn7-docker-test:
+  extends: .test-image-builder
+  variables:
+    CONTAINER_VERSION: "cuda10.2-cudnn7-docker"
+  only:
+    changes:
+    - cuda10.2-cudnn7-docker/*
+    - .gitlab/docker-build/cuda10.2-cudnn7-docker.yaml        

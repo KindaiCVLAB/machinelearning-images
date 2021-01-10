@@ -1,9 +1,0 @@
-cuda10.0-docker:
-  extends: .container-image-builder
-  variables:
-    CONTAINER_VERSION: "cuda10.0-docker"
-  only:
-    changes:
-    - cuda10.0-docker/*
-    - .gitlab/docker-build/cuda10.0-docker.yaml
-    

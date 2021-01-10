@@ -53,7 +53,7 @@ RUN apt-get update \
  && pyenv rehash \
  && pip install --upgrade pip \
  && pip install opencv-python==4.2.0.34 \
- && pip install tensorflow-gpu==2.2.0 --ignore-installed --user keras==2.3.1 \
+  && pip install ${TF_TYPE}-gpu==2.2.0 --ignore-installed --user keras==2.3.1 \
  && pip install torch==1.5.0 \
                 torchvision==0.6.0 \
                 torchsummary==1.5.1 \
