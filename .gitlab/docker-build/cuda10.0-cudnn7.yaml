@@ -4,16 +4,18 @@ cuda10.0-cudnn7-test:
     - .test-image-builder
   only:
     changes:
-    - cuda10.0-cudnn7/*
+    - .gitlab/docker-build/template.yaml
+    - .gitlab/docker-build/versions.yaml
     - .gitlab/docker-build/cuda10.0-cudnn7.yaml    
 
-cuda10.0-cudnn7-unittest:
+cuda10.0-cudnn7-unittest-test:
   extends:
     - .cuda10.0-cudnn7-env-vars
-    - .unittest
+    - .unittest-test
   only:
     changes:
-    - cuda10.0-cudnn7/*
+    - .gitlab/docker-build/template.yaml
+    - .gitlab/docker-build/versions.yaml
     - .gitlab/docker-build/cuda10.0-cudnn7.yaml    
 
 cuda10.0-cudnn7:
@@ -22,6 +24,16 @@ cuda10.0-cudnn7:
     - .container-image-builder
   only:
     changes:
-    - cuda10.0-cudnn7/*
+    - .gitlab/docker-build/template.yaml
+    - .gitlab/docker-build/versions.yaml
     - .gitlab/docker-build/cuda10.0-cudnn7.yaml    
     
+cuda10.0-cudnn7-unittest:
+  extends:
+    - .cuda10.0-cudnn7-env-vars
+    - .unittest
+  only:
+    changes:
+    - .gitlab/docker-build/template.yaml
+    - .gitlab/docker-build/versions.yaml
+    - .gitlab/docker-build/cuda10.0-cudnn7.yaml    

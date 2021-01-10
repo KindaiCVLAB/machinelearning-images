@@ -27,7 +27,7 @@
 |  feature |新機能追加中のため特定の環境でしか動作しません．|
 |   alpha  |一部 alpha バージョンのパッケージがインストールされていることを示します.|
 
-- [ ] cuda10.0(closed)
+- [x] cuda10.0-cudnn7(deprecated)
 - [ ] cuda10.0-docker(closed)
 - [ ] cuda10.0-fukushima(closed)
 - [x] cuda10.1-cudnn7(deprecated)
@@ -94,7 +94,7 @@
 
 ## cuda10.0 
 
-- cuda10.0 & cuda10.0-docker イメージにのみ含まれる物を示しています．
+- cuda10.0-cudnn7 & cuda10.0-docker イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
 |:---:|:---:|
@@ -185,8 +185,8 @@
 |opencv-python|4.4.0.46|
 |tensorflow-gpu|2.4.0|
 |keras|2.4.3|
-|torch|1.8.0-rcx|
-|torchvision|0.8.2|
+|torch|1.8.0.dev20210108+cu110|
+|torchvision|0.9.0.dev20210108+cu110|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
 |cupy-cuda110|8.2.0|
@@ -204,8 +204,8 @@
 |opencv-python|4.4.0.46|
 |tensorflow-gpu|2.5.0.dev20201221|
 |keras|2.4.3|
-|torch|1.8.0-rcx|
-|torchvision|0.8.2|
+|torch|1.8.0.dev20210108+cu110|
+|torchvision|0.9.0.dev20210108+cu110|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
 |cupy-cuda111|8.2.0|

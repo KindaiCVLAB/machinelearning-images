@@ -1,11 +1,10 @@
 stages:
-  - docker-test-build
-  - unittest
   - docker-build
+  - unittest
 
 include:
   - local: .gitlab/docker-build/template.yaml  
-  - local: .gitlab/docker-build/set_versions.yaml
+  - local: .gitlab/docker-build/versions.yaml
   - local: .gitlab/docker-build/cuda10.0-cudnn7.yaml
   - local: .gitlab/docker-build/cuda10.1-cudnn7.yaml
   - local: .gitlab/docker-build/cuda10.1-cudnn8.yaml  

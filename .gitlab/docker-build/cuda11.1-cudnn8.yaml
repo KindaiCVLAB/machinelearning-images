@@ -1,20 +1,32 @@
-cuda11.1-cudnn8:
-  extends: 
-    - .cuda11.1-cudnn8-env-vars
-    - .container-image-builder
-  only:
-    changes:
-    - cuda11.1-cudnn8/*
-    - .gitlab/docker-build/cuda11.1-cudnn8.yaml
-
 cuda11.1-cudnn8-test:
   extends: 
     - .cuda11.1-cudnn8-env-vars
     - .test-image-builder
   only:
     changes:
-    - cuda11.1-cudnn8/*
+    - .gitlab/docker-build/template.yaml
+    - .gitlab/docker-build/versions.yaml
     - .gitlab/docker-build/cuda11.1-cudnn8.yaml    
+
+cuda11.1-cudnn8-unittest-test:
+  extends: 
+    - .cuda11.1-cudnn8-env-vars
+    - .unittest-test
+  only:
+    changes:
+    - .gitlab/docker-build/template.yaml
+    - .gitlab/docker-build/versions.yaml
+    - .gitlab/docker-build/cuda11.1-cudnn8.yaml    
+
+cuda11.1-cudnn8:
+  extends: 
+    - .cuda11.1-cudnn8-env-vars
+    - .container-image-builder
+  only:
+    changes:
+    - .gitlab/docker-build/template.yaml
+    - .gitlab/docker-build/versions.yaml
+    - .gitlab/docker-build/cuda11.1-cudnn8.yaml
 
 cuda11.1-cudnn8-unittest:
   extends: 
@@ -22,5 +34,6 @@ cuda11.1-cudnn8-unittest:
     - .unittest
   only:
     changes:
-    - cuda11.1-cudnn8/*
+    - .gitlab/docker-build/template.yaml
+    - .gitlab/docker-build/versions.yaml
     - .gitlab/docker-build/cuda11.1-cudnn8.yaml    
