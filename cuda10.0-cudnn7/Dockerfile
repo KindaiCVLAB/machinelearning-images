@@ -11,6 +11,22 @@ ENV PYENV_ROOT ${HOME}/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 ENV DEBIAN_FRONTEND=noninteractive
 
+ARG ANACONDA_VERSION
+ARG OPENCV_VERSION
+ARG TF_GPU_VERSION
+ARG KERAS_VERSION
+ARG TORCH_VERSION
+ARG TORCH_VISION_VERSION
+ARG TORCH_SUMMARY_VERSION
+ARG CUPY_CUDA_VERSION
+ARG JUPYTER_VERSION
+ARG CODE_SERVER_VERSION
+ARG NODEJS_VERSION
+ARG CUDA_VERSION_FOR_CUPY
+ARG TORCH_FILE
+ARG TORCH_VISION_FILE
+ARG TF_TYPE
+
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
     curl \
@@ -42,17 +58,17 @@ RUN apt-get update \
     jq \
     dumb-init \    
  && git clone https://github.com/pyenv/pyenv.git .pyenv \
- && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+ && curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \
- && pyenv install anaconda3-2019.07 \
- && pyenv global anaconda3-2019.07 \
+ && pyenv install anaconda3-${ANACONDA_VERSION} \
+ && pyenv global anaconda3-${ANACONDA_VERSION} \
  && pyenv rehash \
  && pip install --upgrade pip \
- && pip install opencv-python==3.4.7.28 \
- && pip install tensorflow-gpu==1.13.1 --ignore-installed --user keras==2.3.1 \
- && pip install torch==1.2.0 \
-                torchvision==0.4.0 \
-                torchsummary==1.5.1 \
+ && pip install opencv-python==${OPENCV_VERSION} \
+ && pip install ${TF_TYPE}-gpu==${TF_GPU_VERSION} --ignore-installed --user keras==${KERAS_VERSION} \
+ && pip install torch==${TORCH_VERSION} \
+                torchvision==${TORCH_VISION_VERSION} \
+                torchsummary==${TORCH_SUMMARY_VERSION} \
  && pip install progressbar \
                 tqdm \
                 addict \
@@ -61,13 +77,13 @@ RUN apt-get update \
                 cmake \
                 scikit-build \
                 tabulate \
-                cupy-cuda100==8.1.0 \
- && pip install jupyterlab==2.0.0 \
+                cupy-cuda${CUDA_VERSION_FOR_CUPY}==${CUPY_CUDA_VERSION} \
+ && pip install jupyterlab==${JUPYTER_VERSION} \
                 jupyterlab-nvdashboard \
                 ipywidgets \
- && curl -fOL https://github.com/cdr/code-server/releases/download/v3.8.0/code-server_3.8.0_amd64.deb \
- && dpkg -i code-server_3.8.0_amd64.deb \
- && rm -rf code-server_3.8.0_amd64.deb \
+ && curl -fOL https://github.com/cdr/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server_${CODE_SERVER_VERSION}_amd64.deb \
+ && dpkg -i code-server_${CODE_SERVER_VERSION}_amd64.deb \
+ && rm -rf code-server_${CODE_SERVER_VERSION}_amd64.deb \
  && chown -R ${USER_NAME}: /home/${USER_NAME}/
 
 RUN apt-get clean \

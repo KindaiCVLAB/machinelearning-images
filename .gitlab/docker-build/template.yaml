@@ -5,13 +5,120 @@
     entrypoint: [""]
   tags:
     - gitlab-org-docker
-  variables: 
-    CONTAINER_VERSION: "cuda-test"
+  before_script:
+    - CUDA_MAJOR=`echo $CONTAINER_VERSION | sed 's/cuda//g' | cut -d. -f1`
+    - CUDA_MINOR=`echo $CONTAINER_VERSION | cut -d. -f2 | cut -d- -f1`
+    - CUDA_VERSION_FOR_CUPY=$CUDA_MAJOR$CUDA_MINOR
   script:
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --snapshotMode=redo --context $CI_PROJECT_DIR --dockerfile $CONTAINER_VERSION/Dockerfile --destination $CI_REGISTRY_IMAGE:$CONTAINER_VERSION
+    - >
+      /kaniko/executor \
+        --snapshotMode redo \
+        --context $CI_PROJECT_DIR \
+        --dockerfile $CONTAINER_VERSION/Dockerfile \
+        --destination $CI_REGISTRY_IMAGE:$CONTAINER_VERSION \
+        --build-arg ANACONDA_VERSION=$ANACONDA \
+        --build-arg OPENCV_VERSION=$OPENCV \
+        --build-arg TF_GPU_VERSION=$TF_GPU \
+        --build-arg KERAS_VERSION=$KERAS \
+        --build-arg TORCH_VERSION=$TORCH \
+        --build-arg TORCH_VISION_VERSION=$TORCH_VISION \
+        --build-arg TORCH_SUMMARY_VERSION=$TORCH_SUMMARY \
+        --build-arg CUPY_CUDA_VERSION=$CUPY_CUDA \
+        --build-arg CUDA_VERSION_FOR_CUPY=$CUDA_VERSION_FOR_CUPY \
+        --build-arg JUPYTER_VERSION=$JUPYTER \
+        --build-arg NODEJS_VERSION=$NODEJS \
+        --build-arg CODE_SERVER_VERSION=$CODE_SERVER \
+        --build-arg TORCH_FILE=$TORCH_FILE \
+        --build-arg TORCH_VISION_FILE=$TORCH_VISION_FILE \
+        --build-arg TF_TYPE=$TF_TYPE        
   only:
+    refs:
+    - master  
+    - schedules
     changes:
     - "$DOCKER_FILE_DIR/*"
     - ".gitlab/docker-build/$DOCKER_FILE_DIR.yaml"
+
+.test-image-builder:
+  stage: docker-build
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  tags:
+    - gitlab-org-docker
+  before_script:
+    - CUDA_MAJOR=`echo $CONTAINER_VERSION | sed 's/cuda//g' | cut -d. -f1`
+    - CUDA_MINOR=`echo $CONTAINER_VERSION | cut -d. -f2 | cut -d- -f1`
+    - CUDA_VERSION_FOR_CUPY=$CUDA_MAJOR$CUDA_MINOR
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - >
+      /kaniko/executor \
+        --snapshotMode redo \
+        --context $CI_PROJECT_DIR \
+        --dockerfile $CONTAINER_VERSION/Dockerfile \
+        --destination $CI_REGISTRY_IMAGE/test:$CONTAINER_VERSION \
+        --build-arg ANACONDA_VERSION=$ANACONDA \
+        --build-arg OPENCV_VERSION=$OPENCV \
+        --build-arg TF_GPU_VERSION=$TF_GPU \
+        --build-arg KERAS_VERSION=$KERAS \
+        --build-arg TORCH_VERSION=$TORCH \
+        --build-arg TORCH_VISION_VERSION=$TORCH_VISION \
+        --build-arg TORCH_SUMMARY_VERSION=$TORCH_SUMMARY \
+        --build-arg CUPY_CUDA_VERSION=$CUPY_CUDA \
+        --build-arg CUDA_VERSION_FOR_CUPY=$CUDA_VERSION_FOR_CUPY \
+        --build-arg JUPYTER_VERSION=$JUPYTER \
+        --build-arg NODEJS_VERSION=$NODEJS \
+        --build-arg CODE_SERVER_VERSION=$CODE_SERVER \
+        --build-arg TORCH_FILE=$TORCH_FILE \
+        --build-arg TORCH_VISION_FILE=$TORCH_VISION_FILE \
+        --build-arg TF_TYPE=$TF_TYPE
+  only:
+    refs:
+    - merge_requests  
+    changes:
+    - "$DOCKER_FILE_DIR/*"
+    - ".gitlab/docker-build/$DOCKER_FILE_DIR.yaml"
+
+.unittest:
+  stage: unittest
+  tags:
+    - gitlab-org-docker  
+  image: docker:stable
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - CUDA_MAJOR=`echo $CONTAINER_VERSION | sed 's/cuda//g' | cut -d. -f1`
+    - CUDA_MINOR=`echo $CONTAINER_VERSION | cut -d. -f2 | cut -d- -f1`
+    - CUDA_VERSION_FOR_CUPY=$CUDA_MAJOR$CUDA_MINOR
+  script:
+    - >
+      docker run -u 1000 --rm \
+        -v $PWD/tests:/home/user/tests \
+        -v $PWD/Makefile:/home/user/Makefile \
+        -e ANACONDA_VERSION=$ANACONDA \
+        -e OPENCV_VERSION=$OPENCV \
+        -e TF_GPU_VERSION=$TF_GPU \
+        -e KERAS_VERSION=$KERAS \
+        -e TORCH_VERSION=$TORCH \
+        -e TORCH_VISION_VERSION=$TORCH_VISION \
+        -e TORCH_SUMMARY_VERSION=$TORCH_SUMMARY \
+        -e CUPY_CUDA_VERSION=$CUPY_CUDA \
+        -e CUDA_VERSION_FOR_CUPY=$CUDA_VERSION_FOR_CUPY \
+        -e JUPYTER_VERSION=$JUPYTER \
+        -e NODEJS_VERSION=$NODEJS \
+        -e CODE_SERVER_VERSION=$CODE_SERVER \
+        -e TORCH_FILE=$TORCH_FILE \
+        -e TORCH_VISION_FILE=$TORCH_VISION_FILE \
+        -e TF_TYPE=$TF_TYPE \
+        $CI_REGISTRY_IMAGE/test:$CONTAINER_VERSION \
+        make unittest
+  only:
+    refs:
+    - merge_requests    
+
+

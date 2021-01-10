@@ -11,6 +11,18 @@ ENV PYENV_ROOT ${HOME}/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 ENV DEBIAN_FRONTEND=noninteractive
 
+ARG ANACONDA_VERSION
+ARG OPENCV_VERSION
+ARG TF_GPU_VERSION
+ARG KERAS_VERSION
+ARG TORCH_VERSION
+ARG TORCH_VISION_VERSION
+ARG TORCH_SUMMARY_VERSION
+ARG CUPY_CUDA_VERSION
+ARG JUPYTER_VERSION
+ARG CODE_SERVER_VERSION
+ARG NODEJS_VERSION
+ARG CUDA_VERSION_FOR_CUPY
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
     curl \
@@ -49,7 +61,7 @@ RUN apt-get update \
  && pyenv rehash \
  && pip install --upgrade pip \
  && pip install opencv-python==3.4.7.28 \
- && pip install tensorflow-gpu==1.13.1 --ignore-installed --user keras==2.3.1 \
+  && pip install ${TF_TYPE}-gpu==1.13.1 --ignore-installed --user keras==2.3.1 \
  && pip install torch==1.2.0 \
                 torchvision==0.4.0 \
                 torchsummary==1.5.1 \

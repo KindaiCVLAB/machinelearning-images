@@ -33,7 +33,7 @@
 - [x] cuda10.1-cudnn7(deprecated)
 - [x] cuda10.1-cudnn8(deprecated)
 - [x] cuda10.2-cudnn7(stable)
-- [x] cuda10.2-cudnn7-docker(stable)
+- [ ] cuda10.2-cudnn7-docker(closed)
 - [x] cuda10.2-cudnn8(stable)
 - [x] cuda11.0-cudnn8(latest, aplha)
 - [ ] cuda11.1-cudnn8(feature, alpha)
