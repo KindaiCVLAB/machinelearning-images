@@ -1,3 +1,4 @@
+# deprecated
 .cuda10.0-cudnn7-env-vars: 
   variables:
     ANACONDA: "2019.07"
@@ -14,6 +15,7 @@
     NODEJS: "12"
     CONTAINER_VERSION: "cuda10.0-cudnn7"
 
+# deprecated
 .cuda10.1-cudnn7-env-vars:
   variables:
     ANACONDA: "2019.07"
@@ -30,6 +32,7 @@
     NODEJS: "12"
     CONTAINER_VERSION: "cuda10.1-cudnn7"
 
+# deprecated
 .cuda10.1-cudnn8-env-vars:
   variables:
     ANACONDA: "2019.07"
@@ -46,69 +49,73 @@
     NODEJS: "12"
     CONTAINER_VERSION: "cuda10.1-cudnn8"
 
+# stable
 .cuda10.2-cudnn7-env-vars:
   variables:
-    ANACONDA: "2020.07"
-    OPENCV: "4.4.0.46"
+    ANACONDA: "2020.11"
+    OPENCV: "4.5.1.48"
     TF_GPU: "2.4.0"
     TF_TYPE: "tensorflow"  
     KERAS: "2.4.3"
     TORCH: "1.7.1"
     TORCH_VISION: "0.8.2"
     TORCH_SUMMARY: "1.5.1"
-    CUPY_CUDA: "8.2.0"
+    CUPY_CUDA: "8.3.0"
     JUPYTER: "2.2.9"
     CODE_SERVER: "3.8.0"
     NODEJS: "15"
     CONTAINER_VERSION: "cuda10.2-cudnn7"
 
+# stable
 .cuda10.2-cudnn8-env-vars:
   variables:
-    ANACONDA: "2020.07"
-    OPENCV: "4.4.0.46"
+    ANACONDA: "2020.11"
+    OPENCV: "4.5.1.48"
     TF_GPU: "2.4.0"
     TF_TYPE: "tensorflow"  
     KERAS: "2.4.3"
     TORCH: "1.7.1"
     TORCH_VISION: "0.8.2"
     TORCH_SUMMARY: "1.5.1"
-    CUPY_CUDA: "8.2.0"
+    CUPY_CUDA: "8.3.0"
     JUPYTER: "2.2.9"
     CODE_SERVER: "3.8.0"
     NODEJS: "15"
     CONTAINER_VERSION: "cuda10.2-cudnn8"
 
+# latest
 .cuda11.0-cudnn8-env-vars:
   variables:
-    ANACONDA: "2020.07"
-    OPENCV: "4.4.0.46"
+    ANACONDA: "2020.11"
+    OPENCV: "4.5.1.48"
     TF_GPU: "2.4.0"
     TF_TYPE: "tensorflow"  
     KERAS: "2.4.3"
-    TORCH: "1.8.0.dev20210108+cu110"
-    TORCH_FILE: "https://download.pytorch.org/whl/nightly/cu110/torch-1.8.0.dev20210108%2Bcu110-cp38-cp38-linux_x86_64.whl"
-    TORCH_VISION: "0.9.0.dev20210108+cu110"
-    TORCH_VISION_FILE: "https://download.pytorch.org/whl/nightly/cu110/torchvision-0.9.0.dev20210108%2Bcu110-cp38-cp38-linux_x86_64.whl"
+    TORCH: "1.8.0.dev20210110+cu110"
+    TORCH_FILE: "https://download.pytorch.org/whl/nightly/cu110/torch-1.8.0.dev20210110%2Bcu110-cp38-cp38-linux_x86_64.whl"
+    TORCH_VISION: "0.9.0.dev20210110+cu110"
+    TORCH_VISION_FILE: "https://download.pytorch.org/whl/nightly/cu110/torchvision-0.9.0.dev20210110%2Bcu110-cp38-cp38-linux_x86_64.whl"
     TORCH_SUMMARY: "1.5.1"
-    CUPY_CUDA: "8.2.0"
+    CUPY_CUDA: "8.3.0"
     JUPYTER: "2.2.9"
     CODE_SERVER: "3.8.0"
     NODEJS: "15"
     CONTAINER_VERSION: "cuda11.0-cudnn8"
 
+# feature
 .cuda11.1-cudnn8-env-vars:
   variables:
-    ANACONDA: "2020.07"
-    OPENCV: "4.4.0.46"
-    TF_GPU: "2.5.0.dev20201221"
+    ANACONDA: "2020.11"
+    OPENCV: "4.5.1.48"
+    TF_GPU: "2.5.0.dev20210110"
     TF_TYPE: "tf-nightly"
     KERAS: "2.4.3"
-    TORCH: "1.8.0.dev20210108+cu110"
-    TORCH_FILE: "https://download.pytorch.org/whl/nightly/cu110/torch-1.8.0.dev20210108%2Bcu110-cp38-cp38-linux_x86_64.whl"
-    TORCH_VISION: "0.9.0.dev20210108+cu110"
-    TORCH_VISION_FILE: "https://download.pytorch.org/whl/nightly/cu110/torchvision-0.9.0.dev20210108%2Bcu110-cp38-cp38-linux_x86_64.whl"
+    TORCH: "1.8.0.dev20210110+cu110"
+    TORCH_FILE: "https://download.pytorch.org/whl/nightly/cu110/torch-1.8.0.dev20210110%2Bcu110-cp38-cp38-linux_x86_64.whl"
+    TORCH_VISION: "0.9.0.dev20210110+cu110"
+    TORCH_VISION_FILE: "https://download.pytorch.org/whl/nightly/cu110/torchvision-0.9.0.dev20210110%2Bcu110-cp38-cp38-linux_x86_64.whl"
     TORCH_SUMMARY: "1.5.1"
-    CUPY_CUDA: "8.2.0"
+    CUPY_CUDA: "8.3.0"
     JUPYTER: "2.2.9"
     CODE_SERVER: "3.8.0"
     NODEJS: "15"

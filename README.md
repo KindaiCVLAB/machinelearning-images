@@ -110,6 +110,7 @@
 |torchsummary|1.5.1|
 |jupyterlab|2.0.0|
 |cupy-cuda100|8.1.0|
+|code-server|3.8.0|
 
 ## cuda10.0-fukushima
 
@@ -132,6 +133,7 @@
 |yacs|0.1.6|
 |pretrainedmodels|0.7.4|
 |imgaug|0.2.9|
+|code-server|3.8.0|
 
 ## cuda10.1
 
@@ -151,6 +153,7 @@
 |torchsummary|1.5.1|
 |jupyterlab|2.0.0|
 |cupy-cuda101|8.2.0|
+|code-server|3.8.0|
 
 
 ## cuda10.2
@@ -162,15 +165,16 @@
 |CUDA|10.2|
 |cudnn|7.x or 8.x|
 |nodejs|15.x|
-|anaconda3|2020.07|
-|opencv-python|4.4.0.46|
+|anaconda3|2020.11|
+|opencv-python|4.5.1.48|
 |tensorflow-gpu|2.4.0|
 |keras|2.4.3|
 |torch|1.7.1|
 |torchvision|0.8.2|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda102|8.2.0|
+|cupy-cuda102|8.3.0|
+|code-server|3.8.0|
 
 ## cuda11.0
 
@@ -181,15 +185,16 @@
 |CUDA|11.0|
 |cudnn|8.x|
 |nodejs|15.x|
-|anaconda3|2020.07|
-|opencv-python|4.4.0.46|
+|anaconda3|2020.11|
+|opencv-python|4.5.1.48|
 |tensorflow-gpu|2.4.0|
 |keras|2.4.3|
-|torch|1.8.0.dev20210108+cu110|
-|torchvision|0.9.0.dev20210108+cu110|
+|torch|1.8.0.dev20210110+cu110|
+|torchvision|0.9.0.dev20210110+cu110|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda110|8.2.0|
+|cupy-cuda110|8.3.0|
+|code-server|3.8.0|
 
 ## cuda11.1
 
@@ -200,15 +205,16 @@
 |CUDA|11.1|
 |cudnn|8.x|
 |nodejs|15.x|
-|anaconda3|2020.07|
-|opencv-python|4.4.0.46|
-|tensorflow-gpu|2.5.0.dev20201221|
+|anaconda3|2020.11|
+|opencv-python|4.5.1.48|
+|tensorflow-gpu|2.5.0.dev20210110|
 |keras|2.4.3|
-|torch|1.8.0.dev20210108+cu110|
-|torchvision|0.9.0.dev20210108+cu110|
+|torch|1.8.0.dev20210110+cu110|
+|torchvision|0.9.0.dev20210110+cu110|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda111|8.2.0|
+|cupy-cuda111|8.3.0|
+|code-server|3.8.0|
 
 # 各種ツール類
 
