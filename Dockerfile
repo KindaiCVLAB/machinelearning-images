@@ -1,5 +1,5 @@
-FROM nvcr.io/nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
-LABEL maintainer="CvlabKubernetesService:iwai"
+FROM nvcr.io/nvidia/cuda:11.0-cudnn8-devel-ubuntu18.04
+LABEL maintainer="CvlabKubernetesService"
 
 ENV USER_NAME user
 ENV UID 1000
@@ -65,10 +65,10 @@ RUN apt-get update \
  && pyenv rehash \
  && pip install --upgrade pip \
  && pip install opencv-python==${OPENCV_VERSION} \
- && pip install ${TF_TYPE}-gpu==$TF_GPU_VERSION --ignore-installed --user keras==${KERAS_VERSION} \
- && pip install torch==${TORCH_VERSION} \
-                torchvision==${TORCH_VISION_VERSION} \
-                torchsummary==${TORCH_SUMMARY_VERSION} \
+ && pip install ${TF_TYPE}-gpu==${TF_GPU_VERSION} --ignore-installed --user keras==${KERAS_VERSION} \
+ && if [ -z "${TORCH_FILE}" ]; then pip install torch==${TORCH_VERSION}; else pip install --pre torch -f ${TORCH_FILE}; fi \
+ && if [ -z "${TORCH_VISION_FILE}" ]; then pip install torchvision==${TORCH_VISION_VERSION}; else pip install --pre torchvision -f ${TORCH_VISION_FILE}; fi \
+ && pip install torchsummary==${TORCH_SUMMARY_VERSION} \
  && pip install tqdm \
                 addict \
                 progressbar \
@@ -109,3 +109,4 @@ RUN mkdir -p /home/user/.local/share/code-server/User \
    --install-extension redhat.vscode-yaml \
    --install-extension pkief.material-icon-theme || true \
  && rm -rf ./ms-python-release.vsix
+
