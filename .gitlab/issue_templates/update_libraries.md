@@ -1,0 +1,21 @@
+# チェック先
+- [PyPI](https://pypi.org/)
+- [nodesource](https://github.com/nodesource/distributions#debinstall)
+- [pyenv](https://github.com/pyenv/pyenv/tree/master/plugins/python-build/share/python-build)
+- [torch nightly](https://download.pytorch.org/whl/nightly/cu110/torch_nightly.html)
+- [code-server](https://github.com/cdr/code-server)
+
+# バージョン
+- [ ] nodejs: 
+- [ ]anaconda3: 
+- [ ]opencv-python: 
+- [ ]tensorflow-gpu: 
+- [ ]tf-nightly: 
+- [ ]keras: 
+- [ ]torch: 
+- [ ]torch-nightly: 
+- [ ]torchvision: 
+- [ ]torchsummary: 
+- [ ]jupyterlab: 
+- [ ]cupy-cuda: 
+- [ ]code-server: 
