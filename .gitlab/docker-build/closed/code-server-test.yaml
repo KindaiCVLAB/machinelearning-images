@@ -1,8 +1,0 @@
-code-server-test:
-  extends: .container-image-builder
-  variables:
-    CONTAINER_VERSION: "code-server-test"
-  only:
-    changes:
-    - code-server-test/*
-    - .gitlab/docker-build/code-server-test.yaml    
