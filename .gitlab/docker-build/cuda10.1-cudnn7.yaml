@@ -1,39 +1,23 @@
 cuda10.1-cudnn7-test:
+  needs: []
   extends: 
     - .cuda10.1-cudnn7-env-vars
     - .test-image-builder
-  only:
-    changes:
-    - .gitlab/docker-build/template.yaml
-    - .gitlab/docker-build/versions.yaml
-    - .gitlab/docker-build/cuda10.1-cudnn7.yaml        
 
 cuda10.1-cudnn7-unittest-test:
+  needs: ["cuda10.1-cudnn7-test"]
   extends: 
     - .cuda10.1-cudnn7-env-vars
     - .unittest-test
-  only:
-    changes:
-    - .gitlab/docker-build/template.yaml
-    - .gitlab/docker-build/versions.yaml
-    - .gitlab/docker-build/cuda10.1-cudnn7.yaml        
 
 cuda10.1-cudnn7:
+  needs: []
   extends: 
     - .cuda10.1-cudnn7-env-vars
     - .container-image-builder
-  only:
-    changes:
-    - .gitlab/docker-build/template.yaml
-    - .gitlab/docker-build/versions.yaml
-    - .gitlab/docker-build/cuda10.1-cudnn7.yaml    
 
 cuda10.1-cudnn7-unittest:
+  needs: ["cuda10.1-cudnn7"]
   extends: 
     - .cuda10.1-cudnn7-env-vars
     - .unittest
-  only:
-    changes:
-    - .gitlab/docker-build/template.yaml
-    - .gitlab/docker-build/versions.yaml
-    - .gitlab/docker-build/cuda10.1-cudnn7.yaml        
