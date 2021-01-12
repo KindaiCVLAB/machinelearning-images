@@ -1,9 +1,0 @@
-cuda10.0-fukushima:
-  extends: .container-image-builder
-  variables:
-    CONTAINER_VERSION: "cuda10.0-fukushima"
-  only:
-    changes:
-    - cuda10.0-fukushima/*
-    - .gitlab/docker-build/cuda10.0-fukushima.yaml
-        

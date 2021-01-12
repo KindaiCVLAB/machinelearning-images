@@ -1,5 +1,7 @@
 .ci-image-build-patterns: &ci-image-build-patterns
-  - .gitlab/docker-build/template.yaml
+  - .gitlab/docker-build/pipline-flow.yaml
+  - .gitlab/docker-build/pipline-templates.yaml
+  - .gitlab/docker-build/rules.yaml
   - .gitlab/docker-build/versions.yaml
   - .gitlab/docker-build/$CONTAINER_VERSION.yaml
   - Dockerfile

@@ -27,13 +27,13 @@
 |  feature |新機能追加中のため特定の環境でしか動作しません．|
 |   alpha  |一部 alpha バージョンのパッケージがインストールされていることを示します.|
 
-- [x] cuda10.0-cudnn7(deprecated)
 - [ ] cuda10.0-docker(closed)
 - [ ] cuda10.0-fukushima(closed)
+- [ ] cuda10.2-cudnn7-docker(closed)
+- [x] cuda10.0-cudnn7(deprecated)
 - [x] cuda10.1-cudnn7(deprecated)
 - [x] cuda10.1-cudnn8(deprecated)
 - [x] cuda10.2-cudnn7(stable)
-- [ ] cuda10.2-cudnn7-docker(closed)
 - [x] cuda10.2-cudnn8(stable)
 - [x] cuda11.0-cudnn8(latest, aplha)
 - [ ] cuda11.1-cudnn8(feature, alpha)
