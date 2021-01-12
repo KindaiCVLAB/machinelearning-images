@@ -1,0 +1,26 @@
+.ci-image-build-patterns: &ci-image-build-patterns
+  - .gitlab/docker-build/template.yaml
+  - .gitlab/docker-build/versions.yaml
+  - .gitlab/docker-build/$CONTAINER_VERSION.yaml
+  - Dockerfile
+
+.if-merge-request: &if-merge-request
+  if: '$CI_PIPELINE_SOURCE == "merge_request_event"'  
+
+.if-commit-master: &if-commit-master
+  if: '$CI_COMMIT_REF_NAME == "master"'
+
+.if-scheduled-job: &if-scheduled-job
+  if: '$CI_PIPELINE_SOURCE == "schedule"'
+
+.merge-request-rules:
+  rules:
+    - <<: *if-merge-request
+      changes: *ci-image-build-patterns
+
+.commit-master-rules:  
+  rules:
+    - <<: *if-commit-master
+      changes: *ci-image-build-patterns
+    - <<: *if-scheduled-job
+      when: always
