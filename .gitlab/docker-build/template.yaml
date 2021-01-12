@@ -16,11 +16,18 @@
   - echo TORCH_VISION_FILE $TORCH_VISION_FILE
   - echo TF_TYPE $TF_TYPE  
   - echo CUDA_VERSION_FOR_CUPY $CUDA_MAJOR$CUDA_MINOR
+  - echo CONTAINER_IMAGE_NAME $CONTAINER_IMAGE_NAME
 
 .all_before: &all_before
   - CUDA_MAJOR=`echo $CONTAINER_VERSION | sed 's/cuda//g' | cut -d. -f1`
   - CUDA_MINOR=`echo $CONTAINER_VERSION | cut -d. -f2 | cut -d- -f1`
   - CUDA_VERSION_FOR_CUPY=$CUDA_MAJOR$CUDA_MINOR
+  - >
+    if [ -n `echo $CONTAINER_VERSION | grep -E *-test` ];then \
+      CONTAINER_IMAGE_NAME="$CI_REGISTRY_IMAGE/test";
+    else  
+      CONTAINER_IMAGE_NAME="$CI_REGISTRY_IMAGE";
+    fi
   
 .kaniko_executor: &kaniko_executor
   - mkdir -p /kaniko/.docker
@@ -70,9 +77,36 @@
       $CONTAINER_IMAGE_NAME:$CONTAINER_VERSION \
       make unittest
 
+.ci-image-build-patterns: &ci-image-build-patterns
+  - .gitlab/docker-build/template.yaml
+  - .gitlab/docker-build/versions.yaml
+  - .gitlab/docker-build/$CONTAINER_VERSION.yaml
+  - Dockerfile
+
+.if-merge-request: &if-merge-request
+  if: '$CI_PIPELINE_SOURCE == "merge_request_event"'  
+
+.if-commit-master: &if-commit-master
+  if: '$CI_COMMIT_REF_NAME == "master"'
+
+.if-scheduled-job: &if-scheduled-job
+  if: '$CI_PIPELINE_SOURCE == "schedule"'
+
+.merge-request-rules:
+  rules:
+    - <<: *if-merge-request
+      changes: *ci-image-build-patterns
+
+.commit-master-rules:  
+  rules:
+    - <<: *if-commit-master
+      changes: *ci-image-build-patterns
+    - <<: *if-scheduled-job
+      when: always
 
 .test-image-builder:
   stage: docker-build
+  extends: .merge-request-rules
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
@@ -81,15 +115,14 @@
   before_script:
     - *all_before
     - *show_version_before
-    - CONTAINER_IMAGE_NAME="$CI_REGISTRY_IMAGE/test"
   script:
     - *kaniko_executor
-  only:
-    refs:
-    - merge_requests  
+  retry:
+    max: 2
 
 .unittest-test:
   stage: unittest
+  extends: .merge-request-rules
   tags:
     - gitlab-org-docker  
   image: docker:stable
@@ -99,18 +132,15 @@
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - *all_before    
     - *show_version_before    
-    - CONTAINER_IMAGE_NAME="$CI_REGISTRY_IMAGE/test"
   script:
     - *unittest_script
   artifacts:
     reports:
       cobertura: 'tests/coverage.xml' 
-  only:
-    refs:
-    - merge_requests    
 
 .container-image-builder:
   stage: docker-build
+  extends: .commit-master-rules
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
@@ -119,16 +149,14 @@
   before_script:
     - *all_before
     - *show_version_before      
-    - CONTAINER_IMAGE_NAME="$CI_REGISTRY_IMAGE"
   script:
     - *kaniko_executor
-  only:
-    refs:
-    - master  
-    - schedules
+  retry:
+    max: 2
 
 .unittest:
   stage: unittest
+  extends: .commit-master-rules
   tags:
     - gitlab-org-docker  
   image: docker:stable
@@ -138,14 +166,9 @@
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - *all_before    
     - *show_version_before    
-    - CONTAINER_IMAGE_NAME="$CI_REGISTRY_IMAGE"
   script:
     - *unittest_script
   artifacts:
     reports:
       cobertura: 'tests/coverage.xml' 
-  only:
-    refs:
-    - master  
-    - schedules
     

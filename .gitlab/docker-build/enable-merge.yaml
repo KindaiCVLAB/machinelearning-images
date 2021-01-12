@@ -1,0 +1,5 @@
+enable-merge:
+  stage: complete
+  only: [merge_requests]
+  script:
+    - echo true
