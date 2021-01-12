@@ -100,6 +100,7 @@
 |:---:|:---:|
 |CUDA|10.0|
 |cudnn|7.x|
+|pyenv|1.2.22|
 |nodejs|12.x|
 |anaconda3|2019.07|
 |opencv-python|3.4.7.28|
@@ -120,6 +121,7 @@
 |:---:|:---:|
 |CUDA|10.0|
 |cudnn|7.x|
+|pyenv|1.2.22|
 |nodejs|12.x|
 |anaconda3|2019.07|
 |opencv-python|3.4.7.28|
@@ -143,6 +145,7 @@
 |:---:|:---:|
 |CUDA|10.1|
 |cudnn|7.x or 8.x|
+|pyenv|1.2.22|
 |nodejs|12.x|
 |anaconda3|2019.07|
 |opencv-python|4.2.0.34|
@@ -164,6 +167,7 @@
 |:---:|:---:|
 |CUDA|10.2|
 |cudnn|7.x or 8.x|
+|pyenv|1.2.22|
 |nodejs|15.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
@@ -184,6 +188,7 @@
 |:---:|:---:|
 |CUDA|11.0|
 |cudnn|8.x|
+|pyenv|1.2.22|
 |nodejs|15.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
@@ -204,6 +209,7 @@
 |:---:|:---:|
 |CUDA|11.1|
 |cudnn|8.x|
+|pyenv|1.2.22|
 |nodejs|15.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|

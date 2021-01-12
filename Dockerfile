@@ -1,4 +1,5 @@
-FROM nvcr.io/nvidia/cuda:11.0-cudnn8-devel-ubuntu18.04
+ARG BASE_IMG_CUDA_VERSION
+FROM nvcr.io/nvidia/cuda:${BASE_IMG_CUDA_VERSION}-devel-ubuntu18.04
 LABEL maintainer="CvlabKubernetesService"
 
 ENV USER_NAME user
@@ -26,6 +27,7 @@ ARG CUDA_VERSION_FOR_CUPY
 ARG TORCH_FILE
 ARG TORCH_VISION_FILE
 ARG TF_TYPE
+ARG PYENV_RELEASE_VERSION
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
@@ -57,7 +59,10 @@ RUN apt-get update \
     liblzma-dev \
     jq \
     dumb-init \
- && git clone https://github.com/pyenv/pyenv.git .pyenv \
+ && curl -OL https://github.com/pyenv/pyenv/archive/v${PYENV_RELEASE_VERSION}.tar.gz \
+ && tar -xzf v${PYENV_RELEASE_VERSION}.tar.gz \
+ && rm -rf v${PYENV_RELEASE_VERSION}.tar.gz \
+ && mv pyenv-${PYENV_RELEASE_VERSION} .pyenv \
  && curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \
  && pyenv install anaconda3-${ANACONDA_VERSION} \

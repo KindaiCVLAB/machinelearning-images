@@ -8,6 +8,7 @@
       --context $CI_PROJECT_DIR \
       --dockerfile Dockerfile \
       --destination $CONTAINER_IMAGE_NAME:$CONTAINER_VERSION \
+      --build-arg BASE_IMG_CUDA_VERSION=$BASE_IMG_CUDA_VERSION \
       --build-arg ANACONDA_VERSION=$ANACONDA \
       --build-arg OPENCV_VERSION=$OPENCV \
       --build-arg TF_GPU_VERSION=$TF_GPU \
@@ -23,12 +24,14 @@
       --build-arg TORCH_FILE=$TORCH_FILE \
       --build-arg TORCH_VISION_FILE=$TORCH_VISION_FILE \
       --build-arg TF_TYPE=$TF_TYPE \
+      --build-arg PYENV_RELEASE_VERSION=$PYENV_RELEASE_VERSION
 
 .unittest_script: &unittest_script
   - >
     docker run -u 1000 --rm \
       -v $PWD/tests:/home/user/tests \
       -v $PWD/Makefile:/home/user/Makefile \
+      -e BASE_IMG_CUDA_VERSION=$BASE_IMG_CUDA_VERSION \
       -e ANACONDA_VERSION=$ANACONDA \
       -e OPENCV_VERSION=$OPENCV \
       -e TF_GPU_VERSION=$TF_GPU \
@@ -44,12 +47,14 @@
       -e TORCH_FILE=$TORCH_FILE \
       -e TORCH_VISION_FILE=$TORCH_VISION_FILE \
       -e TF_TYPE=$TF_TYPE \
+      -e PYENV_RELEASE_VERSION=$PYENV_RELEASE_VERSION \
       $CONTAINER_IMAGE_NAME:$CONTAINER_VERSION \
       make unittest
 
 # before scripts
 .show_version_before: &show_version_before
   - echo CONTAINER_VERSION $CONTAINER_VERSION
+  - echo BASE_IMG_CUDA_VERSION $BASE_IMG_CUDA_VERSION
   - echo ANACONDA_VERSION $ANACONDA
   - echo OPENCV_VERSION $OPENCV
   - echo TF_GPU_VERSION $TF_GPU
@@ -67,6 +72,7 @@
   - echo TF_TYPE $TF_TYPE  
   - echo CUDA_VERSION_FOR_CUPY $CUDA_MAJOR$CUDA_MINOR
   - echo CONTAINER_IMAGE_NAME $CONTAINER_IMAGE_NAME
+  - echo PYENV_RELEASE_VERSION $PYENV_RELEASE_VERSION
 
 .all_before: &all_before
   - CUDA_MAJOR=`echo $CONTAINER_VERSION | sed 's/cuda//g' | cut -d. -f1`
@@ -78,12 +84,13 @@
     else  
       CONTAINER_IMAGE_NAME="$CI_REGISTRY_IMAGE";
     fi
+  - BASE_IMG_CUDA_VERSION=`echo $CONTAINER_VERSION | sed 's/cuda//'`
 
 # pipline template
 .image-build:
   stage: docker-build
   image:
-    name: gcr.io/kaniko-project/executor:debug
+    name: gcr.io/kaniko-project/executor:debug-v1.3.0
     entrypoint: [""]
   tags:
     - gitlab-org-docker
