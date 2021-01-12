@@ -1,0 +1,19 @@
+.test-image-builder:
+  extends: 
+    - .image-build
+    - .merge-request-rules
+
+.unittest-test:
+  extends: 
+    - .unittest-to-check-versions
+    - .merge-request-rules
+
+.container-image-builder:
+  extends: 
+    - .image-build
+    - .commit-master-rules
+
+.unittest:
+  extends: 
+    - .unittest-to-check-versions
+    - .commit-master-rules

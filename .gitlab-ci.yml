@@ -4,7 +4,9 @@ stages:
   - complete
 
 include:
-  - local: .gitlab/docker-build/template.yaml  
+  - local: .gitlab/docker-build/rules.yaml  
+  - local: .gitlab/docker-build/pipline-templates.yaml  
+  - local: .gitlab/docker-build/pipline-flow.yaml  
   - local: .gitlab/docker-build/versions.yaml
   - local: .gitlab/docker-build/cuda10.0-cudnn7.yaml
   - local: .gitlab/docker-build/cuda10.1-cudnn7.yaml
