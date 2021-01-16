@@ -112,6 +112,7 @@ RUN mkdir -p /home/user/.local/share/code-server/User \
    --install-extension coenraads.bracket-pair-colorizer-2 \
    --install-extension streetsidesoftware.code-spell-checker \
    --install-extension redhat.vscode-yaml \
-   --install-extension pkief.material-icon-theme || true \
+   --install-extension pkief.material-icon-theme \
+   --install-extension yzhang.markdown-all-in-one || true \
  && rm -rf ./ms-python-release.vsix
 
