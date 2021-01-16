@@ -4,6 +4,7 @@
   - .gitlab/docker-build/rules.yaml
   - .gitlab/docker-build/versions.yaml
   - .gitlab/docker-build/$CONTAINER_VERSION.yaml
+  - "tests/**/*"
   - Dockerfile
 
 .if-merge-request: &if-merge-request

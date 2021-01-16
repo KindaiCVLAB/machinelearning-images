@@ -13,8 +13,12 @@ class TestVersionsByCmd(unittest.TestCase):
 
     cmd = shlex.split("nvcc -V")
     actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").splitlines()[3].split(",")[1].split()[1]
-    expected = os.environ["BASE_IMG_CUDA_VERSION"].split("-")[0]
-    self.assertEqual(expected, actual) 
+
+    base_cuda_version = os.environ["BASE_IMG_CUDA_VERSION"].split("-")[0]
+    splited_base_cuda_version = base_cuda_version.split(".")
+    expected = splited_base_cuda_version[0] + "." + splited_base_cuda_version[1]
+
+    self.assertEqual(expected, actual)
 
   def test_pyenv_version(self):
     """test pyenv version
@@ -35,6 +39,8 @@ class TestVersionsByCmd(unittest.TestCase):
     self.assertEqual(expected, actual)
 
   def test_code_server_version(self):
+    """test code server version
+    """
 
     cmd = shlex.split("code-server --version")
     actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").split()[0]
@@ -42,6 +48,8 @@ class TestVersionsByCmd(unittest.TestCase):
     self.assertEqual(expected, actual)
 
   def test_nodejs_version(self):
+    """test nodejs version
+    """
 
     cmd = shlex.split("nodejs --version")
     actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").split(".")[0]
