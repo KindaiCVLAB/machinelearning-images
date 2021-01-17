@@ -1,4 +1,5 @@
 enable-merge:
+  image: alpine:3.13.0
   stage: complete
   only: [merge_requests]
   script:
