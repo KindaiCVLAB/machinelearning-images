@@ -7,19 +7,20 @@ include:
   - local: .gitlab/docker-build/rules.yaml  
   - local: .gitlab/docker-build/pipline-templates.yaml  
   - local: .gitlab/docker-build/pipline-flow.yaml  
-  - local: .gitlab/docker-build/versions.yaml
-  - local: .gitlab/docker-build/cuda10.0-cudnn7.yaml
-  - local: .gitlab/docker-build/cuda10.1-cudnn7.yaml
-  - local: .gitlab/docker-build/cuda10.1-cudnn8.yaml  
-  - local: .gitlab/docker-build/cuda10.2-cudnn7.yaml
-  - local: .gitlab/docker-build/cuda10.2-cudnn8.yaml
-  - local: .gitlab/docker-build/cuda11.0-cudnn8.yaml
-  - local: .gitlab/docker-build/cuda11.0.3-cudnn8.yaml
-  - local: .gitlab/docker-build/cuda11.1-cudnn8.yaml
+  - local: .gitlab/docker-build/cuda10.0-cudnn7/jobs.yaml
+  - local: .gitlab/docker-build/cuda10.0-cudnn7/versions.yaml
+  - local: .gitlab/docker-build/cuda10.1-cudnn7/jobs.yaml
+  - local: .gitlab/docker-build/cuda10.1-cudnn7/versions.yaml
+  - local: .gitlab/docker-build/cuda10.1-cudnn8/jobs.yaml
+  - local: .gitlab/docker-build/cuda10.1-cudnn8/versions.yaml
+  - local: .gitlab/docker-build/cuda10.2-cudnn7/jobs.yaml
+  - local: .gitlab/docker-build/cuda10.2-cudnn7/versions.yaml
+  - local: .gitlab/docker-build/cuda10.2-cudnn8/jobs.yaml
+  - local: .gitlab/docker-build/cuda10.2-cudnn8/versions.yaml
+  - local: .gitlab/docker-build/cuda11.0-cudnn8/jobs.yaml
+  - local: .gitlab/docker-build/cuda11.0-cudnn8/versions.yaml
+  - local: .gitlab/docker-build/cuda11.0.3-cudnn8/jobs.yaml
+  - local: .gitlab/docker-build/cuda11.0.3-cudnn8/versions.yaml
+  - local: .gitlab/docker-build/cuda11.1-cudnn8/jobs.yaml
+  - local: .gitlab/docker-build/cuda11.1-cudnn8/versions.yaml
   - local: .gitlab/docker-build/enable-merge.yaml
-
-  # closed
-  # - local: .gitlab/docker-build/cuda10.0-docker.yaml
-  # - local: .gitlab/docker-build/cuda10.0-fukushima.yaml
-  # - local: .gitlab/docker-build/code-server-test.yaml
-  # - local: .gitlab/docker-build/cuda10.2-cudnn7-docker.yaml

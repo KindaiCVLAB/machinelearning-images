@@ -1,0 +1,18 @@
+# deprecated
+.cuda10.2-cudnn7-env-vars:
+  variables:
+    ANACONDA: "2020.11"
+    OPENCV: "4.5.1.48"
+    TF_GPU: "2.4.0"
+    TF_TYPE: "tensorflow"  
+    KERAS: "2.4.3"
+    TORCH: "1.7.1"
+    TORCH_VISION: "0.8.2"
+    TORCH_SUMMARY: "1.5.1"
+    CUPY_CUDA: "8.3.0"
+    JUPYTER: "2.2.9"
+    CODE_SERVER: "3.8.0"
+    NODEJS: "15"
+    CONTAINER_VERSION: "cuda10.2-cudnn7"
+    PYENV_RELEASE_VERSION: "1.2.22"
+
