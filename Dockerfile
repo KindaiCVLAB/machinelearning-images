@@ -101,11 +101,11 @@ RUN jupyter labextension install jupyterlab-nvdashboard \
  && jupyter labextension install @lckr/jupyterlab_variableinspector \
  && jupyter nbextension enable --py widgetsnbextension
 
+# copy settings.json for code-server
+RUN mkdir -p /home/user/.local/share/code-server/User
+COPY configs/vscode.json /home/user/.local/share/code-server/User/settings.json
 # install code-server extensions
-RUN mkdir -p /home/user/.local/share/code-server/User \
- && echo "{\n  \"terminal.integrated.shell.linux\": \"/bin/bash\",\n  \"workbench.colorTheme\": \"Visual Studio Dark\",\n  \"extensions.autoCheckUpdates\": false,\n  \"extensions.autoUpdate\": false\n}" \
- > /home/user/.local/share/code-server/User/settings.json \           
- && wget https://github.com/microsoft/vscode-python/releases/download/2020.10.332292344/ms-python-release.vsix \
+RUN wget https://github.com/microsoft/vscode-python/releases/download/2020.10.332292344/ms-python-release.vsix \
  && dumb-init /usr/bin/code-server \
    --install-extension ./ms-python-release.vsix \
    --install-extension magicstack.magicpython \

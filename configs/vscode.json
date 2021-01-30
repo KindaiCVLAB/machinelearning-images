@@ -1,0 +1,7 @@
+{
+  "terminal.integrated.shell.linux": "/bin/bash",
+  "workbench.colorTheme": "Visual Studio Dark",
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false,
+  "workbench.iconTheme": "material-icon-theme"
+}
