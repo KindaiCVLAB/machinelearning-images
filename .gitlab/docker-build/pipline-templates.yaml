@@ -79,7 +79,7 @@
   - CUDA_MINOR=`echo $CONTAINER_VERSION | cut -d. -f2 | cut -d- -f1`
   - CUDA_VERSION_FOR_CUPY=$CUDA_MAJOR$CUDA_MINOR
   - >
-    if [ -n `echo $CONTAINER_VERSION | grep -E *-test` ];then \
+    if [ -n "`echo $CI_JOB_NAME | grep test`" ];then \
       CONTAINER_IMAGE_NAME="$CI_REGISTRY_IMAGE/test";
     else  
       CONTAINER_IMAGE_NAME="$CI_REGISTRY_IMAGE";
