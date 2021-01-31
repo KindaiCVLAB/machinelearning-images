@@ -102,8 +102,14 @@ RUN jupyter labextension install jupyterlab-nvdashboard \
  && jupyter nbextension enable --py widgetsnbextension
 
 # copy settings.json for code-server
-RUN mkdir -p /home/user/.local/share/code-server/User
-COPY configs/vscode.json /home/user/.local/share/code-server/User/settings.json
+RUN mkdir -p .local/share/code-server/User
+COPY configs/vscode .local/share/code-server/User/cvcloud
+
+WORKDIR ${HOME}/.local/share/code-server/User/cvcloud
+RUN cat container-building.json | sed "s/@@ANACONDA_VERSION@@/${ANACONDA_VERSION}/" > addon.json \
+ && jq -s add base.json addon.json > ../settings.json \
+ && rm addon.json
+
 # install code-server extensions
 RUN wget https://github.com/microsoft/vscode-python/releases/download/2020.10.332292344/ms-python-release.vsix \
  && dumb-init /usr/bin/code-server \
@@ -116,3 +122,4 @@ RUN wget https://github.com/microsoft/vscode-python/releases/download/2020.10.33
    --install-extension yzhang.markdown-all-in-one || true \
  && rm -rf ./ms-python-release.vsix
 
+WORKDIR ${HOME}

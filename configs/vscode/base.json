@@ -3,5 +3,7 @@
   "workbench.colorTheme": "Visual Studio Dark",
   "extensions.autoCheckUpdates": false,
   "extensions.autoUpdate": false,
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.copyOnSelection": true,
+  "editor.tabSize": 2
 }
