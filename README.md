@@ -38,7 +38,8 @@
 - [x] cuda11.0-cudnn8(stable)
 - [x] cuda11.0.3-cudnn8(latest, alpha)
 - [ ] cuda11.1-cudnn8(feature, alpha)
-
+- [ ] cuda11.1.1-cudnn8(feature, alpha)
+- [ ] cuda11.2.0-cudnn8(feature, alpha)
 
 # コンテナイメージ の詳細
 
@@ -251,6 +252,27 @@
 |ライブラリ名 & パッケージ名|バージョン|
 |:---:|:---:|
 |CUDA|11.1.1|
+|cudnn|8.x|
+|pyenv|1.2.22|
+|nodejs|15.x|
+|anaconda3|2020.11|
+|opencv-python|4.5.1.48|
+|tensorflow-gpu|2.5.0.dev20210110|
+|keras|2.4.3|
+|torch|1.8.0.dev20210110+cu110|
+|torchvision|0.9.0.dev20210110+cu110|
+|torchsummary|1.5.1|
+|jupyterlab|2.2.9|
+|cupy-cuda111|8.3.0|
+|code-server|3.8.0|
+
+## cuda11.2.0
+
+- cuda11.2.0-cudnn8 イメージにのみ含まれる物を示しています．
+
+|ライブラリ名 & パッケージ名|バージョン|
+|:---:|:---:|
+|CUDA|11.2.0|
 |cudnn|8.x|
 |pyenv|1.2.22|
 |nodejs|15.x|
