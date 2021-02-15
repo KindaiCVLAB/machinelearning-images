@@ -3,6 +3,7 @@
   - .gitlab/docker-build/pipline-templates.yaml
   - .gitlab/docker-build/rules.yaml
   - ".gitlab/docker-build/$CONTAINER_VERSION/**/*"
+  - "configs/**/*"
   - "tests/**/*"
   - Dockerfile
 
