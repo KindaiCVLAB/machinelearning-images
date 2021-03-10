@@ -44,7 +44,7 @@ class TestVersionsByPip(unittest.TestCase):
     """test cupy cuda version
     """
 
-    if os.environ["CONTAINER_VERSION"] == "cuda11.2.0-cudnn8":
+    if os.environ["CONTAINER_VERSION"] == "cuda11.2.0-cudnn8" or os.environ["CONTAINER_VERSION"] == "cuda11.2.1-cudnn8":
       actual = search_pkg_version("cupy-cuda111")
     else:
       actual = search_pkg_version("cupy-cuda"+os.environ["CUDA_VERSION_FOR_CUPY"])
