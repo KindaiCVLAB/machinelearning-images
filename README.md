@@ -6,7 +6,7 @@
 
 - 全てのコンテナイメージは権限設定を行っており， UID 1000 で起動した場合のみ正常に動作します．そのためコンテナ起動後の pip や conda を用いたライブラリの追加は可能ですが，apt 経由でのパッケージの追加はできません．
 
-- apt を使ったパッケージ類でサポートして欲しい物がある場合，以下 2種類の方法で依頼することができます．(希望に答えられない場合もあります．) 
+- apt を使ったパッケージ類でサポートして欲しい物がある場合，以下 2種類の方法で依頼することができます．(希望に答えられない場合もあります．)
 - pip や conda のライブラリのデフォルト追加依頼も下記で可能です．
     1. Issue を立てて機能リクエストを作成する
     2. 入れて欲しいパッケージやライブリを含んだ Dockerfile を作成して MergeRequest を出す．
@@ -18,7 +18,7 @@
 - チェックマークがついているものは確認したものですが，ついていない物は未確認のため動かないという意味ではないです．
 - イメージ名の後の括弧内はステータスを表しています．ステータスについては下表を参照してください．
 
-|  STATUS  |Descriptioin|
+|  STATUS  |Description|
 |:--------:|:----------:|
 |  closed  |セキュリティパッチや深刻なエラー修正も提供されないので，直ちに使用を停止してください．|
 |deprecated|セキュリティパッチや深刻なエラー修正のみが提供されます．各ライブラリが最新版に更新されることはありません．|
@@ -35,11 +35,11 @@
 - [x] cuda10.1-cudnn8(deprecated)
 - [x] cuda10.2-cudnn7(deprecated)
 - [x] cuda10.2-cudnn8(deprecated)
-- [x] cuda11.0-cudnn8(stable)
-- [x] cuda11.0.3-cudnn8(latest, alpha)
-- [ ] cuda11.1-cudnn8(feature, alpha)
-- [ ] cuda11.1.1-cudnn8(feature, alpha)
-- [ ] cuda11.2.0-cudnn8(feature, alpha)
+- [x] cuda11.0-cudnn8(deprecated)
+- [x] cuda11.0.3-cudnn8(deprecated)
+- [x] cuda11.1-cudnn8(deprecated)
+- [x] cuda11.1.1-cudnn8(stable)
+- [ ] cuda11.2.0-cudnn8(feature)
 
 # コンテナイメージ の詳細
 
@@ -66,7 +66,7 @@
     - libgl1-mesa-dev
     - build-essential
     - libssl-dev
-    - make 
+    - make
     - build-essential
     - zlib1g-dev
     - libbz2-dev
@@ -81,8 +81,8 @@
     - libxmlsec1-dev
     - libffi-dev
     - liblzma-dev
-    - dumb-init  
-    - jq  
+    - dumb-init
+    - jq
     - pyenv
     - requests
     - cmake
@@ -94,30 +94,9 @@
     - addict
     - pycocotools
 
-## cuda10.0 
+## cuda10.0
 
-- cuda10.0-cudnn7 & cuda10.0-docker イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|10.0|
-|cudnn|7.x|
-|pyenv|1.2.22|
-|nodejs|12.x|
-|anaconda3|2019.07|
-|opencv-python|3.4.7.28|
-|tensorflow-gpu|1.13.1|
-|keras|2.3.1|
-|torch|1.2.0|
-|torchvision|0.4.0|
-|torchsummary|1.5.1|
-|jupyterlab|2.0.0|
-|cupy-cuda100|8.1.0|
-|code-server|3.8.0|
-
-## cuda10.0-fukushima
-
-- cuda10.0-fukushima イメージのみに含まれる物を示しています．
+- cuda10.0-cudnn7 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
 |:---:|:---:|
@@ -134,14 +113,11 @@
 |torchsummary|1.5.1|
 |jupyterlab|2.0.0|
 |cupy-cuda100|8.1.0|
-|yacs|0.1.6|
-|pretrainedmodels|0.7.4|
-|imgaug|0.2.9|
 |code-server|3.8.0|
 
 ## cuda10.1
 
-- cuda10.1-cudnn7 & cuda10.1-cudnn8 イメージにのみ含まれる物を示しています．
+- cuda10.1-cudnn7 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
 |:---:|:---:|
@@ -163,7 +139,7 @@
 
 ## cuda10.2
 
-- cuda10.2-cudnn7 & cuda10.2-cudnn8 & cuda10.2-cudnn7-docker イメージにのみ含まれる物を示しています．
+- cuda10.2-cudnn7 & cuda10.2-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
 |:---:|:---:|
@@ -190,7 +166,7 @@
 |:---:|:---:|
 |CUDA|11.0|
 |cudnn|8.x|
-|pyenv|1.2.22|
+|pyenv|1.2.23|
 |nodejs|15.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
@@ -200,8 +176,8 @@
 |torchvision|0.8.2|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda110|8.3.0|
-|code-server|3.8.0|
+|cupy-cuda110|8.4.0|
+|code-server|3.9.0|
 
 ## cuda11.0.3
 
@@ -211,18 +187,18 @@
 |:---:|:---:|
 |CUDA|11.0.3|
 |cudnn|8.x|
-|pyenv|1.2.22|
+|pyenv|1.2.23|
 |nodejs|15.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
 |tensorflow-gpu|2.4.0|
 |keras|2.4.3|
-|torch|1.8.0.dev20210110+cu110|
-|torchvision|0.9.0.dev20210110+cu110|
+|torch|1.8.0|
+|torchvision|0.9.0|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda110|8.3.0|
-|code-server|3.8.0|
+|cupy-cuda110|8.4.0|
+|code-server|3.9.0|
 
 ## cuda11.1
 
@@ -232,18 +208,18 @@
 |:---:|:---:|
 |CUDA|11.1|
 |cudnn|8.x|
-|pyenv|1.2.22|
+|pyenv|1.2.23|
 |nodejs|15.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
 |tensorflow-gpu|2.5.0.dev20210110|
 |keras|2.4.3|
-|torch|1.8.0.dev20210110+cu110|
-|torchvision|0.9.0.dev20210110+cu110|
+|torch|1.8.0|
+|torchvision|0.9.0|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda111|8.3.0|
-|code-server|3.8.0|
+|cupy-cuda111|8.4.0|
+|code-server|3.9.0|
 
 ## cuda11.1.1
 
@@ -253,18 +229,18 @@
 |:---:|:---:|
 |CUDA|11.1.1|
 |cudnn|8.x|
-|pyenv|1.2.22|
+|pyenv|1.2.23|
 |nodejs|15.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
-|tensorflow-gpu|2.5.0.dev20210110|
+|tensorflow-gpu|2.5.0.dev20210216|
 |keras|2.4.3|
-|torch|1.8.0.dev20210110+cu110|
-|torchvision|0.9.0.dev20210110+cu110|
+|torch|1.8.0|
+|torchvision|0.9.0|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda111|8.3.0|
-|code-server|3.8.0|
+|cupy-cuda111|8.4.0|
+|code-server|3.9.0|
 
 ## cuda11.2.0
 
@@ -274,18 +250,18 @@
 |:---:|:---:|
 |CUDA|11.2.0|
 |cudnn|8.x|
-|pyenv|1.2.22|
+|pyenv|1.2.23|
 |nodejs|15.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
 |tensorflow-gpu|2.5.0.dev20210110|
 |keras|2.4.3|
-|torch|1.8.0.dev20210110+cu110|
-|torchvision|0.9.0.dev20210110+cu110|
+|torch|1.8.0|
+|torchvision|0.9.0|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda111|8.3.0|
-|code-server|3.8.0|
+|cupy-cuda111|8.4.0|
+|code-server|3.9.0|
 
 # 各種ツール類
 
