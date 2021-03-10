@@ -1,6 +1,6 @@
 cuda11.0-cudnn8-test:
   needs: []
-  extends: 
+  extends:
     - .cuda11.0-cudnn8-env-vars
     - .test-image-builder
 
@@ -12,7 +12,7 @@ cuda11.0-cudnn8-unittest-test:
 
 cuda11.0-cudnn8:
   needs: []
-  extends: 
+  extends:
     - .cuda11.0-cudnn8-env-vars
     - .container-image-builder
 

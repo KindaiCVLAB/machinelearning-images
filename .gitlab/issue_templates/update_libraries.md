@@ -7,19 +7,18 @@
 - [code-server](https://github.com/cdr/code-server)
 
 # バージョン
-- [ ] pyenv: 
-- [ ] nodejs: 
-- [ ] anaconda3: 
-- [ ] opencv-python: 
-- [ ] tensorflow-gpu: 
-- [ ] tf-nightly: 
-- [ ] keras: 
-- [ ] torch: 
-- [ ] torch-nightly: 
-- [ ] torchvision: 
-- [ ] torchvision-nightly: 
-- [ ] torchsummary: 
-- [ ] jupyterlab: 
-- [ ] cupy-cuda: 
-- [ ] code-server: 
-  
+- [ ] pyenv:
+- [ ] nodejs:
+- [ ] anaconda3:
+- [ ] opencv-python:
+- [ ] tensorflow-gpu:
+- [ ] tf-nightly:
+- [ ] keras:
+- [ ] torch:
+- [ ] torch-nightly:
+- [ ] torchvision:
+- [ ] torchvision-nightly:
+- [ ] torchsummary:
+- [ ] jupyterlab:
+- [ ] cupy-cuda:
+- [ ] code-server:

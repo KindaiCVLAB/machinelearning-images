@@ -1,5 +1,5 @@
 .test-image-builder:
-  extends: 
+  extends:
     - .image-build
     - .merge-request-rules
 
@@ -9,11 +9,11 @@
     - .merge-request-rules
 
 .container-image-builder:
-  extends: 
+  extends:
     - .image-build
     - .commit-master-rules
 
 .unittest:
-  extends: 
+  extends:
     - .unittest-to-check-versions
     - .commit-master-rules

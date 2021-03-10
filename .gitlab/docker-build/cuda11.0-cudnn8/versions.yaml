@@ -1,4 +1,4 @@
-# stable
+# deprecated
 .cuda11.0-cudnn8-env-vars:
   variables:
     ANACONDA: "2020.11"

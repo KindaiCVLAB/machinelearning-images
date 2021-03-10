@@ -70,7 +70,7 @@
   - echo CODE_SERVER_VERSION $CODE_SERVER
   - echo TORCH_FILE $TORCH_FILE
   - echo TORCH_VISION_FILE $TORCH_VISION_FILE
-  - echo TF_TYPE $TF_TYPE  
+  - echo TF_TYPE $TF_TYPE
   - echo CUDA_VERSION_FOR_CUPY $CUDA_VERSION_FOR_CUPY
   - echo CONTAINER_IMAGE_NAME $CONTAINER_IMAGE_NAME
   - echo PYENV_RELEASE_VERSION $PYENV_RELEASE_VERSION
@@ -106,14 +106,14 @@
 .unittest-to-check-versions:
   stage: unittest
   tags:
-    - gitlab-org-docker  
+    - gitlab-org-docker
   image: docker:stable
   services:
     - docker:dind
   before_script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - *all_before    
-    - *show_version_before    
+    - *all_before
+    - *show_version_before
   script:
     - *unittest_script
   artifacts:
