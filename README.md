@@ -40,6 +40,7 @@
 - [x] cuda11.1-cudnn8(deprecated)
 - [x] cuda11.1.1-cudnn8(stable)
 - [ ] cuda11.2.0-cudnn8(feature)
+- [ ] cuda11.2.1-cudnn8(feature)
 
 # コンテナイメージ の詳細
 
@@ -233,14 +234,14 @@
 |nodejs|15.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
-|tensorflow-gpu|2.5.0.dev20210216|
+|tensorflow-gpu|2.4.1|
 |keras|2.4.3|
 |torch|1.8.0|
 |torchvision|0.9.0|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda111|8.4.0|
-|code-server|3.9.0|
+|cupy-cuda111|8.5.0|
+|code-server|3.9.1|
 
 ## cuda11.2.0
 
@@ -254,14 +255,14 @@
 |nodejs|15.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
-|tensorflow-gpu|2.5.0.dev20210110|
+|tensorflow-gpu|2.5.0.dev20210311|
 |keras|2.4.3|
 |torch|1.8.0|
 |torchvision|0.9.0|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda111|8.4.0|
-|code-server|3.9.0|
+|cupy-cuda111|8.5.0|
+|code-server|3.9.1|
 
 ## cuda11.2.1
 
@@ -275,14 +276,14 @@
 |nodejs|15.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
-|tensorflow-gpu|2.5.0.dev20210208|
+|tensorflow-gpu|2.5.0.dev20210311|
 |keras|2.4.3|
 |torch|1.8.0|
 |torchvision|0.9.0|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
-|cupy-cuda111|8.4.0|
-|code-server|3.9.0|
+|cupy-cuda111|8.5.0|
+|code-server|3.9.1|
 
 # 各種ツール類
 
