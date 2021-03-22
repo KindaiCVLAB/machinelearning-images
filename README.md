@@ -14,37 +14,40 @@
 
 # 動作状況
 
-- 全てのイメージを全ての環境でテストすることはできないので以下の動作状況は参考程度にしてください．
-- チェックマークがついているものは確認したものですが，ついていない物は未確認のため動かないという意味ではないです．
-- イメージ名の後の括弧内はステータスを表しています．ステータスについては下表を参照してください．
+全てのイメージを全ての環境でテストすることはできないので以下の動作状況は参考程度にしてください．
 
-|  STATUS  |Description|
-|:--------:|:----------:|
-|  closed  |セキュリティパッチや深刻なエラー修正も提供されないので，直ちに使用を停止してください．|
-|deprecated|セキュリティパッチや深刻なエラー修正のみが提供されます．各ライブラリが最新版に更新されることはありません．|
-|  stable  |安定板です．全てのライブラリが最新版に保たれています．|
-|  latest  |最新安定板です．全てのライブラリが最新版に保たれており，サーバでの動作は確認していますが，一部動作しない環境があります．|
-|  feature |新機能追加中のため特定の環境でしか動作しません．|
-|   alpha  |一部 alpha バージョンのパッケージがインストールされていることを示します.|
+## イメージのステータスについて
 
-- [ ] cuda10.0-docker(closed)
-- [ ] cuda10.0-fukushima(closed)
-- [ ] cuda10.2-cudnn7-docker(closed)
-- [x] cuda10.0-cudnn7(deprecated)
-- [x] cuda10.1-cudnn7(deprecated)
-- [x] cuda10.1-cudnn8(deprecated)
-- [x] cuda10.2-cudnn7(deprecated)
-- [x] cuda10.2-cudnn8(deprecated)
-- [x] cuda11.0-cudnn8(deprecated)
-- [x] cuda11.0.3-cudnn8(deprecated)
-- [x] cuda11.1-cudnn8(deprecated)
-- [x] cuda11.1.1-cudnn8(stable)
-- [ ] cuda11.2.0-cudnn8(feature)
-- [ ] cuda11.2.1-cudnn8(feature)
+|      STATUS      | Description |
+|:----------------:|:-----------:|
+|   ```closed```   | セキュリティパッチや深刻なエラー修正も提供されないので，直ちに使用を停止してください．|
+| ```deprecated``` | セキュリティパッチや深刻なエラー修正のみが提供されます．各ライブラリが最新版に更新されることはありません．|
+|   ```stable```   | 安定板です．全てのライブラリが最新版に保たれています．|
+|   ```latest```   | 最新安定板です．全てのライブラリが最新版に保たれており，サーバでの動作は確認していますが，一部動作しない環境があります．|
+|   ```feature```  | 新機能追加中のため特定の環境でしか動作しません．|
+|    ```alpha```   | 一部 alpha バージョンのパッケージがインストールされていることを示します.|
+
+## イメージのステータス一覧
+
+表のサーバでの動作状況において ```yes``` がついているものは確認したものですが，```no``` の物は未確認のため動かないという意味ではないです．
+
+|          Image          |      Status      |   Server   |
+|:-----------------------:|:----------------:|:----------:|
+|  ```cuda10.0-cudnn7```  |   ```closed```   |   ```no``` |
+|  ```cuda10.1-cudnn7```  |   ```closed```   |   ```no``` |
+|  ```cuda10.1-cudnn8```  |   ```closed```   |   ```no``` |
+|  ```cuda10.2-cudnn7```  | ```deprecated``` |  ```yes``` |
+|  ```cuda10.2-cudnn8```  | ```deprecated``` |  ```yes``` |
+|  ```cuda11.0-cudnn8```  | ```deprecated``` |  ```yes``` |
+| ```cuda11.0.3-cudnn8``` | ```deprecated``` |  ```yes``` |
+|  ```cuda11.1-cudnn8```  | ```deprecated``` |  ```yes``` |
+| ```cuda11.1.1-cudnn8``` |   ```stable```   |  ```yes``` |
+| ```cuda11.2.0-cudnn8``` |   ```feature```  |   ```no``` |
+| ```cuda11.2.1-cudnn8``` |   ```feature```  |   ```no``` |
 
 # コンテナイメージ の詳細
 
-- ベースイメージは全て [NGC](https://ngc.nvidia.com/catalog/containers) の cuda-cudnn を使用しています．Dockerhub の pull 制限につき今後は [NGC](https://ngc.nvidia.com/catalog/containers) をメインで使用していきます．
+ベースイメージは全て [NGC](https://ngc.nvidia.com/catalog/containers) の cuda-cudnn を使用しています．
 
 ## 各イメージ共通ライブラリ & パッケージ
 
@@ -94,49 +97,6 @@
     - tqdm
     - addict
     - pycocotools
-
-## cuda10.0
-
-- cuda10.0-cudnn7 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|10.0|
-|cudnn|7.x|
-|pyenv|1.2.22|
-|nodejs|12.x|
-|anaconda3|2019.07|
-|opencv-python|3.4.7.28|
-|tensorflow-gpu|1.13.1|
-|keras|2.3.1|
-|torch|1.2.0|
-|torchvision|0.4.0|
-|torchsummary|1.5.1|
-|jupyterlab|2.0.0|
-|cupy-cuda100|8.1.0|
-|code-server|3.8.0|
-
-## cuda10.1
-
-- cuda10.1-cudnn7 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|10.1|
-|cudnn|7.x or 8.x|
-|pyenv|1.2.22|
-|nodejs|12.x|
-|anaconda3|2019.07|
-|opencv-python|4.2.0.34|
-|tensorflow-gpu|2.2.0|
-|keras|2.3.1|
-|torch|1.5.0|
-|torchvision|0.6.0|
-|torchsummary|1.5.1|
-|jupyterlab|2.0.0|
-|cupy-cuda101|8.2.0|
-|code-server|3.8.0|
-
 
 ## cuda10.2
 
