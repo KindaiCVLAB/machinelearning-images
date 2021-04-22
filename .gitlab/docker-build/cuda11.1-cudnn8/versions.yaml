@@ -11,7 +11,7 @@
     TORCH_SUMMARY: "1.5.1"
     CUPY_CUDA: "8.4.0"
     JUPYTER: "2.2.9"
-    CODE_SERVER: "3.9.0"
+    CODE_SERVER: "3.9.1"
     NODEJS: "15"
     CONTAINER_VERSION: "cuda11.1-cudnn8"
     PYENV_RELEASE_VERSION: "1.2.23"

@@ -99,6 +99,7 @@ RUN apt-get clean \
 USER ${UID}
 
 #  install jupyter extensions
+
 RUN jupyter labextension install jupyterlab-nvdashboard \
  && jupyter labextension install @lckr/jupyterlab_variableinspector \
  && jupyter nbextension enable --py widgetsnbextension
@@ -113,15 +114,20 @@ RUN cat container-building.json | sed "s/@@ANACONDA_VERSION@@/${ANACONDA_VERSION
  && rm addon.json
 
 # install code-server extensions
-RUN wget https://github.com/microsoft/vscode-python/releases/download/2020.10.332292344/ms-python-release.vsix \
- && dumb-init /usr/bin/code-server \
-   --install-extension ./ms-python-release.vsix \
+
+# install specify ms-python for codeserver(<= 3.9.0)
+# RUN wget https://github.com/microsoft/vscode-python/releases/download/2020.10.332292344/ms-python-release.vsix \
+#  && dumb-init /usr/bin/code-server \
+#    --install-extension ./ms-python-release.vsix \
+#  && rm -rf ./ms-python-release.vsix
+
+RUN dumb-init /usr/bin/code-server \
+   --install-extension ms-python.python \
    --install-extension magicstack.magicpython \
    --install-extension coenraads.bracket-pair-colorizer-2 \
    --install-extension streetsidesoftware.code-spell-checker \
    --install-extension redhat.vscode-yaml \
    --install-extension pkief.material-icon-theme \
-   --install-extension yzhang.markdown-all-in-one || true \
- && rm -rf ./ms-python-release.vsix
+   --install-extension yzhang.markdown-all-in-one || true
 
 WORKDIR ${HOME}
