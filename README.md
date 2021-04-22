@@ -1,6 +1,6 @@
-# CVLAB Original Container Images for Deeplearning
+# CVLAB Original Container Images for Machine Learning
 
-本リポジトリは CVLAB メンバー用に作成した DeepLearning 用コンテナイメージを保管するリポジトリです． 主に CKS で利用されることを想定して作成されています．
+本リポジトリは CVLAB メンバー用に作成した MachineLearning 用コンテナイメージを保管するリポジトリです． 主に CKS で利用されることを想定して作成されています．
 
 # 概要
 
@@ -221,7 +221,7 @@
 |torchvision|0.9.1|
 |torchsummary|1.5.1|
 |jupyterlab|2.3.1|
-|cupy-cuda111|8.6.0|
+|cupy-cuda112|8.6.0|
 |code-server|3.9.3|
 
 ## cuda11.2.1
@@ -242,7 +242,7 @@
 |torchvision|0.9.1|
 |torchsummary|1.5.1|
 |jupyterlab|2.3.1|
-|cupy-cuda111|8.6.0|
+|cupy-cuda112|8.6.0|
 |code-server|3.9.3|
 
 # 各種ツール類
