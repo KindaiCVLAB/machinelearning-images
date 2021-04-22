@@ -117,7 +117,7 @@
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
 |cupy-cuda102|8.3.0|
-|code-server|3.8.0|
+|code-server|3.9.1|
 
 ## cuda11.0
 
@@ -138,7 +138,7 @@
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
 |cupy-cuda110|8.4.0|
-|code-server|3.9.0|
+|code-server|3.9.1|
 
 ## cuda11.0.3
 
@@ -159,7 +159,7 @@
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
 |cupy-cuda110|8.4.0|
-|code-server|3.9.0|
+|code-server|3.9.1|
 
 ## cuda11.1
 
@@ -180,7 +180,7 @@
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
 |cupy-cuda111|8.4.0|
-|code-server|3.9.0|
+|code-server|3.9.1|
 
 ## cuda11.1.1
 
@@ -260,7 +260,7 @@
 
 |拡張ツール名|バージョン|
 |:---:|:---:|
-|ms-python|2020.10.332292344|
+|ms-python|latest|
 |magicstack.magicpython|latest|
 |coenraads.bracket-pair-colorizer-2|latest|
 |streetsidesoftware.code-spell-checker|latest|
