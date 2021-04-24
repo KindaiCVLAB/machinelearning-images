@@ -5,6 +5,7 @@
   - >
     /kaniko/executor \
       --snapshotMode redo \
+      --single-snapshot \
       --context $CI_PROJECT_DIR \
       --dockerfile Dockerfile \
       --destination $CONTAINER_IMAGE_NAME:$CONTAINER_VERSION \
@@ -91,10 +92,10 @@
 .image-build:
   stage: docker-build
   image:
-    name: gcr.io/kaniko-project/executor:debug-v1.3.0
+    name: gcr.io/kaniko-project/executor:v1.5.2-debug
     entrypoint: [""]
   tags:
-    - gitlab-org-docker
+    - cks
   before_script:
     - *all_before
     - *show_version_before
