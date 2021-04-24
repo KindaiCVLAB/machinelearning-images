@@ -29,6 +29,7 @@ ARG TORCH_VISION_FILE
 ARG TF_TYPE
 ARG PYENV_RELEASE_VERSION
 
+# install tools by apt.
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
     curl \
@@ -58,8 +59,10 @@ RUN apt-get update \
     libffi-dev \
     liblzma-dev \
     jq \
-    dumb-init \
- && curl -OL https://github.com/pyenv/pyenv/archive/v${PYENV_RELEASE_VERSION}.tar.gz \
+    dumb-init
+
+# install pyenv and prepare python environment.
+RUN curl -OL https://github.com/pyenv/pyenv/archive/v${PYENV_RELEASE_VERSION}.tar.gz \
  && tar -xzf v${PYENV_RELEASE_VERSION}.tar.gz \
  && rm -rf v${PYENV_RELEASE_VERSION}.tar.gz \
  && mv pyenv-${PYENV_RELEASE_VERSION} .pyenv \
@@ -68,8 +71,10 @@ RUN apt-get update \
  && pyenv install anaconda3-${ANACONDA_VERSION} \
  && pyenv global anaconda3-${ANACONDA_VERSION} \
  && pyenv rehash \
- && pip install --upgrade pip \
- && pip install opencv-python==${OPENCV_VERSION} \
+ && pip install --upgrade pip
+
+# install libraries for machinelearning
+RUN pip install opencv-python==${OPENCV_VERSION} \
  && pip install ${TF_TYPE}-gpu==${TF_GPU_VERSION} --ignore-installed --user keras==${KERAS_VERSION} \
  && if [ -z "${TORCH_FILE}" ]; then pip install torch==${TORCH_VERSION}; else pip install --pre torch -f ${TORCH_FILE}; fi \
  && if [ -z "${TORCH_VISION_FILE}" ]; then pip install torchvision==${TORCH_VISION_VERSION}; else pip install --pre torchvision -f ${TORCH_VISION_FILE}; fi \
@@ -90,18 +95,20 @@ RUN apt-get update \
                 ipywidgets \
  && curl -fOL https://github.com/cdr/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server_${CODE_SERVER_VERSION}_amd64.deb \
  && dpkg -i code-server_${CODE_SERVER_VERSION}_amd64.deb \
- && rm -rf code-server_${CODE_SERVER_VERSION}_amd64.deb \
- && chown -R ${USER_NAME}: /home/${USER_NAME}/
+ && rm -rf code-server_${CODE_SERVER_VERSION}_amd64.deb
 
+# clean apt cache
 RUN apt-get clean \
- && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/* \
+ && chown -R ${USER_NAME}: /home/${USER_NAME}/ \
+ && rm -rf /tmp/*
 
+# change user to 1000
 USER ${UID}
 
-#  install jupyter extensions
-
-RUN jupyter labextension install jupyterlab-nvdashboard \
- && jupyter labextension install @lckr/jupyterlab_variableinspector \
+# install jupyter extensions
+RUN jupyter labextension install jupyterlab-nvdashboard --no-build \
+ && jupyter labextension install @lckr/jupyterlab_variableinspector --no-build \
  && jupyter nbextension enable --py widgetsnbextension
 
 # copy settings.json for code-server
@@ -113,14 +120,13 @@ RUN cat container-building.json | sed "s/@@ANACONDA_VERSION@@/${ANACONDA_VERSION
  && jq -s add base.json addon.json > ../settings.json \
  && rm addon.json
 
-# install code-server extensions
-
 # install specify ms-python for codeserver(<= 3.9.0)
 # RUN wget https://github.com/microsoft/vscode-python/releases/download/2020.10.332292344/ms-python-release.vsix \
 #  && dumb-init /usr/bin/code-server \
 #    --install-extension ./ms-python-release.vsix \
 #  && rm -rf ./ms-python-release.vsix
 
+# install code-server extensions
 RUN dumb-init /usr/bin/code-server \
    --install-extension ms-python.python \
    --install-extension magicstack.magicpython \
@@ -128,6 +134,7 @@ RUN dumb-init /usr/bin/code-server \
    --install-extension streetsidesoftware.code-spell-checker \
    --install-extension redhat.vscode-yaml \
    --install-extension pkief.material-icon-theme \
-   --install-extension yzhang.markdown-all-in-one || true
+   --install-extension yzhang.markdown-all-in-one || true \
+ && rm -rf /tmp/*
 
 WORKDIR ${HOME}
