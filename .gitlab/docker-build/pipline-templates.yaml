@@ -119,4 +119,4 @@
     - *unittest_script
   artifacts:
     reports:
-      cobertura: 'tests/coverage.xml' 
+      cobertura: 'tests/coverage.xml'

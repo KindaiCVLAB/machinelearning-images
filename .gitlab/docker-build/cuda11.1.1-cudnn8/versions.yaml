@@ -1,6 +1,6 @@
-# stable
 .cuda11.1.1-cudnn8-env-vars:
   variables:
+    IMAGE_STATUS: "stable"
     ANACONDA: "2020.11"
     OPENCV: "4.5.1.48"
     TF_GPU: "2.4.1"

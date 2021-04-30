@@ -6,7 +6,7 @@ cuda11.0-cudnn8-test:
 
 cuda11.0-cudnn8-unittest-test:
   needs: ["cuda11.0-cudnn8-test"]
-  extends: 
+  extends:
     - .cuda11.0-cudnn8-env-vars
     - .unittest-test
 
@@ -18,6 +18,6 @@ cuda11.0-cudnn8:
 
 cuda11.0-cudnn8-unittest:
   needs: ["cuda11.0-cudnn8"]
-  extends: 
+  extends:
     - .cuda11.0-cudnn8-env-vars
     - .unittest
