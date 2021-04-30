@@ -174,7 +174,7 @@
 |nodejs|15.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
-|tensorflow-gpu|2.5.0.dev20210110|
+|tensorflow-gpu|2.4.1|
 |keras|2.4.3|
 |torch|1.8.0|
 |torchvision|0.9.0|
