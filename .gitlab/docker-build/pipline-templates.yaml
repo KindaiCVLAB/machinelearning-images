@@ -5,7 +5,7 @@
   - >
     /kaniko/executor \
       --snapshotMode redo \
-      --single-snapshot \
+      --push-retry 5 \
       --context $CI_PROJECT_DIR \
       --dockerfile Dockerfile \
       --destination $CONTAINER_IMAGE_NAME:$CONTAINER_VERSION \
