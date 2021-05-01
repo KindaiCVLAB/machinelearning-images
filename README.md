@@ -88,6 +88,8 @@
     - liblzma-dev
     - dumb-init
     - jq
+    - ssh
+    - rsync
     - pyenv
     - requests
     - cmake
@@ -101,6 +103,7 @@
 
 ## cuda10.2
 
+- STATUS: Deprecated
 - cuda10.2-cudnn7 & cuda10.2-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -122,6 +125,7 @@
 
 ## cuda11.0
 
+- STATUS: Deprecated
 - cuda11.0-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -143,6 +147,7 @@
 
 ## cuda11.0.3
 
+- STATUS: Deprecated
 - cuda11.0.3-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -164,6 +169,7 @@
 
 ## cuda11.1
 
+- STATUS: Deprecated
 - cuda11.1-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -185,6 +191,7 @@
 
 ## cuda11.1.1
 
+- STATUS: Stable
 - cuda11.1.1-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -206,6 +213,7 @@
 
 ## cuda11.2.0
 
+- STATUS: Feature
 - cuda11.2.0-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -227,6 +235,7 @@
 
 ## cuda11.2.1
 
+- STATUS: Feature
 - cuda11.2.1-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -248,6 +257,7 @@
 
 ## cuda11.2.2
 
+- STATUS: Feature
 - cuda11.2.2-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|

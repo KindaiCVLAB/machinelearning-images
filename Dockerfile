@@ -59,6 +59,8 @@ RUN apt-get update \
     libffi-dev \
     liblzma-dev \
     jq \
+    ssh \
+    rsync \
     dumb-init
 
 # install pyenv and prepare python environment.
