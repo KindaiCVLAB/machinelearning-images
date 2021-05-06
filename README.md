@@ -42,9 +42,9 @@
 | ```cuda11.0.3-cudnn8``` | ```deprecated``` |  ```yes``` |
 |  ```cuda11.1-cudnn8```  | ```deprecated``` |  ```yes``` |
 | ```cuda11.1.1-cudnn8``` |   ```stable```   |  ```yes``` |
-| ```cuda11.2.0-cudnn8``` |   ```feature```  |   ```no``` |
-| ```cuda11.2.1-cudnn8``` |   ```feature```  |   ```no``` |
-| ```cuda11.2.2-cudnn8``` |   ```feature```  |   ```no``` |
+| ```cuda11.2.0-cudnn8``` |   ```feature```  |  ```yes``` |
+| ```cuda11.2.1-cudnn8``` |   ```feature```  |  ```yes``` |
+| ```cuda11.2.2-cudnn8``` |   ```feature```  |  ```yes``` |
 
 # コンテナイメージ の詳細
 
