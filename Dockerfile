@@ -122,6 +122,9 @@ RUN jupyter labextension install jupyterlab-nvdashboard --no-build \
  && jupyter labextension install @lckr/jupyterlab_variableinspector --no-build \
  && jupyter nbextension enable --py widgetsnbextension
 
+# create config directory for rclone
+RUN mkdir -p .config/rclone
+
 # copy settings.json for code-server
 RUN mkdir -p .local/share/code-server/User
 COPY configs/vscode .local/share/code-server/User/cvcloud
