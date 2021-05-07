@@ -5,6 +5,7 @@
 - [pyenv version](https://github.com/pyenv/pyenv/releases)
 - [torch nightly](https://download.pytorch.org/whl/nightly/cu110/torch_nightly.html)
 - [code-server](https://github.com/cdr/code-server)
+- [rclone](https://github.com/rclone/rclone)
 
 # バージョン
 - [ ] pyenv:
@@ -22,3 +23,4 @@
 - [ ] jupyterlab:
 - [ ] cupy-cuda:
 - [ ] code-server:
+- [ ] rclone:

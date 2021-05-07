@@ -22,6 +22,7 @@
       --build-arg JUPYTER_VERSION=$JUPYTER \
       --build-arg NODEJS_VERSION=$NODEJS \
       --build-arg CODE_SERVER_VERSION=$CODE_SERVER \
+      --build-arg RCLONE_VERSION=$RCLONE \
       --build-arg TORCH_FILE=$TORCH_FILE \
       --build-arg TORCH_VISION_FILE=$TORCH_VISION_FILE \
       --build-arg TF_TYPE=$TF_TYPE \
@@ -69,6 +70,7 @@
   - echo JUPYTER_VERSION $JUPYTER
   - echo NODEJS_VERSION $NODEJS
   - echo CODE_SERVER_VERSION $CODE_SERVER
+  - echo RCLONE_VERSION $RCLONE
   - echo TORCH_FILE $TORCH_FILE
   - echo TORCH_VISION_FILE $TORCH_VISION_FILE
   - echo TF_TYPE $TF_TYPE
