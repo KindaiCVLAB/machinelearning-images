@@ -12,6 +12,7 @@
     CUPY_CUDA: "8.3.0"
     JUPYTER: "2.2.9"
     CODE_SERVER: "3.9.1"
+    RCLONE: "1.55.1"
     NODEJS: "15"
     CONTAINER_VERSION: "cuda10.2-cudnn7"
     PYENV_RELEASE_VERSION: "1.2.22"

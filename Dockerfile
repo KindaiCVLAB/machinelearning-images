@@ -12,6 +12,7 @@ ENV PYENV_ROOT ${HOME}/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 ENV DEBIAN_FRONTEND=noninteractive
 
+# library version for Python
 ARG ANACONDA_VERSION
 ARG OPENCV_VERSION
 ARG TF_GPU_VERSION
@@ -21,13 +22,16 @@ ARG TORCH_VISION_VERSION
 ARG TORCH_SUMMARY_VERSION
 ARG CUPY_CUDA_VERSION
 ARG JUPYTER_VERSION
-ARG CODE_SERVER_VERSION
-ARG NODEJS_VERSION
 ARG CUDA_VERSION_FOR_CUPY
 ARG TORCH_FILE
 ARG TORCH_VISION_FILE
 ARG TF_TYPE
 ARG PYENV_RELEASE_VERSION
+
+# package version for tools
+ARG NODEJS_VERSION
+ARG CODE_SERVER_VERSION
+ARG RCLONE_VERSION
 
 # install tools by apt.
 RUN apt-get update \
@@ -95,9 +99,14 @@ RUN pip install opencv-python==${OPENCV_VERSION} \
  && pip install jupyterlab==${JUPYTER_VERSION} \
                 jupyterlab-nvdashboard \
                 ipywidgets \
+# install code-server
  && curl -fOL https://github.com/cdr/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server_${CODE_SERVER_VERSION}_amd64.deb \
  && dpkg -i code-server_${CODE_SERVER_VERSION}_amd64.deb \
- && rm -rf code-server_${CODE_SERVER_VERSION}_amd64.deb
+ && rm -rf code-server_${CODE_SERVER_VERSION}_amd64.deb \
+# install rclone
+ && curl -fOL https://github.com/rclone/rclone/releases/download/v${RCLONE_VERSION}/rclone-v${RCLONE_VERSION}-linux-amd64.deb \
+ && dpkg -i rclone-v${RCLONE_VERSION}-linux-amd64.deb \
+ && rm -rf rclone-v${RCLONE_VERSION}-linux-amd64.deb
 
 # clean apt cache
 RUN apt-get clean \

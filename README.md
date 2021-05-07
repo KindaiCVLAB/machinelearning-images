@@ -122,6 +122,7 @@
 |jupyterlab|2.2.9|
 |cupy-cuda102|8.3.0|
 |code-server|3.9.1|
+|rclone|1.55.1|
 
 ## cuda11.0
 
@@ -144,6 +145,7 @@
 |jupyterlab|2.2.9|
 |cupy-cuda110|8.4.0|
 |code-server|3.9.1|
+|rclone|1.55.1|
 
 ## cuda11.0.3
 
@@ -166,6 +168,7 @@
 |jupyterlab|2.2.9|
 |cupy-cuda110|8.4.0|
 |code-server|3.9.1|
+|rclone|1.55.1|
 
 ## cuda11.1
 
@@ -188,6 +191,7 @@
 |jupyterlab|2.2.9|
 |cupy-cuda111|8.4.0|
 |code-server|3.9.1|
+|rclone|1.55.1|
 
 ## cuda11.1.1
 
@@ -210,6 +214,7 @@
 |jupyterlab|2.3.1|
 |cupy-cuda111|8.6.0|
 |code-server|3.9.3|
+|rclone|1.55.1|
 
 ## cuda11.2.0
 
@@ -232,6 +237,7 @@
 |jupyterlab|2.3.1|
 |cupy-cuda112|8.6.0|
 |code-server|3.9.3|
+|rclone|1.55.1|
 
 ## cuda11.2.1
 
@@ -254,6 +260,7 @@
 |jupyterlab|2.3.1|
 |cupy-cuda112|8.6.0|
 |code-server|3.9.3|
+|rclone|1.55.1|
 
 ## cuda11.2.2
 
@@ -276,6 +283,7 @@
 |jupyterlab|2.3.1|
 |cupy-cuda112|8.6.0|
 |code-server|3.9.3|
+|rclone|1.55.1|
 
 # 各種ツール類
 
