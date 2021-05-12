@@ -3,7 +3,7 @@
 - [nodesource](https://github.com/nodesource/distributions#debinstall)
 - [pyenv python](https://github.com/pyenv/pyenv/tree/master/plugins/python-build/share/python-build)
 - [pyenv version](https://github.com/pyenv/pyenv/releases)
-- [torch nightly](https://download.pytorch.org/whl/nightly/cu110/torch_nightly.html)
+- [torch nightly](https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html)
 - [code-server](https://github.com/cdr/code-server)
 - [rclone](https://github.com/rclone/rclone)
 
