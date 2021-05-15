@@ -3,7 +3,7 @@
     IMAGE_STATUS: "feature"
     ANACONDA: "2020.11"
     OPENCV: "4.5.1.48"
-    TF_GPU: "2.6.0.dev20210411"
+    TF_GPU: "2.6.0.dev20210504"
     TF_TYPE: "tf-nightly"
     KERAS: "2.4.3"
     TORCH: "1.8.1+cu111"
