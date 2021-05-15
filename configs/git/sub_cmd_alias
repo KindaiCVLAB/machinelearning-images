@@ -1,0 +1,51 @@
+# git status
+alias gs="git status"
+__git_complete gs _git_status
+
+# git checkout
+alias gck="git checkout"
+__git_complete gck _git_checkout
+
+# git branch
+alias gb="git branch"
+__git_complete gb _git_branch
+
+# git push
+alias gps="git push"
+__git_complete gps _git_push
+
+# git commit
+alias gc="git commit"
+__git_complete gc _git_commit
+
+# git add
+alias ga="git add"
+__git_complete ga _git_add
+
+# git pull
+alias gpl="git pull"
+__git_complete gpl _git_pull
+
+# git reset
+alias grs="git reset"
+__git_complete grs _git_reset
+
+# git stash
+alias gst="git stash"
+__git_complete gst _git_stash
+
+# git rebase
+alias grb="git rebase"
+__git_complete grb _git_rebase
+
+# git diff
+alias gdf="git diff"
+__git_complete gdf _git_diff
+
+# git fetch
+alias gft="git fetch"
+__git_complete gft _git_fetch
+
+# git log
+alias gl="git log"
+__git_complete gl _git_log

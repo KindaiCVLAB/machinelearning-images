@@ -125,6 +125,27 @@ RUN jupyter labextension install jupyterlab-nvdashboard --no-build \
 # create config directory for rclone
 RUN mkdir -p .config/rclone
 
+# set alias for git
+COPY configs/git/sub_cmd_alias .git_sub_cmd_alias
+RUN echo -e "\n#git alias" >> ~/.bashrc \
+ && echo "source /usr/share/bash-completion/completions/git" >> ~/.bashrc \
+ && echo "alias g=\"git\"" >> ~/.bashrc \
+ && echo "__git_complete g __git_main" >> ~/.bashrc \
+ && echo -e "source .git_sub_cmd_alias\n" >> ~/.bashrc \
+ && git config --global alias.s status \
+ && git config --global alias.ck checkout \
+ && git config --global alias.b branch \
+ && git config --global alias.ps push \
+ && git config --global alias.c commit \
+ && git config --global alias.a add \
+ && git config --global alias.pl pull \
+ && git config --global alias.rs reset \
+ && git config --global alias.st stash \
+ && git config --global alias.rb rebase \
+ && git config --global alias.df diff \
+ && git config --global alias.ft fetch \
+ && git config --global alias.l log
+
 # copy settings.json for code-server
 RUN mkdir -p .local/share/code-server/User
 COPY configs/vscode .local/share/code-server/User/cvcloud
