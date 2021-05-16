@@ -153,7 +153,8 @@ COPY configs/vscode .local/share/code-server/User/cvcloud
 WORKDIR ${HOME}/.local/share/code-server/User/cvcloud
 RUN cat container-building.json | sed "s/@@ANACONDA_VERSION@@/${ANACONDA_VERSION}/" > addon.json \
  && jq -s add base.json addon.json > ../settings.json \
- && rm addon.json
+ && rm addon.json \
+ && mv keybindings.json ../keybindings.json
 
 # install specify ms-python for codeserver(<= 3.9.0)
 # RUN wget https://github.com/microsoft/vscode-python/releases/download/2020.10.332292344/ms-python-release.vsix \
