@@ -132,6 +132,7 @@ RUN echo "\n#git alias" >> ~/.bashrc \
  && echo "alias g=\"git\"" >> ~/.bashrc \
  && echo "__git_complete g __git_main" >> ~/.bashrc \
  && echo "source ~/.git_sub_cmd_alias\n" >> ~/.bashrc \
+ && git config --global alias.cl clone \
  && git config --global alias.s status \
  && git config --global alias.ck checkout \
  && git config --global alias.b branch \
