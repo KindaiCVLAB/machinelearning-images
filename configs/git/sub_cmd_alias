@@ -1,3 +1,7 @@
+# git clone
+alias gcl="git clone"
+__git_complete gcl _git_clone
+
 # git status
 alias gs="git status"
 __git_complete gs _git_status
