@@ -68,9 +68,11 @@ RUN apt-get update \
     dumb-init
 
 # install pyenv and prepare python environment.
-RUN curl -OL https://github.com/pyenv/pyenv/archive/v${PYENV_RELEASE_VERSION}.tar.gz \
- && tar -xzf v${PYENV_RELEASE_VERSION}.tar.gz \
- && rm -rf v${PYENV_RELEASE_VERSION}.tar.gz \
+RUN pyenv_get_status=$(curl -I https://github.com/pyenv/pyenv/releases/tag/v${PYENV_RELEASE_VERSION} -o /dev/null -w '%{http_code}\n' -s) \
+ && if [ "$pyenv_get_status" = "200" ];then PYENV_DOWNLOAD_VERSION=v${PYENV_RELEASE_VERSION}; else PYENV_DOWNLOAD_VERSION=${PYENV_RELEASE_VERSION};fi \
+ && curl -OL https://github.com/pyenv/pyenv/archive/${PYENV_DOWNLOAD_VERSION}.tar.gz \
+ && tar -xzf ${PYENV_DOWNLOAD_VERSION}.tar.gz \
+ && rm -rf ${PYENV_DOWNLOAD_VERSION}.tar.gz \
  && mv pyenv-${PYENV_RELEASE_VERSION} .pyenv \
  && curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \
