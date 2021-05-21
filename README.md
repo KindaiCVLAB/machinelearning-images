@@ -202,18 +202,18 @@
 |:---:|:---:|
 |CUDA|11.1.1|
 |cudnn|8.x|
-|pyenv|1.2.26|
-|nodejs|15.x|
+|pyenv|1.2.27|
+|nodejs|16.x|
 |anaconda3|2020.11|
-|opencv-python|4.5.1.48|
-|tensorflow-gpu|2.4.1|
+|opencv-python|4.5.2.52|
+|tensorflow-gpu|2.5.0|
 |keras|2.4.3|
 |torch|1.8.1|
 |torchvision|0.9.1|
 |torchsummary|1.5.1|
 |jupyterlab|2.3.1|
-|cupy-cuda111|8.6.0|
-|code-server|3.9.3|
+|cupy-cuda112|8.6.0|
+|code-server|3.10.1|
 |rclone|1.55.1|
 
 ## cuda11.2.0
@@ -225,18 +225,18 @@
 |:---:|:---:|
 |CUDA|11.2.0|
 |cudnn|8.x|
-|pyenv|1.2.26|
-|nodejs|15.x|
+|pyenv|1.2.27|
+|nodejs|16.x|
 |anaconda3|2020.11|
-|opencv-python|4.5.1.48|
-|tensorflow-gpu|2.6.0.dev20210504|
+|opencv-python|4.5.2.52|
+|tensorflow-gpu|2.6.0.dev20210521|
 |keras|2.4.3|
-|torch|1.8.1|
-|torchvision|0.9.1|
+|torch|1.9.0.dev20210521+cu111|
+|torchvision|0.10.0.dev20210521+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|2.3.1|
-|cupy-cuda112|8.6.0|
-|code-server|3.9.3|
+|cupy-cuda112|9.0.0|
+|code-server|3.10.1|
 |rclone|1.55.1|
 
 ## cuda11.2.1
@@ -248,18 +248,18 @@
 |:---:|:---:|
 |CUDA|11.2.1|
 |cudnn|8.x|
-|pyenv|1.2.26|
-|nodejs|15.x|
+|pyenv|1.2.27|
+|nodejs|16.x|
 |anaconda3|2020.11|
-|opencv-python|4.5.1.48|
-|tensorflow-gpu|2.6.0.dev20210504|
+|opencv-python|4.5.2.52|
+|tensorflow-gpu|2.6.0.dev20210521|
 |keras|2.4.3|
-|torch|1.8.1|
-|torchvision|0.9.1|
+|torch|1.9.0.dev20210521+cu111|
+|torchvision|0.10.0.dev20210521+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|2.3.1|
-|cupy-cuda112|8.6.0|
-|code-server|3.9.3|
+|cupy-cuda112|9.0.0|
+|code-server|3.10.1|
 |rclone|1.55.1|
 
 ## cuda11.2.2
@@ -271,18 +271,18 @@
 |:---:|:---:|
 |CUDA|11.2.2|
 |cudnn|8.x|
-|pyenv|1.2.26|
-|nodejs|15.x|
+|pyenv|1.2.27|
+|nodejs|16.x|
 |anaconda3|2020.11|
-|opencv-python|4.5.1.48|
-|tensorflow-gpu|2.6.0.dev20210504|
+|opencv-python|4.5.2.52|
+|tensorflow-gpu|2.6.0.dev20210521|
 |keras|2.4.3|
-|torch|1.8.1|
-|torchvision|0.9.1|
+|torch|1.9.0.dev20210521+cu111|
+|torchvision|0.10.0.dev20210521+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|2.3.1|
-|cupy-cuda112|8.6.0|
-|code-server|3.9.3|
+|cupy-cuda112|9.0.0|
+|code-server|3.10.1|
 |rclone|1.55.1|
 
 # 各種ツール類

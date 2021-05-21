@@ -69,7 +69,7 @@ RUN apt-get update \
 
 # install pyenv and prepare python environment.
 RUN pyenv_get_status=$(curl -I https://github.com/pyenv/pyenv/releases/tag/v${PYENV_RELEASE_VERSION} -o /dev/null -w '%{http_code}\n' -s) \
- && if [ "$pyenv_get_status" = "200" ];then PYENV_DOWNLOAD_VERSION=v${PYENV_RELEASE_VERSION}; else PYENV_DOWNLOAD_VERSION=${PYENV_RELEASE_VERSION};fi \
+ && if [ "$pyenv_get_status" = "200" ];then PYENV_DOWNLOAD_VERSION=v${PYENV_RELEASE_VERSION}; else PYENV_DOWNLOAD_VERSION=${PYENV_RELEASE_VERSION}; fi \
  && curl -OL https://github.com/pyenv/pyenv/archive/${PYENV_DOWNLOAD_VERSION}.tar.gz \
  && tar -xzf ${PYENV_DOWNLOAD_VERSION}.tar.gz \
  && rm -rf ${PYENV_DOWNLOAD_VERSION}.tar.gz \
@@ -88,7 +88,7 @@ RUN pip install opencv-python==${OPENCV_VERSION} \
 # REF: https://github.com/tensorflow/tensorflow/issues/43947
 # REF: https://gitlab.com/kindaicvlab/cvcloud/machinelearning-images/-/issues/46
  && target_libcusolver_path=$(python -c "import tensorflow.python as x; print(x.__path__[0])") \
- && if [[ "${BASE_IMG_CUDA_VERSION}" =~ ^11.1 ]];then ln -s /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcusolver.so.11 ${target_libcusolver_path}/libcusolver.so.10; fi\
+ && if [[ "${BASE_IMG_CUDA_VERSION}" =~ ^11.1 ]];then ln -s /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcusolver.so.11 ${target_libcusolver_path}/libcusolver.so.10; fi \
  && if [ -z "${TORCH_FILE}" ]; then pip install torch==${TORCH_VERSION}; else pip install --pre torch -f ${TORCH_FILE}; fi \
  && if [ -z "${TORCH_VISION_FILE}" ]; then pip install torchvision==${TORCH_VISION_VERSION}; else pip install --pre torchvision -f ${TORCH_VISION_FILE}; fi \
  && pip install torchsummary==${TORCH_SUMMARY_VERSION} \
