@@ -1,10 +1,10 @@
-# deprecated
-.cuda10.0-cudnn7-env-vars: 
+# closed
+.cuda10.0-cudnn7-env-vars:
   variables:
     ANACONDA: "2019.07"
     OPENCV: "3.4.7.28"
     TF_GPU: "1.13.1"
-    TF_TYPE: "tensorflow"  
+    TF_TYPE: "tensorflow"
     KERAS: "2.3.1"
     TORCH: "1.2.0"
     TORCH_VISION: "0.4.0"

@@ -1,7 +1,7 @@
 cuda10.0-cudnn7-test:
   needs: []
   extends: 
-    - .cuda10.0-cudnn7-env-vars  
+    - .cuda10.0-cudnn7-env-vars
     - .test-image-builder
 
 cuda10.0-cudnn7-unittest-test:
@@ -12,8 +12,8 @@ cuda10.0-cudnn7-unittest-test:
 
 cuda10.0-cudnn7:
   needs: []
-  extends: 
-    - .cuda10.0-cudnn7-env-vars    
+  extends:
+    - .cuda10.0-cudnn7-env-vars
     - .container-image-builder
     
 cuda10.0-cudnn7-unittest:
