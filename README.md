@@ -8,9 +8,9 @@
 
 - apt を使ったパッケージ類でサポートして欲しい物がある場合，以下 2種類の方法で依頼することができます．(希望に答えられない場合もあります．)
 - pip や conda のライブラリのデフォルト追加依頼も下記で可能です．
-    1. Issue を立てて機能リクエストを作成する
-    2. 入れて欲しいパッケージやライブリを含んだ Dockerfile を作成して MergeRequest を出す．
-    - __Slack での依頼は受け付けておりません．__
+  1. Issue を立てて機能リクエストを作成する
+  2. 入れて欲しいパッケージやライブリを含んだ Dockerfile を作成して MergeRequest を出す．
+  - __Slack での依頼は受け付けておりません．__
 
 # 動作状況
 
@@ -55,51 +55,38 @@
 - 各イメージで共通で使用されている物一覧です．
 - バージョンはコンテナイメージがビルドされた時点での最新のものになっています．
 - ビルド日は container registry の以下のような項目を確認してください．
-    - ```Published to the kindaicvlab/deeplearning image repository at 06:19 GMT+0900 on 2020-10-20```
+  - ```Published to the kindaicvlab/deeplearning image repository at 06:19 GMT+0900 on 2020-10-20```
 
 - 共通イメージを最新に保つため一定期間毎にコンテナイメージは再ビルドされます．
 
-- ライブラリ & パッケージ一覧
-    - curl
-    - wget
-    - git
-    - unzip
-    - imagemagick
-    - bzip2
-    - vim
-    - libsm6
-    - libgl1-mesa-dev
-    - build-essential
-    - libssl-dev
-    - make
-    - build-essential
-    - zlib1g-dev
-    - libbz2-dev
-    - libreadline-dev
-    - libsqlite3-dev
-    - llvm
-    - libncurses5-dev
-    - xz-utils
-    - tk-dev
-    - libxml2-dev
-    - libxrender1
-    - libxmlsec1-dev
-    - libffi-dev
-    - liblzma-dev
-    - dumb-init
-    - jq
-    - ssh
-    - rsync
-    - pyenv
-    - requests
-    - cmake
-    - scikit-build
-    - jupyterlab-nvdashboard
-    - ipywidgets
-    - progressbar
-    - tqdm
-    - addict
-    - pycocotools
+### パッケージ
+- curl
+- wget
+- git
+- unzip
+- imagemagick
+- bzip2
+- vim
+- make
+- dumb-init
+- jq
+- ssh
+- rsync
+- libsm6(for opencv)
+- libgl1-mesa-dev(for opencv)
+- libxrender1(for opencv)
+
+### Python ライブラリ
+- tqdm
+- addict
+- progressbar
+- pycocotools
+- requests
+- cmake
+- scikit-build
+- tabulate
+- ipywidgets
+- jupyterlab-nvdashboard
 
 ## cuda10.2
 
