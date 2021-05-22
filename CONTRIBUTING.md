@@ -43,7 +43,10 @@
 通常コンテナイメージはセキュリティパッチなどを当てるため 1 週間ごとに自動で再ビルドされていますが，closed ステータスのイメージは行われません．
 そのため closed ステータスのコンテナイメージは何も更新してはいけません．
 
-closed ステータス認定の基準については現在検討中です．意見がある方は Issue を発行してください．
+また，closed ステータスは，以下のいずれかの条件を満たした物とします．
+
+- 最新の cudnn の一つ前のバージョンの[サポートリスト](https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html)から外れた．
+- [base イメージをビルドしているリポジトリ](https://gitlab.com/nvidia/container-images/cuda)から削除された．
 
 
 ## deprecated
@@ -67,3 +70,17 @@ closed ステータス認定の基準については現在検討中です．意�
 本ステータスはコンテナイメージが機能追加中であることを示します．本ステータスはサーバで動作しない場合であっても，全てを nightly も含む最新版に更新します．
 
 例えば現在，サーバで動作する cuda バージョンは 11.0.3 までですが，ベースイメージに cuda 11.1 を使ったコンテナイメージを作成し，feature としています．
+
+# ドキュメントを書く際の参照ドキュメント等
+
+[cuda, cudnn, nvidia driver 対応表](https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html)
+
+## インストールされた cudnn のバージョン
+
+- [cuda10.2-cudnn7-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/10.2/ubuntu18.04-x86_64/devel/cudnn7/Dockerfile#L5)
+- [cuda10.2-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/10.2/ubuntu18.04-x86_64/devel/cudnn8/Dockerfile#L5)
+- [cuda11.0.3-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.0.3/ubuntu18.04-x86_64/devel/cudnn8/Dockerfile#L5)
+- [cuda11.1.1-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.1.1/ubuntu18.04-x86_64/devel/cudnn8/Dockerfile#L5)
+- [cuda11.2.0-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.0/ubuntu18.04-x86_64/devel/cudnn8/Dockerfile#L5)
+- [cuda11.2.1-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.1/ubuntu18.04-x86_64/devel/cudnn8/Dockerfile#L5)
+- [cuda11.2.2-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.2/ubuntu18.04-x86_64/devel/cudnn8/Dockerfile#L5)

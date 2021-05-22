@@ -200,7 +200,7 @@
 |torchvision|0.9.1|
 |torchsummary|1.5.1|
 |jupyterlab|2.3.1|
-|cupy-cuda112|8.6.0|
+|cupy-cuda111|9.0.0|
 |code-server|3.10.1|
 |rclone|1.55.1|
 

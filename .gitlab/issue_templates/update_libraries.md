@@ -8,19 +8,19 @@
 - [rclone](https://github.com/rclone/rclone)
 
 # バージョン
-- [ ] pyenv:
-- [ ] nodejs:
-- [ ] anaconda3:
-- [ ] opencv-python:
-- [ ] tensorflow-gpu:
-- [ ] tf-nightly:
-- [ ] keras:
-- [ ] torch:
-- [ ] torch-nightly:
-- [ ] torchvision:
-- [ ] torchvision-nightly:
-- [ ] torchsummary:
-- [ ] jupyterlab:
-- [ ] cupy-cuda:
-- [ ] code-server:
-- [ ] rclone:
+- [ ] pyenv: 
+- [ ] nodejs: 
+- [ ] anaconda3: 
+- [ ] opencv-python: 
+- [ ] tensorflow-gpu: 
+- [ ] tf-nightly: 
+- [ ] keras: 
+- [ ] torch: 
+- [ ] torch-nightly: 
+- [ ] torchvision: 
+- [ ] torchvision-nightly: 
+- [ ] torchsummary: 
+- [ ] jupyterlab: 
+- [ ] cupy-cuda: 
+- [ ] code-server: 
+- [ ] rclone: 
