@@ -86,6 +86,7 @@ RUN pip install opencv-python==${OPENCV_VERSION} \
                 cmake \
                 scikit-build \
                 tabulate \
+                tensorflow_model_optimization \
                 cupy-cuda${CUDA_VERSION_FOR_CUPY}==${CUPY_CUDA_VERSION} \
 # how to install cupy-cuda for old cuda driver
 #  && if [ "${CUDA_VERSION_FOR_CUPY}" = "112" ]; then pip install cupy-cuda111==${CUPY_CUDA_VERSION}; else pip install cupy-cuda${CUDA_VERSION_FOR_CUPY}==${CUPY_CUDA_VERSION}; fi \
