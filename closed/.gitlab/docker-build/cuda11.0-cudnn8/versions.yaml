@@ -1,6 +1,6 @@
 .cuda11.0-cudnn8-env-vars:
   variables:
-    IMAGE_STATUS: "deprecated"
+    IMAGE_STATUS: "closed"
     ANACONDA: "2020.11"
     OPENCV: "4.5.1.48"
     TF_GPU: "2.4.1"

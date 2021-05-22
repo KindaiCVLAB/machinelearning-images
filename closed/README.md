@@ -45,3 +45,48 @@
 |cupy-cuda101|8.2.0|
 |code-server|3.8.0|
 
+## cuda11.0
+
+- STATUS: Deprecated
+- cuda11.0-cudnn8 イメージにのみ含まれる物を示しています．
+
+|ライブラリ名 & パッケージ名|バージョン|
+|:---:|:---:|
+|CUDA|11.0|
+|cudnn|8.x|
+|pyenv|1.2.23|
+|nodejs|15.x|
+|anaconda3|2020.11|
+|opencv-python|4.5.1.48|
+|tensorflow-gpu|2.4.0|
+|keras|2.4.3|
+|torch|1.7.1|
+|torchvision|0.8.2|
+|torchsummary|1.5.1|
+|jupyterlab|2.2.9|
+|cupy-cuda110|8.4.0|
+|code-server|3.9.1|
+|rclone|1.55.1|
+
+## cuda11.1
+
+- STATUS: Deprecated
+- cuda11.1-cudnn8 イメージにのみ含まれる物を示しています．
+
+|ライブラリ名 & パッケージ名|バージョン|
+|:---:|:---:|
+|CUDA|11.1|
+|cudnn|8.x|
+|pyenv|1.2.23|
+|nodejs|15.x|
+|anaconda3|2020.11|
+|opencv-python|4.5.1.48|
+|tensorflow-gpu|2.4.1|
+|keras|2.4.3|
+|torch|1.8.0|
+|torchvision|0.9.0|
+|torchsummary|1.5.1|
+|jupyterlab|2.2.9|
+|cupy-cuda111|8.4.0|
+|code-server|3.9.1|
+|rclone|1.55.1|

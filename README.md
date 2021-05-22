@@ -36,11 +36,11 @@
 |  ```cuda10.0-cudnn7```  |   ```closed```   |   ```no``` |
 |  ```cuda10.1-cudnn7```  |   ```closed```   |   ```no``` |
 |  ```cuda10.1-cudnn8```  |   ```closed```   |   ```no``` |
+|  ```cuda11.0-cudnn8```  |   ```closed```   |   ```no``` |
+|  ```cuda11.1-cudnn8```  |   ```closed```   |   ```no``` |
 |  ```cuda10.2-cudnn7```  | ```deprecated``` |  ```yes``` |
 |  ```cuda10.2-cudnn8```  | ```deprecated``` |  ```yes``` |
-|  ```cuda11.0-cudnn8```  | ```deprecated``` |  ```yes``` |
 | ```cuda11.0.3-cudnn8``` | ```deprecated``` |  ```yes``` |
-|  ```cuda11.1-cudnn8```  | ```deprecated``` |  ```yes``` |
 | ```cuda11.1.1-cudnn8``` |   ```stable```   |  ```yes``` |
 | ```cuda11.2.0-cudnn8``` |   ```feature```  |  ```yes``` |
 | ```cuda11.2.1-cudnn8``` |   ```feature```  |  ```yes``` |
@@ -55,7 +55,7 @@
 - 各イメージで共通で使用されている物一覧です．
 - バージョンはコンテナイメージがビルドされた時点での最新のものになっています．
 - ビルド日は container registry の以下のような項目を確認してください．
-  - ```Published to the kindaicvlab/deeplearning image repository at 06:19 GMT+0900 on 2020-10-20```
+  - ```Published to the kindaicvlab/cvcloud/machinelearning-images image repository at 06:56 GMT+0900 on 2021-05-22```
 
 - 共通イメージを最新に保つため一定期間毎にコンテナイメージは再ビルドされます．
 
@@ -97,7 +97,7 @@
 |ライブラリ名 & パッケージ名|バージョン|
 |:---:|:---:|
 |CUDA|10.2|
-|cudnn|7.x or 8.x|
+|cudnn|7.6.5.32 or 8.2.0.53|
 |pyenv|1.2.22|
 |nodejs|15.x|
 |anaconda3|2020.11|
@@ -112,29 +112,6 @@
 |code-server|3.9.1|
 |rclone|1.55.1|
 
-## cuda11.0
-
-- STATUS: Deprecated
-- cuda11.0-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|11.0|
-|cudnn|8.x|
-|pyenv|1.2.23|
-|nodejs|15.x|
-|anaconda3|2020.11|
-|opencv-python|4.5.1.48|
-|tensorflow-gpu|2.4.0|
-|keras|2.4.3|
-|torch|1.7.1|
-|torchvision|0.8.2|
-|torchsummary|1.5.1|
-|jupyterlab|2.2.9|
-|cupy-cuda110|8.4.0|
-|code-server|3.9.1|
-|rclone|1.55.1|
-
 ## cuda11.0.3
 
 - STATUS: Deprecated
@@ -143,7 +120,7 @@
 |ライブラリ名 & パッケージ名|バージョン|
 |:---:|:---:|
 |CUDA|11.0.3|
-|cudnn|8.x|
+|cudnn|8.0.5.39|
 |pyenv|1.2.23|
 |nodejs|15.x|
 |anaconda3|2020.11|
@@ -155,29 +132,6 @@
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
 |cupy-cuda110|8.4.0|
-|code-server|3.9.1|
-|rclone|1.55.1|
-
-## cuda11.1
-
-- STATUS: Deprecated
-- cuda11.1-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|11.1|
-|cudnn|8.x|
-|pyenv|1.2.23|
-|nodejs|15.x|
-|anaconda3|2020.11|
-|opencv-python|4.5.1.48|
-|tensorflow-gpu|2.4.1|
-|keras|2.4.3|
-|torch|1.8.0|
-|torchvision|0.9.0|
-|torchsummary|1.5.1|
-|jupyterlab|2.2.9|
-|cupy-cuda111|8.4.0|
 |code-server|3.9.1|
 |rclone|1.55.1|
 
@@ -189,7 +143,7 @@
 |ライブラリ名 & パッケージ名|バージョン|
 |:---:|:---:|
 |CUDA|11.1.1|
-|cudnn|8.x|
+|cudnn|8.0.5.39|
 |pyenv|1.2.27|
 |nodejs|16.x|
 |anaconda3|2020.11|
@@ -212,7 +166,7 @@
 |ライブラリ名 & パッケージ名|バージョン|
 |:---:|:---:|
 |CUDA|11.2.0|
-|cudnn|8.x|
+|cudnn|8.1.1.33|
 |pyenv|1.2.27|
 |nodejs|16.x|
 |anaconda3|2020.11|
@@ -235,7 +189,7 @@
 |ライブラリ名 & パッケージ名|バージョン|
 |:---:|:---:|
 |CUDA|11.2.1|
-|cudnn|8.x|
+|cudnn|8.1.1.33|
 |pyenv|1.2.27|
 |nodejs|16.x|
 |anaconda3|2020.11|
@@ -258,7 +212,7 @@
 |ライブラリ名 & パッケージ名|バージョン|
 |:---:|:---:|
 |CUDA|11.2.2|
-|cudnn|8.x|
+|cudnn|8.1.1.33|
 |pyenv|1.2.27|
 |nodejs|16.x|
 |anaconda3|2020.11|
