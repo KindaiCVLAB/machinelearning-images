@@ -87,6 +87,7 @@
 - tabulate
 - ipywidgets
 - jupyterlab-nvdashboard
+- tensorflow_model_optimization
 
 ## cuda10.2
 
