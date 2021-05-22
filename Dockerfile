@@ -43,29 +43,15 @@ RUN apt-get update \
     imagemagick \
     bzip2 \
     vim \
-    libsm6 \
-    libgl1-mesa-dev \
-    build-essential \
-    libssl-dev \
     make \
-    build-essential \
-    zlib1g-dev \
-    libbz2-dev \
-    libreadline-dev \
-    libsqlite3-dev \
-    llvm \
-    libncurses5-dev \
-    xz-utils \
-    tk-dev \
-    libxml2-dev \
-    libxrender1\
-    libxmlsec1-dev \
-    libffi-dev \
-    liblzma-dev \
     jq \
     ssh \
     rsync \
-    dumb-init
+    dumb-init \
+# for opencv
+    libsm6 \
+    libgl1-mesa-dev \
+    libxrender1
 
 # install pyenv and prepare python environment.
 RUN pyenv_get_status=$(curl -I https://github.com/pyenv/pyenv/releases/tag/v${PYENV_RELEASE_VERSION} -o /dev/null -w '%{http_code}\n' -s) \
@@ -127,7 +113,8 @@ USER ${UID}
 # install jupyter extensions
 RUN jupyter labextension install jupyterlab-nvdashboard --no-build \
  && jupyter labextension install @lckr/jupyterlab_variableinspector --no-build \
- && jupyter nbextension enable --py widgetsnbextension
+ && jupyter nbextension enable --py widgetsnbextension \
+ && jupyter-lab build
 
 # create config directory for rclone
 RUN mkdir -p .config/rclone
