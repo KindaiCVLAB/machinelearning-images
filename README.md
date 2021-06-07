@@ -1,6 +1,6 @@
 # CVLAB Original Container Images for Machine Learning
 
-本リポジトリは CVLAB メンバー用に作成した MachineLearning 用コンテナイメージを保管するリポジトリです． 主に CKS で利用されることを想定して作成されています．
+本リポジトリは CVLAB. メンバー用に作成した MachineLearning 用コンテナイメージを保管するリポジトリです． 主に CKS で利用されることを想定して作成されています．
 
 # 概要
 
@@ -153,7 +153,7 @@
 |torch|1.8.1|
 |torchvision|0.9.1|
 |torchsummary|1.5.1|
-|jupyterlab|2.3.1|
+|jupyterlab|3.0.16|
 |cupy-cuda111|9.0.0|
 |code-server|3.10.1|
 |rclone|1.55.1|
@@ -176,7 +176,7 @@
 |torch|1.9.0.dev20210521+cu111|
 |torchvision|0.10.0.dev20210521+cu111|
 |torchsummary|1.5.1|
-|jupyterlab|2.3.1|
+|jupyterlab|3.0.16|
 |cupy-cuda112|9.0.0|
 |code-server|3.10.1|
 |rclone|1.55.1|
@@ -199,7 +199,7 @@
 |torch|1.9.0.dev20210521+cu111|
 |torchvision|0.10.0.dev20210521+cu111|
 |torchsummary|1.5.1|
-|jupyterlab|2.3.1|
+|jupyterlab|3.0.16|
 |cupy-cuda112|9.0.0|
 |code-server|3.10.1|
 |rclone|1.55.1|
@@ -222,7 +222,7 @@
 |torch|1.9.0.dev20210521+cu111|
 |torchvision|0.10.0.dev20210521+cu111|
 |torchsummary|1.5.1|
-|jupyterlab|2.3.1|
+|jupyterlab|3.0.16|
 |cupy-cuda112|9.0.0|
 |code-server|3.10.1|
 |rclone|1.55.1|
