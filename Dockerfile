@@ -90,10 +90,12 @@ RUN pip install opencv-python==${OPENCV_VERSION} \
  && pip install cupy-cuda${CUDA_VERSION_FOR_CUPY}==${CUPY_CUDA_VERSION} -f https://github.com/cupy/cupy/releases/v${CUPY_CUDA_VERSION} \
 # how to install cupy-cuda for old cuda driver
 #  && if [ "${CUDA_VERSION_FOR_CUPY}" = "112" ]; then pip install cupy-cuda111==${CUPY_CUDA_VERSION}; else pip install cupy-cuda${CUDA_VERSION_FOR_CUPY}==${CUPY_CUDA_VERSION}; fi \
+# prepre jupyter
  && conda uninstall jupyterlab --force -y \
  && pip install jupyterlab==${JUPYTER_VERSION} \
-                jupyterlab-nvdashboard \
                 ipywidgets \
+                jupyterlab-nvdashboard \
+                lckr-jupyterlab-variableinspector \
 # install code-server
  && curl -fOL https://github.com/cdr/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server_${CODE_SERVER_VERSION}_amd64.deb \
  && dpkg -i code-server_${CODE_SERVER_VERSION}_amd64.deb \
@@ -111,12 +113,6 @@ RUN apt-get clean \
 
 # change user to 1000
 USER ${UID}
-
-# install jupyter extensions
-RUN jupyter labextension install jupyterlab-nvdashboard --no-build \
- && jupyter labextension install @lckr/jupyterlab_variableinspector --no-build \
- && jupyter nbextension enable --py widgetsnbextension \
- && jupyter-lab build
 
 # create config directory for rclone
 RUN mkdir -p .config/rclone

@@ -10,7 +10,7 @@
     TORCH_VISION: "0.9.1+cu111"
     TORCH_SUMMARY: "1.5.1"
     CUPY_CUDA: "9.0.0"
-    JUPYTER: "2.3.1"
+    JUPYTER: "3.0.16"
     CODE_SERVER: "3.10.1"
     RCLONE: "1.55.1"
     NODEJS: "16"
