@@ -45,6 +45,7 @@
 | ```cuda11.2.0-cudnn8``` |   ```feature```  |  ```yes``` |
 | ```cuda11.2.1-cudnn8``` |   ```feature```  |  ```yes``` |
 | ```cuda11.2.2-cudnn8``` |   ```feature```  |  ```yes``` |
+| ```cuda11.3.0-cudnn8``` |   ```feature```  |   ```no``` |
 
 # コンテナイメージ の詳細
 
@@ -213,6 +214,29 @@
 |:---:|:---:|
 |CUDA|11.2.2|
 |cudnn|8.1.1.33|
+|pyenv|1.2.27|
+|nodejs|16.x|
+|anaconda3|2020.11|
+|opencv-python|4.5.2.52|
+|tensorflow-gpu|2.6.0.dev20210521|
+|keras|2.4.3|
+|torch|1.9.0.dev20210521+cu111|
+|torchvision|0.10.0.dev20210521+cu111|
+|torchsummary|1.5.1|
+|jupyterlab|3.0.16|
+|cupy-cuda112|9.0.0|
+|code-server|3.10.1|
+|rclone|1.55.1|
+
+## cuda11.3.0
+
+- STATUS: Feature
+- cuda11.3.0-cudnn8 イメージにのみ含まれる物を示しています．
+
+|ライブラリ名 & パッケージ名|バージョン|
+|:---:|:---:|
+|CUDA|11.3.0|
+|cudnn|8.2.0.53|
 |pyenv|1.2.27|
 |nodejs|16.x|
 |anaconda3|2020.11|

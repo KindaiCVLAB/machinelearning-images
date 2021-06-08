@@ -84,3 +84,4 @@
 - [cuda11.2.0-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.0/ubuntu18.04-x86_64/devel/cudnn8/Dockerfile#L5)
 - [cuda11.2.1-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.1/ubuntu18.04-x86_64/devel/cudnn8/Dockerfile#L5)
 - [cuda11.2.2-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.2/ubuntu18.04-x86_64/devel/cudnn8/Dockerfile#L5)
+- [cuda11.3.0-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.3.0/ubuntu18.04-x86_64/devel/cudnn8/Dockerfile#L5)
