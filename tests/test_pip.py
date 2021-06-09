@@ -45,7 +45,7 @@ class TestVersionsByPip(unittest.TestCase):
     """
 
     # how to test cupy-cuda for old cuda drivers
-    if os.environ["CONTAINER_VERSION"] == "cuda11.3.0-cudnn8":
+    if os.environ["CONTAINER_VERSION"] == "cuda11.3.0-cudnn8" or os.environ["CONTAINER_VERSION"] == "cuda11.3.1-cudnn8":
       actual = search_pkg_version("cupy-cuda112")
     else:
       actual = search_pkg_version("cupy-cuda"+os.environ["CUDA_VERSION_FOR_CUPY"])

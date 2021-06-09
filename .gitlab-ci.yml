@@ -23,4 +23,6 @@ include:
   - local: .gitlab/docker-build/cuda11.2.2-cudnn8/versions.yaml
   - local: .gitlab/docker-build/cuda11.3.0-cudnn8/jobs.yaml
   - local: .gitlab/docker-build/cuda11.3.0-cudnn8/versions.yaml
+  - local: .gitlab/docker-build/cuda11.3.1-cudnn8/jobs.yaml
+  - local: .gitlab/docker-build/cuda11.3.1-cudnn8/versions.yaml
   - local: .gitlab/docker-build/enable-merge.yaml
