@@ -12,6 +12,7 @@ ENV PYENV_ROOT ${HOME}/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 ENV DEBIAN_FRONTEND=noninteractive
 
+ARG IMAGE_STATUS
 # library version for Python
 ARG ANACONDA_VERSION
 ARG OPENCV_VERSION
@@ -76,8 +77,34 @@ RUN pip install opencv-python==${OPENCV_VERSION} \
 # REF: https://gitlab.com/kindaicvlab/cvcloud/machinelearning-images/-/issues/46
  && target_libcusolver_path=$(python -c "import tensorflow.python as x; print(x.__path__[0])") \
  && if [[ "${BASE_IMG_CUDA_VERSION}" =~ ^11.1 ]];then ln -s /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcusolver.so.11 ${target_libcusolver_path}/libcusolver.so.10; fi \
- && if [ -z "${TORCH_FILE}" ]; then pip install torch==${TORCH_VERSION}; else pip install --pre torch -f ${TORCH_FILE}; fi \
- && if [ -z "${TORCH_VISION_FILE}" ]; then pip install torchvision==${TORCH_VISION_VERSION}; else pip install --pre torchvision -f ${TORCH_VISION_FILE}; fi \
+# install pytorch
+ && if [ -z "${TORCH_FILE}" ]; then \
+        if [ "${IMAGE_STATUS}" = "feature" ]; then \
+            pip install --pre torch==${TORCH_VERSION}; \
+        else \
+            pip install torch==${TORCH_VERSION}; \
+        fi \
+    else \
+        if [ "${IMAGE_STATUS}" = "feature" ]; then \
+            pip install --pre torch==${TORCH_VERSION} -f ${TORCH_FILE}; \
+        else \
+            pip install torch==${TORCH_VERSION} -f ${TORCH_FILE}; \
+        fi \
+    fi \
+# install torchvision
+ && if [ -z "${TORCH_VISION_FILE}" ]; then \
+        if [ "${IMAGE_STATUS}" = "feature" ]; then \
+            pip install --pre torchvision==${TORCH_VISION_VERSION}; \
+        else \
+            pip install torchvision==${TORCH_VISION_VERSION}; \
+        fi \
+    else \
+        if [ "${IMAGE_STATUS}" = "feature" ]; then \
+            pip install --pre torchvision==${TORCH_VISION_VERSION} -f ${TORCH_VISION_FILE}; \
+        else \
+            pip install torchvision==${TORCH_VISION_VERSION} -f ${TORCH_VISION_FILE}; \
+        fi \
+    fi \
  && pip install torchsummary==${TORCH_SUMMARY_VERSION} \
  && pip install tqdm \
                 addict \

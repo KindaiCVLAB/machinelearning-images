@@ -16,5 +16,5 @@
     NODEJS: "16"
     CONTAINER_VERSION: "cuda11.1.1-cudnn8"
     PYENV_RELEASE_VERSION: "1.2.27"
-    TORCH_FILE: "https://download.pytorch.org/whl/cu111/torch-1.8.1%2Bcu111-cp38-cp38-linux_x86_64.whl"
-    TORCH_VISION_FILE: "https://download.pytorch.org/whl/cu111/torchvision-0.9.1%2Bcu111-cp38-cp38-linux_x86_64.whl"
+    TORCH_FILE: "https://download.pytorch.org/whl/torch_stable.html"
+    TORCH_VISION_FILE: "https://download.pytorch.org/whl/torch_stable.html"
