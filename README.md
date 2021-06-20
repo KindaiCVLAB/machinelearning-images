@@ -106,8 +106,8 @@
 |opencv-python|4.5.1.48|
 |tensorflow-gpu|2.4.0|
 |keras|2.4.3|
-|torch|1.7.1|
-|torchvision|0.8.2|
+|torch|1.7.1+cu102|
+|torchvision|0.8.2+cu102|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
 |cupy-cuda102|8.3.0|
@@ -129,8 +129,8 @@
 |opencv-python|4.5.1.48|
 |tensorflow-gpu|2.4.0|
 |keras|2.4.3|
-|torch|1.8.0|
-|torchvision|0.9.0|
+|torch|1.8.0+cu111|
+|torchvision|0.9.0+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
 |cupy-cuda110|8.4.0|
@@ -152,8 +152,8 @@
 |opencv-python|4.5.2.52|
 |tensorflow-gpu|2.5.0|
 |keras|2.4.3|
-|torch|1.8.1|
-|torchvision|0.9.1|
+|torch|1.8.1+cu111|
+|torchvision|0.9.1+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
 |cupy-cuda111|9.0.0|
@@ -175,8 +175,8 @@
 |opencv-python|4.5.2.52|
 |tensorflow-gpu|2.6.0.dev20210521|
 |keras|2.4.3|
-|torch|1.9.0.dev20210521+cu111|
-|torchvision|0.10.0.dev20210521+cu111|
+|torch|1.10.0.dev20210615+cu111|
+|torchvision|0.11.0.dev20210615+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
 |cupy-cuda112|9.0.0|
@@ -198,8 +198,8 @@
 |opencv-python|4.5.2.52|
 |tensorflow-gpu|2.6.0.dev20210521|
 |keras|2.4.3|
-|torch|1.9.0.dev20210521+cu111|
-|torchvision|0.10.0.dev20210521+cu111|
+|torch|1.10.0.dev20210615+cu111|
+|torchvision|0.11.0.dev20210615+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
 |cupy-cuda112|9.0.0|
@@ -221,8 +221,8 @@
 |opencv-python|4.5.2.52|
 |tensorflow-gpu|2.6.0.dev20210521|
 |keras|2.4.3|
-|torch|1.9.0.dev20210521+cu111|
-|torchvision|0.10.0.dev20210521+cu111|
+|torch|1.10.0.dev20210615+cu111|
+|torchvision|0.11.0.dev20210615+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
 |cupy-cuda112|9.0.0|
@@ -244,8 +244,8 @@
 |opencv-python|4.5.2.52|
 |tensorflow-gpu|2.6.0.dev20210521|
 |keras|2.4.3|
-|torch|1.9.0.dev20210521+cu111|
-|torchvision|0.10.0.dev20210521+cu111|
+|torch|1.10.0.dev20210615+cu113|
+|torchvision|0.11.0.dev20210615+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
 |cupy-cuda112|9.0.0|
@@ -267,8 +267,8 @@
 |opencv-python|4.5.2.52|
 |tensorflow-gpu|2.6.0.dev20210521|
 |keras|2.4.3|
-|torch|1.9.0.dev20210521+cu111|
-|torchvision|0.10.0.dev20210521+cu111|
+|torch|1.10.0.dev20210615+cu113|
+|torchvision|0.11.0.dev20210615+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
 |cupy-cuda112|9.0.0|

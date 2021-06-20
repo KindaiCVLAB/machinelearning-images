@@ -7,8 +7,8 @@
     TF_GPU: "2.6.0.dev20210521"
     TF_TYPE: "tf-nightly"
     KERAS: "2.4.3"
-    TORCH: "1.9.0.dev20210521+cu111"
-    TORCH_VISION: "0.10.0.dev20210521+cu111"
+    TORCH: "1.10.0.dev20210615+cu111"
+    TORCH_VISION: "0.11.0.dev20210615+cu111"
     TORCH_SUMMARY: "1.5.1"
     CUPY_CUDA: "9.0.0"
     JUPYTER: "3.0.16"
@@ -16,8 +16,8 @@
     RCLONE: "1.55.1"
     NODEJS: "16"
     PYENV_RELEASE_VERSION: "1.2.27"
-    TORCH_FILE: "https://download.pytorch.org/whl/nightly/cu111/torch-1.9.0.dev20210521%2Bcu111-cp38-cp38-linux_x86_64.whl"
-    TORCH_VISION_FILE: "https://download.pytorch.org/whl/nightly/cu111/torchvision-0.10.0.dev20210521%2Bcu111-cp38-cp38-linux_x86_64.whl"
+    TORCH_FILE: "https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html"
+    TORCH_VISION_FILE: "https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html"
 
 # sample
 # TORCH: "1.8.0.dev20210208+cu110"
