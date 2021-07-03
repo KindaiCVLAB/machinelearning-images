@@ -18,35 +18,35 @@
 
 ## イメージのステータスについて
 
-|      STATUS      | Description |
-|:----------------:|:-----------:|
-|   ```closed```   | セキュリティパッチや深刻なエラー修正も提供されないので，直ちに使用を停止してください．|
-| ```deprecated``` | セキュリティパッチや深刻なエラー修正のみが提供されます．各ライブラリが最新版に更新されることはありません．|
-|   ```stable```   | 安定版です．全てのライブラリが最新版に保たれています．|
-|   ```latest```   | 最新安定版です．全てのライブラリが最新版に保たれており，サーバでの動作は確認していますが，一部動作しない環境があります．|
-|   ```feature```  | 新機能追加中のため特定の環境でしか動作しません．|
-|    ```alpha```   | 一部 alpha バージョンのパッケージがインストールされていることを示します.|
+|    STATUS    | Description |
+|:------------:|:-----------:|
+|   `closed`   | セキュリティパッチや深刻なエラー修正も提供されないので，直ちに使用を停止してください．|
+| `deprecated` | セキュリティパッチや深刻なエラー修正のみが提供されます．各ライブラリが最新版に更新されることはありません．|
+|   `stable`   | 安定版です．全てのライブラリが最新版に保たれています．|
+|   `latest`   | 最新安定版です．全てのライブラリが最新版に保たれており，サーバでの動作は確認していますが，一部動作しない環境があります．|
+|   `feature`  | 新機能追加中のため特定の環境でしか動作しません．|
+|    `alpha`   | 一部 alpha バージョンのパッケージがインストールされていることを示します.|
 
 ## イメージのステータス一覧
 
-表のサーバでの動作状況において ```yes``` がついているものは確認したものですが，```no``` の物は未確認のため動かないという意味ではないです．
+表のサーバでの動作状況において `yes` がついているものは確認したものですが，`no` の物は未確認のため動かないという意味ではないです．
 
-|          Image          |      Status      |   Server   |
-|:-----------------------:|:----------------:|:----------:|
-|  ```cuda10.0-cudnn7```  |   ```closed```   |   ```no``` |
-|  ```cuda10.1-cudnn7```  |   ```closed```   |   ```no``` |
-|  ```cuda10.1-cudnn8```  |   ```closed```   |   ```no``` |
-|  ```cuda11.0-cudnn8```  |   ```closed```   |   ```no``` |
-|  ```cuda11.1-cudnn8```  |   ```closed```   |   ```no``` |
-|  ```cuda10.2-cudnn7```  | ```deprecated``` |  ```yes``` |
-|  ```cuda10.2-cudnn8```  | ```deprecated``` |  ```yes``` |
-| ```cuda11.0.3-cudnn8``` | ```deprecated``` |  ```yes``` |
-| ```cuda11.1.1-cudnn8``` |   ```stable```   |  ```yes``` |
-| ```cuda11.2.0-cudnn8``` |   ```feature```  |  ```yes``` |
-| ```cuda11.2.1-cudnn8``` |   ```feature```  |  ```yes``` |
-| ```cuda11.2.2-cudnn8``` |   ```feature```  |  ```yes``` |
-| ```cuda11.3.0-cudnn8``` |   ```feature```  |   ```no``` |
-| ```cuda11.3.1-cudnn8``` |   ```feature```  |   ```no``` |
+|        Image        |    Status    | Server |
+|:-------------------:|:------------:|:------:|
+|  `cuda10.0-cudnn7`  |   `closed`   |   `no` |
+|  `cuda10.1-cudnn7`  |   `closed`   |   `no` |
+|  `cuda10.1-cudnn8`  |   `closed`   |   `no` |
+|  `cuda11.0-cudnn8`  |   `closed`   |   `no` |
+|  `cuda11.1-cudnn8`  |   `closed`   |   `no` |
+|  `cuda10.2-cudnn7`  | `deprecated` |  `yes` |
+|  `cuda10.2-cudnn8`  | `deprecated` |  `yes` |
+| `cuda11.0.3-cudnn8` | `deprecated` |  `yes` |
+| `cuda11.1.1-cudnn8` |   `stable`   |  `yes` |
+| `cuda11.2.0-cudnn8` |   `feature`  |  `yes` |
+| `cuda11.2.1-cudnn8` |   `feature`  |  `yes` |
+| `cuda11.2.2-cudnn8` |   `feature`  |  `yes` |
+| `cuda11.3.0-cudnn8` |   `feature`  |  `yes` |
+| `cuda11.3.1-cudnn8` |   `feature`  |   `no` |
 
 # コンテナイメージ の詳細
 
@@ -57,7 +57,7 @@
 - 各イメージで共通で使用されている物一覧です．
 - バージョンはコンテナイメージがビルドされた時点での最新のものになっています．
 - ビルド日は container registry の以下のような項目を確認してください．
-  - ```Published to the kindaicvlab/cvcloud/machinelearning-images image repository at 06:56 GMT+0900 on 2021-05-22```
+  - `Published to the kindaicvlab/cvcloud/machinelearning-images image repository at 06:56 GMT+0900 on 2021-05-22`
 
 - 共通イメージを最新に保つため一定期間毎にコンテナイメージは再ビルドされます．
 
@@ -90,6 +90,7 @@
 - ipywidgets
 - jupyterlab-nvdashboard
 - tensorflow_model_optimization
+- Keras-Applications
 
 ## cuda10.2
 
