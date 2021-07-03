@@ -115,6 +115,7 @@ RUN pip install opencv-python==${OPENCV_VERSION} \
                 scikit-build \
                 tabulate \
                 tensorflow_model_optimization \
+                Keras-Applications \
 #  && pip install cupy-cuda${CUDA_VERSION_FOR_CUPY}==${CUPY_CUDA_VERSION} -f ${CUPY_CUDA_WHEEL}; \
 # how to install cupy-cuda for old cuda driver
  && if [ "${CUDA_VERSION_FOR_CUPY}" = "113" ]; then \
