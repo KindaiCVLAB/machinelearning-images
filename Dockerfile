@@ -4,9 +4,10 @@ LABEL maintainer="CvlabKubernetesService"
 
 ENV USER_NAME user
 ENV UID 1000
+ENV HOME /home/${USER_NAME}
+ENV PATH ${HOME}/.local/bin:$PATH
 RUN useradd -m -u ${UID} ${USER_NAME}
 
-ENV HOME /home/${USER_NAME}
 WORKDIR ${HOME}
 ENV PYENV_ROOT ${HOME}/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
@@ -53,17 +54,36 @@ RUN apt-get update \
 # for opencv
     libsm6 \
     libgl1-mesa-dev \
-    libxrender1
+    libxrender1 \
+## setup nodejs
+ && curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
+ && apt-get install -y --no-install-recommends nodejs \
+# install code-server
+ && curl -fOL https://github.com/cdr/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server_${CODE_SERVER_VERSION}_amd64.deb \
+ && dpkg -i code-server_${CODE_SERVER_VERSION}_amd64.deb \
+ && rm -rf code-server_${CODE_SERVER_VERSION}_amd64.deb \
+# install rclone
+ && curl -fOL https://github.com/rclone/rclone/releases/download/v${RCLONE_VERSION}/rclone-v${RCLONE_VERSION}-linux-amd64.deb \
+ && dpkg -i rclone-v${RCLONE_VERSION}-linux-amd64.deb \
+ && rm -rf rclone-v${RCLONE_VERSION}-linux-amd64.deb \
+# clean apt cache
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
+# change user to 1000
+USER ${UID}
 
 # install pyenv and prepare python environment.
 RUN pyenv_get_status=$(curl -I https://github.com/pyenv/pyenv/releases/tag/v${PYENV_RELEASE_VERSION} -o /dev/null -w '%{http_code}\n' -s) \
- && if [ "$pyenv_get_status" = "200" ];then PYENV_DOWNLOAD_VERSION=v${PYENV_RELEASE_VERSION}; else PYENV_DOWNLOAD_VERSION=${PYENV_RELEASE_VERSION}; fi \
+ && if [ "$pyenv_get_status" = "200" ];then \
+        PYENV_DOWNLOAD_VERSION=v${PYENV_RELEASE_VERSION}; \
+    else \
+        PYENV_DOWNLOAD_VERSION=${PYENV_RELEASE_VERSION}; \
+    fi \
  && curl -OL https://github.com/pyenv/pyenv/archive/${PYENV_DOWNLOAD_VERSION}.tar.gz \
  && tar -xzf ${PYENV_DOWNLOAD_VERSION}.tar.gz \
  && rm -rf ${PYENV_DOWNLOAD_VERSION}.tar.gz \
  && mv pyenv-${PYENV_RELEASE_VERSION} .pyenv \
- && curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
- && apt-get install -y --no-install-recommends nodejs \
  && pyenv install anaconda3-${ANACONDA_VERSION} \
  && pyenv global anaconda3-${ANACONDA_VERSION} \
  && pyenv rehash \
@@ -76,7 +96,9 @@ RUN pip install opencv-python==${OPENCV_VERSION} \
 # REF: https://github.com/tensorflow/tensorflow/issues/43947
 # REF: https://gitlab.com/kindaicvlab/cvcloud/machinelearning-images/-/issues/46
  && target_libcusolver_path=$(python -c "import tensorflow.python as x; print(x.__path__[0])") \
- && if [[ "${BASE_IMG_CUDA_VERSION}" =~ ^11.1 ]];then ln -s /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcusolver.so.11 ${target_libcusolver_path}/libcusolver.so.10; fi \
+ && if [[ "${BASE_IMG_CUDA_VERSION}" =~ ^11.1 ]];then \
+        ln -s /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcusolver.so.11 ${target_libcusolver_path}/libcusolver.so.10; \
+    fi \
 # install pytorch
  && if [ -z "${TORCH_FILE}" ]; then \
         if [ "${IMAGE_STATUS}" = "feature" ]; then \
@@ -129,23 +151,7 @@ RUN pip install opencv-python==${OPENCV_VERSION} \
                 ipywidgets \
                 jupyterlab-nvdashboard \
                 lckr-jupyterlab-variableinspector \
-# install code-server
- && curl -fOL https://github.com/cdr/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server_${CODE_SERVER_VERSION}_amd64.deb \
- && dpkg -i code-server_${CODE_SERVER_VERSION}_amd64.deb \
- && rm -rf code-server_${CODE_SERVER_VERSION}_amd64.deb \
-# install rclone
- && curl -fOL https://github.com/rclone/rclone/releases/download/v${RCLONE_VERSION}/rclone-v${RCLONE_VERSION}-linux-amd64.deb \
- && dpkg -i rclone-v${RCLONE_VERSION}-linux-amd64.deb \
- && rm -rf rclone-v${RCLONE_VERSION}-linux-amd64.deb
-
-# clean apt cache
-RUN apt-get clean \
- && rm -rf /var/lib/apt/lists/* \
- && chown -R ${USER_NAME}: /home/${USER_NAME}/ \
- && rm -rf /tmp/*
-
-# change user to 1000
-USER ${UID}
+ && rm -rf .cache/pip
 
 # create config directory for rclone
 RUN mkdir -p .config/rclone
