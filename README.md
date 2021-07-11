@@ -31,22 +31,22 @@
 
 表のサーバでの動作状況において `yes` がついているものは確認したものですが，`no` の物は未確認のため動かないという意味ではないです．
 
-|        Image        |    Status    | Server |
-|:-------------------:|:------------:|:------:|
-|  `cuda10.0-cudnn7`  |   `closed`   |   `no` |
-|  `cuda10.1-cudnn7`  |   `closed`   |   `no` |
-|  `cuda10.1-cudnn8`  |   `closed`   |   `no` |
-|  `cuda11.0-cudnn8`  |   `closed`   |   `no` |
-|  `cuda11.1-cudnn8`  |   `closed`   |   `no` |
-|  `cuda10.2-cudnn7`  | `deprecated` |  `yes` |
-|  `cuda10.2-cudnn8`  | `deprecated` |  `yes` |
-| `cuda11.0.3-cudnn8` | `deprecated` |  `yes` |
-| `cuda11.1.1-cudnn8` |   `stable`   |  `yes` |
-| `cuda11.2.0-cudnn8` |   `feature`  |  `yes` |
-| `cuda11.2.1-cudnn8` |   `feature`  |  `yes` |
-| `cuda11.2.2-cudnn8` |   `feature`  |  `yes` |
-| `cuda11.3.0-cudnn8` |   `feature`  |  `yes` |
-| `cuda11.3.1-cudnn8` |   `feature`  |   `no` |
+|        Image        |       Status       | Server |
+|:-------------------:|:------------------:|:------:|
+|  `cuda10.0-cudnn7`  |      `closed`      |   `no` |
+|  `cuda10.1-cudnn7`  |      `closed`      |   `no` |
+|  `cuda10.1-cudnn8`  |      `closed`      |   `no` |
+|  `cuda11.0-cudnn8`  |      `closed`      |   `no` |
+|  `cuda11.1-cudnn8`  |      `closed`      |   `no` |
+|  `cuda10.2-cudnn7`  |     `deprecated`   |  `yes` |
+|  `cuda10.2-cudnn8`  |     `deprecated`   |  `yes` |
+| `cuda11.0.3-cudnn8` |     `deprecated`   |  `yes` |
+| `cuda11.1.1-cudnn8` |  `stable(pytorch)` |  `yes` |
+| `cuda11.2.0-cudnn8` |     `deprecated`   |  `yes` |
+| `cuda11.2.1-cudnn8` |     `deprecated`   |  `yes` |
+| `cuda11.2.2-cudnn8` |`stable(tensorflow)`|  `yes` |
+| `cuda11.3.0-cudnn8` |      `feature`     |  `yes` |
+| `cuda11.3.1-cudnn8` |      `feature`     |  `yes` |
 
 # コンテナイメージ の詳細
 
@@ -140,7 +140,7 @@
 
 ## cuda11.1.1
 
-- STATUS: Stable
+- STATUS: Stable(Pytorch)
 - cuda11.1.1-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -163,7 +163,7 @@
 
 ## cuda11.2.0
 
-- STATUS: Feature
+- STATUS: Deprecated
 - cuda11.2.0-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -174,10 +174,10 @@
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.2.54|
-|tensorflow-gpu|2.6.0.dev20210614|
+|tensorflow-gpu|2.5.0|
 |keras|2.4.3|
-|torch|1.10.0.dev20210615+cu111|
-|torchvision|0.11.0.dev20210615+cu111|
+|torch|1.9.0+cu111|
+|torchvision|0.10.0+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
 |cupy-cuda112|9.1.0|
@@ -186,7 +186,7 @@
 
 ## cuda11.2.1
 
-- STATUS: Feature
+- STATUS: Deprecated
 - cuda11.2.1-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -197,10 +197,10 @@
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.2.54|
-|tensorflow-gpu|2.6.0.dev20210614|
+|tensorflow-gpu|2.5.0|
 |keras|2.4.3|
-|torch|1.10.0.dev20210615+cu111|
-|torchvision|0.11.0.dev20210615+cu111|
+|torch|1.9.0+cu111|
+|torchvision|0.10.0+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
 |cupy-cuda112|9.1.0|
@@ -209,7 +209,7 @@
 
 ## cuda11.2.2
 
-- STATUS: Feature
+- STATUS: Stable(Tensorflow)
 - cuda11.2.2-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -220,10 +220,10 @@
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.2.54|
-|tensorflow-gpu|2.6.0.dev20210614|
+|tensorflow-gpu|2.5.0|
 |keras|2.4.3|
-|torch|1.10.0.dev20210615+cu111|
-|torchvision|0.11.0.dev20210615+cu111|
+|torch|1.9.0+cu111|
+|torchvision|0.10.0+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
 |cupy-cuda112|9.1.0|

@@ -1,6 +1,7 @@
 .cuda11.1.1-cudnn8-env-vars:
   variables:
-    IMAGE_STATUS: "stable"
+    IMAGE_STATUS: "stable(pytorch)"
+    CONTAINER_VERSION: "cuda11.1.1-cudnn8"
     ANACONDA: "2021.05"
     OPENCV: "4.5.2.54"
     TF_GPU: "2.5.0"
@@ -14,7 +15,6 @@
     CODE_SERVER: "3.10.2"
     RCLONE: "1.55.1"
     NODEJS: "16"
-    CONTAINER_VERSION: "cuda11.1.1-cudnn8"
     PYENV_RELEASE_VERSION: "2.0.1"
     TORCH_FILE: "https://download.pytorch.org/whl/torch_stable.html"
     TORCH_VISION_FILE: "https://download.pytorch.org/whl/torch_stable.html"
