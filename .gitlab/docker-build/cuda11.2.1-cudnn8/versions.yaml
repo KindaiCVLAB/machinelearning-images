@@ -1,6 +1,6 @@
 .cuda11.2.1-cudnn8-env-vars:
   variables:
-    IMAGE_STATUS: "feature"
+    IMAGE_STATUS: "deprecated"
     CONTAINER_VERSION: "cuda11.2.1-cudnn8"
     ANACONDA: "2021.05"
     OPENCV: "4.5.2.54"
