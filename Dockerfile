@@ -140,13 +140,13 @@ RUN pip install opencv-python==${OPENCV_VERSION} \
                 tabulate \
                 tensorflow_model_optimization \
                 Keras-Applications \
-#  && pip install cupy-cuda${CUDA_VERSION_FOR_CUPY}==${CUPY_CUDA_VERSION} -f ${CUPY_CUDA_WHEEL}; \
+ && pip install cupy-cuda${CUDA_VERSION_FOR_CUPY}==${CUPY_CUDA_VERSION} -f ${CUPY_CUDA_WHEEL} \
 # how to install cupy-cuda for old cuda driver
- && if [ "${CUDA_VERSION_FOR_CUPY}" = "113" ]; then \
-        pip install cupy-cuda112==${CUPY_CUDA_VERSION} -f ${CUPY_CUDA_WHEEL}; \
-    else \
-        pip install cupy-cuda${CUDA_VERSION_FOR_CUPY}==${CUPY_CUDA_VERSION} -f ${CUPY_CUDA_WHEEL}; \
-    fi \
+#  && if [ "${CUDA_VERSION_FOR_CUPY}" = "113" ]; then \
+#         pip install cupy-cuda112==${CUPY_CUDA_VERSION} -f ${CUPY_CUDA_WHEEL}; \
+#     else \
+#         pip install cupy-cuda${CUDA_VERSION_FOR_CUPY}==${CUPY_CUDA_VERSION} -f ${CUPY_CUDA_WHEEL}; \
+#     fi \
 # prepre jupyter
  && conda uninstall jupyterlab --force -y \
  && pip install jupyterlab==${JUPYTER_VERSION} \
