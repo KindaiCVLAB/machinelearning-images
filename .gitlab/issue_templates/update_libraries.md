@@ -1,7 +1,7 @@
 # チェック先
 - [PyPI](https://pypi.org/)
 - [nodesource](https://github.com/nodesource/distributions#debinstall)
-- [pyenv python](https://github.com/pyenv/pyenv/tree/master/plugins/python-build/share/python-build)
+- [pyenv anaconda version](https://github.com/pyenv/pyenv/tree/master/plugins/python-build/share/python-build)
 - [pyenv version](https://github.com/pyenv/pyenv/releases)
 - [torch stable wheel file](https://download.pytorch.org/whl/torch_stable.html)
 - torch nightly
@@ -12,19 +12,35 @@
 - [cupy-cuda](https://github.com/cupy/cupy)
 
 # バージョン
-- [ ] pyenv:
-- [ ] nodejs:
-- [ ] anaconda3:
-- [ ] opencv-python:
-- [ ] tensorflow-gpu:
-- [ ] tf-nightly:
-- [ ] keras:
-- [ ] torch:
-- [ ] torch-nightly:
-- [ ] torchvision:
-- [ ] torchvision-nightly:
-- [ ] torchsummary:
-- [ ] jupyterlab:
-- [ ] cupy-cuda:
-- [ ] code-server:
-- [ ] rclone:
+
+## Stable
+
+- [ ] pyenv: 
+- [ ] nodejs: 
+- [ ] anaconda3: 
+- [ ] opencv-python: 
+- [ ] tensorflow-gpu: 
+- [ ] keras: 
+- [ ] torch: 
+- [ ] torchvision: 
+- [ ] torchsummary: 
+- [ ] jupyterlab: 
+- [ ] cupy-cuda: 
+- [ ] code-server: 
+- [ ] rclone: 
+
+## Feature
+
+- [ ] pyenv: 
+- [ ] nodejs: 
+- [ ] anaconda3: 
+- [ ] opencv-python: 
+- [ ] tf-nightly-gpu: 
+- [ ] keras: 
+- [ ] torch-nightly: 
+- [ ] torchvision-nightly: 
+- [ ] torchsummary: 
+- [ ] jupyterlab: 
+- [ ] cupy-cuda: 
+- [ ] code-server: 
+- [ ] rclone: 

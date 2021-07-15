@@ -1,5 +1,5 @@
 ARG BASE_IMG_CUDA_VERSION
-FROM nvcr.io/nvidia/cuda:${BASE_IMG_CUDA_VERSION}-devel-ubuntu18.04
+FROM nvidia/cuda:${BASE_IMG_CUDA_VERSION}-devel-ubuntu18.04
 LABEL maintainer="CvlabKubernetesService"
 
 ENV USER_NAME user
@@ -35,6 +35,8 @@ ENV CUPY_CUDA_WHEEL https://github.com/cupy/cupy/releases/v${CUPY_CUDA_VERSION}
 ARG NODEJS_VERSION
 ARG CODE_SERVER_VERSION
 ARG RCLONE_VERSION
+
+SHELL ["/bin/bash", "-c"]
 
 # install tools by apt.
 RUN apt-get update \
@@ -158,11 +160,11 @@ RUN mkdir -p .config/rclone
 
 # set alias for git
 COPY configs/git/sub_cmd_alias .git_sub_cmd_alias
-RUN echo "\n#git alias" >> ~/.bashrc \
+RUN echo -e "\n#git alias" >> ~/.bashrc \
  && echo "source /usr/share/bash-completion/completions/git" >> ~/.bashrc \
  && echo "alias g=\"git\"" >> ~/.bashrc \
  && echo "__git_complete g __git_main" >> ~/.bashrc \
- && echo "source ~/.git_sub_cmd_alias\n" >> ~/.bashrc \
+ && echo -e "source ~/.git_sub_cmd_alias\n" >> ~/.bashrc \
  && git config --global alias.cl clone \
  && git config --global alias.s status \
  && git config --global alias.ck checkout \

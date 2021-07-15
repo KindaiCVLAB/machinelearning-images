@@ -1,5 +1,7 @@
 cuda10.2-cudnn8-test:
   needs: []
+  tags:
+    - gitlab-org-docker
   extends:
     - .cuda10.2-cudnn8-env-vars
     - .test-image-builder
@@ -12,6 +14,8 @@ cuda10.2-cudnn8-unittest-test:
 
 cuda10.2-cudnn8:
   needs: []
+  tags:
+    - gitlab-org-docker
   extends:
     - .cuda10.2-cudnn8-env-vars
     - .container-image-builder

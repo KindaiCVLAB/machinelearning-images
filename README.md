@@ -50,7 +50,7 @@
 
 # コンテナイメージ の詳細
 
-ベースイメージは全て [NGC](https://ngc.nvidia.com/catalog/containers) の cuda-cudnn を使用しています．
+ベースイメージは全て https://hub.docker.com/r/nvidia/cuda を使用しています．
 
 ## 各イメージ共通ライブラリ & パッケージ
 
@@ -243,8 +243,8 @@
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.2.54|
-|tensorflow-gpu|2.6.0.dev20210614|
-|keras|2.4.3|
+|tensorflow-gpu|2.6.0rc1|
+|keras|2.6.0rc2|
 |torch|1.10.0.dev20210615+cu111|
 |torchvision|0.11.0.dev20210615+cu111|
 |torchsummary|1.5.1|
@@ -266,8 +266,8 @@
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.2.54|
-|tensorflow-gpu|2.6.0.dev20210614|
-|keras|2.4.3|
+|tensorflow-gpu|2.6.0rc1|
+|keras|2.6.0rc2|
 |torch|1.10.0.dev20210615+cu111|
 |torchvision|0.11.0.dev20210615+cu111|
 |torchsummary|1.5.1|
