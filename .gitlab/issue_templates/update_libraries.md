@@ -9,6 +9,7 @@
   - [cuda11.3.x](https://download.pytorch.org/whl/nightly/cu113/torch_nightly.html)
 - [code-server](https://github.com/cdr/code-server)
 - [rclone](https://github.com/rclone/rclone)
+- [cupy-cuda](https://github.com/cupy/cupy)
 
 # バージョン
 - [ ] pyenv:
