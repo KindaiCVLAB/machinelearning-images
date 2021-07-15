@@ -249,7 +249,7 @@
 |torchvision|0.11.0.dev20210615+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
-|cupy-cuda112|9.1.0|
+|cupy-cuda112|10.0.0a2|
 |code-server|3.10.2|
 |rclone|1.55.1|
 
@@ -272,7 +272,7 @@
 |torchvision|0.11.0.dev20210615+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
-|cupy-cuda112|9.1.0|
+|cupy-cuda112|10.0.0a2|
 |code-server|3.10.2|
 |rclone|1.55.1|
 
