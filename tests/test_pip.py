@@ -13,7 +13,7 @@ class TestVersionsByPip(unittest.TestCase):
 
     actual = search_pkg_version("jupyterlab")
     expected = os.environ["JUPYTER_VERSION"]
-    self.assertEqual(expected, actual)  
+    self.assertEqual(expected, actual)
 
   def test_torch_summary_version(self):
     """test torch summary version
@@ -36,7 +36,11 @@ class TestVersionsByPip(unittest.TestCase):
     """test keras version
     """
 
-    actual = search_pkg_version("Keras")
+    if os.environ["CONTAINER_VERSION"] == "cuda11.3.0-cudnn8" or os.environ["CONTAINER_VERSION"] == "cuda11.3.1-cudnn8":
+      actual = search_pkg_version("keras")
+    else:
+      actual = search_pkg_version("Keras")
+
     expected = os.environ["KERAS_VERSION"]
     self.assertEqual(expected, actual)
 
