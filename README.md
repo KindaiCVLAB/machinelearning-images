@@ -51,6 +51,7 @@
 # コンテナイメージ の詳細
 
 ベースイメージは全て https://hub.docker.com/r/nvidia/cuda を使用しています．
+また，ベースイメージの使用 OS バージョンは cuda10.2 は ubuntu18.04，それ以外は ubuntu20.04 を使用しています．
 
 ## 各イメージ共通ライブラリ & パッケージ
 
@@ -102,7 +103,7 @@
 |CUDA|10.2|
 |cudnn|7.6.5.32 or 8.2.0.53|
 |pyenv|1.2.22|
-|nodejs|15.x|
+|nodejs|16.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
 |tensorflow-gpu|2.4.0|
@@ -125,7 +126,7 @@
 |CUDA|11.0.3|
 |cudnn|8.0.5.39|
 |pyenv|1.2.23|
-|nodejs|15.x|
+|nodejs|16.x|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
 |tensorflow-gpu|2.4.0|

@@ -1,6 +1,7 @@
 ARG BASE_IMG_CUDA_VERSION
-FROM nvidia/cuda:${BASE_IMG_CUDA_VERSION}-devel-ubuntu18.04
-LABEL maintainer="CvlabKubernetesService"
+ARG BASE_IMG_OS_VERSION
+FROM nvidia/cuda:${BASE_IMG_CUDA_VERSION}-devel-${BASE_IMG_OS_VERSION}
+LABEL maintainer="CVCloud"
 
 ENV USER_NAME user
 ENV UID 1000

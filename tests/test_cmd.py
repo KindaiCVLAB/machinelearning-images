@@ -51,7 +51,7 @@ class TestVersionsByCmd(unittest.TestCase):
     """test nodejs version
     """
 
-    cmd = shlex.split("nodejs --version")
+    cmd = shlex.split("node --version")
     actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").split(".")[0]
     expected = "v" + os.environ["NODEJS_VERSION"]
     self.assertEqual(expected, actual)

@@ -13,6 +13,6 @@
     JUPYTER: "3.0.16"
     CODE_SERVER: "3.9.1"
     RCLONE: "1.55.1"
-    NODEJS: "15"
+    NODEJS: "16"
     CONTAINER_VERSION: "cuda10.2-cudnn7"
     PYENV_RELEASE_VERSION: "1.2.22"

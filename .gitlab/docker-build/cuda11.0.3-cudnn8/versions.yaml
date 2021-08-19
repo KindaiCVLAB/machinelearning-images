@@ -13,7 +13,7 @@
     JUPYTER: "3.0.16"
     CODE_SERVER: "3.9.1"
     RCLONE: "1.55.1"
-    NODEJS: "15"
+    NODEJS: "16"
     CONTAINER_VERSION: "cuda11.0.3-cudnn8"
     PYENV_RELEASE_VERSION: "1.2.23"
     TORCH_FILE: "https://download.pytorch.org/whl/torch_stable.html"
