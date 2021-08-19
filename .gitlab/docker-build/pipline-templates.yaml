@@ -10,6 +10,7 @@
       --dockerfile Dockerfile \
       --destination $CONTAINER_IMAGE_NAME:$CONTAINER_VERSION \
       --build-arg BASE_IMG_CUDA_VERSION=$BASE_IMG_CUDA_VERSION \
+      --build-arg BASE_IMG_OS_VERSION=$BASE_IMG_OS_VERSION \
       --build-arg ANACONDA_VERSION=$ANACONDA \
       --build-arg OPENCV_VERSION=$OPENCV \
       --build-arg TF_GPU_VERSION=$TF_GPU \
@@ -35,6 +36,7 @@
       -v $PWD/tests:/home/user/tests \
       -v $PWD/Makefile:/home/user/Makefile \
       -e BASE_IMG_CUDA_VERSION=$BASE_IMG_CUDA_VERSION \
+      -e BASE_IMG_OS_VERSION=$BASE_IMG_OS_VERSION \
       -e ANACONDA_VERSION=$ANACONDA \
       -e OPENCV_VERSION=$OPENCV \
       -e TF_GPU_VERSION=$TF_GPU \
@@ -61,6 +63,7 @@
   - echo IMAGE_STATUS $IMAGE_STATUS
   - echo CONTAINER_VERSION $CONTAINER_VERSION
   - echo BASE_IMG_CUDA_VERSION $BASE_IMG_CUDA_VERSION
+  - echo BASE_IMG_OS_VERSION $BASE_IMG_OS_VERSION
   - echo ANACONDA_VERSION $ANACONDA
   - echo OPENCV_VERSION $OPENCV
   - echo TF_GPU_VERSION $TF_GPU
@@ -92,6 +95,13 @@
       CONTAINER_IMAGE_NAME="$CI_REGISTRY_IMAGE";
     fi
   - BASE_IMG_CUDA_VERSION=`echo $CONTAINER_VERSION | sed 's/cuda//'`
+  - ONLY_CUDA_VERSION=$(echo $BASE_IMG_CUDA_VERSION | cut -d- -f1)
+  - >
+    if [ "$ONLY_CUDA_VERSION" = "10.2" ];then \
+      BASE_IMG_OS_VERSION="ubuntu18.04";
+    else \
+      BASE_IMG_OS_VERSION="ubuntu20.04";
+    fi;
 
 # pipline template
 .image-build:
