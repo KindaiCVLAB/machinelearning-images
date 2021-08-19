@@ -36,11 +36,14 @@ class TestVersionsByPip(unittest.TestCase):
     """test keras version
     """
 
-    if os.environ["IMAGE_STATUS"] == "feature":
-      actual = search_pkg_version("keras")
-    else:
-      actual = search_pkg_version("Keras")
+    target_image_status_list = ["feature", "stable(pytorch)", "stable(tensorflow)"]
+    for status_name in target_image_status_list:
+      if os.environ["IMAGE_STATUS"] == status_name:
+        search_name = "keras"
+        break
+      search_name = "Keras"
 
+    actual = search_pkg_version(search_name)
     expected = os.environ["KERAS_VERSION"]
     self.assertEqual(expected, actual)
 
