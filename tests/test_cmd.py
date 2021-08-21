@@ -56,5 +56,14 @@ class TestVersionsByCmd(unittest.TestCase):
     expected = "v" + os.environ["NODEJS_VERSION"]
     self.assertEqual(expected, actual)
 
+  def test_rclone_version(self):
+    """test rclone version
+    """
+
+    cmd = shlex.split("rclone version")
+    actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").splitlines()[0].split()[1]
+    expected = "v" + os.environ["RCLONE_DESIRED_VERSION"]
+    self.assertEqual(expected, actual)
+
 if __name__ == "__main__":
   unittest.main()
