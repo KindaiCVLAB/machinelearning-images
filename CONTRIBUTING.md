@@ -86,3 +86,4 @@
 - [cuda11.2.2-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.2/ubuntu20.04/devel/cudnn8/Dockerfile#L6)
 - [cuda11.3.0-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.3.0/ubuntu20.04/devel/cudnn8/Dockerfile#L6)
 - [cuda11.3.1-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.3.1/ubuntu20.04/devel/cudnn8/Dockerfile#L6)
+- [cuda11.4.0-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.4.0/ubuntu20.04/devel/cudnn8/Dockerfile#L6)
