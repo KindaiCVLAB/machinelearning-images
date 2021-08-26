@@ -51,7 +51,7 @@ jobs:
       - uses: ./.github/actions/setup-env-vars
       - uses: ./.github/actions/show-version
       - uses: ./.github/actions/build-image
-      # - uses: ./.github/actions/test-version
+      - uses: ./.github/actions/test-version
   release-image:
     if: github.event.pull_request.merged == true || github.event_name == 'schedule'
     runs-on: ubuntu-20.04
@@ -65,4 +65,4 @@ jobs:
       - uses: ./.github/actions/setup-env-vars
       - uses: ./.github/actions/show-version
       - uses: ./.github/actions/build-image
-      # - uses: ./.github/actions/test-version
+      - uses: ./.github/actions/test-version
