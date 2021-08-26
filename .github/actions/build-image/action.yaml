@@ -5,12 +5,10 @@ runs:
     -
       name: Login to DockerHub
       uses: docker/login-action@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         registry: ghcr.io
         username: ${{ env.GITHUB_ACTOR }}
-        password: ${{ env.GITHUB_TOKEN }}
+        password: ${{ env.github_token }}
     -
       name: Build and push
       uses: docker/build-push-action@v2

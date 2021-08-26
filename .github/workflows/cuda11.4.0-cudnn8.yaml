@@ -18,6 +18,7 @@ env:
   pyenv_release_version: "2.0.4"
   torch_file: "https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html"
   torch_vision_file: "https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html"
+  github_token: ${{ secrets.GITHUB_TOKEN }}
 on:
   pull_request:
     branches:

@@ -16,6 +16,7 @@ env:
   rclone: "1.55.1"
   nodejs: "16"
   pyenv_release_version: "1.2.22"
+  github_token: ${{ secrets.GITHUB_TOKEN }}
 on:
   pull_request:
     branches:
