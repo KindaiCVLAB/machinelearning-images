@@ -95,4 +95,4 @@ jobs:
             --build-arg TF_TYPE=$TF_TYPE \
             --build-arg PYENV_RELEASE_VERSION=$PYENV_RELEASE_VERSION \
             --build-arg IMAGE_STATUS=$IMAGE_STATUS .
-
+          docker images ${{ env.CONTAINER_IMAGE_NAME }}:$CONTAINER_VERSION
