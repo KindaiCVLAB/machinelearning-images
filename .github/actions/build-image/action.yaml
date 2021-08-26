@@ -8,8 +8,10 @@ runs:
       file: Dockerfile
       with:
         context: .
-        push: false
+        push: true
         tags: ${{ env.container_image_name }}:${{ env.container_version }}
+        username: ${{ secrets.GITHUB_USER }}
+        password: ${{ secrets.GITHUB_TOKEN }}
         build-args: |
           BASE_IMG_CUDA_VERSION=${{ env.base_img_cuda_version }}
           BASE_IMG_OS_VERSION=${{ env.base_img_os_version }}
