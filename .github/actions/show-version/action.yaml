@@ -1,8 +1,8 @@
 name: "setup env vars"
-inputs:
-  container_image_name:
-    description: 'image name'
-    default: 'ghcr.io/kindaicvlab/machinelearning-images'
+# inputs:
+#   container_image_name:
+#     description: 'image name'
+#     default: 'ghcr.io/kindaicvlab/machinelearning-images'
 runs:
   using: "composite"
   steps:
@@ -28,6 +28,6 @@ runs:
         echo TORCH_FILE ${{ env.torch_file }}
         echo TORCH_VISION_FILE ${{ env.torch_vision_file }}
         echo TF_TYPE ${{ env.tf_type }}
-        echo CONTAINER_IMAGE_NAME ${{ inputs.container_img_name }}
+        echo CONTAINER_IMAGE_NAME ${{ env.container_img_name }}
         echo PYENV_RELEASE_VERSION ${{ env.pyenv_release_version }}
       shell: bash

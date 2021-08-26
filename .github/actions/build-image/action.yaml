@@ -53,9 +53,9 @@ inputs:
   # torch_vision_file:
   #   description: 'torch vision file url'
   #   default: ''
-  container_image_name:
-    description: 'image name'
-    default: 'ghcr.io/kindaicvlab/machinelearning-images'
+  # container_image_name:
+  #   description: 'image name'
+  #   default: 'ghcr.io/kindaicvlab/machinelearning-images'
 runs:
   using: "composite"
   steps:
@@ -64,9 +64,9 @@ runs:
       id: buildx
       with:
         install: true
-    - name: Build ${{ inputs.container_image_name }}:${{ env.container_version }}
+    - name: Build ${{ env.container_image_name }}:${{ env.container_version }}
       run: |
-        docker build -t ${{ inputs.container_image_name }}:${{ env.container_version }} \
+        docker build -t ${{ env.container_image_name }}:${{ env.container_version }} \
           --build-arg BASE_IMG_CUDA_VERSION=${{ env.base_img_cuda_version }} \
           --build-arg BASE_IMG_OS_VERSION=${{ env.base_img_os_version }} \
           --build-arg ANACONDA_VERSION=${{ env.anaconda }} \
