@@ -87,3 +87,4 @@ runs:
           --build-arg TF_TYPE=${{ env.tf_type }} \
           --build-arg PYENV_RELEASE_VERSION=${{ env.pyenv_release_version }} \
           --build-arg IMAGE_STATUS=${{ env.image_status }} .
+      shell: bash
