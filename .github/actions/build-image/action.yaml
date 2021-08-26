@@ -1,5 +1,5 @@
 name: "build container image"
-inputs:
+# inputs:
   # image_status:
   #   description: 'image status'
   #   default: ''
