@@ -11,7 +11,7 @@ runs:
         echo IMAGE_STATUS ${{ env.image_status }}
         echo CONTAINER_VERSION ${{ env.container_version }}
         echo BASE_IMG_CUDA_VERSION ${{ env.base_img_cuda_version }}
-        echo BASE_IMG_OS_VERSION ${{ env.base_img_cuda_version }}
+        echo BASE_IMG_OS_VERSION ${{ env.base_img_os_version }}
         echo ANACONDA_VERSION ${{ env.anaconda }}
         echo OPENCV_VERSION ${{ env.opencv }}
         echo TF_GPU_VERSION ${{ env.tf_gpu }}
