@@ -5,8 +5,8 @@ runs:
     - name: Test library version
       run: |
         docker run -u 1000 --rm ${{ env.container_image_name }}:${{ env.container_version }} \
-          --volume tests:/home/user/tests \
-          --volume Makefile:/home/user/Makefile \
+          --volume $(pwd)/tests:/home/user/tests \
+          --volume $(pwd)/Makefile:/home/user/Makefile \
           --env BASE_IMG_CUDA_VERSION=${{ env.base_img_cuda_version }} \
           --env BASE_IMG_OS_VERSION=${{ env.base_img_os_version }} \
           --env ANACONDA_VERSION=${{ env.anaconda }} \
