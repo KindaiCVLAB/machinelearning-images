@@ -9,10 +9,10 @@ ENV HOME /home/${USER_NAME}
 ENV PATH ${HOME}/.local/bin:$PATH
 RUN useradd -m -u ${UID} ${USER_NAME}
 
-# WORKDIR ${HOME}
-# ENV PYENV_ROOT ${HOME}/.pyenv
-# ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
-# ENV DEBIAN_FRONTEND=noninteractive
+WORKDIR ${HOME}
+ENV PYENV_ROOT ${HOME}/.pyenv
+ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+ENV DEBIAN_FRONTEND=noninteractive
 
 # ARG IMAGE_STATUS
 # # library version for Python
@@ -37,7 +37,7 @@ RUN useradd -m -u ${UID} ${USER_NAME}
 # ARG CODE_SERVER_VERSION
 # ARG RCLONE_VERSION
 
-# SHELL ["/bin/bash", "-c"]
+SHELL ["/bin/bash", "-c"]
 
 # # install tools by apt.
 # RUN apt-get update \
