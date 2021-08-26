@@ -1,98 +1,98 @@
-name: builds
-on:
-  push:
-    tags:
-      - v*
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
-jobs:
-  build-test:
-    runs-on: ubuntu-20.04
-    env:
-      IMAGE_STATUS: "feature"
-      CONTAINER_VERSION: "cuda11.4.0-cudnn8"
-      ANACONDA: "2021.05"
-      OPENCV: "4.5.3.56"
-      TF_TYPE: "tf-nightly"
-      TF_GPU: "2.7.0.dev20210818"
-      KERAS: "2.6.0"
-      TORCH: "1.10.0.dev20210818+cu111"
-      TORCH_VISION: "0.11.0.dev20210818+cu111"
-      TORCH_SUMMARY: "1.5.1"
-      CUPY_CUDA: "10.0.0b1"
-      JUPYTER: "3.1.7"
-      CODE_SERVER: "3.11.1"
-      RCLONE: "1.56.0"
-      NODEJS: "16"
-      PYENV_RELEASE_VERSION: "2.0.4"
-      TORCH_FILE: "https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html"
-      TORCH_VISION_FILE: "https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html"
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
-      - name: before
-        run: |
-          CUDA_MAJOR=$(echo ${CONTAINER_VERSION//cuda/} | cut -d. -f1)
-          CUDA_MINOR=$(echo $CONTAINER_VERSION | cut -d. -f2 | cut -d- -f1)
-          echo "CUDA_VERSION_FOR_CUPY=$CUDA_MAJOR$CUDA_MINOR" >> $GITHUB_ENV
-          echo "CONTAINER_IMAGE_NAME=ghcr.io/kindaicvlab/machinelearning-images" >> $GITHUB_ENV;
-          echo "BASE_IMG_CUDA_VERSION=$(echo ${CONTAINER_VERSION//cuda/})" >> $GITHUB_ENV
-          echo "BASE_IMG_OS_VERSION=ubuntu20.04" >> $GITHUB_ENV;
-      - name: setup buildkit
-        uses: docker/setup-buildx-action@v1
-        id: buildx
-        with:
-          install: true
-      - name: show version
-        run: |
-          echo IMAGE_STATUS $IMAGE_STATUS
-          echo CONTAINER_VERSION $CONTAINER_VERSION
-          echo BASE_IMG_CUDA_VERSION ${{ env.BASE_IMG_CUDA_VERSION }}
-          echo BASE_IMG_OS_VERSION ${{ env.BASE_IMG_OS_VERSION }}
-          echo ANACONDA_VERSION $ANACONDA
-          echo OPENCV_VERSION $OPENCV
-          echo TF_GPU_VERSION $TF_GPU
-          echo KERAS_VERSION $KERAS
-          echo TORCH_VERSION $TORCH
-          echo TORCH_VISION_VERSION $TORCH_VISION
-          echo TORCH_SUMMARY_VERSION $TORCH_SUMMARY
-          echo CUPY_CUDA_VERSION $CUPY_CUDA
-          echo CUDA_VERSION_FOR_CUPY ${{ env.CUDA_VERSION_FOR_CUPY }}
-          echo JUPYTER_VERSION $JUPYTER
-          echo NODEJS_VERSION $NODEJS
-          echo CODE_SERVER_VERSION $CODE_SERVER
-          echo RCLONE_VERSION $RCLONE
-          echo TORCH_FILE $TORCH_FILE
-          echo TORCH_VISION_FILE $TORCH_VISION_FILE
-          echo TF_TYPE $TF_TYPE
-          echo CONTAINER_IMAGE_NAME ${{ env.CONTAINER_IMAGE_NAME }}
-          echo PYENV_RELEASE_VERSION $PYENV_RELEASE_VERSION
-      - name: build test
-        run: |
-          docker build -t ${{ env.CONTAINER_IMAGE_NAME }}:$CONTAINER_VERSION \
-            --build-arg BASE_IMG_CUDA_VERSION=${{ env.BASE_IMG_CUDA_VERSION }} \
-            --build-arg BASE_IMG_OS_VERSION=${{ env.BASE_IMG_OS_VERSION }} \
-            --build-arg ANACONDA_VERSION=$ANACONDA \
-            --build-arg OPENCV_VERSION=$OPENCV \
-            --build-arg TF_GPU_VERSION=$TF_GPU \
-            --build-arg KERAS_VERSION=$KERAS \
-            --build-arg TORCH_VERSION=$TORCH \
-            --build-arg TORCH_VISION_VERSION=$TORCH_VISION \
-            --build-arg TORCH_SUMMARY_VERSION=$TORCH_SUMMARY \
-            --build-arg CUPY_CUDA_VERSION=$CUPY_CUDA \
-            --build-arg CUDA_VERSION_FOR_CUPY=${{ env.CUDA_VERSION_FOR_CUPY }} \
-            --build-arg JUPYTER_VERSION=$JUPYTER \
-            --build-arg NODEJS_VERSION=$NODEJS \
-            --build-arg CODE_SERVER_VERSION=$CODE_SERVER \
-            --build-arg RCLONE_VERSION=$RCLONE \
-            --build-arg TORCH_FILE=$TORCH_FILE \
-            --build-arg TORCH_VISION_FILE=$TORCH_VISION_FILE \
-            --build-arg TF_TYPE=$TF_TYPE \
-            --build-arg PYENV_RELEASE_VERSION=$PYENV_RELEASE_VERSION \
-            --build-arg IMAGE_STATUS=$IMAGE_STATUS .
-          docker images ${{ env.CONTAINER_IMAGE_NAME }}:$CONTAINER_VERSION
+# name: builds
+# on:
+#   push:
+#     tags:
+#       - v*
+#     branches:
+#       - master
+#   pull_request:
+#     branches:
+#       - master
+# jobs:
+#   build-test:
+#     runs-on: ubuntu-20.04
+#     env:
+#       IMAGE_STATUS: "feature"
+#       CONTAINER_VERSION: "cuda11.4.0-cudnn8"
+#       ANACONDA: "2021.05"
+#       OPENCV: "4.5.3.56"
+#       TF_TYPE: "tf-nightly"
+#       TF_GPU: "2.7.0.dev20210818"
+#       KERAS: "2.6.0"
+#       TORCH: "1.10.0.dev20210818+cu111"
+#       TORCH_VISION: "0.11.0.dev20210818+cu111"
+#       TORCH_SUMMARY: "1.5.1"
+#       CUPY_CUDA: "10.0.0b1"
+#       JUPYTER: "3.1.7"
+#       CODE_SERVER: "3.11.1"
+#       RCLONE: "1.56.0"
+#       NODEJS: "16"
+#       PYENV_RELEASE_VERSION: "2.0.4"
+#       TORCH_FILE: "https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html"
+#       TORCH_VISION_FILE: "https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html"
+#     steps:
+#       - name: checkout
+#         uses: actions/checkout@v2
+#         with:
+#           fetch-depth: 1
+#       - name: before
+#         run: |
+#           CUDA_MAJOR=$(echo ${CONTAINER_VERSION//cuda/} | cut -d. -f1)
+#           CUDA_MINOR=$(echo $CONTAINER_VERSION | cut -d. -f2 | cut -d- -f1)
+#           echo "CUDA_VERSION_FOR_CUPY=$CUDA_MAJOR$CUDA_MINOR" >> $GITHUB_ENV
+#           echo "CONTAINER_IMAGE_NAME=ghcr.io/kindaicvlab/machinelearning-images" >> $GITHUB_ENV
+#           echo "BASE_IMG_CUDA_VERSION=$(echo ${CONTAINER_VERSION//cuda/})" >> $GITHUB_ENV
+#           echo "BASE_IMG_OS_VERSION=ubuntu20.04" >> $GITHUB_ENV;
+#       - name: setup buildkit
+#         uses: docker/setup-buildx-action@v1
+#         id: buildx
+#         with:
+#           install: true
+#       - name: show version
+#         run: |
+#           echo IMAGE_STATUS $IMAGE_STATUS
+#           echo CONTAINER_VERSION $CONTAINER_VERSION
+#           echo BASE_IMG_CUDA_VERSION ${{ env.BASE_IMG_CUDA_VERSION }}
+#           echo BASE_IMG_OS_VERSION ${{ env.BASE_IMG_OS_VERSION }}
+#           echo ANACONDA_VERSION $ANACONDA
+#           echo OPENCV_VERSION $OPENCV
+#           echo TF_GPU_VERSION $TF_GPU
+#           echo KERAS_VERSION $KERAS
+#           echo TORCH_VERSION $TORCH
+#           echo TORCH_VISION_VERSION $TORCH_VISION
+#           echo TORCH_SUMMARY_VERSION $TORCH_SUMMARY
+#           echo CUPY_CUDA_VERSION $CUPY_CUDA
+#           echo CUDA_VERSION_FOR_CUPY ${{ env.CUDA_VERSION_FOR_CUPY }}
+#           echo JUPYTER_VERSION $JUPYTER
+#           echo NODEJS_VERSION $NODEJS
+#           echo CODE_SERVER_VERSION $CODE_SERVER
+#           echo RCLONE_VERSION $RCLONE
+#           echo TORCH_FILE $TORCH_FILE
+#           echo TORCH_VISION_FILE $TORCH_VISION_FILE
+#           echo TF_TYPE $TF_TYPE
+#           echo CONTAINER_IMAGE_NAME ${{ env.CONTAINER_IMAGE_NAME }}
+#           echo PYENV_RELEASE_VERSION $PYENV_RELEASE_VERSION
+#       - name: build test
+#         run: |
+#           docker build -t ${{ env.CONTAINER_IMAGE_NAME }}:$CONTAINER_VERSION \
+#             --build-arg BASE_IMG_CUDA_VERSION=${{ env.BASE_IMG_CUDA_VERSION }} \
+#             --build-arg BASE_IMG_OS_VERSION=${{ env.BASE_IMG_OS_VERSION }} \
+#             --build-arg ANACONDA_VERSION=$ANACONDA \
+#             --build-arg OPENCV_VERSION=$OPENCV \
+#             --build-arg TF_GPU_VERSION=$TF_GPU \
+#             --build-arg KERAS_VERSION=$KERAS \
+#             --build-arg TORCH_VERSION=$TORCH \
+#             --build-arg TORCH_VISION_VERSION=$TORCH_VISION \
+#             --build-arg TORCH_SUMMARY_VERSION=$TORCH_SUMMARY \
+#             --build-arg CUPY_CUDA_VERSION=$CUPY_CUDA \
+#             --build-arg CUDA_VERSION_FOR_CUPY=${{ env.CUDA_VERSION_FOR_CUPY }} \
+#             --build-arg JUPYTER_VERSION=$JUPYTER \
+#             --build-arg NODEJS_VERSION=$NODEJS \
+#             --build-arg CODE_SERVER_VERSION=$CODE_SERVER \
+#             --build-arg RCLONE_VERSION=$RCLONE \
+#             --build-arg TORCH_FILE=$TORCH_FILE \
+#             --build-arg TORCH_VISION_FILE=$TORCH_VISION_FILE \
+#             --build-arg TF_TYPE=$TF_TYPE \
+#             --build-arg PYENV_RELEASE_VERSION=$PYENV_RELEASE_VERSION \
+#             --build-arg IMAGE_STATUS=$IMAGE_STATUS .
+#           docker images ${{ env.CONTAINER_IMAGE_NAME }}:$CONTAINER_VERSION

@@ -1,0 +1,89 @@
+name: "build container image"
+inputs:
+  # image_status:
+  #   description: 'image status'
+  #   default: ''
+  # container_version:
+  #   description: 'base image version'
+  #   default: ''
+  # anaconda:
+  #   description: 'anaconda version'
+  #   default: ''
+  # opencv:
+  #   description: 'opencv version'
+  #   default: ''
+  # tf_type:
+  #   description: 'tensorflow or tf-nightly'
+  #   default: 'tensorflow'
+  # tf_gpu:
+  #   description: 'tensorflow-gpu version'
+  #   default: ''
+  # keras:
+  #   description: 'keras version'
+  #   default: ''
+  # torch:
+  #   description: 'pytorch version'
+  #   default: ''
+  # torch_vision:
+  #   description: 'torchvision version'
+  #   default: ''
+  # torch_summary:
+  #   description: 'torch summary version'
+  #   default: ''
+  # cupy_cuda:
+  #   description: 'cupy cuda version'
+  #   default: ''
+  # jupyter:
+  #   description: 'jupyter version'
+  #   default: ''
+  # code_server:
+  #   description: 'code-server version'
+  # rclone:
+  #   description: 'rclone version'
+  #   default: ''
+  # nodejs:
+  #   description: 'nodejs major version'
+  #   default: ''
+  # pyenv_release_version:
+  #   description: 'pyenv release version'
+  #   default: ''
+  # torch_file:
+  #   description: 'torch wheel file url'
+  #   default: ''
+  # torch_vision_file:
+  #   description: 'torch vision file url'
+  #   default: ''
+  container_image_name:
+    description: 'image name'
+    default: 'ghcr.io/kindaicvlab/machinelearning-images'
+runs:
+  using: "composite"
+  steps:
+    - name: Setup buildkit
+      uses: docker/setup-buildx-action@v1
+      id: buildx
+      with:
+        install: true
+    - name: Build ${{ inputs.container_image_name }}:${{ env.container_version }}
+      run: |
+        docker build -t ${{ inputs.container_image_name }}:${{ env.container_version }} \
+          --build-arg BASE_IMG_CUDA_VERSION=${{ env.base_img_cuda_version }} \
+          --build-arg BASE_IMG_OS_VERSION=${{ env.base_img_os_version }} \
+          --build-arg ANACONDA_VERSION=${{ env.anaconda }} \
+          --build-arg OPENCV_VERSION=${{ env.opencv }} \
+          --build-arg TF_GPU_VERSION=${{ env.tf_gpu }} \
+          --build-arg KERAS_VERSION=${{ env.keras }} \
+          --build-arg TORCH_VERSION=${{ env.torch }} \
+          --build-arg TORCH_VISION_VERSION=${{ env.torch_vision }} \
+          --build-arg TORCH_SUMMARY_VERSION=${{ env.trorch_summary }} \
+          --build-arg CUPY_CUDA_VERSION=${{ env.cupy_cuda }} \
+          --build-arg CUDA_VERSION_FOR_CUPY=${{ env.cuda_version_for_cupy }} \
+          --build-arg JUPYTER_VERSION=${{ env.jupyter }} \
+          --build-arg NODEJS_VERSION=${{ env.nodejs }} \
+          --build-arg CODE_SERVER_VERSION=${{ env.code_server }} \
+          --build-arg RCLONE_VERSION=${{ env.rclone }} \
+          --build-arg TORCH_FILE=${{ env.torch_file }} \
+          --build-arg TORCH_VISION_FILE=${{ env.torch_vision_file }} \
+          --build-arg TF_TYPE=${{ env.tf_type }} \
+          --build-arg PYENV_RELEASE_VERSION=${{ env.pyenv_release_version }} \
+          --build-arg IMAGE_STATUS=${{ env.image_status }} .

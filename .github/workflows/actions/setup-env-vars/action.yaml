@@ -1,0 +1,21 @@
+name: "show version"
+runs:
+  using: "composite"
+  steps:
+    - name: Setup cuda_version_for_cupy and base_img_cuda_version
+      run: |
+        container_version=${{ env.container_version }}
+        cuda_major=$(echo ${container_version//cuda/} | cut -d. -f1)
+        cuda_minor=$(echo $container_version | cut -d. -f2 | cut -d- -f1)
+        echo "base_img_cuda_version=$cuda_major" >> $GITHUB_ENV
+        echo "cuda_version_for_cupy=$cuda_major$cuda_minor" >> $GITHUB_ENV
+      shell: bash
+    - name: Setup base_img_os_version
+      run: |
+        only_cuda_version=$(echo ${{ env.base_img_cuda_version }} | cut -d- -f1)
+        if [ "$only_cuda_version" = "10.2" ]; then
+          echo "base_img_os_version=ubuntu18.04" >> $GITHUB_ENV
+        else
+          echo "base_img_os_version=ubuntu20.04" >> $GITHUB_ENV
+        fi
+      shell: bash
