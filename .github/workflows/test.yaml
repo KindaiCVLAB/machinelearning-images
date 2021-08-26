@@ -69,7 +69,7 @@ jobs:
           echo PYENV_RELEASE_VERSION $PYENV_RELEASE_VERSION
       - name: build test
         run: |
-          docker build -t ${{ env.CONTAINER_IMAGE_NAME }}:$CONTAINER_VERSION . \
+          docker build -t ${{ env.CONTAINER_IMAGE_NAME }}:$CONTAINER_VERSION \
             --build-arg BASE_IMG_CUDA_VERSION=${{ env.BASE_IMG_CUDA_VERSION }} \
             --build-arg BASE_IMG_OS_VERSION=${{ env.BASE_IMG_OS_VERSION }} \
             --build-arg ANACONDA_VERSION=$ANACONDA \
@@ -89,5 +89,5 @@ jobs:
             --build-arg TORCH_VISION_FILE=$TORCH_VISION_FILE \
             --build-arg TF_TYPE=$TF_TYPE \
             --build-arg PYENV_RELEASE_VERSION=$PYENV_RELEASE_VERSION \
-            --build-arg IMAGE_STATUS=$IMAGE_STATUS
+            --build-arg IMAGE_STATUS=$IMAGE_STATUS .
 
