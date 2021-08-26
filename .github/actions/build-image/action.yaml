@@ -18,7 +18,7 @@ runs:
           --build-arg KERAS_VERSION=${{ env.keras }} \
           --build-arg TORCH_VERSION=${{ env.torch }} \
           --build-arg TORCH_VISION_VERSION=${{ env.torch_vision }} \
-          --build-arg TORCH_SUMMARY_VERSION=${{ env.trorch_summary }} \
+          --build-arg TORCH_SUMMARY_VERSION=${{ env.torch_summary }} \
           --build-arg CUPY_CUDA_VERSION=${{ env.cupy_cuda }} \
           --build-arg CUDA_VERSION_FOR_CUPY=${{ env.cuda_version_for_cupy }} \
           --build-arg JUPYTER_VERSION=${{ env.jupyter }} \
