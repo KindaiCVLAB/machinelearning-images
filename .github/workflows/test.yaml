@@ -37,11 +37,11 @@ jobs:
           fetch-depth: 1
       - name: before
         run: |
-          CUDA_MAJOR=`echo $CONTAINER_VERSION | sed 's/cuda//g' | cut -d. -f1`
-          CUDA_MINOR=`echo $CONTAINER_VERSION | cut -d. -f2 | cut -d- -f1`
+          CUDA_MAJOR=$(echo ${CONTAINER_VERSION//cuda/} | cut -d. -f1)
+          CUDA_MINOR=$(echo $CONTAINER_VERSION | cut -d. -f2 | cut -d- -f1)
           echo "CUDA_VERSION_FOR_CUPY=$CUDA_MAJOR$CUDA_MINOR" >> $GITHUB_ENV
           echo "CONTAINER_IMAGE_NAME=ghcr.io/KindaiCVLAB/machinelearning-images" >> $GITHUB_ENV;
-          echo "BASE_IMG_CUDA_VERSION=`echo $CONTAINER_VERSION | sed 's/cuda//'`" >> $GITHUB_ENV
+          echo "BASE_IMG_CUDA_VERSION=$(echo ${CONTAINER_VERSION//cuda/})" >> $GITHUB_ENV
           echo "BASE_IMG_OS_VERSION="ubuntu20.04" >> $GITHUB_ENV;
       - name: show version
         run: |
