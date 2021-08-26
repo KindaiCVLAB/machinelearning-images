@@ -18,13 +18,16 @@ env:
   pyenv_release_version: "2.0.4"
   torch_file: "https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html"
   torch_vision_file: "https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html"
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
 jobs:
   build-test:
     runs-on: ubuntu-20.04
-    on:
-      pull_request:
-        branches:
-          - master
     env:
       container_image_name: "ghcr.io/kindaicvlab/machinelearning-images-test"
     steps:
@@ -36,11 +39,8 @@ jobs:
       - uses: ./.github/actions/build-image
       - run: docker images ${{ env.container_image_name }}:${{ env.container_version }}
   release-image:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
-    on:
-      push:
-        branches:
-          - master
     env:
       container_image_name: "ghcr.io/kindaicvlab/machinelearning-images"
     steps:
