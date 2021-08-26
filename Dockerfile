@@ -1,7 +1,7 @@
 ARG BASE_IMG_CUDA_VERSION
 ARG BASE_IMG_OS_VERSION
 FROM nvidia/cuda:${BASE_IMG_CUDA_VERSION}-devel-${BASE_IMG_OS_VERSION}
-LABEL maintainer="CVCloud"
+LABEL maintainer="KindaiCVLAB"
 LABEL org.opencontainers.image.source="https://github.com/kindaicvlab/machinelearning-images"
 
 ENV USER_NAME user

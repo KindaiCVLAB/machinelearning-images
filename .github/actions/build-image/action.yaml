@@ -2,32 +2,33 @@ name: "build container image"
 runs:
   using: "composite"
   steps:
-    - name: Setup buildkit
-      uses: docker/setup-buildx-action@v1
-      id: buildx
+    -
+      name: Build and push
+      uses: docker/build-push-action@v2
+      file: Dockerfile
       with:
-        install: true
-    - name: Build ${{ env.container_image_name }}:${{ env.container_version }}
-      run: |
-        docker build -t ${{ env.container_image_name }}:${{ env.container_version }} \
-          --build-arg BASE_IMG_CUDA_VERSION=${{ env.base_img_cuda_version }} \
-          --build-arg BASE_IMG_OS_VERSION=${{ env.base_img_os_version }} \
-          --build-arg ANACONDA_VERSION=${{ env.anaconda }} \
-          --build-arg OPENCV_VERSION=${{ env.opencv }} \
-          --build-arg TF_GPU_VERSION=${{ env.tf_gpu }} \
-          --build-arg KERAS_VERSION=${{ env.keras }} \
-          --build-arg TORCH_VERSION=${{ env.torch }} \
-          --build-arg TORCH_VISION_VERSION=${{ env.torch_vision }} \
-          --build-arg TORCH_SUMMARY_VERSION=${{ env.torch_summary }} \
-          --build-arg CUPY_CUDA_VERSION=${{ env.cupy_cuda }} \
-          --build-arg CUDA_VERSION_FOR_CUPY=${{ env.cuda_version_for_cupy }} \
-          --build-arg JUPYTER_VERSION=${{ env.jupyter }} \
-          --build-arg NODEJS_VERSION=${{ env.nodejs }} \
-          --build-arg CODE_SERVER_VERSION=${{ env.code_server }} \
-          --build-arg RCLONE_VERSION=${{ env.rclone }} \
-          --build-arg TORCH_FILE=${{ env.torch_file }} \
-          --build-arg TORCH_VISION_FILE=${{ env.torch_vision_file }} \
-          --build-arg TF_TYPE=${{ env.tf_type }} \
-          --build-arg PYENV_RELEASE_VERSION=${{ env.pyenv_release_version }} \
-          --build-arg IMAGE_STATUS=${{ env.image_status }} .
+        context: .
+        push: false
+        tags: ${{ env.container_image_name }}:${{ env.container_version }}
+        build-args: |
+          BASE_IMG_CUDA_VERSION=${{ env.base_img_cuda_version }}
+          BASE_IMG_OS_VERSION=${{ env.base_img_os_version }}
+          ANACONDA_VERSION=${{ env.anaconda }}
+          OPENCV_VERSION=${{ env.opencv }}
+          TF_GPU_VERSION=${{ env.tf_gpu }}
+          KERAS_VERSION=${{ env.keras }}
+          TORCH_VERSION=${{ env.torch }}
+          TORCH_VISION_VERSION=${{ env.torch_vision }}
+          TORCH_SUMMARY_VERSION=${{ env.torch_summary }}
+          CUPY_CUDA_VERSION=${{ env.cupy_cuda }}
+          CUDA_VERSION_FOR_CUPY=${{ env.cuda_version_for_cupy }}
+          JUPYTER_VERSION=${{ env.jupyter }}
+          NODEJS_VERSION=${{ env.nodejs }}
+          CODE_SERVER_VERSION=${{ env.code_server }}
+          RCLONE_VERSION=${{ env.rclone }}
+          TORCH_FILE=${{ env.torch_file }}
+          TORCH_VISION_FILE=${{ env.torch_vision_file }}
+          TF_TYPE=${{ env.tf_type }}
+          PYENV_RELEASE_VERSION=${{ env.pyenv_release_version }}
+          IMAGE_STATUS=${{ env.image_status }}
       shell: bash

@@ -38,7 +38,6 @@ jobs:
       - uses: ./.github/actions/setup-env-vars
       - uses: ./.github/actions/show-version
       - uses: ./.github/actions/build-image
-      - run: docker images ${{ env.container_image_name }}:${{ env.container_version }}
   release-image:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
@@ -52,4 +51,3 @@ jobs:
       - uses: ./.github/actions/setup-env-vars
       - uses: ./.github/actions/show-version
       - uses: ./.github/actions/build-image
-      - run: docker images ${{ env.container_image_name }}:${{ env.container_version }}
