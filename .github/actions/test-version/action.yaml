@@ -4,7 +4,7 @@ runs:
   steps:
     - name: Test library version
       run: |
-        docker run --rm -u 1000 ${{ env.container_image_name }}:${{ env.container_version }} \
+        docker run -u 1000 --rm \
           --volume $GITHUB_WORKSPACE/tests:/home/user/tests \
           --volume $GITHUB_WORKSPACE/Makefile:/home/user/Makefile \
           --env BASE_IMG_CUDA_VERSION=${{ env.base_img_cuda_version }} \
@@ -28,5 +28,6 @@ runs:
           --env CONTAINER_VERSION=${{ env.container_version }} \
           --env IMAGE_STATUS=${{ env.image_status }} \
           --env RCLONE_DESIRED_VERSION=${{ env.rclone }} \
+          ${{ env.container_image_name }}:${{ env.container_version }} \
           make unittest
       shell: bash
