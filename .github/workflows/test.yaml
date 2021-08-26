@@ -69,6 +69,7 @@ jobs:
           echo PYENV_RELEASE_VERSION $PYENV_RELEASE_VERSION
       - name: build test
         run: |
+          df -h
           docker build -t ${{ env.CONTAINER_IMAGE_NAME }}:$CONTAINER_VERSION \
             --build-arg BASE_IMG_CUDA_VERSION=${{ env.BASE_IMG_CUDA_VERSION }} \
             --build-arg BASE_IMG_OS_VERSION=${{ env.BASE_IMG_OS_VERSION }} \
