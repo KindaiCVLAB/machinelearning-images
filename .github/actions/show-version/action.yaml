@@ -1,8 +1,4 @@
 name: "setup env vars"
-# inputs:
-#   container_image_name:
-#     description: 'image name'
-#     default: 'ghcr.io/kindaicvlab/machinelearning-images'
 runs:
   using: "composite"
   steps:
