@@ -4,7 +4,7 @@ runs:
   steps:
     - name: Test library version
       run: |
-        docker run -u 1000 --rm ${{ env.container_image_name }}:${{ env.container_version }} \
+        docker run --rm -u 1000 ${{ env.container_image_name }}:${{ env.container_version }} \
           --volume $GITHUB_WORKSPACE/tests:/home/user/tests \
           --volume $GITHUB_WORKSPACE/Makefile:/home/user/Makefile \
           --env BASE_IMG_CUDA_VERSION=${{ env.base_img_cuda_version }} \
