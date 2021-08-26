@@ -67,8 +67,6 @@ jobs:
           echo TF_TYPE $TF_TYPE
           echo CONTAINER_IMAGE_NAME ${{ env.CONTAINER_IMAGE_NAME }}
           echo PYENV_RELEASE_VERSION $PYENV_RELEASE_VERSION
-      - name: show volume
-        run: df -h
       - name: build test
         run: |
           docker build -t ${{ env.CONTAINER_IMAGE_NAME }}:$CONTAINER_VERSION \
