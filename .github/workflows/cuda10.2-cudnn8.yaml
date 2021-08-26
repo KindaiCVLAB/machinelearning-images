@@ -1,0 +1,53 @@
+name: cuda10.2-cudnn8
+env:
+  image_status: "deprecated"
+  container_version: "cuda10.2-cudnn8"
+  anaconda: "2020.11"
+  opencv: "4.5.1.48"
+  tf_type: "tensorflow"
+  tf_gpu: "2.4.0"
+  keras: "2.4.3"
+  torch: "1.7.1"
+  torch_vision: "0.8.2"
+  torch_summary: "1.5.1"
+  cupy_cuda: "8.3.0"
+  jupyter: "3.0.16"
+  code_server: "3.9.1"
+  rclone: "1.55.1"
+  nodejs: "16"
+  pyenv_release_version: "1.2.22"
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+jobs:
+  build-test:
+    if: github.ref != 'master'
+    runs-on: ubuntu-20.04
+    env:
+      container_image_name: "ghcr.io/kindaicvlab/machinelearning-images-test"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - uses: ./.github/actions/setup-env-vars
+      - uses: ./.github/actions/show-version
+      - uses: ./.github/actions/build-image
+      - run: docker images ${{ env.container_image_name }}:${{ env.container_version }}
+  release-image:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-20.04
+    env:
+      container_image_name: "ghcr.io/kindaicvlab/machinelearning-images"
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - uses: ./.github/actions/setup-env-vars
+      - uses: ./.github/actions/show-version
+      - uses: ./.github/actions/build-image
+      - run: docker images ${{ env.container_image_name }}:${{ env.container_version }}
