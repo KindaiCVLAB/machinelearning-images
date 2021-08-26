@@ -22,9 +22,23 @@ on:
   pull_request:
     branches:
       - master
+    paths:
+      - .github/workflows/cuda11.4.0-cudnn8.yaml
+      - Dockerfile
+      - ".github/actions/**/*.yaml"
+      - "configs/**/*"
+      - "tests/**/*"
   push:
     branches:
       - master
+    paths:
+      - .github/workflows/cuda11.4.0-cudnn8.yaml
+      - Dockerfile
+      - ".github/actions/**/*.yaml"
+      - "configs/**/*"
+      - "tests/**/*"
+    schedule:
+      - cron: "0 4 * * 1"
 jobs:
   build-test:
     if: github.ref != 'master'
@@ -39,7 +53,7 @@ jobs:
       - uses: ./.github/actions/show-version
       - uses: ./.github/actions/build-image
   release-image:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true || github.event_name == 'schedule'
     runs-on: ubuntu-20.04
     env:
       container_image_name: "ghcr.io/kindaicvlab/machinelearning-images"
