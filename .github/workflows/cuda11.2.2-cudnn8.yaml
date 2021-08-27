@@ -1,0 +1,70 @@
+name: cuda11.2.2-cudnn8
+env:
+  image_status: "stable(tensorflow)"
+  container_version: "cuda11.2.2-cudnn8"
+  anaconda: "2021.05"
+  opencv: "4.5.3.56"
+  tf_type: "tensorflow"
+  tf_gpu: "2.6.0"
+  keras: "2.6.0"
+  torch: "1.9.0+cu111"
+  torch_vision: "0.10.0+cu111"
+  torch_summary: "1.5.1"
+  cupy_cuda: "9.3.0"
+  jupyter: "3.1.7"
+  code_server: "3.11.1"
+  rclone: "1.56.0"
+  nodejs: "16"
+  pyenv_release_version: "2.0.4"
+  torch_file: "https://download.pytorch.org/whl/torch_stable.html"
+  torch_vision_file: "https://download.pytorch.org/whl/torch_stable.html"
+  github_token: ${{ secrets.GITHUB_TOKEN }}
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - .github/workflows/cuda11.2.2-cudnn8.yaml
+      - Dockerfile
+      - ".github/actions/**/*.yaml"
+      - "configs/**/*"
+      - "tests/**/*"
+  push:
+    branches:
+      - master
+    paths:
+      - .github/workflows/cuda11.2.2-cudnn8.yaml
+      - Dockerfile
+      - ".github/actions/**/*.yaml"
+      - "configs/**/*"
+      - "tests/**/*"
+    schedule:
+      - cron: "0 4 * * 1"
+jobs:
+  build-test:
+    if: github.ref != 'master'
+    runs-on: ubuntu-20.04
+    env:
+      container_image_name: "ghcr.io/kindaicvlab/machinelearning-images-test"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - uses: ./.github/actions/setup-env-vars
+      - uses: ./.github/actions/show-version
+      - uses: ./.github/actions/build-image
+      - uses: ./.github/actions/test-version
+  release-image:
+    if: github.event.pull_request.merged == true || github.event_name == 'schedule'
+    runs-on: ubuntu-20.04
+    env:
+      container_image_name: "ghcr.io/kindaicvlab/machinelearning-images"
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - uses: ./.github/actions/setup-env-vars
+      - uses: ./.github/actions/show-version
+      - uses: ./.github/actions/build-image
+      - uses: ./.github/actions/test-version
