@@ -1,22 +1,42 @@
-# CVLAB Original Container Images for Machine Learning
+[![GitHub license](https://img.shields.io/github/license/KindaiCVLAB/machinelearning-images?color=blue)](https://github.com/KindaiCVLAB/machinelearning-images/blob/master/LICENSE)
+[![cuda10.2-cudnn7](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda10.2-cudnn7.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda10.2-cudnn7.yaml)
+[![cuda10.2-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda10.2-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda10.2-cudnn8.yaml)
+[![cuda11.0.3-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.0.3-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.0.3-cudnn8.yaml)
+[![cuda11.1.1-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.1.1-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.1.1-cudnn8.yaml)
+[![cuda11.2.0-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.2.0-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.2.0-cudnn8.yaml)
+[![cuda11.2.1-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.2.1-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.2.1-cudnn8.yaml)
+[![cuda11.2.2-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.2.2-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.2.2-cudnn8.yaml)
+[![cuda11.3.0-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.3.0-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.3.0-cudnn8.yaml)
+[![cuda11.3.1-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.3.1-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.3.1-cudnn8.yaml)
+[![cuda11.4.0-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.4.0-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.4.0-cudnn8.yaml)
 
-本リポジトリは CVLAB. メンバー用に作成した MachineLearning 用コンテナイメージを保管するリポジトリです． 主に CKS で利用されることを想定して作成されています．
+# Container Images for Machine Learning
 
-# 概要
+本リポジトリは Machine Learning 用コンテナイメージを保管するリポジトリです．
 
-- 全てのコンテナイメージは権限設定を行っており， UID 1000 で起動した場合のみ正常に動作します．そのためコンテナ起動後の pip や conda を用いたライブラリの追加は可能ですが，apt 経由でのパッケージの追加はできません．
+## 概要
 
-- apt を使ったパッケージ類でサポートして欲しい物がある場合，以下 2種類の方法で依頼することができます．(希望に答えられない場合もあります．)
-- pip や conda のライブラリのデフォルト追加依頼も下記で可能です．
-  1. Issue を立てて機能リクエストを作成する
-  2. 入れて欲しいパッケージやライブリを含んだ Dockerfile を作成して PullRequest を出す．
-  - __Slack での依頼は受け付けておりません．__
+全てのコンテナイメージは，UID 1000 で起動した場合のみ正常に動作します．
+そのためコンテナ起動後の pip や conda を用いたライブラリの追加は可能ですが，apt 経由でのパッケージの追加はできません．
 
-# 動作状況
+## イメージ一覧
+
+- `ghcr.io/kindaicvlab/machinelearning-images:cuda10.2-cudnn7`
+- `ghcr.io/kindaicvlab/machinelearning-images:cuda10.2-cudnn8`
+- `ghcr.io/kindaicvlab/machinelearning-images:cuda11.0.3-cudnn8`
+- `ghcr.io/kindaicvlab/machinelearning-images:cuda11.1.1-cudnn8`
+- `ghcr.io/kindaicvlab/machinelearning-images:cuda11.2.0-cudnn8`
+- `ghcr.io/kindaicvlab/machinelearning-images:cuda11.2.1-cudnn8`
+- `ghcr.io/kindaicvlab/machinelearning-images:cuda11.2.2-cudnn8`
+- `ghcr.io/kindaicvlab/machinelearning-images:cuda11.3.0-cudnn8`
+- `ghcr.io/kindaicvlab/machinelearning-images:cuda11.3.1-cudnn8`
+- `ghcr.io/kindaicvlab/machinelearning-images:cuda11.4.0-cudnn8`
+
+## 動作状況
 
 全てのイメージを全ての環境でテストすることはできないので以下の動作状況は参考程度にしてください．
 
-## イメージのステータスについて
+### イメージのステータスについて
 
 |    STATUS    | Description |
 |:------------:|:-----------:|
@@ -27,43 +47,41 @@
 |   `feature`  | 新機能追加中のため特定の環境でしか動作しません．|
 |    `alpha`   | 一部 alpha バージョンのパッケージがインストールされていることを示します.|
 
-## イメージのステータス一覧
+### イメージのステータス一覧
 
-表のサーバでの動作状況において `yes` がついているものは確認したものですが，`no` の物は未確認のため動かないという意味ではないです．
+|        Image        |       Status       |
+|:-------------------:|:------------------:|
+|  `cuda10.0-cudnn7`  |      `closed`      |
+|  `cuda10.1-cudnn7`  |      `closed`      |
+|  `cuda10.1-cudnn8`  |      `closed`      |
+|  `cuda11.0-cudnn8`  |      `closed`      |
+|  `cuda11.1-cudnn8`  |      `closed`      |
+|  `cuda10.2-cudnn7`  |     `deprecated`   |
+|  `cuda10.2-cudnn8`  |     `deprecated`   |
+| `cuda11.0.3-cudnn8` |     `deprecated`   |
+| `cuda11.1.1-cudnn8` |  `stable(pytorch)` |
+| `cuda11.2.0-cudnn8` |     `deprecated`   |
+| `cuda11.2.1-cudnn8` |     `deprecated`   |
+| `cuda11.2.2-cudnn8` |`stable(tensorflow)`|
+| `cuda11.3.0-cudnn8` |      `feature`     |
+| `cuda11.3.1-cudnn8` |      `feature`     |
+| `cuda11.4.0-cudnn8` |      `feature`     |
 
-|        Image        |       Status       | Server |
-|:-------------------:|:------------------:|:------:|
-|  `cuda10.0-cudnn7`  |      `closed`      |   `no` |
-|  `cuda10.1-cudnn7`  |      `closed`      |   `no` |
-|  `cuda10.1-cudnn8`  |      `closed`      |   `no` |
-|  `cuda11.0-cudnn8`  |      `closed`      |   `no` |
-|  `cuda11.1-cudnn8`  |      `closed`      |   `no` |
-|  `cuda10.2-cudnn7`  |     `deprecated`   |  `yes` |
-|  `cuda10.2-cudnn8`  |     `deprecated`   |  `yes` |
-| `cuda11.0.3-cudnn8` |     `deprecated`   |  `yes` |
-| `cuda11.1.1-cudnn8` |  `stable(pytorch)` |  `yes` |
-| `cuda11.2.0-cudnn8` |     `deprecated`   |  `yes` |
-| `cuda11.2.1-cudnn8` |     `deprecated`   |  `yes` |
-| `cuda11.2.2-cudnn8` |`stable(tensorflow)`|  `yes` |
-| `cuda11.3.0-cudnn8` |      `feature`     |  `yes` |
-| `cuda11.3.1-cudnn8` |      `feature`     |  `yes` |
-| `cuda11.4.0-cudnn8` |      `feature`     |  `yes` |
-
-# コンテナイメージ の詳細
+## コンテナイメージ の詳細
 
 ベースイメージは全て https://hub.docker.com/r/nvidia/cuda を使用しています．
 また，ベースイメージの使用 OS バージョンは cuda10.2 は ubuntu18.04，それ以外は ubuntu20.04 を使用しています．
 
-## 各イメージ共通ライブラリ & パッケージ
+### 各イメージ共通ライブラリ & パッケージ
 
 - 各イメージで共通で使用されている物一覧です．
 - バージョンはコンテナイメージがビルドされた時点での最新のものになっています．
-- ビルド日は container registry の以下のような項目を確認してください．
+- ビルド日は package registry の以下のような項目を確認してください．
   - `Published about 20 hours ago · Digest`
 
 - 共通イメージを最新に保つため一定期間毎にコンテナイメージは再ビルドされます．
 
-### パッケージ
+#### パッケージ
 - curl
 - wget
 - git
@@ -80,7 +98,7 @@
 - libgl1-mesa-dev(for opencv)
 - libxrender1(for opencv)
 
-### Python ライブラリ
+#### Python ライブラリ
 - tqdm
 - addict
 - progressbar
@@ -94,7 +112,7 @@
 - tensorflow_model_optimization
 - Keras-Applications
 
-## cuda10.2
+### cuda10.2
 
 - STATUS: Deprecated
 - cuda10.2-cudnn7 & cuda10.2-cudnn8 イメージにのみ含まれる物を示しています．
@@ -117,7 +135,7 @@
 |code-server|3.9.1|
 |rclone|1.55.1|
 
-## cuda11.0.3
+### cuda11.0.3
 
 - STATUS: Deprecated
 - cuda11.0.3-cudnn8 イメージにのみ含まれる物を示しています．
@@ -140,7 +158,7 @@
 |code-server|3.9.1|
 |rclone|1.55.1|
 
-## cuda11.1.1
+### cuda11.1.1
 
 - STATUS: Stable(Pytorch)
 - cuda11.1.1-cudnn8 イメージにのみ含まれる物を示しています．
@@ -163,7 +181,7 @@
 |code-server|3.11.1|
 |rclone|1.56.0|
 
-## cuda11.2.0
+### cuda11.2.0
 
 - STATUS: Deprecated
 - cuda11.2.0-cudnn8 イメージにのみ含まれる物を示しています．
@@ -186,7 +204,7 @@
 |code-server|3.10.2|
 |rclone|1.55.1|
 
-## cuda11.2.1
+### cuda11.2.1
 
 - STATUS: Deprecated
 - cuda11.2.1-cudnn8 イメージにのみ含まれる物を示しています．
@@ -209,7 +227,7 @@
 |code-server|3.10.2|
 |rclone|1.55.1|
 
-## cuda11.2.2
+### cuda11.2.2
 
 - STATUS: Stable(Tensorflow)
 - cuda11.2.2-cudnn8 イメージにのみ含まれる物を示しています．
@@ -232,7 +250,7 @@
 |code-server|3.11.1|
 |rclone|1.56.0|
 
-## cuda11.3.0
+### cuda11.3.0
 
 - STATUS: Feature
 - cuda11.3.0-cudnn8 イメージにのみ含まれる物を示しています．
@@ -255,7 +273,7 @@
 |code-server|3.11.1|
 |rclone|1.56.0|
 
-## cuda11.3.1
+### cuda11.3.1
 
 - STATUS: Feature
 - cuda11.3.1-cudnn8 イメージにのみ含まれる物を示しています．
@@ -278,7 +296,7 @@
 |code-server|3.11.1|
 |rclone|1.56.0|
 
-## cuda11.4.0
+### cuda11.4.0
 
 - STATUS: Feature
 - cuda11.4.0-cudnn8 イメージにのみ含まれる物を示しています．
@@ -301,9 +319,9 @@
 |code-server|3.11.1|
 |rclone|1.56.0|
 
-# 各種ツール類
+## 各種ツール類
 
-## jupyterlab アドオン拡張ツール
+### jupyterlab アドオン拡張ツール
 
 |拡張ツール名|バージョン|
 |:---:|:---:|
@@ -312,7 +330,7 @@
 |widgetsnbextension|latest|
 
 
-## code-server アドオン拡張ツール
+### code-server アドオン拡張ツール
 
 |拡張ツール名|バージョン|
 |:---:|:---:|
