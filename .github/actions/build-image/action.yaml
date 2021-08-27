@@ -16,7 +16,7 @@ runs:
         context: .
         file: Dockerfile
         push: true
-        tags: "${{ env.container_image_name }}":"${{ env.container_version }}"
+        tags: ${{ env.container_image_name }}:${{ env.container_version }}
         build-args: |
           BASE_IMG_CUDA_VERSION=${{ env.base_img_cuda_version }}
           BASE_IMG_OS_VERSION=${{ env.base_img_os_version }}
