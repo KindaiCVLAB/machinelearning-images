@@ -9,7 +9,7 @@
 - apt を使ったパッケージ類でサポートして欲しい物がある場合，以下 2種類の方法で依頼することができます．(希望に答えられない場合もあります．)
 - pip や conda のライブラリのデフォルト追加依頼も下記で可能です．
   1. Issue を立てて機能リクエストを作成する
-  2. 入れて欲しいパッケージやライブリを含んだ Dockerfile を作成して MergeRequest を出す．
+  2. 入れて欲しいパッケージやライブリを含んだ Dockerfile を作成して PullRequest を出す．
   - __Slack での依頼は受け付けておりません．__
 
 # 動作状況
@@ -59,7 +59,7 @@
 - 各イメージで共通で使用されている物一覧です．
 - バージョンはコンテナイメージがビルドされた時点での最新のものになっています．
 - ビルド日は container registry の以下のような項目を確認してください．
-  - `Published to the kindaicvlab/cvcloud/machinelearning-images image repository at 06:56 GMT+0900 on 2021-05-22`
+  - `Published about 20 hours ago · Digest`
 
 - 共通イメージを最新に保つため一定期間毎にコンテナイメージは再ビルドされます．
 

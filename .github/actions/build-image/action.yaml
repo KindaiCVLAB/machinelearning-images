@@ -1,0 +1,40 @@
+name: "build container image"
+runs:
+  using: "composite"
+  steps:
+    -
+      name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ env.github_token }}
+    -
+      name: Build and push
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        file: Dockerfile
+        push: true
+        tags: ${{ env.container_image_name }}:${{ env.container_version }}
+        build-args: |
+          BASE_IMG_CUDA_VERSION=${{ env.base_img_cuda_version }}
+          BASE_IMG_OS_VERSION=${{ env.base_img_os_version }}
+          ANACONDA_VERSION=${{ env.anaconda }}
+          OPENCV_VERSION=${{ env.opencv }}
+          TF_GPU_VERSION=${{ env.tf_gpu }}
+          KERAS_VERSION=${{ env.keras }}
+          TORCH_VERSION=${{ env.torch }}
+          TORCH_VISION_VERSION=${{ env.torch_vision }}
+          TORCH_SUMMARY_VERSION=${{ env.torch_summary }}
+          CUPY_CUDA_VERSION=${{ env.cupy_cuda }}
+          CUDA_VERSION_FOR_CUPY=${{ env.cuda_version_for_cupy }}
+          JUPYTER_VERSION=${{ env.jupyter }}
+          NODEJS_VERSION=${{ env.nodejs }}
+          CODE_SERVER_VERSION=${{ env.code_server }}
+          RCLONE_VERSION=${{ env.rclone }}
+          TORCH_FILE=${{ env.torch_file }}
+          TORCH_VISION_FILE=${{ env.torch_vision_file }}
+          TF_TYPE=${{ env.tf_type }}
+          PYENV_RELEASE_VERSION=${{ env.pyenv_release_version }}
+          IMAGE_STATUS=${{ env.image_status }}

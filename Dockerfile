@@ -1,7 +1,8 @@
 ARG BASE_IMG_CUDA_VERSION
 ARG BASE_IMG_OS_VERSION
 FROM nvidia/cuda:${BASE_IMG_CUDA_VERSION}-devel-${BASE_IMG_OS_VERSION}
-LABEL maintainer="CVCloud"
+LABEL maintainer="KindaiCVLAB"
+LABEL org.opencontainers.image.source="https://github.com/kindaicvlab/machinelearning-images"
 
 ENV USER_NAME user
 ENV UID 1000
@@ -183,12 +184,11 @@ RUN echo -e "\n#git alias" >> ~/.bashrc \
 
 # copy settings.json for code-server
 RUN mkdir -p .local/share/code-server/User
-COPY configs/vscode .local/share/code-server/User/cvcloud
+COPY --chown=${UID} configs/vscode .local/share/code-server/User/cvcloud
 
 WORKDIR ${HOME}/.local/share/code-server/User/cvcloud
-RUN cat container-building.json | sed "s/@@ANACONDA_VERSION@@/${ANACONDA_VERSION}/" > addon.json \
- && jq -s add base.json addon.json > ../settings.json \
- && rm addon.json \
+RUN sed -i "s/@@ANACONDA_VERSION@@/${ANACONDA_VERSION}/" container-building.json \
+ && jq -s add base.json container-building.json > ../settings.json \
  && mv keybindings.json ../keybindings.json
 
 # install specify ms-python for codeserver(<= 3.9.0)
