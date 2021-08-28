@@ -37,7 +37,7 @@ jobs:
     if: github.event.action != 'closed'
     runs-on: ubuntu-20.04
     env:
-      container_image_name: "ghcr.io/kindaicvlab/machinelearning-images-test"
+      container_image_name: "ghcr.io/kindaicvlab/machinelearning-images/test"
     steps:
       - uses: actions/checkout@v2
         with:
