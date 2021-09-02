@@ -319,6 +319,29 @@
 |code-server|3.11.1|
 |rclone|1.56.0|
 
+### cuda11.4.1
+
+ - STATUS: Feature
+ - cuda11.4.1-cudnn8 イメージにのみ含まれる物を示しています．
+
+ |ライブラリ名 & パッケージ名|バージョン|
+ |:---:|:---:|
+ |CUDA|11.4.1|
+ |cudnn|8.2.2.26|
+ |pyenv|2.0.4|
+ |nodejs|16.x|
+ |anaconda3|2021.05|
+ |opencv-python|4.5.3.56|
+ |tensorflow-gpu|2.7.0.dev20210818|
+ |keras|2.6.0|
+ |torch|1.10.0.dev20210818+cu111|
+ |torchvision|0.11.0.dev20210818+cu111|
+ |torchsummary|1.5.1|
+ |jupyterlab|3.1.7|
+ |cupy-cuda112|10.0.0b1|
+ |code-server|3.11.1|
+ |rclone|1.56.0|
+
 ## 各種ツール類
 
 ### jupyterlab アドオン拡張ツール
