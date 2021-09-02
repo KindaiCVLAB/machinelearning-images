@@ -9,6 +9,7 @@
 [![cuda11.3.0-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.3.0-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.3.0-cudnn8.yaml)
 [![cuda11.3.1-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.3.1-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.3.1-cudnn8.yaml)
 [![cuda11.4.0-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.4.0-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.4.0-cudnn8.yaml)
+[![cuda11.4.1-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.4.1-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.4.1-cudnn8.yaml)
 
 # Container Images for Machine Learning
 
@@ -31,6 +32,7 @@
 - `ghcr.io/kindaicvlab/machinelearning-images:cuda11.3.0-cudnn8`
 - `ghcr.io/kindaicvlab/machinelearning-images:cuda11.3.1-cudnn8`
 - `ghcr.io/kindaicvlab/machinelearning-images:cuda11.4.0-cudnn8`
+- `ghcr.io/kindaicvlab/machinelearning-images:cuda11.4.1-cudnn8`
 
 ## 動作状況
 
@@ -66,6 +68,7 @@
 | `cuda11.3.0-cudnn8` |      `feature`     |
 | `cuda11.3.1-cudnn8` |      `feature`     |
 | `cuda11.4.0-cudnn8` |      `feature`     |
+| `cuda11.4.1-cudnn8` |      `feature`     |
 
 ## コンテナイメージ の詳細
 
