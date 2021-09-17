@@ -181,7 +181,7 @@
 |torchsummary|1.5.1|
 |jupyterlab|3.1.12|
 |cupy-cuda111|9.4.0|
-|code-server|3.11.1|
+|code-server|3.12.0|
 |rclone|1.56.0|
 
 ### cuda11.2.0
@@ -250,7 +250,7 @@
 |torchsummary|1.5.1|
 |jupyterlab|3.1.12|
 |cupy-cuda112|9.4.0|
-|code-server|3.11.1|
+|code-server|3.12.0|
 |rclone|1.56.0|
 
 ### cuda11.3.0
@@ -272,8 +272,8 @@
 |torchvision|0.11.0.dev20210915+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.1.12|
-|cupy-cuda112|10.0.0b1|
-|code-server|3.11.1|
+|cupy-cuda112|10.0.0b2|
+|code-server|3.12.0|
 |rclone|1.56.0|
 
 ### cuda11.3.1
@@ -295,8 +295,8 @@
 |torchvision|0.11.0.dev20210915+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.1.12|
-|cupy-cuda112|10.0.0b1|
-|code-server|3.11.1|
+|cupy-cuda112|10.0.0b2|
+|code-server|3.12.0|
 |rclone|1.56.0|
 
 ### cuda11.4.0
@@ -318,8 +318,8 @@
 |torchvision|0.11.0.dev20210915+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.1.12|
-|cupy-cuda112|10.0.0b1|
-|code-server|3.11.1|
+|cupy-cuda112|10.0.0b2|
+|code-server|3.12.0|
 |rclone|1.56.0|
 
 ### cuda11.4.1
@@ -341,8 +341,8 @@
  |torchvision|0.11.0.dev20210915+cu111|
  |torchsummary|1.5.1|
  |jupyterlab|3.1.12|
- |cupy-cuda112|10.0.0b1|
- |code-server|3.11.1|
+ |cupy-cuda112|10.0.0b2|
+ |code-server|3.12.0|
  |rclone|1.56.0|
 
 ## 各種ツール類
