@@ -5,7 +5,7 @@
 3. リモートブランチに push します．
 4. master ブランチへの Pull Request をテンプレートを用いて作成します．その際，1 で作成した Issue 番号を貼り付けます．
 5. 作業中の場合は Draft マークをつけます．
-6. 変更が完了して，全てのビルドおよびテストに合格したら iwai 及び M1 1名に レビューリクエストを送ります．
+6. 変更が完了して，全てのビルドおよびテストに合格したら `tenzen-y` 及び M1 1名に レビューリクエストを送ります．
 7. 2名から Approval が付いたら Merge します．
 
 # ライブラリバージョンのアップデート基準
@@ -24,17 +24,16 @@
 付帯ステータスである alpha は nightly バージョンのライブラリを使用している場合やサーバで対応していないバージョンの cuda を使用している場合につける必要があります．
 
 
-それぞれ 5 つのステータスごとにライブラリのアップデート基準が存在するので，以下に記述します．基準について変更する必要があると感じた場合は Issue を発行してください．
+それぞれ 5 つのステータスごとにライブラリのアップデート基準が存在するので，以下に記述します．基準について変更する必要があると感じた場合は issue を発行してください．
 
 - ベースイメージ cuda バージョンの選定基準と 1 週間毎の自動ビルドの有無
 
-|STATUS|cuda|scheduled|
-|:----:|:--:|:-------:|
-|closed|-|無し|
-|deprecated|-|有り|
-|stable|サーバで動作する|有り|
-|latest|サーバで動作する|有り|
-|feature|サーバで動作しなくても良い|有り|
+|  STATUS  |                                     cuda                                      |scheduled|
+|:--------:|:-----------------------------------------------------------------------------:|:-------:|
+|  closed  |                                       -                                       |   無し   |
+|deprecated|                                       -                                       |   有り   |
+|  stable  |           Pytorch or Tensorflow のアップストリームで公式サポートされている           |   有り   |
+| feature  |Pytorch or Tensorflow のアップストリームで公式サポートされていないが，依存関係に問題がない |   有り   |
 
 
 ## closed
@@ -63,13 +62,9 @@
 
 本ステータスはコンテナイメージが最新安定板であることを示します．本ステータスは stable 版のライブラリに一部動作しない特異環境が存在する場合，それを nightly バージョンのライブラリを用いて改善した物になります．そのため，stable において特異環境が存在しない場合は latest バージョンを作成する必要がありません．
 
-例えば現在，Pytorch の最新版 1.7.1 において Ampere 世代 GPU が動作しない問題があります．これを改善するため torch-nightly 1.8.0 を使用した コンテナイメージを作成し，latest バージョンとして管理しています．
-
 ## feature
 
-本ステータスはコンテナイメージが機能追加中であることを示します．本ステータスはサーバで動作しない場合であっても，全てを nightly も含む最新版に更新します．
-
-例えば現在，サーバで動作する cuda バージョンは 11.0.3 までですが，ベースイメージに cuda 11.1 を使ったコンテナイメージを作成し，feature としています．
+本ステータスはコンテナイメージが機能追加中であることを示します．
 
 # ドキュメントを書く際の参照ドキュメント等
 
@@ -77,13 +72,14 @@
 
 ## インストールされた cudnn のバージョン
 
-- [cuda10.2-cudnn7-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/10.2/ubuntu18.04/devel/cudnn7/Dockerfile#L6)
-- [cuda10.2-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/10.2/ubuntu18.04/devel/cudnn8/Dockerfile#L6)
-- [cuda11.0.3-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.0.3/ubuntu20.04/devel/cudnn8/Dockerfile#L6)
-- [cuda11.1.1-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.1.1/ubuntu20.04/devel/cudnn8/Dockerfile#L6)
-- [cuda11.2.0-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.0/ubuntu20.04/devel/cudnn8/Dockerfile#L6)
-- [cuda11.2.1-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.1/ubuntu20.04/devel/cudnn8/Dockerfile#L6)
-- [cuda11.2.2-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.2/ubuntu20.04/devel/cudnn8/Dockerfile#L6)
-- [cuda11.3.0-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.3.0/ubuntu20.04/devel/cudnn8/Dockerfile#L6)
-- [cuda11.3.1-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.3.1/ubuntu20.04/devel/cudnn8/Dockerfile#L6)
-- [cuda11.4.0-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.4.0/ubuntu20.04/devel/cudnn8/Dockerfile#L6)
+- [cuda10.2-cudnn7-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/10.2/ubuntu1804/devel/cudnn7/Dockerfile#L6)
+- [cuda10.2-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/10.2/ubuntu1804/devel/cudnn8/Dockerfile#L6)
+- [cuda11.0.3-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.0.3/ubuntu2004/devel/cudnn8/Dockerfile#L6)
+- [cuda11.1.1-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.1.1/ubuntu2004/devel/cudnn8/Dockerfile#L6)
+- [cuda11.2.0-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.0/ubuntu2004/devel/cudnn8/Dockerfile#L6)
+- [cuda11.2.1-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.1/ubuntu2004/devel/cudnn8/Dockerfile#L6)
+- [cuda11.2.2-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.2/ubuntu2004/devel/cudnn8/Dockerfile#L6)
+- [cuda11.3.0-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.3.0/ubuntu2004/devel/cudnn8/Dockerfile#L6)
+- [cuda11.3.1-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.3.1/ubuntu2004/devel/cudnn8/Dockerfile#L6)
+- [cuda11.4.0-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.4.0/ubuntu2004/devel/cudnn8/Dockerfile#L6)
+- [cuda11.4.1-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.4.1/ubuntu2004/devel/cudnn8/Dockerfile#L6)
