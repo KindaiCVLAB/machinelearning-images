@@ -182,7 +182,7 @@
 |tensorflow-gpu|2.6.0|
 |keras|2.6.0|
 |torch|1.9.1+cu111|
-|torchvision|0.10.0+cu111|
+|torchvision|0.10.1+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.1.12|
 |cupy-cuda111|9.4.0|
@@ -251,7 +251,7 @@
 |tensorflow-gpu|2.6.0|
 |keras|2.6.0|
 |torch|1.9.1+cu111|
-|torchvision|0.10.0+cu111|
+|torchvision|0.10.1+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.1.12|
 |cupy-cuda112|9.4.0|
