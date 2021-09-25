@@ -36,6 +36,8 @@ jobs:
   build-test:
     if: github.event.action != 'closed'
     runs-on: ubuntu-20.04
+    permissions:
+      packages: write
     env:
       container_image_name: "ghcr.io/kindaicvlab/machinelearning-images/test"
     steps:
@@ -49,6 +51,8 @@ jobs:
   release-image:
     if: github.event.action == 'closed' || github.event_name == 'schedule'
     runs-on: ubuntu-20.04
+    permissions:
+      packages: write
     env:
       container_image_name: "ghcr.io/kindaicvlab/machinelearning-images"
     steps:
