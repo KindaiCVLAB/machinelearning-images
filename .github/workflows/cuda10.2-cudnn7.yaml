@@ -5,7 +5,7 @@ env:
   anaconda: "2020.11"
   opencv: "4.5.1.48"
   tf_type: "tensorflow"
-  tf_gpu: "2.4.0"
+  tf_gpu: "2.4.3"
   keras: "2.4.3"
   torch: "1.7.1"
   torch_vision: "0.8.2"
