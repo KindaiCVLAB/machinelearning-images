@@ -159,7 +159,7 @@
 |tensorflow-gpu|2.4.0|
 |keras|2.4.3|
 |torch|1.8.1+cu111|
-|torchvision|0.9.0+cu111|
+|torchvision|0.9.1+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
 |cupy-cuda110|8.4.0|
