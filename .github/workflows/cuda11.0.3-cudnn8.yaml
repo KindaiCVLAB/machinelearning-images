@@ -7,7 +7,7 @@ env:
   tf_type: "tensorflow"
   tf_gpu: "2.4.1"
   keras: "2.4.3"
-  torch: "1.8.0+cu111"
+  torch: "1.8.1+cu111"
   torch_vision: "0.9.0+cu111"
   torch_summary: "1.5.1"
   cupy_cuda: "8.4.0"
