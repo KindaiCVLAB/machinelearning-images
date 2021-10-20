@@ -369,7 +369,7 @@
 |torchvision|0.12.0.dev20211014+cu113|
 |torchsummary|1.5.1|
 |jupyterlab|3.1.18|
-|cupy-cuda112|10.0.0b3|
+|cupy-cuda114|10.0.0b3|
 |code-server|3.12.0|
 |rclone|1.56.2|
 
