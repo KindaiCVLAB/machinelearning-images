@@ -272,7 +272,7 @@
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
 |tensorflow-gpu|2.8.0.dev20211012|
-|keras|2.6.0|
+|keras|2.7.0rc0|
 |torch|1.11.0.dev20211014+cu113|
 |torchvision|0.12.0.dev20211014+cu113|
 |torchsummary|1.5.1|
@@ -295,7 +295,7 @@
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
 |tensorflow-gpu|2.8.0.dev20211012|
-|keras|2.6.0|
+|keras|2.7.0rc0|
 |torch|1.11.0.dev20211014+cu113|
 |torchvision|0.12.0.dev20211014+cu113|
 |torchsummary|1.5.1|
@@ -318,7 +318,7 @@
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
 |tensorflow-gpu|2.8.0.dev20211012|
-|keras|2.6.0|
+|keras|2.7.0rc0|
 |torch|1.11.0.dev20211014+cu113|
 |torchvision|0.12.0.dev20211014+cu113|
 |torchsummary|1.5.1|
@@ -341,7 +341,7 @@
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
 |tensorflow-gpu|2.8.0.dev20211012|
-|keras|2.6.0|
+|keras|2.7.0rc0|
 |torch|1.11.0.dev20211014+cu113|
 |torchvision|0.12.0.dev20211014+cu113|
 |torchsummary|1.5.1|
@@ -364,7 +364,7 @@
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
 |tensorflow-gpu|2.8.0.dev20211012|
-|keras|2.6.0|
+|keras|2.7.0rc0|
 |torch|1.11.0.dev20211014+cu113|
 |torchvision|0.12.0.dev20211014+cu113|
 |torchsummary|1.5.1|

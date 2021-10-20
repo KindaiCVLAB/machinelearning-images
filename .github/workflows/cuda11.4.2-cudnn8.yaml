@@ -6,7 +6,7 @@ env:
   opencv: "4.5.3.56"
   tf_type: "tf-nightly"
   tf_gpu: "2.8.0.dev20211012"
-  keras: "2.6.0"
+  keras: "2.7.0rc0"
   torch: "1.11.0.dev20211014+cu113"
   torch_vision: "0.12.0.dev20211014+cu113"
   torch_summary: "1.5.1"
@@ -16,8 +16,8 @@ env:
   rclone: "1.56.2"
   nodejs: "16"
   pyenv_release_version: "2.1.0"
-  torch_file: "https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html"
-  torch_vision_file: "https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html"
+  torch_file: "https://download.pytorch.org/whl/nightly/cu113/torch_nightly.html"
+  torch_vision_file: "https://download.pytorch.org/whl/nightly/cu113/torch_nightly.html"
   github_token: ${{ secrets.GITHUB_TOKEN }}
 on:
   pull_request:
