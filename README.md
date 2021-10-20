@@ -175,7 +175,7 @@
 |:---:|:---:|
 |CUDA|11.1.1|
 |cudnn|8.0.5.39|
-|pyenv|2.0.6|
+|pyenv|2.1.0|
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
@@ -184,10 +184,10 @@
 |torch|1.9.1+cu111|
 |torchvision|0.10.1+cu111|
 |torchsummary|1.5.1|
-|jupyterlab|3.1.12|
-|cupy-cuda111|9.4.0|
+|jupyterlab|3.1.18|
+|cupy-cuda111|9.5.0|
 |code-server|3.12.0|
-|rclone|1.56.0|
+|rclone|1.56.2|
 
 ### cuda11.2.0
 
@@ -244,7 +244,7 @@
 |:---:|:---:|
 |CUDA|11.2.2|
 |cudnn|8.1.1.33|
-|pyenv|2.0.6|
+|pyenv|2.1.0|
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
@@ -253,10 +253,10 @@
 |torch|1.9.1+cu111|
 |torchvision|0.10.1+cu111|
 |torchsummary|1.5.1|
-|jupyterlab|3.1.12|
-|cupy-cuda112|9.4.0|
+|jupyterlab|3.1.18|
+|cupy-cuda112|9.5.0|
 |code-server|3.12.0|
-|rclone|1.56.0|
+|rclone|1.56.2|
 
 ### cuda11.3.0
 
@@ -267,19 +267,19 @@
 |:---:|:---:|
 |CUDA|11.3.0|
 |cudnn|8.2.0.53|
-|pyenv|2.0.6|
+|pyenv|2.1.0|
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
-|tensorflow-gpu|2.7.0.dev20210915|
+|tensorflow-gpu|2.8.0.dev20211012|
 |keras|2.6.0|
-|torch|1.10.0.dev20210915+cu111|
-|torchvision|0.11.0.dev20210915+cu111|
+|torch|1.11.0.dev20211014+cu113|
+|torchvision|0.12.0.dev20211014+cu113|
 |torchsummary|1.5.1|
-|jupyterlab|3.1.12|
-|cupy-cuda112|10.0.0b2|
+|jupyterlab|3.1.18|
+|cupy-cuda112|10.0.0b3|
 |code-server|3.12.0|
-|rclone|1.56.0|
+|rclone|1.56.2|
 
 ### cuda11.3.1
 
@@ -290,19 +290,19 @@
 |:---:|:---:|
 |CUDA|11.3.1|
 |cudnn|8.2.0.53|
-|pyenv|2.0.6|
+|pyenv|2.1.0|
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
-|tensorflow-gpu|2.7.0.dev20210915|
+|tensorflow-gpu|2.8.0.dev20211012|
 |keras|2.6.0|
-|torch|1.10.0.dev20210915+cu111|
-|torchvision|0.11.0.dev20210915+cu111|
+|torch|1.11.0.dev20211014+cu113|
+|torchvision|0.12.0.dev20211014+cu113|
 |torchsummary|1.5.1|
-|jupyterlab|3.1.12|
-|cupy-cuda112|10.0.0b2|
+|jupyterlab|3.1.18|
+|cupy-cuda112|10.0.0b3|
 |code-server|3.12.0|
-|rclone|1.56.0|
+|rclone|1.56.2|
 
 ### cuda11.4.0
 
@@ -313,19 +313,19 @@
 |:---:|:---:|
 |CUDA|11.4.0|
 |cudnn|8.2.4.15|
-|pyenv|2.0.6|
+|pyenv|2.1.0|
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
-|tensorflow-gpu|2.7.0.dev20210915|
+|tensorflow-gpu|2.8.0.dev20211012|
 |keras|2.6.0|
-|torch|1.10.0.dev20210915+cu111|
-|torchvision|0.11.0.dev20210915+cu111|
+|torch|1.11.0.dev20211014+cu113|
+|torchvision|0.12.0.dev20211014+cu113|
 |torchsummary|1.5.1|
-|jupyterlab|3.1.12|
-|cupy-cuda112|10.0.0b2|
+|jupyterlab|3.1.18|
+|cupy-cuda112|10.0.0b3|
 |code-server|3.12.0|
-|rclone|1.56.0|
+|rclone|1.56.2|
 
 ### cuda11.4.1
 
@@ -336,19 +336,19 @@
 |:---:|:---:|
 |CUDA|11.4.1|
 |cudnn|8.2.4.15|
-|pyenv|2.0.6|
+|pyenv|2.1.0|
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
-|tensorflow-gpu|2.7.0.dev20210915|
+|tensorflow-gpu|2.8.0.dev20211012|
 |keras|2.6.0|
-|torch|1.10.0.dev20210915+cu111|
-|torchvision|0.11.0.dev20210915+cu111|
+|torch|1.11.0.dev20211014+cu113|
+|torchvision|0.12.0.dev20211014+cu113|
 |torchsummary|1.5.1|
-|jupyterlab|3.1.12|
-|cupy-cuda112|10.0.0b2|
+|jupyterlab|3.1.18|
+|cupy-cuda112|10.0.0b3|
 |code-server|3.12.0|
-|rclone|1.56.0|
+|rclone|1.56.2|
 
 ### cuda11.4.2
 
@@ -359,19 +359,19 @@
 |:---:|:---:|
 |CUDA|11.4.2|
 |cudnn|8.2.4.15|
-|pyenv|2.0.6|
+|pyenv|2.1.0|
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
-|tensorflow-gpu|2.7.0.dev20210915|
+|tensorflow-gpu|2.8.0.dev20211012|
 |keras|2.6.0|
-|torch|1.10.0.dev20210915+cu111|
-|torchvision|0.11.0.dev20210915+cu111|
+|torch|1.11.0.dev20211014+cu113|
+|torchvision|0.12.0.dev20211014+cu113|
 |torchsummary|1.5.1|
-|jupyterlab|3.1.12|
-|cupy-cuda112|10.0.0b2|
+|jupyterlab|3.1.18|
+|cupy-cuda112|10.0.0b3|
 |code-server|3.12.0|
-|rclone|1.56.0|
+|rclone|1.56.2|
 
 ## 各種ツール類
 
