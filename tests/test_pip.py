@@ -2,6 +2,7 @@ import unittest
 import os
 import subprocess
 import shlex
+from distutils.version import LooseVersion
 
 class TestVersionsByPip(unittest.TestCase):
   """test class to check some libraries by pip
@@ -35,16 +36,10 @@ class TestVersionsByPip(unittest.TestCase):
   def test_keras(self):
     """test keras version
     """
+    change_name_version = "2.6.0"
 
-    target_image_status_list = ["feature", "stable(pytorch)", "stable(tensorflow)"]
-    for status_name in target_image_status_list:
-      if os.environ["IMAGE_STATUS"] == status_name:
-        search_name = "keras"
-        break
-      search_name = "Keras"
-
-    actual = search_pkg_version(search_name)
     expected = os.environ["KERAS_VERSION"]
+    actual = search_pkg_version("keras" if LooseVersion(expected) >= LooseVersion(change_name_version) else "Keras")
     self.assertEqual(expected, actual)
 
   def test_cupy_cuda_version(self):
