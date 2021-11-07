@@ -1,6 +1,6 @@
 name: cuda11.1.1-cudnn8
 env:
-  image_status: "stable(pytorch)"
+  image_status: "deprecated"
   container_version: "cuda11.1.1-cudnn8"
   anaconda: "2021.05"
   opencv: "4.5.3.56"
