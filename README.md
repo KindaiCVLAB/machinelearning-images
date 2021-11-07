@@ -168,7 +168,7 @@
 
 ### cuda11.1.1
 
-- STATUS: Stable(Pytorch)
+- STATUS: Deprecated
 - cuda11.1.1-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -260,7 +260,7 @@
 
 ### cuda11.3.0
 
-- STATUS: Feature
+- STATUS: Deprecated
 - cuda11.3.0-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -271,19 +271,19 @@
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
-|tensorflow-gpu|2.8.0.dev20211012|
-|keras|2.7.0rc0|
-|torch|1.11.0.dev20211014+cu113|
-|torchvision|0.12.0.dev20211014+cu113|
+|tensorflow-gpu|2.6.0|
+|keras|2.6.0|
+|torch|1.10.0+cu113|
+|torchvision|0.11.1+cu113|
 |torchsummary|1.5.1|
 |jupyterlab|3.1.18|
-|cupy-cuda113|10.0.0b3|
+|cupy-cuda113|9.5.0|
 |code-server|3.12.0|
 |rclone|1.56.2|
 
 ### cuda11.3.1
 
-- STATUS: Feature
+- STATUS: Stable(Pytorch)
 - cuda11.3.1-cudnn8 イメージにのみ含まれる物を示しています．
 
 |ライブラリ名 & パッケージ名|バージョン|
@@ -294,13 +294,13 @@
 |nodejs|16.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
-|tensorflow-gpu|2.8.0.dev20211012|
-|keras|2.7.0rc0|
-|torch|1.11.0.dev20211014+cu113|
-|torchvision|0.12.0.dev20211014+cu113|
+|tensorflow-gpu|2.6.0|
+|keras|2.6.0|
+|torch|1.10.0+cu113|
+|torchvision|0.11.1+cu113|
 |torchsummary|1.5.1|
 |jupyterlab|3.1.18|
-|cupy-cuda113|10.0.0b3|
+|cupy-cuda113|9.5.0|
 |code-server|3.12.0|
 |rclone|1.56.2|
 
