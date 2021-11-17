@@ -3,7 +3,12 @@
   "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "/bin/bash"
-    }
+    },
+    "args": [
+      "-l",
+    ],
+    "overrideName": true,
+    "icon": "terminal-bash",
   },
   "workbench.colorTheme": "Visual Studio Dark",
   "extensions.autoCheckUpdates": false,
