@@ -6,7 +6,7 @@ env:
   opencv: "4.5.4.60"
   tf_type: "tensorflow"
   tf_gpu: "2.7.0"
-  keras: "2.6.0"
+  keras: "2.7.0"
   torch: "1.10.0+cu113"
   torch_vision: "0.11.1+cu113"
   torch_summary: "1.5.1"
