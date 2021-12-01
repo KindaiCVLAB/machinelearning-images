@@ -317,7 +317,7 @@
 |nodejs|17.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.4.60|
-|tensorflow-gpu|2.8.0.dev20211012|
+|tensorflow-gpu|2.8.0.dev20211130|
 |keras|2.7.0rc0|
 |torch|1.11.0.dev20211123+cu113|
 |torchvision|0.12.0.dev20211123+cu113|
@@ -340,7 +340,7 @@
 |nodejs|17.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.4.60|
-|tensorflow-gpu|2.8.0.dev20211012|
+|tensorflow-gpu|2.8.0.dev20211130|
 |keras|2.7.0rc0|
 |torch|1.11.0.dev20211123+cu113|
 |torchvision|0.12.0.dev20211123+cu113|
@@ -363,7 +363,7 @@
 |nodejs|17.x|
 |anaconda3|2021.05|
 |opencv-python|4.5.4.60|
-|tensorflow-gpu|2.8.0.dev20211012|
+|tensorflow-gpu|2.8.0.dev20211130|
 |keras|2.7.0rc0|
 |torch|1.11.0.dev20211123+cu113|
 |torchvision|0.12.0.dev20211123+cu113|
