@@ -364,7 +364,7 @@
 |anaconda3|2021.05|
 |opencv-python|4.5.4.60|
 |tensorflow-gpu|2.8.0.dev20211130|
-|keras|2.7.0rc0|
+|keras|2.7.0|
 |torch|1.11.0.dev20211123+cu113|
 |torchvision|0.12.0.dev20211123+cu113|
 |torchsummary|1.5.1|
