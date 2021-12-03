@@ -157,8 +157,10 @@ RUN pip install opencv-python==${OPENCV_VERSION} \
                 lckr-jupyterlab-variableinspector \
  && rm -rf .cache/pip
 
-# create config directory for rclone
-RUN mkdir -p .config/rclone
+# setup rclone
+RUN mkdir -p .config/rclone \
+ && echo -e "\n#completion for rclone" >> ~/.bashrc \
+ && echo -e "\nsource <(rclone completion bash)\n" >> ~/.bashrc
 
 # set alias for git
 COPY configs/git/sub_cmd_alias .git_sub_cmd_alias
