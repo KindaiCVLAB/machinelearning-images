@@ -12,6 +12,7 @@ env:
   torch_summary: "1.5.1"
   cupy_cuda: "8.3.0"
   jupyter: "3.0.16"
+  optuna: "2.10.0"
   code_server: "3.9.1"
   rclone: "1.55.1"
   nodejs: "16"

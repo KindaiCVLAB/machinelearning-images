@@ -139,6 +139,7 @@
 |torchvision|0.8.2+cu102|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
+|optuna|2.10.0|
 |cupy-cuda102|8.3.0|
 |code-server|3.9.1|
 |rclone|1.55.1|
@@ -162,6 +163,7 @@
 |torchvision|0.9.1+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|2.2.9|
+|optuna|2.10.0|
 |cupy-cuda110|8.4.0|
 |code-server|3.9.1|
 |rclone|1.55.1|
@@ -185,6 +187,7 @@
 |torchvision|0.10.1+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.1.18|
+|optuna|2.10.0|
 |cupy-cuda111|9.5.0|
 |code-server|3.12.0|
 |rclone|1.56.2|
@@ -208,6 +211,7 @@
 |torchvision|0.10.0+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
+|optuna|2.10.0|
 |cupy-cuda112|9.1.0|
 |code-server|3.10.2|
 |rclone|1.55.1|
@@ -231,6 +235,7 @@
 |torchvision|0.10.0+cu111|
 |torchsummary|1.5.1|
 |jupyterlab|3.0.16|
+|optuna|2.10.0|
 |cupy-cuda112|9.1.0|
 |code-server|3.10.2|
 |rclone|1.55.1|
@@ -254,6 +259,7 @@
 |torchvision|0.11.1+cu113|
 |torchsummary|1.5.1|
 |jupyterlab|3.2.4|
+|optuna|2.10.0|
 |cupy-cuda112|9.6.0|
 |code-server|3.12.0|
 |rclone|1.57.0|
@@ -277,6 +283,7 @@
 |torchvision|0.11.1+cu113|
 |torchsummary|1.5.1|
 |jupyterlab|3.1.18|
+|optuna|2.10.0|
 |cupy-cuda113|9.5.0|
 |code-server|3.12.0|
 |rclone|1.56.2|
@@ -300,6 +307,7 @@
 |torchvision|0.11.1+cu113|
 |torchsummary|1.5.1|
 |jupyterlab|3.2.4|
+|optuna|2.10.0|
 |cupy-cuda113|9.6.0|
 |code-server|3.12.0|
 |rclone|1.57.0|
@@ -323,6 +331,7 @@
 |torchvision|0.12.0.dev20211123+cu113|
 |torchsummary|1.5.1|
 |jupyterlab|3.2.4|
+|optuna|3.0.0a0|
 |cupy-cuda113|10.0.0rc1|
 |code-server|3.12.0|
 |rclone|1.57.0|
@@ -346,6 +355,7 @@
 |torchvision|0.12.0.dev20211123+cu113|
 |torchsummary|1.5.1|
 |jupyterlab|3.2.4|
+|optuna|3.0.0a0|
 |cupy-cuda114|10.0.0rc1|
 |code-server|3.12.0|
 |rclone|1.57.0|
@@ -369,6 +379,7 @@
 |torchvision|0.12.0.dev20211123+cu113|
 |torchsummary|1.5.1|
 |jupyterlab|3.2.4|
+|optuna|3.0.0a0|
 |cupy-cuda114|10.0.0rc1|
 |code-server|3.12.0|
 |rclone|1.57.0|
