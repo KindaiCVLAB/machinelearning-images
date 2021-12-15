@@ -15,8 +15,6 @@ assignees: ''
 - [torch stable wheel file](https://download.pytorch.org/whl/torch_stable.html)
 - torch nightly
   - [cuda11.5.x](https://download.pytorch.org/whl/nightly/cu115/torch_nightly.html)
-- [code-server](https://github.com/cdr/code-server)
-- [rclone](https://github.com/rclone/rclone)
 - [cupy-cuda](https://github.com/cupy/cupy)
 
 # バージョン
@@ -35,8 +33,6 @@ assignees: ''
 - [ ] jupyterlab: 
 - [ ] optuna: 
 - [ ] cupy-cuda: 
-- [ ] code-server: 
-- [ ] rclone: 
 
 ## Feature
 
@@ -52,5 +48,3 @@ assignees: ''
 - [ ] jupyterlab: 
 - [ ] optuna: 
 - [ ] cupy-cuda: 
-- [ ] code-server: 
-- [ ] rclone:

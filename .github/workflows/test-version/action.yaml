@@ -22,7 +22,6 @@ runs:
           --env CUDA_VERSION_FOR_CUPY="${{ env.cuda_version_for_cupy }}" \
           --env JUPYTER_VERSION="${{ env.jupyter }}" \
           --env NODEJS_VERSION="${{ env.nodejs }}" \
-          --env CODE_SERVER_VERSION="${{ env.code_server }}" \
           --env TORCH_FILE="${{ env.torch_file }}" \
           --env TORCH_VISION_FILE="${{ env.torch_vision_file }}" \
           --env TF_TYPE="${{ env.tf_type }}" \
@@ -30,6 +29,5 @@ runs:
           --env PYENV_RELEASE_VERSION="${{ env.pyenv_release_version }}" \
           --env CONTAINER_VERSION="${{ env.container_version }}" \
           --env IMAGE_STATUS="${{ env.image_status }}" \
-          --env RCLONE_DESIRED_VERSION="${{ env.rclone }}" \
           "${{ env.container_image_name }}":"${{ env.container_version }}" \
           make unittest
