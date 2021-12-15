@@ -34,9 +34,6 @@ ARG OPTUNA_VERSION
 ARG PYENV_RELEASE_VERSION
 ENV CUPY_CUDA_WHEEL https://github.com/cupy/cupy/releases/v${CUPY_CUDA_VERSION}
 
-# package version for tools
-ARG NODEJS_VERSION
-
 SHELL ["/bin/bash", "-c"]
 
 # install tools by apt.
@@ -59,7 +56,11 @@ RUN apt-get update \
     libgl1-mesa-dev \
     libxrender1 \
 ## setup nodejs
- && curl -sSL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
+ && if [ "${IMAGE_STATUS}" = "feature" ]; then \
+        curl -sSL https://deb.nodesource.com/setup_current.x | bash - ; \
+    else \
+        curl -sSL https://deb.nodesource.com/setup_lts.x | bash - ; \
+    fi \
  && apt-get install -y --no-install-recommends nodejs \
 # install the latest code-server
  && curl -sSL https://code-server.dev/install.sh | sh \

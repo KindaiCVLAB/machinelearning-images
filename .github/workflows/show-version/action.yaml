@@ -18,7 +18,6 @@ runs:
         echo CUPY_CUDA_VERSION "${{ env.cupy_cuda }}"
         echo CUDA_VERSION_FOR_CUPY "${{ env.cuda_version_for_cupy }}"
         echo JUPYTER_VERSION "${{ env.jupyter }}"
-        echo NODEJS_VERSION "${{ env.nodejs }}"
         echo TORCH_FILE "${{ env.torch_file }}"
         echo TORCH_VISION_FILE "${{ env.torch_vision_file }}"
         echo TF_TYPE "${{ env.tf_type }}"

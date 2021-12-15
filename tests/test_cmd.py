@@ -39,15 +39,6 @@ class TestVersionsByCmd(unittest.TestCase):
     expected = os.environ["ANACONDA_VERSION"]
     self.assertEqual(expected, actual)
 
-  def test_nodejs_version(self):
-    """test nodejs version
-    """
-
-    cmd = shlex.split("node --version")
-    actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").split(".")[0]
-    expected = "v" + os.environ["NODEJS_VERSION"]
-    self.assertEqual(expected, actual)
-
   def test_optuna_cmd_version(self):
     """test optuna cmd version
     """
