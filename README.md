@@ -319,8 +319,8 @@
 |opencv-python|4.5.4.60|
 |tensorflow-gpu|2.8.0.dev20211130|
 |keras|2.7.0|
-|torch|1.11.0.dev20211123+cu113|
-|torchvision|0.12.0.dev20211123+cu113|
+|torch|1.11.0.dev20211214+cu115|
+|torchvision|0.12.0.dev20211214+cu115|
 |torchsummary|1.5.1|
 |jupyterlab|3.2.4|
 |cupy-cuda113|10.0.0rc1|
@@ -342,8 +342,8 @@
 |opencv-python|4.5.4.60|
 |tensorflow-gpu|2.8.0.dev20211130|
 |keras|2.7.0|
-|torch|1.11.0.dev20211123+cu113|
-|torchvision|0.12.0.dev20211123+cu113|
+|torch|1.11.0.dev20211214+cu115|
+|torchvision|0.12.0.dev20211214+cu115|
 |torchsummary|1.5.1|
 |jupyterlab|3.2.4|
 |cupy-cuda114|10.0.0rc1|
@@ -365,8 +365,8 @@
 |opencv-python|4.5.4.60|
 |tensorflow-gpu|2.8.0.dev20211130|
 |keras|2.7.0|
-|torch|1.11.0.dev20211123+cu113|
-|torchvision|0.12.0.dev20211123+cu113|
+|torch|1.11.0.dev20211214+cu115|
+|torchvision|0.12.0.dev20211214+cu115|
 |torchsummary|1.5.1|
 |jupyterlab|3.2.4|
 |cupy-cuda114|10.0.0rc1|
