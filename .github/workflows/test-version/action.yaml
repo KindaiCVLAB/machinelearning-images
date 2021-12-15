@@ -2,7 +2,9 @@ name: "test library version"
 runs:
   using: "composite"
   steps:
-    - name: Test library version
+    -
+      name: Test library version
+      shell: bash
       run: |
         docker run -u 1000 --rm \
           --volume $GITHUB_WORKSPACE/tests:/home/user/tests \
@@ -30,4 +32,3 @@ runs:
           --env RCLONE_DESIRED_VERSION="${{ env.rclone }}" \
           "${{ env.container_image_name }}":"${{ env.container_version }}" \
           make unittest
-      shell: bash

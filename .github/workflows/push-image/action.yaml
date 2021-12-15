@@ -1,0 +1,15 @@
+name: "build container image"
+runs:
+  using: "composite"
+  steps:
+    -
+      name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ env.github_token }}
+    -
+      name: Push
+      shell: bash
+      run: docker push ${{ env.container_image_name }}:${{ env.container_version }}

@@ -2,20 +2,32 @@ name: "show version"
 runs:
   using: "composite"
   steps:
-    - name: Setup cuda_version_for_cupy and base_img_cuda_version
+    -
+      name: Setup cuda_version_for_cupy and base_img_cuda_version
+      shell: bash
       run: |
         container_version="${{ env.container_version }}"
         cuda_major=$(echo ${container_version//cuda/} | cut -d. -f1)
         cuda_minor=$(echo $container_version | cut -d. -f2 | cut -d- -f1)
         echo "base_img_cuda_version=$(echo ${container_version//cuda/})" >> $GITHUB_ENV
         echo "cuda_version_for_cupy=$cuda_major$cuda_minor" >> $GITHUB_ENV
+    -
+      name: Setup base_img_os_version
       shell: bash
-    - name: Setup base_img_os_version
       run: |
         only_cuda_version=$(echo "${{ env.base_img_cuda_version }}" | cut -d- -f1)
-        if [ "$only_cuda_version" = "10.2" ]; then
+        if [ "$only_cuda_version" = "10.2" ]; then \
           echo "base_img_os_version=ubuntu18.04" >> $GITHUB_ENV
-        else
+        else \
           echo "base_img_os_version=ubuntu20.04" >> $GITHUB_ENV
-        fi
+        fi;
+    -
+      name: Setup container_image_name
       shell: bash
+      run: |
+        git_branch_name="${GITHUB_REF#refs/heads/}"
+        if [ "$git_branch_name" = "master" ]; then \
+          echo "container_image_name=ghcr.io/kindaicvlab/machinelearning-images" >> $GITHUB_ENV
+        else \
+          echo "container_image_name=ghcr.io/kindaicvlab/machinelearning-images/test" >> $GITHUB_ENV
+        fi;
