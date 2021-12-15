@@ -11,8 +11,6 @@ ENV PATH ${HOME}/.local/bin:$PATH
 RUN useradd -m -u ${UID} ${USER_NAME}
 
 WORKDIR ${HOME}
-ENV PYENV_ROOT ${HOME}/.pyenv
-ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 ENV DEBIAN_FRONTEND=noninteractive
 
 ARG IMAGE_STATUS
@@ -31,7 +29,6 @@ ARG TORCH_FILE
 ARG TORCH_VISION_FILE
 ARG TF_TYPE
 ARG OPTUNA_VERSION
-ARG PYENV_RELEASE_VERSION
 ENV CUPY_CUDA_WHEEL https://github.com/cupy/cupy/releases/v${CUPY_CUDA_VERSION}
 
 SHELL ["/bin/bash", "-c"]
@@ -55,6 +52,16 @@ RUN apt-get update \
     libsm6 \
     libgl1-mesa-dev \
     libxrender1 \
+# for anaconda
+    libgl1-mesa-glx \
+    libegl1-mesa \
+    libxrandr2 \
+    libxss1 \
+    libxcursor1 \
+    libxcomposite1 \
+    libasound2 \
+    libxi6 \
+    libxtst6 \
 ## setup nodejs
  && if [ "${IMAGE_STATUS}" = "feature" ]; then \
         curl -sSL https://deb.nodesource.com/setup_current.x | bash - ; \
@@ -65,9 +72,10 @@ RUN apt-get update \
 # install the latest code-server
  && curl -sSL https://code-server.dev/install.sh | sh \
  && rm -rf ~/.cache/code-server \
+ && chown ${UID}:${UID} ~/.cache \
 # install the latest rclone
  && curl -sSL https://rclone.org/install.sh | bash \
- && rm -rf rclone-current-linux-amd64.zip \
+ && rm -f rclone-current-linux-amd64.zip \
 # clean apt cache
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
@@ -76,21 +84,12 @@ RUN apt-get update \
 # change user to 1000
 USER ${UID}
 
-# install pyenv and prepare python environment.
-RUN pyenv_get_status=$(curl -I https://github.com/pyenv/pyenv/releases/tag/v${PYENV_RELEASE_VERSION} -o /dev/null -w '%{http_code}\n' -s) \
- && if [ "$pyenv_get_status" = "200" ];then \
-        PYENV_DOWNLOAD_VERSION=v${PYENV_RELEASE_VERSION}; \
-    else \
-        PYENV_DOWNLOAD_VERSION=${PYENV_RELEASE_VERSION}; \
-    fi \
- && curl -OL https://github.com/pyenv/pyenv/archive/${PYENV_DOWNLOAD_VERSION}.tar.gz \
- && tar -xzf ${PYENV_DOWNLOAD_VERSION}.tar.gz \
- && rm -rf ${PYENV_DOWNLOAD_VERSION}.tar.gz \
- && mv pyenv-${PYENV_RELEASE_VERSION} .pyenv \
- && pyenv install anaconda3-${ANACONDA_VERSION} \
- && pyenv global anaconda3-${ANACONDA_VERSION} \
- && pyenv rehash \
- && pip install --upgrade pip
+# install anaconda
+ENV PATH=${HOME}/.anaconda3/bin:$PATH
+RUN curl -sSL -o Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh https://repo.anaconda.com/archive/Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh \
+ && bash Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh -b -p ${HOME}/.anaconda3 \
+ && rm -f Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh \
+ && conda init bash
 
 # install libraries for machinelearning
 RUN pip install opencv-python==${OPENCV_VERSION} \
@@ -163,7 +162,7 @@ RUN mkdir -p .config/rclone \
  && echo -e "\nsource <(rclone completion bash)\n" >> ~/.bashrc
 
 # set alias for git
-COPY configs/git/sub_cmd_alias .git_sub_cmd_alias
+COPY --chown=${UID}:${UID} configs/git/sub_cmd_alias .git_sub_cmd_alias
 RUN echo -e "\n#git alias" >> ~/.bashrc \
  && echo "source /usr/share/bash-completion/completions/git" >> ~/.bashrc \
  && echo "alias g=\"git\"" >> ~/.bashrc \
@@ -186,12 +185,11 @@ RUN echo -e "\n#git alias" >> ~/.bashrc \
 
 # copy settings.json for code-server
 RUN mkdir -p .local/share/code-server/User
-COPY --chown=${UID} configs/vscode .local/share/code-server/User/cvcloud
+COPY --chown=${UID}:${UID} configs/vscode .local/share/code-server/User/cvcloud
 
 WORKDIR ${HOME}/.local/share/code-server/User/cvcloud
-RUN sed -i "s/@@ANACONDA_VERSION@@/${ANACONDA_VERSION}/" container-building.json \
- && jq -s add base.json container-building.json > ../settings.json \
- && mv keybindings.json ../keybindings.json
+RUN cp keybindings.json ../keybindings.json \
+ && cp settings.json ../settings.json
 
 # install code-server extensions
 RUN dumb-init /usr/bin/code-server \

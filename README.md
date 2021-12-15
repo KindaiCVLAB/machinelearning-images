@@ -109,6 +109,18 @@
   - others: LTS
 - code-server
 
+##### For Anaconda
+
+- libgl1-mesa-glx
+- libegl1-mesa
+- libxrandr2
+- libxss1
+- libxcursor1
+- libxcomposite1
+- libasound2
+- libxi6
+- libxtst6
+
 ##### For OpenCV
 
 - libsm6
@@ -139,7 +151,6 @@
 |:---:|:---:|
 |CUDA|10.2|
 |cudnn|7.6.5.32-1 or 8.2.4.15-1|
-|pyenv|1.2.22|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
 |tensorflow-gpu|2.4.4|
@@ -160,7 +171,6 @@
 |:---:|:---:|
 |CUDA|11.0.3|
 |cudnn|8.0.5.39|
-|pyenv|1.2.23|
 |anaconda3|2020.11|
 |opencv-python|4.5.1.48|
 |tensorflow-gpu|2.4.4|
@@ -181,7 +191,6 @@
 |:---:|:---:|
 |CUDA|11.1.1|
 |cudnn|8.0.5.39|
-|pyenv|2.1.0|
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
 |tensorflow-gpu|2.6.1|
@@ -202,7 +211,6 @@
 |:---:|:---:|
 |CUDA|11.2.0|
 |cudnn|8.1.1.33|
-|pyenv|2.0.1|
 |anaconda3|2021.05|
 |opencv-python|4.5.2.54|
 |tensorflow-gpu|2.5.2|
@@ -223,7 +231,6 @@
 |:---:|:---:|
 |CUDA|11.2.1|
 |cudnn|8.1.1.33|
-|pyenv|2.0.1|
 |anaconda3|2021.05|
 |opencv-python|4.5.2.54|
 |tensorflow-gpu|2.5.2|
@@ -244,7 +251,6 @@
 |:---:|:---:|
 |CUDA|11.2.2|
 |cudnn|8.1.1.33|
-|pyenv|2.2.0|
 |anaconda3|2021.05|
 |opencv-python|4.5.4.60|
 |tensorflow-gpu|2.7.0|
@@ -265,7 +271,6 @@
 |:---:|:---:|
 |CUDA|11.3.0|
 |cudnn|8.2.0.53|
-|pyenv|2.1.0|
 |anaconda3|2021.05|
 |opencv-python|4.5.3.56|
 |tensorflow-gpu|2.6.1|
@@ -286,7 +291,6 @@
 |:---:|:---:|
 |CUDA|11.3.1|
 |cudnn|8.2.0.53|
-|pyenv|2.2.0|
 |anaconda3|2021.05|
 |opencv-python|4.5.4.60|
 |tensorflow-gpu|2.7.0|
@@ -307,7 +311,6 @@
 |:---:|:---:|
 |CUDA|11.4.0|
 |cudnn|8.2.4.15|
-|pyenv|2.2.0|
 |anaconda3|2021.05|
 |opencv-python|4.5.4.60|
 |tensorflow-gpu|2.8.0.dev20211130|
@@ -328,7 +331,6 @@
 |:---:|:---:|
 |CUDA|11.4.1|
 |cudnn|8.2.4.15|
-|pyenv|2.2.0|
 |anaconda3|2021.05|
 |opencv-python|4.5.4.60|
 |tensorflow-gpu|2.8.0.dev20211130|
@@ -349,7 +351,6 @@
 |:---:|:---:|
 |CUDA|11.4.2|
 |cudnn|8.2.4.15|
-|pyenv|2.2.0|
 |anaconda3|2021.05|
 |opencv-python|4.5.4.60|
 |tensorflow-gpu|2.8.0.dev20211130|

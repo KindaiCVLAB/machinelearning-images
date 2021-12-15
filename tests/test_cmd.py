@@ -21,24 +21,6 @@ class TestVersionsByCmd(unittest.TestCase):
 
     self.assertEqual(expected, actual)
 
-  def test_pyenv_version(self):
-    """test pyenv version
-    """
-
-    cmd = shlex.split("pyenv --version")
-    actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").split()[1].split("-")[0]
-    expected = os.environ["PYENV_RELEASE_VERSION"]
-    self.assertEqual(expected, actual)
-
-  def test_anaconda(self):
-    """test anaconda version
-    """
-
-    cmd = shlex.split("pyenv version")
-    actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").split()[0].split("-")[1]
-    expected = os.environ["ANACONDA_VERSION"]
-    self.assertEqual(expected, actual)
-
   def test_optuna_cmd_version(self):
     """test optuna cmd version
     """
