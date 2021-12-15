@@ -13,8 +13,6 @@ env:
   cupy_cuda: "8.4.0"
   jupyter: "3.0.16"
   optuna: "2.10.0"
-  code_server: "3.9.1"
-  rclone: "1.55.1"
   nodejs: "16"
   pyenv_release_version: "1.2.23"
   torch_file: "https://download.pytorch.org/whl/torch_stable.html"

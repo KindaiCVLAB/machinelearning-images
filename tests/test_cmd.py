@@ -39,15 +39,6 @@ class TestVersionsByCmd(unittest.TestCase):
     expected = os.environ["ANACONDA_VERSION"]
     self.assertEqual(expected, actual)
 
-  def test_code_server_version(self):
-    """test code server version
-    """
-
-    cmd = shlex.split("code-server --version")
-    actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").split()[0]
-    expected = os.environ["CODE_SERVER_VERSION"]
-    self.assertEqual(expected, actual)
-
   def test_nodejs_version(self):
     """test nodejs version
     """
@@ -55,15 +46,6 @@ class TestVersionsByCmd(unittest.TestCase):
     cmd = shlex.split("node --version")
     actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").split(".")[0]
     expected = "v" + os.environ["NODEJS_VERSION"]
-    self.assertEqual(expected, actual)
-
-  def test_rclone_version(self):
-    """test rclone version
-    """
-
-    cmd = shlex.split("rclone version")
-    actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").splitlines()[0].split()[1]
-    expected = "v" + os.environ["RCLONE_DESIRED_VERSION"]
     self.assertEqual(expected, actual)
 
   def test_optuna_cmd_version(self):

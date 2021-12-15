@@ -90,6 +90,7 @@
 - 共通イメージを最新に保つため一定期間毎にコンテナイメージは再ビルドされます．
 
 #### パッケージ
+
 - curl
 - wget
 - git
@@ -102,11 +103,17 @@
 - jq
 - ssh
 - rsync
-- libsm6(for opencv)
-- libgl1-mesa-dev(for opencv)
-- libxrender1(for opencv)
+- rclone
+- code-server
+
+##### For OpenCV
+
+- libsm6
+- libgl1-mesa-dev
+- libxrender1
 
 #### Python ライブラリ
+
 - tqdm
 - addict
 - progressbar
@@ -141,8 +148,6 @@
 |jupyterlab|2.2.9|
 |optuna|2.10.0|
 |cupy-cuda102|8.3.0|
-|code-server|3.9.1|
-|rclone|1.55.1|
 
 ### cuda11.0.3
 
@@ -165,8 +170,6 @@
 |jupyterlab|2.2.9|
 |optuna|2.10.0|
 |cupy-cuda110|8.4.0|
-|code-server|3.9.1|
-|rclone|1.55.1|
 
 ### cuda11.1.1
 
@@ -189,8 +192,6 @@
 |jupyterlab|3.1.18|
 |optuna|2.10.0|
 |cupy-cuda111|9.5.0|
-|code-server|3.12.0|
-|rclone|1.56.2|
 
 ### cuda11.2.0
 
@@ -213,8 +214,6 @@
 |jupyterlab|3.0.16|
 |optuna|2.10.0|
 |cupy-cuda112|9.1.0|
-|code-server|3.10.2|
-|rclone|1.55.1|
 
 ### cuda11.2.1
 
@@ -237,8 +236,6 @@
 |jupyterlab|3.0.16|
 |optuna|2.10.0|
 |cupy-cuda112|9.1.0|
-|code-server|3.10.2|
-|rclone|1.55.1|
 
 ### cuda11.2.2
 
@@ -261,8 +258,6 @@
 |jupyterlab|3.2.4|
 |optuna|2.10.0|
 |cupy-cuda112|9.6.0|
-|code-server|3.12.0|
-|rclone|1.57.0|
 
 ### cuda11.3.0
 
@@ -285,8 +280,6 @@
 |jupyterlab|3.1.18|
 |optuna|2.10.0|
 |cupy-cuda113|9.5.0|
-|code-server|3.12.0|
-|rclone|1.56.2|
 
 ### cuda11.3.1
 
@@ -309,8 +302,6 @@
 |jupyterlab|3.2.4|
 |optuna|2.10.0|
 |cupy-cuda113|9.6.0|
-|code-server|3.12.0|
-|rclone|1.57.0|
 
 ### cuda11.4.0
 
@@ -333,8 +324,6 @@
 |jupyterlab|3.2.4|
 |optuna|3.0.0a0|
 |cupy-cuda113|10.0.0rc1|
-|code-server|3.12.0|
-|rclone|1.57.0|
 
 ### cuda11.4.1
 
@@ -357,8 +346,6 @@
 |jupyterlab|3.2.4|
 |optuna|3.0.0a0|
 |cupy-cuda114|10.0.0rc1|
-|code-server|3.12.0|
-|rclone|1.57.0|
 
 ### cuda11.4.2
 
@@ -381,8 +368,6 @@
 |jupyterlab|3.2.4|
 |optuna|3.0.0a0|
 |cupy-cuda114|10.0.0rc1|
-|code-server|3.12.0|
-|rclone|1.57.0|
 
 ## 各種ツール類
 

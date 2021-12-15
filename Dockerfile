@@ -36,8 +36,6 @@ ENV CUPY_CUDA_WHEEL https://github.com/cupy/cupy/releases/v${CUPY_CUDA_VERSION}
 
 # package version for tools
 ARG NODEJS_VERSION
-ARG CODE_SERVER_VERSION
-ARG RCLONE_VERSION
 
 SHELL ["/bin/bash", "-c"]
 
@@ -61,19 +59,18 @@ RUN apt-get update \
     libgl1-mesa-dev \
     libxrender1 \
 ## setup nodejs
- && curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
+ && curl -sSL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
  && apt-get install -y --no-install-recommends nodejs \
-# install code-server
- && curl -fOL https://github.com/cdr/code-server/releases/download/v${CODE_SERVER_VERSION}/code-server_${CODE_SERVER_VERSION}_amd64.deb \
- && dpkg -i code-server_${CODE_SERVER_VERSION}_amd64.deb \
- && rm -rf code-server_${CODE_SERVER_VERSION}_amd64.deb \
-# install rclone
- && curl -fOL https://github.com/rclone/rclone/releases/download/v${RCLONE_VERSION}/rclone-v${RCLONE_VERSION}-linux-amd64.deb \
- && dpkg -i rclone-v${RCLONE_VERSION}-linux-amd64.deb \
- && rm -rf rclone-v${RCLONE_VERSION}-linux-amd64.deb \
+# install the latest code-server
+ && curl -sSL https://code-server.dev/install.sh | sh \
+ && rm -rf ~/.cache/code-server \
+# install the latest rclone
+ && curl -sSL https://rclone.org/install.sh | bash \
+ && rm -rf rclone-current-linux-amd64.zip \
 # clean apt cache
  && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/* \
+ && rm -rf /tmp/*
 
 # change user to 1000
 USER ${UID}
@@ -194,12 +191,6 @@ WORKDIR ${HOME}/.local/share/code-server/User/cvcloud
 RUN sed -i "s/@@ANACONDA_VERSION@@/${ANACONDA_VERSION}/" container-building.json \
  && jq -s add base.json container-building.json > ../settings.json \
  && mv keybindings.json ../keybindings.json
-
-# install specify ms-python for codeserver(<= 3.9.0)
-# RUN wget https://github.com/microsoft/vscode-python/releases/download/2020.10.332292344/ms-python-release.vsix \
-#  && dumb-init /usr/bin/code-server \
-#    --install-extension ./ms-python-release.vsix \
-#  && rm -rf ./ms-python-release.vsix
 
 # install code-server extensions
 RUN dumb-init /usr/bin/code-server \
