@@ -3,6 +3,7 @@ import cv2
 import os
 import torch
 import torchvision
+import optuna
 
 class TestVersionsByImport(unittest.TestCase):
   """test class to check some libraries by to import
@@ -33,6 +34,14 @@ class TestVersionsByImport(unittest.TestCase):
 
     actual = torchvision.__version__
     expected = os.environ["TORCH_VISION_VERSION"]
+    self.assertEqual(expected, actual)
+
+  def test_optuna_library_version(self):
+    """test optuna library version
+    """
+
+    actual = optuna.__version__
+    expected = os.environ["OPTUNA_VERSION"]
     self.assertEqual(expected, actual)
 
 if __name__ == "__main__":

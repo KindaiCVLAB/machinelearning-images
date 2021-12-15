@@ -14,7 +14,6 @@ assignees: ''
 - [pyenv version](https://github.com/pyenv/pyenv/releases)
 - [torch stable wheel file](https://download.pytorch.org/whl/torch_stable.html)
 - torch nightly
-  - [cuda11.1.x](https://download.pytorch.org/whl/nightly/cu111/torch_nightly.html)
   - [cuda11.3.x](https://download.pytorch.org/whl/nightly/cu113/torch_nightly.html)
 - [code-server](https://github.com/cdr/code-server)
 - [rclone](https://github.com/rclone/rclone)
@@ -34,6 +33,7 @@ assignees: ''
 - [ ] torchvision: 
 - [ ] torchsummary: 
 - [ ] jupyterlab: 
+- [ ] optuna: 
 - [ ] cupy-cuda: 
 - [ ] code-server: 
 - [ ] rclone: 
@@ -50,6 +50,7 @@ assignees: ''
 - [ ] torchvision-nightly: 
 - [ ] torchsummary: 
 - [ ] jupyterlab: 
+- [ ] optuna: 
 - [ ] cupy-cuda: 
 - [ ] code-server: 
 - [ ] rclone:
