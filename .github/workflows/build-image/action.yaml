@@ -23,7 +23,6 @@ runs:
           CUPY_CUDA_VERSION=${{ env.cupy_cuda }}
           CUDA_VERSION_FOR_CUPY=${{ env.cuda_version_for_cupy }}
           JUPYTER_VERSION=${{ env.jupyter }}
-          NODEJS_VERSION=${{ env.nodejs }}
           TORCH_FILE=${{ env.torch_file }}
           TORCH_VISION_FILE=${{ env.torch_vision_file }}
           TF_TYPE=${{ env.tf_type }}

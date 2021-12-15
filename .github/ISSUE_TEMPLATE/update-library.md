@@ -9,7 +9,6 @@ assignees: ''
 
 # チェック先
 - [PyPI](https://pypi.org/)
-- [nodesource](https://github.com/nodesource/distributions#debinstall)
 - [pyenv anaconda version](https://github.com/pyenv/pyenv/tree/master/plugins/python-build/share/python-build)
 - [pyenv version](https://github.com/pyenv/pyenv/releases)
 - [torch stable wheel file](https://download.pytorch.org/whl/torch_stable.html)
@@ -22,7 +21,6 @@ assignees: ''
 ## Stable
 
 - [ ] pyenv: 
-- [ ] nodejs: 
 - [ ] anaconda3: 
 - [ ] opencv-python: 
 - [ ] tensorflow-gpu: 
@@ -37,7 +35,6 @@ assignees: ''
 ## Feature
 
 - [ ] pyenv: 
-- [ ] nodejs: 
 - [ ] anaconda3: 
 - [ ] opencv-python: 
 - [ ] tf-nightly-gpu: 

@@ -13,7 +13,6 @@ env:
   cupy_cuda: "8.3.0"
   jupyter: "3.0.16"
   optuna: "2.10.0"
-  nodejs: "16"
   pyenv_release_version: "1.2.22"
   github_token: ${{ secrets.GITHUB_TOKEN }}
 on:
