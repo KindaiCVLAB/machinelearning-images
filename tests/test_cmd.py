@@ -2,6 +2,7 @@ import unittest
 import os
 import subprocess
 import shlex
+from unittest.case import expectedFailure
 
 class TestVersionsByCmd(unittest.TestCase):
   """test class to check some libraries to run commands
@@ -63,6 +64,15 @@ class TestVersionsByCmd(unittest.TestCase):
     cmd = shlex.split("rclone version")
     actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").splitlines()[0].split()[1]
     expected = "v" + os.environ["RCLONE_DESIRED_VERSION"]
+    self.assertEqual(expected, actual)
+
+  def test_optuna_cmd_version(self):
+    """test optuna cmd version
+    """
+
+    cmd = shlex.split("optuna --version")
+    actual = subprocess.run(cmd, stdout=subprocess.PIPE).stdout.decode("utf-8").splitlines()[0].split()[1]
+    expected = os.environ["OPTUNA_VERSION"]
     self.assertEqual(expected, actual)
 
 if __name__ == "__main__":

@@ -33,6 +33,7 @@ assignees: ''
 - [ ] torchvision: 
 - [ ] torchsummary: 
 - [ ] jupyterlab: 
+- [ ] optuna: 
 - [ ] cupy-cuda: 
 - [ ] code-server: 
 - [ ] rclone: 
@@ -49,6 +50,7 @@ assignees: ''
 - [ ] torchvision-nightly: 
 - [ ] torchsummary: 
 - [ ] jupyterlab: 
+- [ ] optuna: 
 - [ ] cupy-cuda: 
 - [ ] code-server: 
 - [ ] rclone:

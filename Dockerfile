@@ -30,6 +30,7 @@ ARG CUDA_VERSION_FOR_CUPY
 ARG TORCH_FILE
 ARG TORCH_VISION_FILE
 ARG TF_TYPE
+ARG OPTUNA_VERSION
 ARG PYENV_RELEASE_VERSION
 ENV CUPY_CUDA_WHEEL https://github.com/cupy/cupy/releases/v${CUPY_CUDA_VERSION}
 
@@ -132,6 +133,7 @@ RUN pip install opencv-python==${OPENCV_VERSION} \
         fi \
     fi \
  && pip install torchsummary==${TORCH_SUMMARY_VERSION} \
+ && pip install optuna==${OPTUNA_VERSION} \
  && pip install tqdm \
                 addict \
                 progressbar \
