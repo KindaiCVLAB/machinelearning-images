@@ -18,6 +18,6 @@
   "editor.renderWhitespace": "boundary",
   "terminal.integrated.tabs.enabled": true,
   "redhat.telemetry.enabled": false,
-  "python.pythonPath": "/home/user/.pyenv/versions/anaconda3-${ANACONDA_VERSION}/bin/python",
+  "python.pythonPath": "/home/user/.anaconda3/bin/python",
   "terminal.integrated.cwd": "$HOME_DIR"
 }

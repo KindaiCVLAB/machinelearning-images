@@ -27,5 +27,4 @@ runs:
           TORCH_VISION_FILE=${{ env.torch_vision_file }}
           TF_TYPE=${{ env.tf_type }}
           OPTUNA_VERSION=${{ env.optuna }}
-          PYENV_RELEASE_VERSION=${{ env.pyenv_release_version }}
           IMAGE_STATUS=${{ env.image_status }}

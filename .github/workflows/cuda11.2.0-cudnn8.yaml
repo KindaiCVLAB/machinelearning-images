@@ -13,7 +13,6 @@ env:
   cupy_cuda: "9.1.0"
   jupyter: "3.0.16"
   optuna: "2.10.0"
-  pyenv_release_version: "2.0.1"
   torch_file: "https://download.pytorch.org/whl/torch_stable.html"
   torch_vision_file: "https://download.pytorch.org/whl/torch_stable.html"
   github_token: ${{ secrets.GITHUB_TOKEN }}
