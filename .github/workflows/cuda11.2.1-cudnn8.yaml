@@ -24,22 +24,10 @@ on:
   push:
     branches:
       - 'master'
-    paths:
-      - '.github/workflows/cuda11.2.1-cudnn8.yaml'
-      - 'Dockerfile'
-      - ".github/workflows/**/*.yaml"
-      - "configs/**/*"
-      - "tests/**/*"
   pull_request:
     branches:
       - 'master'
     types: [opened, synchronize]
-    paths:
-      - '.github/workflows/cuda11.2.1-cudnn8.yaml'
-      - 'Dockerfile'
-      - ".github/workflows/**/*.yaml"
-      - "configs/**/*"
-      - "tests/**/*"
   schedule:
     - cron: "0 4 * * 1"
 jobs:
