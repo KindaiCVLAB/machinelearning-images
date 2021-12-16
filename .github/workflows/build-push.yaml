@@ -1,0 +1,45 @@
+name: Build and Push Container Images
+
+env:
+  github_token: ${{ secrets.GITHUB_TOKEN }}
+
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+    types: [opened, synchronize]
+  schedule:
+    - cron: "0 4 * * 1"
+
+jobs:
+  build-test-push:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        container_version:
+          - "cuda10.2-cudnn7"
+          - "cuda10.2-cudnn8"
+          - "cuda11.0.3-cudnn8"
+          - "cuda11.1.1-cudnn8"
+          - "cuda11.2.0-cudnn8"
+          - "cuda11.2.1-cudnn8"
+          - "cuda11.2.2-cudnn8"
+          - "cuda11.3.0-cudnn8"
+          - "cuda11.3.1-cudnn8"
+          - "cuda11.4.0-cudnn8"
+          - "cuda11.4.1-cudnn8"
+          - "cuda11.4.2-cudnn8"
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      -
+        name: Build ${{ matrix.container_version }}
+        uses: ./.github/workflows/build-image.new
+        with:
+          container_version: ${{ matrix.container_version }}

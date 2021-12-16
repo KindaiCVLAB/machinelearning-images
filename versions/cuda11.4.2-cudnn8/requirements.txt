@@ -1,0 +1,13 @@
+--find-links https://download.pytorch.org/whl/nightly/cu115/torch_nightly.html
+--pre
+### For cuda11.4.2-cudnn8 ###
+tf-nightly-gpu
+keras
+torch
+torchvision
+torchinfo==1.5.4
+optuna==3.0.0a0
+cupy-cuda114==10.0.0
+
+### Common Libraries ###
+-r ../common/requirements.txt
