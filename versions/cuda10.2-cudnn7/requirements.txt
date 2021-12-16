@@ -1,6 +1,6 @@
 ### For cuda10.2-cudnn7 ###
 tensorflow-gpu==2.4.4
-keras==2.4.3
+keras==2.7.0
 torch==1.7.1
 torchvision==0.8.2
 torchinfo==1.5.4
