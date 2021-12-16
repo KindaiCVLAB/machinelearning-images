@@ -1,0 +1,48 @@
+inputs:
+  container_version:
+    required: true
+    type: string
+
+runs:
+  using: "composite"
+  steps:
+    -
+      name: Setup base_img_cuda_version
+      shell: bash
+      run: |
+        container_version="${{ inputs.container_version }}"
+        cuda_major=$(echo ${container_version//cuda/} | cut -d. -f1)
+        cuda_minor=$(echo $container_version | cut -d. -f2 | cut -d- -f1)
+        echo "base_img_cuda_version=$(echo ${container_version//cuda/})" >> $GITHUB_ENV
+    -
+      name: Setup base_img_os_version
+      shell: bash
+      run: |
+        only_cuda_version=$(echo "${{ env.base_img_cuda_version }}" | cut -d- -f1)
+        if [ "$only_cuda_version" = "10.2" ]; then \
+          echo "base_img_os_version=ubuntu18.04" >> $GITHUB_ENV
+        else \
+          echo "base_img_os_version=ubuntu20.04" >> $GITHUB_ENV
+        fi;
+    -
+      name: Setup container_image_name
+      shell: bash
+      run: |
+        git_branch_name="${GITHUB_REF#refs/heads/}"
+        if [ "$git_branch_name" = "master" ]; then \
+          echo "container_image_name=ghcr.io/kindaicvlab/machinelearning-images" >> $GITHUB_ENV
+        else \
+          echo "container_image_name=ghcr.io/kindaicvlab/machinelearning-images/test" >> $GITHUB_ENV
+        fi;
+    -
+      name: Build
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        file: Dockerfile.new
+        push: false
+        tags: ${{ env.container_image_name }}:${{ inputs.container_version }}
+        build-args: |
+          BASE_IMG_CUDA_VERSION=${{ env.base_img_cuda_version }}
+          BASE_IMG_OS_VERSION=${{ env.base_img_os_version }}
+          IMAGE_STATUS=${{ env.image_status }}

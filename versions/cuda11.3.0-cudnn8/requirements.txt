@@ -1,0 +1,12 @@
+--find-links https://download.pytorch.org/whl/torch_stable.html
+### For cuda11.3.0-cudnn8 ###
+tensorflow-gpu==2.6.1
+keras==2.6.0
+torch==1.10.0+cu113
+torchvision==0.11.1+cu113
+torchinfo==1.5.4
+optuna==2.10.0
+cupy-cuda113==9.5.0
+
+### Common Libraries ###
+-r ../common/requirements.txt

@@ -1,0 +1,18 @@
+### jupyter extensions ###
+ipywidgets
+jupyterlab-nvdashboard
+lckr-jupyterlab-variableinspector
+
+### Common Libaries ###
+tqdm
+addict
+progressbar
+pycocotools
+requests
+cmake
+scikit-build
+tabulate
+tensorflow_model_optimization
+Keras-Applications
+opencv-python>=4.0.0.21,<=5.0.0.0
+jupyterlab>=3.0.0,<=4.0.0
