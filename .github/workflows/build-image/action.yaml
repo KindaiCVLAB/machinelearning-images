@@ -19,7 +19,7 @@ runs:
           KERAS_VERSION=${{ env.keras }}
           TORCH_VERSION=${{ env.torch }}
           TORCH_VISION_VERSION=${{ env.torch_vision }}
-          TORCH_SUMMARY_VERSION=${{ env.torch_summary }}
+          TORCHINFO_VERSION=${{ env.torchinfo }}
           CUPY_CUDA_VERSION=${{ env.cupy_cuda }}
           CUDA_VERSION_FOR_CUPY=${{ env.cuda_version_for_cupy }}
           JUPYTER_VERSION=${{ env.jupyter }}

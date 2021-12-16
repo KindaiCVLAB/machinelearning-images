@@ -21,7 +21,7 @@ ARG TF_GPU_VERSION
 ARG KERAS_VERSION
 ARG TORCH_VERSION
 ARG TORCH_VISION_VERSION
-ARG TORCH_SUMMARY_VERSION
+ARG TORCHINFO_VERSION
 ARG CUPY_CUDA_VERSION
 ARG JUPYTER_VERSION
 ARG CUDA_VERSION_FOR_CUPY
@@ -129,7 +129,7 @@ RUN pip install opencv-python==${OPENCV_VERSION} \
             pip install torchvision==${TORCH_VISION_VERSION} -f ${TORCH_VISION_FILE}; \
         fi \
     fi \
- && pip install torchsummary==${TORCH_SUMMARY_VERSION} \
+ && pip install torchinfo==${TORCHINFO_VERSION} \
  && pip install optuna==${OPTUNA_VERSION} \
  && pip install tqdm \
                 addict \

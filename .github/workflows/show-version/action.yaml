@@ -14,7 +14,7 @@ runs:
         echo KERAS_VERSION "${{ env.keras }}"
         echo TORCH_VERSION "${{ env.torch }}"
         echo TORCH_VISION_VERSION "${{ env.torch_vision }}"
-        echo TORCH_SUMMARY_VERSION "${{ env.torch_summary }}"
+        echo TORCHINFO_VERSION "${{ env.torchinfo }}"
         echo CUPY_CUDA_VERSION "${{ env.cupy_cuda }}"
         echo CUDA_VERSION_FOR_CUPY "${{ env.cuda_version_for_cupy }}"
         echo JUPYTER_VERSION "${{ env.jupyter }}"
