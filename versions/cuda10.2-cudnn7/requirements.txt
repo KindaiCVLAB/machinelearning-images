@@ -1,7 +1,7 @@
 ### For cuda10.2-cudnn7 ###
 tensorflow-gpu==2.4.4
 keras==2.4.3
-torch==1.7.1
+torch==1.10.1
 torchvision==0.8.2
 torchinfo==1.5.4
 optuna==2.10.0
