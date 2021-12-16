@@ -16,6 +16,8 @@ env:
   torch_file: "https://download.pytorch.org/whl/torch_stable.html"
   torch_vision_file: "https://download.pytorch.org/whl/torch_stable.html"
   github_token: ${{ secrets.GITHUB_TOKEN }}
+permissions:
+  packages: write
 on:
   push:
     branches:

@@ -3,6 +3,9 @@ name: Build and Push Container Images
 env:
   github_token: ${{ secrets.GITHUB_TOKEN }}
 
+permissions:
+  packages: write
+
 on:
   push:
     branches:

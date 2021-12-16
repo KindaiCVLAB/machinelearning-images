@@ -1,9 +1,9 @@
---find-links https://download.pytorch.org/whl/torch_stable.html
+--find-links https://download.pytorch.org/whl/cu111/torch_stable.html
 ### For cuda11.2.1-cudnn8 ###
 tensorflow-gpu==2.5.2
 keras==2.4.3
-torch==1.9.0+cu111
-torchvision==0.10.0+cu111
+torch==1.9.0
+torchvision==0.10.0
 torchinfo==1.5.4
 optuna==2.10.0
 cupy-cuda112==9.1.0
