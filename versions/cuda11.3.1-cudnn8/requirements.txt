@@ -6,7 +6,7 @@ torch==1.10.0
 torchvision==0.11.1
 torchinfo==1.5.4
 optuna==2.10.0
-cupy-cuda113==9.6.0
+cupy-cuda113==10.0.0
 
 ### Common Libraries ###
 -r ../common/requirements.txt
