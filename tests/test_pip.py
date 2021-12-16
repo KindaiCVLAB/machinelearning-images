@@ -16,12 +16,12 @@ class TestVersionsByPip(unittest.TestCase):
     expected = os.environ["JUPYTER_VERSION"]
     self.assertEqual(expected, actual)
 
-  def test_torch_summary_version(self):
-    """test torch summary version
+  def test_torchinfo_version(self):
+    """test torchinfo version
     """
 
-    actual = search_pkg_version("torchsummary")
-    expected = os.environ["TORCH_SUMMARY_VERSION"]
+    actual = search_pkg_version("torchinfo")
+    expected = os.environ["TORCHINFO_VERSION"]
     self.assertEqual(expected, actual)
 
   def test_tf_gpu(self):

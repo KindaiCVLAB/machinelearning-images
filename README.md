@@ -45,8 +45,8 @@
 
 |    STATUS    | Description |
 |:------------:|:-----------:|
-|   `closed`   | セキュリティパッチや深刻なエラー修正も提供されないので，直ちに使用を停止してください．|
-| `deprecated` | セキュリティパッチや深刻なエラー修正のみが提供されます．各ライブラリが最新版に更新されることはありません．|
+|   `closed`   | セキュリティパッチやバグ修正も提供されないので，直ちに使用を停止してください．|
+| `deprecated` | セキュリティパッチやバグ修正のみが提供されます．各ライブラリが最新版に更新されることはありません．|
 |   `stable`   | 安定版です．全てのライブラリが最新版に保たれています．|
 |   `feature`  | 新機能追加中のため特定の環境でしか動作しません．|
 
@@ -157,7 +157,7 @@
 |keras|2.4.3|
 |torch|1.7.1+cu102|
 |torchvision|0.8.2+cu102|
-|torchsummary|1.5.1|
+|torchinfo|1.5.4|
 |jupyterlab|2.2.9|
 |optuna|2.10.0|
 |cupy-cuda102|8.3.0|
@@ -177,7 +177,7 @@
 |keras|2.4.3|
 |torch|1.8.1+cu111|
 |torchvision|0.9.1+cu111|
-|torchsummary|1.5.1|
+|torchinfo|1.5.4|
 |jupyterlab|2.2.9|
 |optuna|2.10.0|
 |cupy-cuda110|8.4.0|
@@ -197,7 +197,7 @@
 |keras|2.6.0|
 |torch|1.9.1+cu111|
 |torchvision|0.10.1+cu111|
-|torchsummary|1.5.1|
+|torchinfo|1.5.4|
 |jupyterlab|3.1.18|
 |optuna|2.10.0|
 |cupy-cuda111|9.5.0|
@@ -217,7 +217,7 @@
 |keras|2.4.3|
 |torch|1.9.0+cu111|
 |torchvision|0.10.0+cu111|
-|torchsummary|1.5.1|
+|torchinfo|1.5.4|
 |jupyterlab|3.0.16|
 |optuna|2.10.0|
 |cupy-cuda112|9.1.0|
@@ -237,7 +237,7 @@
 |keras|2.4.3|
 |torch|1.9.0+cu111|
 |torchvision|0.10.0+cu111|
-|torchsummary|1.5.1|
+|torchinfo|1.5.4|
 |jupyterlab|3.0.16|
 |optuna|2.10.0|
 |cupy-cuda112|9.1.0|
@@ -257,7 +257,7 @@
 |keras|2.7.0|
 |torch|1.10.0+cu113|
 |torchvision|0.11.1+cu113|
-|torchsummary|1.5.1|
+|torchinfo|1.5.4|
 |jupyterlab|3.2.4|
 |optuna|2.10.0|
 |cupy-cuda112|9.6.0|
@@ -277,7 +277,7 @@
 |keras|2.6.0|
 |torch|1.10.0+cu113|
 |torchvision|0.11.1+cu113|
-|torchsummary|1.5.1|
+|torchinfo|1.5.4|
 |jupyterlab|3.1.18|
 |optuna|2.10.0|
 |cupy-cuda113|9.5.0|
@@ -297,7 +297,7 @@
 |keras|2.7.0|
 |torch|1.10.0+cu113|
 |torchvision|0.11.1+cu113|
-|torchsummary|1.5.1|
+|torchinfo|1.5.4|
 |jupyterlab|3.2.4|
 |optuna|2.10.0|
 |cupy-cuda113|9.6.0|
@@ -317,7 +317,7 @@
 |keras|2.7.0|
 |torch|1.11.0.dev20211214+cu115|
 |torchvision|0.12.0.dev20211214+cu115|
-|torchsummary|1.5.1|
+|torchinfo|1.5.4|
 |jupyterlab|3.2.4|
 |optuna|3.0.0a0|
 |cupy-cuda113|10.0.0rc1|
@@ -337,7 +337,7 @@
 |keras|2.7.0|
 |torch|1.11.0.dev20211214+cu115|
 |torchvision|0.12.0.dev20211214+cu115|
-|torchsummary|1.5.1|
+|torchinfo|1.5.4|
 |jupyterlab|3.2.4|
 |optuna|3.0.0a0|
 |cupy-cuda114|10.0.0rc1|
@@ -357,7 +357,7 @@
 |keras|2.7.0|
 |torch|1.11.0.dev20211214+cu115|
 |torchvision|0.12.0.dev20211214+cu115|
-|torchsummary|1.5.1|
+|torchinfo|1.5.4|
 |jupyterlab|3.2.4|
 |optuna|3.0.0a0|
 |cupy-cuda114|10.0.0rc1|

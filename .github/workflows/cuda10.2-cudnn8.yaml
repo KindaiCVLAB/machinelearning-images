@@ -9,7 +9,7 @@ env:
   keras: "2.4.3"
   torch: "1.7.1"
   torch_vision: "0.8.2"
-  torch_summary: "1.5.1"
+  torchinfo: "1.5.4"
   cupy_cuda: "8.3.0"
   jupyter: "3.0.16"
   optuna: "2.10.0"

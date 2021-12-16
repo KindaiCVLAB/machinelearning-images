@@ -25,7 +25,7 @@ assignees: ''
 - [ ] keras: 
 - [ ] torch: 
 - [ ] torchvision: 
-- [ ] torchsummary: 
+- [ ] torchinfo: 
 - [ ] jupyterlab: 
 - [ ] optuna: 
 - [ ] cupy-cuda: 
@@ -38,7 +38,6 @@ assignees: ''
 - [ ] keras: 
 - [ ] torch-nightly: 
 - [ ] torchvision-nightly: 
-- [ ] torchsummary: 
 - [ ] jupyterlab: 
 - [ ] optuna: 
 - [ ] cupy-cuda: 
