@@ -1,0 +1,65 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":timezone(Asia/Tokyo)",
+    ":prHourlyLimitNone"
+  ],
+  "labels": ["dependencies"],
+  "pip_requirements": {
+    "fileMatch": [
+      "versions/cuda11.4.2-cudnn8/requirements.txt",
+      "versions/cuda11.4.1-cudnn8/requirements.txt",
+      "versions/cuda11.4.0-cudnn8/requirements.txt",
+      "versions/cuda11.3.1-cudnn8/requirements.txt",
+      "versions/cuda11.3.0-cudnn8/requirements.txt",
+      "versions/cuda11.2.2-cudnn8/requirements.txt",
+      "versions/cuda11.2.1-cudnn8/requirements.txt",
+      "versions/cuda11.2.0-cudnn8/requirements.txt",
+      "versions/cuda11.1.1-cudnn8/requirements.txt",
+      "versions/cuda11.0.3-cudnn8/requirements.txt",
+      "versions/cuda10.2-cudnn8/requirements.txt",
+      "versions/cuda10.2-cudnn7/requirements.txt"
+    ]
+  },
+  "packageRules": [
+    {
+      "groupName": "Pytorch",
+      "matchPackageNames": [
+        "torch",
+        "torchvision"
+      ]
+    },
+    {
+      "groupName": "Tensorflow",
+      "matchPackageNames": [
+        "tensorflow-gpu",
+        "keas"
+      ]
+    },
+    {
+      "packagePatterns": [".*"],
+      "matchFiles": [
+        "versions/cuda11.4.2-cudnn8/requirements.txt",
+        "versions/cuda11.4.1-cudnn8/requirements.txt",
+        "versions/cuda11.4.0-cudnn8/requirements.txt",
+        "versions/cuda11.3.1-cudnn8/requirements.txt",
+        "versions/cuda11.2.2-cudnn8/requirements.txt"
+        ],
+        "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"]
+    },
+    {
+      "packagePatterns": [".*"],
+      "matchFiles": [
+        "versions/cuda11.3.0-cudnn8/requirements.txt",
+        "versions/cuda11.2.1-cudnn8/requirements.txt",
+        "versions/cuda11.2.0-cudnn8/requirements.txt",
+        "versions/cuda11.1.1-cudnn8/requirements.txt",
+        "versions/cuda11.0.3-cudnn8/requirements.txt",
+        "versions/cuda10.2-cudnn8/requirements.txt",
+        "versions/cuda10.2-cudnn7/requirements.txt"
+      ],
+      "matchUpdateTypes": ["patch", "pin", "digest"]
+    }
+  ]
+}
