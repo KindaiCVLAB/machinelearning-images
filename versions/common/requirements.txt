@@ -1,18 +1,19 @@
 ### jupyter extensions ###
-ipywidgets
-jupyterlab-nvdashboard
-lckr-jupyterlab-variableinspector
+ipywidgets==7.6.5
+jupyterlab-nvdashboard==0.6.0
+lckr-jupyterlab-variableinspector==3.0.9
 
 ### Common Libaries ###
-tqdm
-addict
-progressbar
-pycocotools
-requests
-cmake
-scikit-build
-tabulate
-tensorflow_model_optimization
-Keras-Applications
-opencv-python>=4.0.0.21,<=5.0.0.0
-jupyterlab>=3.0.0,<=4.0.0
+tqdm==4.62.3
+addict==2.4.0
+progressbar==2.5
+progressbar2==3.55.0
+pycocotools==2.0.3
+requests==2.26.0
+cmake==3.22.0
+scikit-build==0.11.1
+tabulate==0.8.9
+tensorflow_model_optimization==0.7.0
+Keras-Applications==1.0.8
+opencv-python==4.4.0.46
+jupyterlab==3.0.0
