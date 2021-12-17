@@ -1,0 +1,72 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":timezone(Asia/Tokyo)",
+    ":prHourlyLimitNone",
+    ":preserveSemverRanges"
+  ],
+  "addLabels": [
+    "dependencies",
+    "update"
+  ],
+  "github-actions": {
+    "enabled": false
+  },
+  "dockerfile": {
+    "fileMatch": [
+      "(^|/|\\.)Dockerfile$",
+      "(^|/)Dockerfile\\.[^/]*$"
+    ],
+    "enabled": false
+  },
+  "packageRules": [
+    {
+      "groupName": "Pytorch Group",
+      "matchPackageNames": ["torch", "torchvision"]
+    },
+    {
+      "groupName": "Tensorflow Group",
+      "matchPackageNames": ["tensorflow-gpu", "keras"]
+    },
+    {
+      "groupName": "Tensorflow Nightly Group",
+      "matchPackageNames": ["tf-nightly-gpu", "keras"],
+      "matchPaths": [
+        "versions/cuda11.4.0-cudnn8/requirements.txt",
+        "versions/cuda11.4.1-cudnn8/requirements.txt",
+        "versions/cuda11.4.2-cudnn8/requirements.txt"
+      ]
+    },
+    {
+      "groupName": "Ignore updateType=[major|minor] if image status is deprecated",
+      "excludePackagePatterns": ["cupy-cuda.*"],
+      "matchPaths": [
+        "versions/cuda10.2-cudnn7/requirements.txt",
+        "versions/cuda10.2-cudnn8/requirements.txt",
+        "versions/cuda11.0.3-cudnn8/requirements.txt",
+        "versions/cuda11.1.1-cudnn8/requirements.txt",
+        "versions/cuda11.2.0-cudnn8/requirements.txt",
+        "versions/cuda11.2.1-cudnn8/requirements.txt",
+        "versions/cuda11.3.0-cudnn8/requirements.txt"
+      ],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
+   },
+   {
+    "groupName": "Ignore updateType=[major] when if image status is deprecated",
+    "matchPackagePatterns": ["cupy-cuda.*"],
+     "matchPaths": [
+       "versions/cuda10.2-cudnn7/requirements.txt",
+       "versions/cuda10.2-cudnn8/requirements.txt",
+       "versions/cuda11.0.3-cudnn8/requirements.txt",
+       "versions/cuda11.1.1-cudnn8/requirements.txt",
+       "versions/cuda11.2.0-cudnn8/requirements.txt",
+       "versions/cuda11.2.1-cudnn8/requirements.txt",
+       "versions/cuda11.3.0-cudnn8/requirements.txt"
+     ],
+     "matchUpdateTypes": ["major"],
+     "enabled": false
+   }
+  ]
+}
