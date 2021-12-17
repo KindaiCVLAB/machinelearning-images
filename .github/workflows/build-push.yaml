@@ -19,7 +19,7 @@ on:
 
 jobs:
   build-push:
-    if: ${{ github.actor == 'renovate[bot]' || github.actor == 'tenzen-y' }}
+    if: ${{ github.actor == 'renovate[bot]' || github.actor == 'tenzen-y' || github.actor == 'mergify[bot]' }}
     runs-on: ubuntu-20.04
     strategy:
       matrix:
