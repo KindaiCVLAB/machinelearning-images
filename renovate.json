@@ -10,6 +10,7 @@
     "dependencies",
     "update"
   ],
+  "commitMessagePrefix": "chore(deps):",
   "github-actions": {
     "enabled": false
   },
