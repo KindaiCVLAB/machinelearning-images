@@ -55,7 +55,7 @@
       "enabled": false
    },
    {
-    "groupName": "Ignore updateType=[major] when if image status is deprecated",
+    "groupName": "Ignore updateType=[major] if image status is deprecated",
     "matchPackagePatterns": ["cupy-cuda.*"],
      "matchPaths": [
        "versions/cuda10.2-cudnn7/requirements.txt",
