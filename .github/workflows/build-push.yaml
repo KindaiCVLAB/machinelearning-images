@@ -18,7 +18,8 @@ on:
     - cron: "0 4 * * 1"
 
 jobs:
-  build-test-push:
+  build-push:
+    if: ${{ github.actor == 'renovate[bot]' || github.actor == 'tenzen-y' }}
     runs-on: ubuntu-20.04
     strategy:
       matrix:

@@ -28,6 +28,7 @@ on:
     - cron: "0 4 * * 1"
 jobs:
   build-test-push:
+    if: ${{ github.actor != 'renovate[bot]' }}
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
