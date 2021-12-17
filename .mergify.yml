@@ -21,4 +21,4 @@ pull_request_rules:
       - 'check-success=build-push (cuda10.2-cudnn7)'
     actions:
       merge:
-        method: merge
+        method: squash
