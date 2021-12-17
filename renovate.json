@@ -40,6 +40,38 @@
       ]
     },
     {
+      "groupName": "Jupyter Extensions Group",
+      "matchPaths": [
+        "versions/common/requirements.txt"
+      ],
+      "matchPackageNames": [
+        "ipywidgets",
+        "jupyterlab-nvdashboard",
+        "lckr-jupyterlab-variableinspector"
+      ]
+    },
+    {
+      "groupName": "Common Libraries Group",
+      "matchPaths": [
+        "versions/common/requirements.txt"
+      ],
+      "matchPackageNames": [
+        "tqdm",
+        "addict",
+        "progressbar",
+        "progressbar2",
+        "pycocotools",
+        "requests",
+        "cmake",
+        "scikit-build",
+        "tabulate",
+        "tensorflow_model_optimization",
+        "Keras-Applications",
+        "opencv-python",
+        "jupyterlab"
+      ]
+    },
+    {
       "groupName": "Ignore updateType=[major|minor] if image status is deprecated",
       "excludePackagePatterns": ["cupy-cuda.*"],
       "matchPaths": [
