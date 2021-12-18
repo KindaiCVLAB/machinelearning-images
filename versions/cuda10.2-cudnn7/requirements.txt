@@ -1,3 +1,4 @@
+--find-links https://download.pytorch.org/whl/cu102/torch_stable.html
 ### For cuda10.2-cudnn7 ###
 tensorflow-gpu==2.4.4
 keras==2.4.3
