@@ -37,7 +37,8 @@
         "versions/cuda11.4.0-cudnn8/requirements.txt",
         "versions/cuda11.4.1-cudnn8/requirements.txt",
         "versions/cuda11.4.2-cudnn8/requirements.txt"
-      ]
+      ],
+      "automerge": true
     },
     {
       "groupName": "Jupyter Extensions Group",
