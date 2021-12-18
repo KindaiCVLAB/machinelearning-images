@@ -1,4 +1,4 @@
---find-links https://download.pytorch.org/whl/cu111/torch_stable.html
+--find-links https://download.pytorch.org/whl/cu113/torch_stable.html
 ### For cuda11.2.1-cudnn8 ###
 tensorflow-gpu==2.5.2
 keras==2.4.3
