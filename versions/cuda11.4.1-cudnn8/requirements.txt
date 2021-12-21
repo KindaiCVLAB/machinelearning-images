@@ -4,7 +4,7 @@
 ### For cuda11.4.1-cudnn8 ###
 torch
 torchvision
-tf-nightly-gpu==2.8.0.dev20211220
+tf-nightly-gpu==2.8.0.dev20211221
 keras==2.7.0
 torchinfo==1.5.4
 optuna==3.0.0a0
