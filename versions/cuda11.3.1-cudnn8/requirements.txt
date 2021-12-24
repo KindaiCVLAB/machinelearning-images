@@ -4,7 +4,7 @@ tensorflow-gpu==2.7.0
 keras==2.7.0
 torch==1.10.1
 torchvision==0.11.2
-torchinfo==1.6.0
+torchinfo==1.6.1
 optuna==2.10.0
 cupy-cuda113==10.0.0
 
