@@ -251,16 +251,16 @@
 |:---:|:---:|
 |CUDA|11.2.2|
 |cudnn|8.1.1.33|
-|anaconda3|2021.05|
+|anaconda3|2021.11|
 |opencv-python|4.5.4.60|
 |tensorflow-gpu|2.7.0|
 |keras|2.7.0|
-|torch|1.10.0+cu113|
-|torchvision|0.11.1+cu113|
-|torchinfo|1.5.4|
-|jupyterlab|3.2.4|
+|torch|1.10.1+cu113|
+|torchvision|0.11.2+cu113|
+|torchinfo|1.6.1|
+|jupyterlab|3.2.5|
 |optuna|2.10.0|
-|cupy-cuda112|9.6.0|
+|cupy-cuda112|10.0.0|
 
 ### cuda11.3.0
 
@@ -291,16 +291,16 @@
 |:---:|:---:|
 |CUDA|11.3.1|
 |cudnn|8.2.0.53|
-|anaconda3|2021.05|
+|anaconda3|2021.11|
 |opencv-python|4.5.4.60|
 |tensorflow-gpu|2.7.0|
 |keras|2.7.0|
-|torch|1.10.0+cu113|
-|torchvision|0.11.1+cu113|
-|torchinfo|1.5.4|
-|jupyterlab|3.2.4|
+|torch|1.10.1+cu113|
+|torchvision|0.11.2+cu113|
+|torchinfo|1.6.1|
+|jupyterlab|3.2.5|
 |optuna|2.10.0|
-|cupy-cuda113|9.6.0|
+|cupy-cuda113|10.0.0|
 
 ### cuda11.4.0
 
@@ -311,16 +311,16 @@
 |:---:|:---:|
 |CUDA|11.4.0|
 |cudnn|8.2.4.15|
-|anaconda3|2021.05|
+|anaconda3|2021.11|
 |opencv-python|4.5.4.60|
-|tensorflow-gpu|2.8.0.dev20211130|
+|tensorflow-gpu|2.9.0.dev20211227|
 |keras|2.7.0|
-|torch|1.11.0.dev20211214+cu115|
-|torchvision|0.12.0.dev20211214+cu115|
-|torchinfo|1.5.4|
-|jupyterlab|3.2.4|
+|torch|1.11.0.dev20211227+cu115|
+|torchvision|0.12.0.dev20211227+cu115|
+|torchinfo|1.6.1|
+|jupyterlab|3.2.5|
 |optuna|3.0.0a0|
-|cupy-cuda113|10.0.0rc1|
+|cupy-cuda113|10.0.0|
 
 ### cuda11.4.1
 
@@ -331,16 +331,16 @@
 |:---:|:---:|
 |CUDA|11.4.1|
 |cudnn|8.2.4.15|
-|anaconda3|2021.05|
+|anaconda3|2021.11|
 |opencv-python|4.5.4.60|
-|tensorflow-gpu|2.8.0.dev20211130|
+|tensorflow-gpu|2.9.0.dev20211227|
 |keras|2.7.0|
-|torch|1.11.0.dev20211214+cu115|
-|torchvision|0.12.0.dev20211214+cu115|
-|torchinfo|1.5.4|
-|jupyterlab|3.2.4|
+|torch|1.11.0.dev20211227+cu115|
+|torchvision|0.12.0.dev20211227+cu115|
+|torchinfo|1.6.1|
+|jupyterlab|3.2.5|
 |optuna|3.0.0a0|
-|cupy-cuda114|10.0.0rc1|
+|cupy-cuda114|10.0.0|
 
 ### cuda11.4.2
 
@@ -351,16 +351,16 @@
 |:---:|:---:|
 |CUDA|11.4.2|
 |cudnn|8.2.4.15|
-|anaconda3|2021.05|
+|anaconda3|2021.11|
 |opencv-python|4.5.4.60|
-|tensorflow-gpu|2.8.0.dev20211130|
+|tensorflow-gpu|2.9.0.dev20211227|
 |keras|2.7.0|
-|torch|1.11.0.dev20211214+cu115|
-|torchvision|0.12.0.dev20211214+cu115|
-|torchinfo|1.5.4|
-|jupyterlab|3.2.4|
+|torch|1.11.0.dev20211227+cu115|
+|torchvision|0.12.0.dev20211227+cu115|
+|torchinfo|1.6.1|
+|jupyterlab|3.2.5|
 |optuna|3.0.0a0|
-|cupy-cuda114|10.0.0rc1|
+|cupy-cuda114|10.0.0|
 
 ## 各種ツール類
 
