@@ -31,15 +31,6 @@
       "matchPackageNames": ["tensorflow-gpu", "keras"]
     },
     {
-      "groupName": "Tensorflow Nightly Group",
-      "matchPackageNames": ["tf-nightly-gpu", "keras"],
-      "matchPaths": [
-        "versions/cuda11.4.0-cudnn8/requirements.txt",
-        "versions/cuda11.4.1-cudnn8/requirements.txt",
-        "versions/cuda11.4.2-cudnn8/requirements.txt"
-      ]
-    },
-    {
       "groupName": "Jupyter Extensions Group",
       "matchPaths": [
         "versions/common/requirements.txt"
