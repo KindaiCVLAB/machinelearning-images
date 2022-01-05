@@ -7,7 +7,7 @@ lckr-jupyterlab-variableinspector==3.0.9
 tqdm==4.62.3
 addict==2.4.0
 progressbar==2.5
-progressbar2==3.55.0
+progressbar2==4.0.0
 pycocotools==2.0.3
 requests==2.27.1
 cmake==3.22.1
