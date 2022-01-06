@@ -19,7 +19,6 @@ on:
 
 jobs:
   build-push:
-    if: ${{ github.actor == 'renovate[bot]' || github.actor == 'tenzen-y' || github.actor == 'mergify[bot]' }}
     runs-on: ubuntu-20.04
     strategy:
       matrix:
@@ -44,6 +43,6 @@ jobs:
           fetch-depth: 1
       -
         name: Build ${{ matrix.container_version }}
-        uses: ./.github/workflows/build-image.new
+        uses: ./.github/workflows/build-image
         with:
           container_version: ${{ matrix.container_version }}

@@ -1,21 +1,9 @@
 [![GitHub license](https://img.shields.io/github/license/KindaiCVLAB/machinelearning-images?color=blue)](https://github.com/KindaiCVLAB/machinelearning-images/blob/master/LICENSE)
-[![cuda10.2-cudnn7](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda10.2-cudnn7.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda10.2-cudnn7.yaml)
-[![cuda10.2-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda10.2-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda10.2-cudnn8.yaml)
-[![cuda11.0.3-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.0.3-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.0.3-cudnn8.yaml)
-[![cuda11.1.1-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.1.1-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.1.1-cudnn8.yaml)
-[![cuda11.2.0-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.2.0-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.2.0-cudnn8.yaml)
-[![cuda11.2.1-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.2.1-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.2.1-cudnn8.yaml)
-[![cuda11.2.2-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.2.2-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.2.2-cudnn8.yaml)
-[![cuda11.3.0-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.3.0-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.3.0-cudnn8.yaml)
-[![cuda11.3.1-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.3.1-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.3.1-cudnn8.yaml)
-[![cuda11.4.0-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.4.0-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.4.0-cudnn8.yaml)
-[![cuda11.4.1-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.4.1-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.4.1-cudnn8.yaml)
-[![cuda11.4.2-cudnn8](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.4.2-cudnn8.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/cuda11.4.2-cudnn8.yaml)
-
+[![Build and Push Container Images](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/build-push.yaml/badge.svg)](https://github.com/KindaiCVLAB/machinelearning-images/actions/workflows/build-push.yaml)
 
 # Container Images for Machine Learning
 
-本リポジトリは Machine Learning 用コンテナイメージを保管するリポジトリです．
+本リポジトリはコンピュータビジョン向けの Machine Learning 用コンテナイメージを保管するリポジトリです．
 
 ## 概要
 
@@ -52,25 +40,25 @@
 
 ### イメージのステータス一覧
 
-|        Image        |       Status       |
-|:-------------------:|:------------------:|
-|  `cuda10.0-cudnn7`  |      `closed`      |
-|  `cuda10.1-cudnn7`  |      `closed`      |
-|  `cuda10.1-cudnn8`  |      `closed`      |
-|  `cuda11.0-cudnn8`  |      `closed`      |
-|  `cuda11.1-cudnn8`  |      `closed`      |
-|  `cuda10.2-cudnn7`  |     `deprecated`   |
-|  `cuda10.2-cudnn8`  |     `deprecated`   |
-| `cuda11.0.3-cudnn8` |     `deprecated`   |
-| `cuda11.1.1-cudnn8` |     `deprecated`   |
-| `cuda11.2.0-cudnn8` |     `deprecated`   |
-| `cuda11.2.1-cudnn8` |     `deprecated`   |
-| `cuda11.2.2-cudnn8` |`stable(tensorflow)`|
-| `cuda11.3.0-cudnn8` |      `deprecated`  |
-| `cuda11.3.1-cudnn8` |`stable(pytorch)`   |
-| `cuda11.4.0-cudnn8` |      `feature`     |
-| `cuda11.4.1-cudnn8` |      `feature`     |
-| `cuda11.4.2-cudnn8` |      `feature`     |
+|        Image        |       Status       |                          Libraries Version                          |
+|:-------------------:|:------------------:|:-------------------------------------------------------------------:|
+|  `cuda10.0-cudnn7`  |      `closed`      |                                 none                                |
+|  `cuda10.1-cudnn7`  |      `closed`      |                                 none                                |
+|  `cuda10.1-cudnn8`  |      `closed`      |                                 none                                |
+|  `cuda11.0-cudnn8`  |      `closed`      |                                 none                                |
+|  `cuda11.1-cudnn8`  |      `closed`      |                                 none                                |
+|  `cuda10.2-cudnn7`  |     `deprecated`   |  [`requirements.txt`](./versions/cuda10.2-cudnn7/requirements.txt)  |
+|  `cuda10.2-cudnn8`  |     `deprecated`   |  [`requirements.txt`](./versions/cuda10.2-cudnn8/requirements.txt)  |
+| `cuda11.0.3-cudnn8` |     `deprecated`   | [`requirements.txt`](./versions/cuda11.0.3-cudnn8/requirements.txt) |
+| `cuda11.1.1-cudnn8` |     `deprecated`   | [`requirements.txt`](./versions/cuda11.1.1-cudnn8/requirements.txt) |
+| `cuda11.2.0-cudnn8` |     `deprecated`   | [`requirements.txt`](./versions/cuda11.2.0-cudnn8/requirements.txt) |
+| `cuda11.2.1-cudnn8` |     `deprecated`   | [`requirements.txt`](./versions/cuda11.2.1-cudnn8/requirements.txt) |
+| `cuda11.2.2-cudnn8` |`stable(tensorflow)`| [`requirements.txt`](./versions/cuda11.2.2-cudnn8/requirements.txt) |
+| `cuda11.3.0-cudnn8` |      `deprecated`  | [`requirements.txt`](./versions/cuda11.3.0-cudnn8/requirements.txt) |
+| `cuda11.3.1-cudnn8` |`stable(pytorch)`   | [`requirements.txt`](./versions/cuda11.3.1-cudnn8/requirements.txt) |
+| `cuda11.4.0-cudnn8` |      `feature`     | [`requirements.txt`](./versions/cuda11.4.0-cudnn8/requirements.txt) |
+| `cuda11.4.1-cudnn8` |      `feature`     | [`requirements.txt`](./versions/cuda11.4.1-cudnn8/requirements.txt) |
+| `cuda11.4.2-cudnn8` |      `feature`     | [`requirements.txt`](./versions/cuda11.4.2-cudnn8/requirements.txt) |
 
 ## コンテナイメージ の詳細
 
@@ -80,16 +68,14 @@
 - cuda10.2: ubuntu18.04
 - cuda10.2 以外: ubuntu20.04
 
-### 各イメージ共通ライブラリ & パッケージ
+ビルド日は package registry の `Published about 20 hours ago · Digest` を確認してください．
 
-- 各イメージで共通で使用されている物一覧です．
-- バージョンはコンテナイメージがビルドされた時点での最新のものになっています．
-- ビルド日は package registry の以下のような項目を確認してください．
-  - `Published about 20 hours ago · Digest`
+Note: ベースイメージを最新に保つため一定期間毎にコンテナイメージは再ビルドされます．
 
-- 共通イメージを最新に保つため一定期間毎にコンテナイメージは再ビルドされます．
+### インストールされているツール類
+注釈がない場合は最新バージョンがインストールされています．
 
-#### パッケージ
+#### ツール類
 
 - curl
 - wget
@@ -109,25 +95,28 @@
   - others: LTS
 - code-server
 
-##### For Anaconda
+#### jupyterlab アドオン拡張ツール
 
-- libgl1-mesa-glx
-- libegl1-mesa
-- libxrandr2
-- libxss1
-- libxcursor1
-- libxcomposite1
-- libasound2
-- libxi6
-- libxtst6
+- jupyterlab-nvdashboard
+- @lckr/jupyterlab_variableinspector
+- widgetsnbextension
 
-##### For OpenCV
+#### code-server アドオン拡張ツール
 
-- libsm6
-- libgl1-mesa-dev
-- libxrender1
+- ms-python
+- magicstack.magicpython
+- coenraads.bracket-pair-colorizer-2
+- streetsidesoftware.code-spell-checker
+- redhat.vscode-yaml
+- pkief.material-icon-theme
+- yzhang.markdown-all-in-one
 
-#### Python ライブラリ
+
+### Python ライブラリ
+各イメージ共通でインストールされているライブラリと各イメージごとで異なるバージョンがインストールされているライブラリがあります．
+
+#### 共通ライブラリ
+共通ライブラリのバージョンは[こちら](./versions/common/requirements.txt)を参照してください．
 
 - tqdm
 - addict
@@ -142,245 +131,16 @@
 - tensorflow_model_optimization
 - Keras-Applications
 
-### cuda10.2
+#### イメージ毎にバージョンが異なるライブラリ
+各イメージにインストールされているバージョンはイメージのステータス一覧の表を参照してください．
 
-- STATUS: Deprecated
-- cuda10.2-cudnn7 & cuda10.2-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|10.2|
-|cudnn|7.6.5.32-1 or 8.2.4.15-1|
-|anaconda3|2020.11|
-|opencv-python|4.5.1.48|
-|tensorflow-gpu|2.4.4|
-|keras|2.4.3|
-|torch|1.7.1+cu102|
-|torchvision|0.8.2+cu102|
-|torchinfo|1.5.4|
-|jupyterlab|2.2.9|
-|optuna|2.10.0|
-|cupy-cuda102|8.3.0|
-
-### cuda11.0.3
-
-- STATUS: Deprecated
-- cuda11.0.3-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|11.0.3|
-|cudnn|8.0.5.39|
-|anaconda3|2020.11|
-|opencv-python|4.5.1.48|
-|tensorflow-gpu|2.4.4|
-|keras|2.4.3|
-|torch|1.8.1+cu111|
-|torchvision|0.9.1+cu111|
-|torchinfo|1.5.4|
-|jupyterlab|2.2.9|
-|optuna|2.10.0|
-|cupy-cuda110|8.4.0|
-
-### cuda11.1.1
-
-- STATUS: Deprecated
-- cuda11.1.1-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|11.1.1|
-|cudnn|8.0.5.39|
-|anaconda3|2021.05|
-|opencv-python|4.5.3.56|
-|tensorflow-gpu|2.6.1|
-|keras|2.6.0|
-|torch|1.9.1+cu111|
-|torchvision|0.10.1+cu111|
-|torchinfo|1.5.4|
-|jupyterlab|3.1.18|
-|optuna|2.10.0|
-|cupy-cuda111|9.5.0|
-
-### cuda11.2.0
-
-- STATUS: Deprecated
-- cuda11.2.0-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|11.2.0|
-|cudnn|8.1.1.33|
-|anaconda3|2021.05|
-|opencv-python|4.5.2.54|
-|tensorflow-gpu|2.5.2|
-|keras|2.4.3|
-|torch|1.9.0+cu111|
-|torchvision|0.10.0+cu111|
-|torchinfo|1.5.4|
-|jupyterlab|3.0.16|
-|optuna|2.10.0|
-|cupy-cuda112|9.1.0|
-
-### cuda11.2.1
-
-- STATUS: Deprecated
-- cuda11.2.1-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|11.2.1|
-|cudnn|8.1.1.33|
-|anaconda3|2021.05|
-|opencv-python|4.5.2.54|
-|tensorflow-gpu|2.5.2|
-|keras|2.4.3|
-|torch|1.9.0+cu111|
-|torchvision|0.10.0+cu111|
-|torchinfo|1.5.4|
-|jupyterlab|3.0.16|
-|optuna|2.10.0|
-|cupy-cuda112|9.1.0|
-
-### cuda11.2.2
-
-- STATUS: Stable(Tensorflow)
-- cuda11.2.2-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|11.2.2|
-|cudnn|8.1.1.33|
-|anaconda3|2021.11|
-|opencv-python|4.5.4.60|
-|tensorflow-gpu|2.7.0|
-|keras|2.7.0|
-|torch|1.10.1+cu113|
-|torchvision|0.11.2+cu113|
-|torchinfo|1.6.1|
-|jupyterlab|3.2.5|
-|optuna|2.10.0|
-|cupy-cuda112|10.0.0|
-
-### cuda11.3.0
-
-- STATUS: Deprecated
-- cuda11.3.0-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|11.3.0|
-|cudnn|8.2.0.53|
-|anaconda3|2021.05|
-|opencv-python|4.5.3.56|
-|tensorflow-gpu|2.6.1|
-|keras|2.6.0|
-|torch|1.10.0+cu113|
-|torchvision|0.11.1+cu113|
-|torchinfo|1.5.4|
-|jupyterlab|3.1.18|
-|optuna|2.10.0|
-|cupy-cuda113|9.5.0|
-
-### cuda11.3.1
-
-- STATUS: Stable(Pytorch)
-- cuda11.3.1-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|11.3.1|
-|cudnn|8.2.0.53|
-|anaconda3|2021.11|
-|opencv-python|4.5.4.60|
-|tensorflow-gpu|2.7.0|
-|keras|2.7.0|
-|torch|1.10.1+cu113|
-|torchvision|0.11.2+cu113|
-|torchinfo|1.6.1|
-|jupyterlab|3.2.5|
-|optuna|2.10.0|
-|cupy-cuda113|10.0.0|
-
-### cuda11.4.0
-
-- STATUS: Feature
-- cuda11.4.0-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|11.4.0|
-|cudnn|8.2.4.15|
-|anaconda3|2021.11|
-|opencv-python|4.5.4.60|
-|tensorflow-gpu|2.9.0.dev20211227|
-|keras|2.7.0|
-|torch|1.11.0.dev20211227+cu115|
-|torchvision|0.12.0.dev20211227+cu115|
-|torchinfo|1.6.1|
-|jupyterlab|3.2.5|
-|optuna|3.0.0a0|
-|cupy-cuda113|10.0.0|
-
-### cuda11.4.1
-
-- STATUS: Feature
-- cuda11.4.1-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|11.4.1|
-|cudnn|8.2.4.15|
-|anaconda3|2021.11|
-|opencv-python|4.5.4.60|
-|tensorflow-gpu|2.9.0.dev20211227|
-|keras|2.7.0|
-|torch|1.11.0.dev20211227+cu115|
-|torchvision|0.12.0.dev20211227+cu115|
-|torchinfo|1.6.1|
-|jupyterlab|3.2.5|
-|optuna|3.0.0a0|
-|cupy-cuda114|10.0.0|
-
-### cuda11.4.2
-
-- STATUS: Feature
-- cuda11.4.2-cudnn8 イメージにのみ含まれる物を示しています．
-
-|ライブラリ名 & パッケージ名|バージョン|
-|:---:|:---:|
-|CUDA|11.4.2|
-|cudnn|8.2.4.15|
-|anaconda3|2021.11|
-|opencv-python|4.5.4.60|
-|tensorflow-gpu|2.9.0.dev20211227|
-|keras|2.7.0|
-|torch|1.11.0.dev20211227+cu115|
-|torchvision|0.12.0.dev20211227+cu115|
-|torchinfo|1.6.1|
-|jupyterlab|3.2.5|
-|optuna|3.0.0a0|
-|cupy-cuda114|10.0.0|
-
-## 各種ツール類
-
-### jupyterlab アドオン拡張ツール
-
-|拡張ツール名|バージョン|
-|:---:|:---:|
-|jupyterlab-nvdashboard|latest|
-|@lckr/jupyterlab_variableinspector|latest|
-|widgetsnbextension|latest|
-
-
-### code-server アドオン拡張ツール
-
-|拡張ツール名|バージョン|
-|:---:|:---:|
-|ms-python|latest|
-|magicstack.magicpython|latest|
-|coenraads.bracket-pair-colorizer-2|latest|
-|streetsidesoftware.code-spell-checker|latest|
-|redhat.vscode-yaml|latest|
-|pkief.material-icon-theme|latest|
-|yzhang.markdown-all-in-one|latest|
+- anaconda3
+- opencv-python
+- tensorflow-gpu
+- keras
+- torch
+- torchvision
+- torchinfo
+- jupyterlab
+- optuna
+- cupy-cuda
