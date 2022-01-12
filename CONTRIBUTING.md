@@ -66,21 +66,7 @@
 
 本ステータスはコンテナイメージが機能追加中であることを示します．
 
-# ドキュメントを書く際の参照ドキュメント等
+# 参考
 
-[cuda, cudnn, nvidia driver 対応表](https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html)
-
-## インストールされた cudnn のバージョン
-
-- [cuda10.2-cudnn7-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/10.2/ubuntu1804/devel/cudnn7/Dockerfile#L6)
-- [cuda10.2-cudnn8-devel-ubuntu18.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/10.2/ubuntu1804/devel/cudnn8/Dockerfile#L6)
-- [cuda11.0.3-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.0.3/ubuntu2004/devel/cudnn8/Dockerfile#L6)
-- [cuda11.1.1-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.1.1/ubuntu2004/devel/cudnn8/Dockerfile#L6)
-- [cuda11.2.0-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.0/ubuntu2004/devel/cudnn8/Dockerfile#L6)
-- [cuda11.2.1-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.1/ubuntu2004/devel/cudnn8/Dockerfile#L6)
-- [cuda11.2.2-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.2.2/ubuntu2004/devel/cudnn8/Dockerfile#L6)
-- [cuda11.3.0-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.3.0/ubuntu2004/devel/cudnn8/Dockerfile#L6)
-- [cuda11.3.1-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.3.1/ubuntu2004/devel/cudnn8/Dockerfile#L6)
-- [cuda11.4.0-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.4.0/ubuntu2004/devel/cudnn8/Dockerfile#L6)
-- [cuda11.4.1-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.4.1/ubuntu2004/devel/cudnn8/Dockerfile#L6)
-- [cuda11.4.2-cudnn8-devel-ubuntu20.04](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.4.2/ubuntu2004/devel/cudnn8/Dockerfile#L6)
+- [cuda, cudnn, nvidia driver 対応表](https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html)
+- [base image の Dockerfile](https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist)
