@@ -36,6 +36,7 @@ jobs:
           - "cuda11.4.1-cudnn8"
           - "cuda11.4.2-cudnn8"
           - "cuda11.4.3-cudnn8"
+          - "cuda11.5.1-cudnn8"
     steps:
       -
         name: Checkout
