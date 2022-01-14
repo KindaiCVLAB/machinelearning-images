@@ -25,6 +25,7 @@
 - `ghcr.io/kindaicvlab/machinelearning-images:cuda11.4.1-cudnn8`
 - `ghcr.io/kindaicvlab/machinelearning-images:cuda11.4.2-cudnn8`
 - `ghcr.io/kindaicvlab/machinelearning-images:cuda11.4.3-cudnn8`
+- `ghcr.io/kindaicvlab/machinelearning-images:cuda11.5.1-cudnn8`
 
 ## 動作状況
 
@@ -61,6 +62,7 @@
 | `cuda11.4.1-cudnn8` |      `feature`     | [`requirements.txt`](./versions/cuda11.4.1-cudnn8/requirements.txt) |
 | `cuda11.4.2-cudnn8` |      `feature`     | [`requirements.txt`](./versions/cuda11.4.2-cudnn8/requirements.txt) |
 | `cuda11.4.3-cudnn8` |      `feature`     | [`requirements.txt`](./versions/cuda11.4.3-cudnn8/requirements.txt) |
+| `cuda11.5.1-cudnn8` |      `feature`     | [`requirements.txt`](./versions/cuda11.5.1-cudnn8/requirements.txt) |
 
 ## コンテナイメージ の詳細
 
