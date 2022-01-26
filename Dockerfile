@@ -29,6 +29,7 @@ RUN apt-get update -y \
     wget \
     git \
     unzip \
+    zip \
     imagemagick \
     bzip2 \
     vim \
