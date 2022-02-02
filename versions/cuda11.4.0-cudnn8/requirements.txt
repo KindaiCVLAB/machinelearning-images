@@ -1,7 +1,7 @@
 --find-links https://download.pytorch.org/whl/cu115/torch_stable.html
 ### For cuda11.4.0-cudnn8 ###
-tensorflow-gpu==2.7.0
-keras==2.7.0
+tensorflow-gpu==2.8.0
+keras==2.8.0
 torch==1.10.2
 torchvision==0.11.3
 torchinfo==1.6.3
