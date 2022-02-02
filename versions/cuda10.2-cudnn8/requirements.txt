@@ -1,6 +1,6 @@
 --find-links https://download.pytorch.org/whl/cu102/torch_stable.html
 ### For cuda10.2-cudnn8 ###
-tensorflow-gpu==2.4.4
+tensorflow-gpu==2.5.3
 keras==2.4.3
 torch==1.7.1
 torchvision==0.8.2
