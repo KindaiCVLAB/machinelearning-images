@@ -1,5 +1,5 @@
 pull_request_rules:
-  - name: Automatic merge on approval
+  - name: "renovate[bot]: Automatic merge on approval"
     conditions:
       - "#approved-reviews-by>=1"
       - author=renovate[bot]
@@ -7,6 +7,33 @@ pull_request_rules:
       - label=dependencies
       - label=update
       - base=master
+      - 'check-success=build-push (cuda11.5.1-cudnn8)'
+      - 'check-success=build-push (cuda11.5.0-cudnn8)'
+      - 'check-success=build-push (cuda11.4.3-cudnn8)'
+      - 'check-success=build-push (cuda11.4.2-cudnn8)'
+      - 'check-success=build-push (cuda11.4.1-cudnn8)'
+      - 'check-success=build-push (cuda11.4.0-cudnn8)'
+      - 'check-success=build-push (cuda11.3.1-cudnn8)'
+      - 'check-success=build-push (cuda11.3.0-cudnn8)'
+      - 'check-success=build-push (cuda11.2.2-cudnn8)'
+      - 'check-success=build-push (cuda11.2.1-cudnn8)'
+      - 'check-success=build-push (cuda11.2.0-cudnn8)'
+      - 'check-success=build-push (cuda11.1.1-cudnn8)'
+      - 'check-success=build-push (cuda11.0.3-cudnn8)'
+      - 'check-success=build-push (cuda10.2-cudnn8)'
+      - 'check-success=build-push (cuda10.2-cudnn7)'
+    actions:
+      merge:
+        method: squash
+  - name: "@ml-image-maintainers: Automatic merge on approval"
+    conditions:
+      - "#approved-reviews-by>=1"
+      - author=@ml-image-maintainers
+      - approved-reviews-by=@ml-image-maintainers
+      - base=master
+      - 'check-success=build-push (cuda11.5.1-cudnn8)'
+      - 'check-success=build-push (cuda11.5.0-cudnn8)'
+      - 'check-success=build-push (cuda11.4.3-cudnn8)'
       - 'check-success=build-push (cuda11.4.2-cudnn8)'
       - 'check-success=build-push (cuda11.4.1-cudnn8)'
       - 'check-success=build-push (cuda11.4.0-cudnn8)'
