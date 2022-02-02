@@ -6,19 +6,13 @@
     ":prHourlyLimitNone",
     ":preserveSemverRanges"
   ],
-  "addLabels": [
-    "dependencies",
-    "update"
-  ],
+  "addLabels": ["dependencies", "update"],
   "commitMessagePrefix": "chore(deps):",
   "github-actions": {
     "enabled": false
   },
   "dockerfile": {
-    "fileMatch": [
-      "(^|/|\\.)Dockerfile$",
-      "(^|/)Dockerfile\\.[^/]*$"
-    ],
+    "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile\\.[^/]*$"],
     "enabled": false
   },
   "packageRules": [
@@ -32,9 +26,7 @@
     },
     {
       "groupName": "Jupyter Extensions Group",
-      "matchPaths": [
-        "versions/common/requirements.txt"
-      ],
+      "matchPaths": ["versions/common/requirements.txt"],
       "matchPackageNames": [
         "ipywidgets",
         "jupyterlab-nvdashboard",
@@ -43,9 +35,7 @@
     },
     {
       "groupName": "Common Libraries Group",
-      "matchPaths": [
-        "versions/common/requirements.txt"
-      ],
+      "matchPaths": ["versions/common/requirements.txt"],
       "matchPackageNames": [
         "tqdm",
         "addict",
@@ -74,8 +64,7 @@
         "versions/cuda11.2.1-cudnn8/requirements.txt",
         "versions/cuda11.3.0-cudnn8/requirements.txt"
       ],
-      "matchUpdateTypes": ["major", "minor"],
-      "enabled": false
+      "matchUpdateTypes": ["patch"]
     },
     {
       "groupName": "Ignore updateType=[major] if image status is deprecated",
@@ -89,8 +78,7 @@
         "versions/cuda11.2.1-cudnn8/requirements.txt",
         "versions/cuda11.3.0-cudnn8/requirements.txt"
       ],
-      "matchUpdateTypes": ["major"],
-      "enabled": false
+      "matchUpdateTypes": ["minor", "patch"]
     }
   ]
 }
