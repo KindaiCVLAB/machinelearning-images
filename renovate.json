@@ -21,8 +21,38 @@
       "matchPackageNames": ["torch", "torchvision"]
     },
     {
+      "groupName": "Pytorch Group with Deprecated Images",
+      "matchPackageNames": ["torch", "torchvision"],
+      "matchPaths": [
+        "versions/cuda10.2-cudnn7/requirements.txt",
+        "versions/cuda10.2-cudnn8/requirements.txt",
+        "versions/cuda11.0.3-cudnn8/requirements.txt",
+        "versions/cuda11.1.1-cudnn8/requirements.txt",
+        "versions/cuda11.2.0-cudnn8/requirements.txt",
+        "versions/cuda11.2.1-cudnn8/requirements.txt",
+        "versions/cuda11.3.0-cudnn8/requirements.txt"
+      ],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
+    },
+    {
       "groupName": "Tensorflow Group",
       "matchPackageNames": ["tensorflow-gpu", "keras"]
+    },
+    {
+      "groupName": "Tensorflow Group with Deprecated Images",
+      "matchPackageNames": ["tensorflow-gpu", "keras"],
+      "matchPaths": [
+        "versions/cuda10.2-cudnn7/requirements.txt",
+        "versions/cuda10.2-cudnn8/requirements.txt",
+        "versions/cuda11.0.3-cudnn8/requirements.txt",
+        "versions/cuda11.1.1-cudnn8/requirements.txt",
+        "versions/cuda11.2.0-cudnn8/requirements.txt",
+        "versions/cuda11.2.1-cudnn8/requirements.txt",
+        "versions/cuda11.3.0-cudnn8/requirements.txt"
+      ],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
     },
     {
       "groupName": "Jupyter Extensions Group",
@@ -54,7 +84,13 @@
     },
     {
       "groupName": "Ignore updateType=[major|minor] if image status is deprecated",
-      "excludePackagePatterns": ["cupy-cuda.*"],
+      "excludePackagePatterns": [
+        "cupy-cuda.*",
+        "tensorflow-gpu",
+        "keras",
+        "torch",
+        "torchvision"
+      ],
       "matchPaths": [
         "versions/cuda10.2-cudnn7/requirements.txt",
         "versions/cuda10.2-cudnn8/requirements.txt",
@@ -64,7 +100,8 @@
         "versions/cuda11.2.1-cudnn8/requirements.txt",
         "versions/cuda11.3.0-cudnn8/requirements.txt"
       ],
-      "matchUpdateTypes": ["patch"]
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
     },
     {
       "groupName": "Ignore updateType=[major] if image status is deprecated",
@@ -78,7 +115,8 @@
         "versions/cuda11.2.1-cudnn8/requirements.txt",
         "versions/cuda11.3.0-cudnn8/requirements.txt"
       ],
-      "matchUpdateTypes": ["minor", "patch"]
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ]
 }
