@@ -16,4 +16,4 @@ tabulate==0.8.9
 tensorflow_model_optimization==0.7.0
 Keras-Applications==1.0.8
 opencv-python==4.5.5.62
-jupyterlab==3.2.8
+jupyterlab==3.2.9
