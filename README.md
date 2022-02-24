@@ -137,6 +137,7 @@ Note: ベースイメージを最新に保つため一定期間毎にコンテ�
 - jupyterlab-nvdashboard
 - tensorflow_model_optimization
 - Keras-Applications
+- torchinfo
 
 #### イメージ毎にバージョンが異なるライブラリ
 各イメージにインストールされているバージョンはイメージのステータス一覧の表を参照してください．
@@ -147,7 +148,6 @@ Note: ベースイメージを最新に保つため一定期間毎にコンテ�
 - keras
 - torch
 - torchvision
-- torchinfo
 - jupyterlab
 - optuna
 - cupy-cuda
