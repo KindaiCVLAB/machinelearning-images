@@ -17,3 +17,4 @@ tensorflow_model_optimization==0.7.1
 Keras-Applications==1.0.8
 opencv-python==4.5.5.62
 jupyterlab==3.2.9
+torchinfo==1.6.3
