@@ -23,8 +23,6 @@ jobs:
     strategy:
       matrix:
         container_version:
-          - "cuda10.2-cudnn7"
-          - "cuda10.2-cudnn8"
           - "cuda11.0.3-cudnn8"
           - "cuda11.1.1-cudnn8"
           - "cuda11.2.0-cudnn8"
