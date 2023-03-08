@@ -4,7 +4,7 @@ tensorflow-gpu==2.5.3
 keras==2.4.3
 torch==1.8.1
 torchvision==0.9.1
-optuna==2.10.0
+optuna==2.10.1
 cupy-cuda111==8.6.0
 
 ### Common Libraries ###
