@@ -2,8 +2,8 @@
 ### For cuda11.2.2-cudnn8 ###
 tensorflow==2.12.0rc1
 keras==2.11.0
-torch==1.11.0
-torchvision==0.12.0
+torch==1.13.1
+torchvision==0.14.1
 optuna==2.10.1
 cupy-cuda112==10.6.0
 
