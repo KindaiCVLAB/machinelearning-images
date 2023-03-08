@@ -89,7 +89,7 @@ RUN conda uninstall jupyterlab --force -y \
 # tensorflow do not support cuda11.1.x, so must create libcusolver.so.10
 # REF: https://github.com/tensorflow/tensorflow/issues/43947
 # REF: https://gitlab.com/kindaicvlab/cvcloud/machinelearning-images/-/issues/46
- && target_libcusolver_path=$(python -c "import tensorflow.python as x; print(x.__path__[0])") \
+# && target_libcusolver_path=$(python -c "import tensorflow.python as x; print(x.__path__[0])") \
 # && if [[ "${BASE_IMG_CUDA_VERSION}" =~ ^11.1 ]];then \
 #        ln -s /usr/local/cuda-11.1/targets/x86_64-linux/lib/libcusolver.so.11 ${target_libcusolver_path}/libcusolver.so.10; \
 #    fi \
