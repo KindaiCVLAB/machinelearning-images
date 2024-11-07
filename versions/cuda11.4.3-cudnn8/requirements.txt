@@ -2,7 +2,7 @@
 ### For cuda11.4.3-cudnn8 ###
 tensorflow==2.11.0
 keras==2.15.0
-torch==1.13.1
+torch==2.5.1
 torchvision==0.19.1
 optuna==3.2.0
 cupy-cuda114==10.6.0
