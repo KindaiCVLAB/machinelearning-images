@@ -1,7 +1,7 @@
 ### jupyter extensions ###
-ipywidgets==8.0.6
-jupyterlab-nvdashboard==0.8.0
-lckr-jupyterlab-variableinspector==3.0.9
+ipywidgets==8.1.5
+jupyterlab-nvdashboard==0.11.0
+lckr-jupyterlab-variableinspector==3.2.4
 
 ### Common Libaries ###
 tqdm==4.65.0
